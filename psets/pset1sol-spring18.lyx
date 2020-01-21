@@ -1,0 +1,1018 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\renewcommand{\ket}[1]{#1}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 2
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 1 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Adjoints and operators (5+10+5 points)
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\dagger$
+\end_inset
+
+ is conjugate-transpose of a matrix or vector, we are just using the usual
+ linear-algebra rule that 
+\begin_inset Formula $(AB)^{\dagger}=B^{\dagger}A^{\dagger}$
+\end_inset
+
+, hence 
+\begin_inset Formula $\braket{h,Oh'}=h^{\dagger}(Oh')=(O^{\dagger}h)^{\dagger}h'=\braket{O^{\dagger}h,h'}$
+\end_inset
+
+ for the Euclidean inner product.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+More explicitly, if 
+\begin_inset Formula $h$
+\end_inset
+
+ is a column-vector and we let 
+\begin_inset Formula $h^{\dagger}$
+\end_inset
+
+ be its conjugate transpose, then 
+\begin_inset Formula $h^{\dagger}$
+\end_inset
+
+ is a row vector and 
+\begin_inset Formula $h^{\dagger}h'=\sum_{m}h_{m}^{*}h_{m}'=\braket{h,h'}$
+\end_inset
+
+ by the usual row-times-column multiplicaton rule.
+ If 
+\begin_inset Formula $O$
+\end_inset
+
+ is a matrix then 
+\begin_inset Formula $Oh'=\sum_{n}O_{mn}h_{n}'$
+\end_inset
+
+ by the usual matrix-vector product.
+ Then the dot product of 
+\begin_inset Formula $h$
+\end_inset
+
+ with 
+\begin_inset Formula $Oh'$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\sum_{m}h_{m}^{*}(\sum_{n}O_{mn}h_{n}')=\sum_{n}(\sum_{m}O_{mn}^{*}h_{m})^{*}h_{n}'$
+\end_inset
+
+, which is the same thing as the dot product of 
+\begin_inset Formula $O^{\dagger}h$
+\end_inset
+
+ with 
+\begin_inset Formula $h'$
+\end_inset
+
+ where 
+\begin_inset Formula $O^{\dagger}$
+\end_inset
+
+ is the conjugate transpose of 
+\begin_inset Formula $O$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Thus, interpreting 
+\begin_inset Formula $\dagger$
+\end_inset
+
+ as the conjugate transpose in this finite-dimensional case is consistent
+ with the abstract definitions given in class.
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ is unitary and we send 
+\begin_inset Formula $\ket{u}\rightarrow\hat{O}\ket{u}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{v}\rightarrow\hat{O}\ket{v}$
+\end_inset
+
+, then 
+\begin_inset Formula $\braket{u,v}\rightarrow\braket{u,\hat{O}^{\dagger}\hat{O}v}=\braket{u,v}$
+\end_inset
+
+, and thus inner products are preserved.
+ Consider now two eigensolutions 
+\begin_inset Formula $\hat{O}\ket{u_{1}}=\lambda_{1}\ket{u_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{O}\ket{u_{2}}=\lambda_{2}\ket{u_{2}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\braket{u_{1},\hat{O}^{\dagger}\hat{O}u_{2}}=\braket{u_{1},u_{2}}$
+\end_inset
+
+ by the unitarity of 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ and 
+\begin_inset Formula $\braket{u_{1},\hat{O}^{\dagger}\hat{O}u_{2}}=\braket{\hat{O}u_{1},\hat{O}u_{2}}=\lambda_{1}^{*}\lambda_{2}\braket{u_{1},u_{2}}$
+\end_inset
+
+ by the eigenvector property (where we let 
+\begin_inset Formula $\hat{O}^{\dagger}$
+\end_inset
+
+ act to the left, and conjugate the eigenvalue when we factor it out, as
+ in class).
+ Combining these two expressions, we have 
+\begin_inset Formula $(\lambda_{1}^{*}\lambda_{2}-1)\braket{u_{1},u_{2}}=0$
+\end_inset
+
+.
+ There are three cases, just like for Hermitian operators.
+ If 
+\begin_inset Formula $\ket{u_{1}}=\ket{u_{2}}$
+\end_inset
+
+, then we must have 
+\begin_inset Formula $\lambda_{1}^{*}\lambda_{1}=1=|\lambda_{1}|^{2}$
+\end_inset
+
+, and thus the eigenvalues have unit magnitude.
+ This also implies that 
+\begin_inset Formula $\lambda_{1}^{*}=1/\lambda_{1}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\lambda_{1}\neq\lambda_{2}$
+\end_inset
+
+, then 
+\begin_inset Formula $(\lambda_{1}^{*}\lambda_{2}-1)=(\lambda_{2}/\lambda_{1}-1)\neq0$
+\end_inset
+
+, and therefore 
+\begin_inset Formula $\braket{u_{1},u_{2}}=0$
+\end_inset
+
+ and the eigenvectors are orthogonal.
+ If 
+\begin_inset Formula $\lambda_{1}=\lambda_{2}$
+\end_inset
+
+ but have linearly independent 
+\begin_inset Formula $\ket{u_{1}}\neq\ket{u_{2}}$
+\end_inset
+
+ (degenerate eigenvectors, i.e.
+ geometric multiplicity 
+\begin_inset Formula $>1$
+\end_inset
+
+), then we can form orthogonal linear combinations (e.g.
+ via Gram–Schmidt).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Take two vectors 
+\begin_inset Formula $\ket{u}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{v}$
+\end_inset
+
+, and consider their inner product.
+ Then 
+\begin_inset Formula $\braket{u,\hat{O}^{-1}\hat{O}v}=\braket{u,v}$
+\end_inset
+
+.
+ By definition of the adjoint, however, if we move first 
+\begin_inset Formula $\hat{O}^{-1}$
+\end_inset
+
+ and then 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ to act to the left, then we get 
+\begin_inset Formula $\braket{u,v}=\braket{\hat{O}^{\dagger}(\hat{O}^{-1})^{\dagger}u,v}$
+\end_inset
+
+.
+ For this to be true for all 
+\begin_inset Formula $\ket{u}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{v}$
+\end_inset
+
+, we must have 
+\begin_inset Formula $\hat{O}^{\dagger}(\hat{O}^{-1})^{\dagger}=\mathbf{1}$
+\end_inset
+
+ and thus 
+\begin_inset Formula $(\hat{O}^{-1})^{\dagger}=(\hat{O}^{\dagger})^{-1}$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: Maxwell eigenproblems (5+5+5+5+5 points)
+\end_layout
+
+\begin_layout Enumerate
+To eliminate 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+, we start with Faraday's law 
+\begin_inset Formula $\nabla\times\vec{E}=i\frac{\omega}{c}\vec{H}$
+\end_inset
+
+ and take the curl of both sides.
+ We obtain: 
+\begin_inset Formula 
+\[
+\nabla\times\nabla\times\vec{E}=\frac{\omega^{2}}{c^{2}}\varepsilon\vec{E}.
+\]
+
+\end_inset
+
+If we divide both sides by 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, we get the form of a linear eigenproblem but the operator 
+\begin_inset Formula $\frac{1}{\varepsilon}\nabla\times\nabla\times$
+\end_inset
+
+ is not Hermitian under the usual inner product 
+\begin_inset Formula $\langle\vec{E}_{1},\vec{E}_{2}\rangle=\int\vec{E}_{1}^{*}\cdot\vec{E}_{2}$
+\end_inset
+
+—integrating by parts as in class, assuming boundary conditions such that
+ the boundary terms vanish, we find that its adjoint is 
+\begin_inset Formula $\nabla\times\nabla\times\frac{1}{\varepsilon}\cdot$
+\end_inset
+
+, which is not the same operator unless the 
+\begin_inset Formula $\frac{1}{\varepsilon}$
+\end_inset
+
+ commutes with the curls, which only happens if 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is a constant.
+ However, if we leave it in the form above we have a generalized Hermitian
+ problem with 
+\begin_inset Formula $\hat{A}=\nabla\times\nabla\times$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{B}=\varepsilon$
+\end_inset
+
+ .
+ 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ is Hermitian for the same reason that 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ was (it 
+\emph on
+is
+\emph default
+ 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ for 
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+), and 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is Hermitian as long as 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is real (so that 
+\begin_inset Formula $\vec{H}_{1}^{*}\cdot\varepsilon\vec{H}_{2}=(\varepsilon\vec{H}_{1})^{*}\cdot\vec{H}_{2}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+The proof follows the same lines as in class.
+ Consider two eigensolutions 
+\begin_inset Formula $\ket{u_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{u_{2}}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\hat{A}\ket{u}=\lambda\hat{B}\ket{u}$
+\end_inset
+
+, and 
+\begin_inset Formula $u\neq0$
+\end_inset
+
+), and take 
+\begin_inset Formula $\braket{u_{2},\hat{A}u_{1}}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ is Hermitian, we can operate it to the left or to the right in the inner
+ product, and get 
+\begin_inset Formula $\lambda_{2}^{*}\braket{u_{2},\hat{B}u_{1}}=\lambda_{1}\braket{u_{2},\hat{B}u_{1}}$
+\end_inset
+
+, or 
+\begin_inset Formula $(\lambda_{2}^{*}-\lambda_{1})\braket{u_{2},\hat{B}u_{1}}=0$
+\end_inset
+
+.
+ There are three cases.
+ First, if 
+\begin_inset Formula $\ket{u_{1}}=\ket{u_{2}}$
+\end_inset
+
+ then we must have 
+\begin_inset Formula $\lambda_{1}=\lambda_{1}^{*}$
+\end_inset
+
+ (real eigenvalues), since 
+\begin_inset Formula $\braket{u_{1},\hat{B}u_{1}}>0$
+\end_inset
+
+ by definition if 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is positive definite.
+ Second, if 
+\begin_inset Formula $\lambda_{1}\neq\lambda_{2}$
+\end_inset
+
+ then we must have 
+\begin_inset Formula $\braket{u_{2},\hat{B}u_{1}}=0$
+\end_inset
+
+, which is our modified orthogonality condition.
+ Finally, if 
+\begin_inset Formula $\lambda_{1}=\lambda_{2}$
+\end_inset
+
+ but 
+\begin_inset Formula $\ket{u_{1}}\neq\ket{u_{2}}$
+\end_inset
+
+, then we can form a linear combination that is orthogonal (since any linear
+ combination still is an eigenvector); e.g.
+ 
+\begin_inset Formula 
+\[
+\ket{u_{2}}\rightarrow\ket{u_{2}}-\ket{u_{1}}\frac{\braket{u_{2},\hat{B}u_{1}}}{\braket{u_{1},\hat{B}u_{1}}},
+\]
+
+\end_inset
+
+where we have again relied on the fact that 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is positive definite (so that we can divide by 
+\begin_inset Formula $\braket{u_{1},\hat{B}u_{1}}$
+\end_inset
+
+).
+ This is certainly true for 
+\begin_inset Formula $\hat{B}=\varepsilon$
+\end_inset
+
+, since 
+\begin_inset Formula $\braket{E,\hat{B}E}=\int\varepsilon|\vec{E}|^{2}>0$
+\end_inset
+
+ for all 
+\begin_inset Formula $\vec{E}\neq0$
+\end_inset
+
+ (almost everywhere) as long as we have a real 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ as we required in class.
+ 
+\end_layout
+
+\begin_layout Enumerate
+First, let us verify that 
+\begin_inset Formula $\langle\vec{E},\vec{E}'\rangle_{B}=\langle\vec{E},\hat{B}\vec{E}'\rangle$
+\end_inset
+
+ is indeed an inner product.
+ Because 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is self-adjoint, we have 
+\begin_inset Formula $\langle\vec{E}',\vec{E}\rangle_{B}=\langle\vec{E}',\hat{B}\vec{E}\rangle=\langle\hat{B}\vec{E}',\vec{E}\rangle=\langle\vec{E},\hat{B}\vec{E}'\rangle^{*}=\langle\vec{E},\vec{E}'\rangle_{B}^{*}$
+\end_inset
+
+.
+ Bilinearity follows from bilinearity of 
+\begin_inset Formula $\langle\cdot,\cdot\rangle$
+\end_inset
+
+ and linearity of 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+.
+ Positivity 
+\begin_inset Formula $\langle\vec{E},\vec{E}\rangle_{B}=\langle\vec{E},\hat{B}\vec{E}\rangle>0$
+\end_inset
+
+ except for 
+\begin_inset Formula $\vec{E}=0$
+\end_inset
+
+ (almost everywhere) follows from positive-definiteness of 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+.
+ All good!
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now, Hermiticity of 
+\begin_inset Formula $\hat{B}^{-1}\hat{A}$
+\end_inset
+
+ follows almost trivially from Hermiticity of 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+: 
+\begin_inset Formula $\langle\vec{E},\hat{B}^{-1}\hat{A}\vec{E}'\rangle_{B}=\langle\vec{E},\cancel{\hat{B}\hat{B}^{-1}}\hat{A}\vec{E}'\rangle=\langle\hat{A}\vec{E},\vec{E}'\rangle=\langle\hat{A}\vec{E},\hat{B}^{-1}\hat{B}\vec{E}'\rangle=\langle\hat{B}^{-1}\hat{A}\vec{E},\hat{B}\vec{E}'\rangle=\langle\hat{B}^{-1}\hat{A}\vec{E},\vec{E}'\rangle_{B}$
+\end_inset
+
+, where we have used the fact, from problem 1, that Hermiticity of 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ implies Hermiticity of 
+\begin_inset Formula $\hat{B}^{-1}$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\mu\neq1$
+\end_inset
+
+ then we have 
+\begin_inset Formula $\vec{B}=\mu\vec{H}\neq\vec{H}$
+\end_inset
+
+, and when we eliminate 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ or 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ from Maxwell's equations we get: 
+\begin_inset Formula 
+\[
+\nabla\times\frac{1}{\varepsilon}\nabla\times\vec{H}=\frac{\omega^{2}}{c^{2}}\mu\vec{H}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\nabla\times\frac{1}{\mu}\nabla\times\vec{E}=\frac{\omega^{2}}{c^{2}}\varepsilon\vec{E}
+\]
+
+\end_inset
+
+ with the constraints 
+\begin_inset Formula $\nabla\cdot\varepsilon\vec{E}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\cdot\mu\vec{H}=0$
+\end_inset
+
+.
+ These are both generalized Hermitian eigenproblems (since 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\times\frac{1}{\mu}\nabla\times$
+\end_inset
+
+ are both Hermitian operators for the same reason 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\times\frac{1}{\varepsilon}\nabla\times$
+\end_inset
+
+ were).
+ Thus, the eigenvalues are real and the eigenstates are orthogonal through
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, respectively, as proved above.
+ To prove that 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is real, we consider an eigenfunction 
+\begin_inset Formula $\ket{H}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\braket{H,\hat{\Theta}H}=\frac{\omega^{2}}{c^{2}}\braket{H,\mu H}$
+\end_inset
+
+ and we must have 
+\begin_inset Formula $\omega^{2}\geq0$
+\end_inset
+
+ since 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ is positive semi-definite (from class) and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is positive definite (for the same reason 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ was, above).
+ The 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ eigenproblem has real 
+\begin_inset Formula $\omega$
+\end_inset
+
+ for the same reason (except that 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ are swapped).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Alternatively, as in part (c), we can write them as ordinary Hermitian eigenprob
+lems with a modified inner product, e.g.
+ 
+\begin_inset Formula $\frac{1}{\varepsilon}\nabla\times\frac{1}{\mu}\nabla\times\vec{E}=\frac{\omega^{2}}{c^{2}}\vec{E}$
+\end_inset
+
+, where 
+\begin_inset Formula $\frac{1}{\varepsilon}\nabla\times\frac{1}{\mu}\nabla\times$
+\end_inset
+
+ is Hermitian and positive semidefinite under the 
+\begin_inset Formula $\langle\vec{E},\vec{E}'\rangle_{B}=\int\vec{E}^{*}\cdot\varepsilon\vec{E}\prime$
+\end_inset
+
+ inner product as above.
+ The results then follow.
+\end_layout
+
+\begin_layout Enumerate
+Consider the 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ eigenproblem.
+ (To even get this linear eigenproblem, we must immediately require 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ to be an invertible matrix, and of course require 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ to be independent of 
+\begin_inset Formula $\omega$
+\end_inset
+
+ or the field strength.) For the right-hand operator 
+\begin_inset Formula $\mu$
+\end_inset
+
+ to be Hermitian, we require 
+\begin_inset Formula $\int\vec{H}_{1}^{*}\cdot\mu\vec{H}_{2}=\int(\mu\vec{H}_{1})^{*}\cdot\vec{H}_{2}$
+\end_inset
+
+ for all 
+\begin_inset Formula $\vec{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}_{2}$
+\end_inset
+
+, which implies that 
+\begin_inset Formula $\vec{H}_{1}^{*}\cdot\mu\vec{H}_{2}=(\mu\vec{H}_{1})^{*}\cdot\vec{H}_{2}$
+\end_inset
+
+.
+ Thus, we require the 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ 
+\begin_inset Formula $\mu(\vec{x})$
+\end_inset
+
+ matrix to be itself Hermitian at every 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ (that is, equal to its conjugate transpose, from problem 1).
+ (Technically, these requirements hold 
+\begin_inset Quotes eld
+\end_inset
+
+almost everywhere
+\begin_inset Quotes erd
+\end_inset
+
+ rather than at every point, but as usual I will gloss over this distinction.)
+ Similarly, for 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ to be Hermitian we require 
+\begin_inset Formula $\int\vec{F}_{1}^{*}\cdot\varepsilon^{-1}\vec{F}_{2}=\int(\varepsilon^{-1}\vec{F}_{1})^{*}\cdot\vec{F}_{2}$
+\end_inset
+
+ where 
+\begin_inset Formula $\vec{F}=\nabla\times\vec{H}$
+\end_inset
+
+, so that we can move the 
+\begin_inset Formula $\varepsilon^{-1}$
+\end_inset
+
+ over to the left side of the inner product, and thus 
+\begin_inset Formula $\varepsilon^{-1}(\vec{x})$
+\end_inset
+
+ must be Hermitian at every 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+.
+ From problem 1, this implies that 
+\begin_inset Formula $\varepsilon(\vec{x})$
+\end_inset
+
+ is also Hermitian.
+ Finally, to get real eigenvalues we saw from above that we must have 
+\begin_inset Formula $\mu$
+\end_inset
+
+ positive definite (
+\begin_inset Formula $\int\vec{H}^{*}\cdot\mu\vec{H}>0$
+\end_inset
+
+ for 
+\begin_inset Formula $\vec{H}\neq0$
+\end_inset
+
+); since this must be true for all 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ then 
+\begin_inset Formula $\mu(\vec{x})$
+\end_inset
+
+ at each point must be a positive-definite 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrix (positive eigenvalues).
+ Similarly, 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ must be positive semi-definite, which implies that 
+\begin_inset Formula $\varepsilon^{-1}(\vec{x})$
+\end_inset
+
+ is positive semi-definite (non-negative eigenvalues), but since it has
+ to be invertible we must have 
+\begin_inset Formula $\varepsilon(\vec{x})$
+\end_inset
+
+ positive definite (zero eigenvalues would make it singular).
+ To sum up, we must have 
+\begin_inset Formula $\varepsilon(\vec{x})$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu(\vec{x})$
+\end_inset
+
+ being positive-definite Hermitian matrices at (almost) every 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+.
+ (The analysis for the 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ eigenproblem is identical.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Technically, there are a couple other possibilities.
+ In part (b), we showed that if 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is positive-definite it leads to real eigenvalues etc.
+ The same properties, however, hold if 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is 
+\emph on
+negative
+\emph default
+-definite, and if 
+\emph on
+both
+\emph default
+ 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ are negative-definite we still get real, 
+\emph on
+positive
+\emph default
+ eigenvalues.
+ Thus, another possibility is for 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ to be Hermitian 
+\emph on
+negative
+\emph default
+-definite matrices.
+ (For a scalar 
+\begin_inset Formula $\varepsilon<0$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu<0$
+\end_inset
+
+, this leads to materials with a 
+\emph on
+negative
+\emph default
+ real index of refraction 
+\begin_inset Formula $n=-\sqrt{\varepsilon\mu}$
+\end_inset
+
+!) Furthermore, 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ could both be 
+\emph on
+anti
+\emph default
+-Hermitian instead of Hermitian (i.e., 
+\begin_inset Formula $\varepsilon^{\dagger}=-\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu^{\dagger}=-\mu$
+\end_inset
+
+), although I'm not aware of any physical examples of this.
+ More generally, for any complex number 
+\begin_inset Formula $z$
+\end_inset
+
+, if we replace 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ by 
+\begin_inset Formula $z\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu/z$
+\end_inset
+
+, then 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is unchanged (e.g.
+ making 
+\begin_inset Formula $z=i$
+\end_inset
+
+ gives anti-Hermitian matrices).
+ 
+\end_layout
+
+\end_body
+\end_document

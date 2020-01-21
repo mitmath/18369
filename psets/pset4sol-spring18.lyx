@@ -1,0 +1,1690 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 4 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: (5+5+10 points)
+\end_layout
+
+\begin_layout Enumerate
+Let us write 
+\begin_inset Formula $(\hat{A}^{(0)}+\Delta\hat{A})\psi=\lambda(\hat{B}^{(0)}+\Delta\hat{B})\psi$
+\end_inset
+
+, where 
+\begin_inset Formula $\psi=\psi^{(0)}+\psi^{(1)}+\cdots$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda=\lambda^{(0)}+\lambda^{(1)}+\cdots$
+\end_inset
+
+ are expansions of the new eigensolutions in powers of the perturbation
+ 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ (since we don't have to worry about breaking degeneracies, by assumption).
+ If we keep only the zero-th order terms, we get the unperturbed problem
+ 
+\begin_inset Formula $\hat{A}^{(0)}\psi^{(0)}=\lambda^{(0)}\hat{B}^{(0)}\psi^{(0)}$
+\end_inset
+
+.
+ If we only keep terms only up to the 1st order, we get: 
+\begin_inset Formula 
+\[
+\hat{A}^{(0)}\psi^{(1)}+\Delta\hat{A}\psi^{(0)}=\lambda^{(1)}\hat{B}^{(0)}\psi^{(0)}+\lambda^{(0)}\hat{B}^{(0)}\psi^{(1)}+\lambda^{(0)}\Delta\hat{B}\psi^{(0)}+O(\Delta^{2}).
+\]
+
+\end_inset
+
+Taking the inner product with
+\begin_inset Formula $\psi^{(0)}$
+\end_inset
+
+ on both sides, and using the Hermitian property to operate 
+\begin_inset Formula $\hat{A}^{(0)}$
+\end_inset
+
+ to the left and the fact that 
+\begin_inset Formula $\lambda^{(0)}$
+\end_inset
+
+ is real, the 
+\begin_inset Formula $\lambda^{(0)}\left\langle \psi^{(0)},\hat{B}^{(0)}\psi^{(1)}\right\rangle $
+\end_inset
+
+ terms cancel on both sides, and we obtain: 
+\begin_inset Formula 
+\[
+\lambda^{(1)}=\frac{\left\langle \psi^{(0)},\Delta\hat{A}\psi^{(0)}\right\rangle -\lambda^{(0)}\left\langle \psi^{(0)},\Delta\hat{B}\psi^{(0)}\right\rangle }{\left\langle \psi^{(0)},\hat{B}^{(0)}\psi^{(0)}\right\rangle },
+\]
+
+\end_inset
+
+which is the generalized version of first-order perturbation theory.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $\nabla\times\nabla\times\vec{E}=\frac{\omega^{2}}{c^{2}}\varepsilon\vec{E}$
+\end_inset
+
+ with a small change 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+, we have 
+\begin_inset Formula $\Delta\hat{A}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta\hat{B}=\Delta\varepsilon$
+\end_inset
+
+.
+ Also, to first order, 
+\begin_inset Formula $\Delta(\frac{\omega^{2}}{c^{2}})=2\frac{\omega\Delta\omega}{c^{2}}=\lambda^{(1)}$
+\end_inset
+
+.
+ Plugging this in above and dividing through by 
+\begin_inset Formula $2\omega/c^{2}$
+\end_inset
+
+, we have: 
+\begin_inset Formula 
+\[
+\Delta\omega=-\frac{\omega}{2}\frac{\left\langle \vec{E}^{(0)},\Delta\varepsilon\vec{E}^{(0)}\right\rangle }{\left\langle \vec{E}^{(0)},\varepsilon\vec{E}^{(0)}\right\rangle },
+\]
+
+\end_inset
+
+which is the same as the expression we derived from the 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ eigenproblem in class.
+\end_layout
+
+\begin_layout Enumerate
+Suppose we have a width-
+\begin_inset Formula $d$
+\end_inset
+
+ perturbation 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+ centered at 
+\begin_inset Formula $x=0$
+\end_inset
+
+ in a unit cell 
+\begin_inset Formula $(-a/2,a/2]$
+\end_inset
+
+.
+ In class, we showed that you should start with the unperturbed (constant
+ 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+) solutions 
+\begin_inset Formula $\sin(\pi x/a)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(\pi x/a)$
+\end_inset
+
+, both with unperturbed frequency 
+\begin_inset Formula $\omega=c\pi/a\sqrt{\varepsilon}$
+\end_inset
+
+.
+ (We used these solutions rather than 
+\begin_inset Formula $e^{\pm i\pi x/a}$
+\end_inset
+
+ because, by symmetry, the perturbation must split the degenerate Brillouin-zone
+-edge modes into even/odd solutions, hence sine and cosine.) Now, we can
+ just evaluate the first-order frequency shifts 
+\begin_inset Formula $\Delta\omega_{c}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta\omega_{s}$
+\end_inset
+
+ (in the cos and sin modes, respectively) using the perturbation formula
+ above, via the double-angle trig identity 
+\begin_inset Formula $\cos^{2}(x)=\frac{1+\cos(2x)}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sin^{2}(x)=\frac{1-\cos(2x)}{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\Delta\omega_{c} & =-\frac{\omega}{2}\frac{2\Delta\varepsilon\int_{0}^{d/2}\cos^{2}(\pi x/a)dx}{2\varepsilon\int_{0}^{a/2}\cos^{2}(\pi x/a)dx}=-\frac{\omega\Delta\varepsilon}{2\varepsilon}\frac{\left.\frac{1}{2}\left(x+\frac{\sin(2\pi x/a)}{2\pi/a}\right)\right|_{0}^{d/2}}{\left.\frac{1}{2}\left(x+\frac{\sin(2\pi x/a)}{2\pi/a}\right)\right|_{0}^{a/2}}\\
+ & =-\frac{\omega\Delta\varepsilon}{2\varepsilon}\frac{d/2+\frac{\sin(\pi d/a)}{2\pi/a}}{a/2}=-\frac{\omega\Delta\varepsilon}{2\varepsilon}\left(\frac{d}{a}+\frac{\sin(\pi d/a)}{\pi}\right).
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\Delta\omega_{s} & =-\frac{\omega}{2}\frac{2\Delta\varepsilon\int_{0}^{d/2}\sin^{2}(\pi x/a)dx}{2\varepsilon\int_{0}^{a/2}\sin^{2}(\pi x/a)dx}=-\frac{\omega\Delta\varepsilon}{2\varepsilon}\frac{\left.\frac{1}{2}\left(x-\frac{\sin(2\pi x/a)}{\pi/a}\right)\right|_{0}^{d/2}}{\left.\frac{1}{2}\left(x-\frac{\sin(2\pi x/a)}{2\pi/a}\right)\right|_{0}^{a/2}}\\
+ & =-\frac{\omega\Delta\varepsilon}{2\varepsilon}\frac{d/2-\frac{\sin(\pi d/a)}{2\pi/a}}{a/2}=-\frac{\omega\Delta\varepsilon}{2\varepsilon}\left(\frac{d}{a}-\frac{\sin(\pi d/a)}{\pi}\right).
+\end{align*}
+
+\end_inset
+
+Hence the mid-gap frequency is 
+\begin_inset Formula 
+\[
+\omega_{m}=\omega+\frac{\Delta\omega_{c}+\Delta\omega_{m}}{2}=\omega-\frac{\omega d\Delta\varepsilon}{2a\varepsilon}
+\]
+
+\end_inset
+
+and the gap width is 
+\begin_inset Formula 
+\[
+\Delta\omega=\Delta\omega_{s}-\Delta\omega_{c}=\frac{\omega\Delta\varepsilon}{\varepsilon}\frac{\sin(\pi d/a)}{\pi},
+\]
+
+\end_inset
+
+so we obtain: 
+\begin_inset Formula 
+\[
+\frac{\Delta\omega}{\omega_{m}}=\frac{\Delta\varepsilon}{\varepsilon}\frac{\sin(\pi d/a)}{\pi}+O(\Delta\varepsilon^{2})
+\]
+
+\end_inset
+
+as desired (note that the 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+ term in 
+\begin_inset Formula $\omega_{m}$
+\end_inset
+
+ contributes only to second order in 
+\begin_inset Formula $\Delta\omega/\omega_{m}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: (20 points)
+\end_layout
+
+\begin_layout Standard
+What Calvin has forgotten is that, with Bloch's theorem, the periodicity
+ in 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ is determined by the choice of unit cell—if you employ a supercell, a periodici
+ty larger than the minimum, then this leads to a labelling 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ that is 
+\begin_inset Quotes eld
+\end_inset
+
+folded
+\begin_inset Quotes erd
+\end_inset
+
+ onto the smaller Brillouin zone of the new unit cell.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+(10 points)
+\emph default
+ In particular, the point 
+\begin_inset Formula $(k_{x},0,0)$
+\end_inset
+
+ in the 
+\emph on
+second
+\emph default
+ calculation (where the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction has a non-zero periodicity 
+\begin_inset Formula $a$
+\end_inset
+
+ and thus a finite Brillouin zone 
+\begin_inset Formula $2\pi/a$
+\end_inset
+
+ in the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction) corresponds to the points 
+\begin_inset Formula $(k_{x},\frac{2\pi n}{a},0)$
+\end_inset
+
+, for all integers 
+\begin_inset Formula $n$
+\end_inset
+
+, in the 
+\emph on
+first
+\emph default
+ calculation (where the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction has zero periodicity and thus an infinite Brillouin zone where
+ all 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ are distinct).
+ The results are shown in Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:1d-bands"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 1d-bands.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:1d-bands"
+
+\end_inset
+
+Band diagrams of quarter-wave stack (
+\begin_inset Formula $\varepsilon=1.1/1$
+\end_inset
+
+).
+ 
+\emph on
+Top
+\emph default
+: 1d unit cell.
+ 
+\emph on
+Bottom:
+\emph default
+ 2d unit cell (supercell), showing 1d bands (red) and double-degenerate
+ folded bands from 
+\begin_inset Formula $k_{y}=\frac{2\pi n}{a}$
+\end_inset
+
+ for 
+\begin_inset Formula $n\neq0$
+\end_inset
+
+ (blue).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the 1d unit cell, shown in Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:1d-bands"
+
+\end_inset
+
+(top), we see the usual 1d quarter-wave band diagram of non-degenerate bands
+ (considering the TM polarization only).
+ Because the index contrast is so low, the bands are 
+\emph on
+nearly
+\emph default
+ the folded versions of the straight-line bands 
+\begin_inset Formula $\omega=c|k|/\sqrt{\varepsilon}$
+\end_inset
+
+ from 
+\begin_inset Formula $\varepsilon\approx1.05$
+\end_inset
+
+ (the mean 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+).
+ A small gap opens up at 
+\begin_inset Formula $k_{x}=\pi/a$
+\end_inset
+
+, centered on 
+\begin_inset Formula $\omega a/2\pi c=0.4884$
+\end_inset
+
+.
+ There is no gap at 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+, due to the peculiar accidental degeneracy of the quarter-wave stack at
+ this point (from pset 3).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+(10 points)
+\emph default
+ For the 
+\begin_inset Formula $a\times a$
+\end_inset
+
+ unit cell, we see two kinds of bands in Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:1d-bands"
+
+\end_inset
+
+(bottom).
+ First, the (non-degenerate) bands of the 1d unit cell (
+\begin_inset Formula $n=0$
+\end_inset
+
+) are still solutions, of course, shown in red.
+ The first folded band is for 
+\begin_inset Formula $n=1$
+\end_inset
+
+, corresponding to the lowest band at 
+\begin_inset Formula $k_{y}=\pm\frac{2\pi}{a}$
+\end_inset
+
+.
+ Since this is 
+\emph on
+nearly
+\emph default
+ a homogeneous system, we expect this band to be 
+\emph on
+nearly
+\emph default
+ 
+\begin_inset Formula $\omega\approx c\sqrt{k_{x}^{2}+(\pm2\pi/a)^{2}}$
+\end_inset
+
+, which is doubly-degenerate, curved, and is almost degenerate with the
+ 1d bands at 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+ (a little below 
+\begin_inset Formula $\omega a/2\pi c=1$
+\end_inset
+
+) and at 
+\begin_inset Formula $k_{x}=0.5\frac{\pi}{a}$
+\end_inset
+
+ should be a little below 
+\begin_inset Formula $\sqrt{0.5^{2}+1}=1.12$
+\end_inset
+
+.
+ In fact, the first 3 folded bands correspond to the first 3 bands at 
+\begin_inset Formula $n=\pm1$
+\end_inset
+
+, with frequencies 
+\begin_inset Formula $\omega\approx c\sqrt{(k_{x}+\ell\frac{2\pi}{a})^{2}+(\pm2\pi/a)^{2}}$
+\end_inset
+
+ for 
+\begin_inset Formula $\ell=0,-1,1$
+\end_inset
+
+.
+ Thus, the 2nd and 3rd folded bands at 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+ should be at 
+\begin_inset Formula $\omega\approx\sqrt{2}$
+\end_inset
+
+.
+ It's hard to tell on this plot because the index contrast is so low, but
+ there 
+\emph on
+is
+\emph default
+ a gap in the folded bands at 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+, since we are no longer satisfying the quarter-wave condition when 
+\begin_inset Formula $k_{y}\neq0$
+\end_inset
+
+.
+ For the 4th folded band, there is a crossing between two bands: first,
+ the 4th band(s) at 
+\begin_inset Formula $n=\pm1$
+\end_inset
+
+, with 
+\begin_inset Formula $\omega\approx c\sqrt{(k_{x}-2\frac{2\pi}{a})^{2}+(\pm2\pi/a)^{2}}$
+\end_inset
+
+; and second, the 1st band at 
+\begin_inset Formula $n=\pm2$
+\end_inset
+
+, with 
+\begin_inset Formula $\omega\approx c\sqrt{k_{x}^{2}+(\pm4\pi/a)^{2}}$
+\end_inset
+
+.
+ The latter is lower (
+\begin_inset Formula $\omega\approx2$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $\omega\approx\sqrt{5}$
+\end_inset
+
+) at 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+, and the former is lower (
+\begin_inset Formula $\omega\approx\frac{\sqrt{13}}{2}$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $\omega\approx\frac{\sqrt{17}}{2}$
+\end_inset
+
+) at 
+\begin_inset Formula $k_{x}=\pi/a$
+\end_inset
+
+.
+ No bands are more than 2-fold degenerate (except at points where they cross,
+ of course).
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: (10+5+5 points)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename p2a.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p2a"
+
+\end_inset
+
+Gap size (% of mid-gap) for 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ of 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $12$
+\end_inset
+
+ layers (period 
+\begin_inset Formula $a$
+\end_inset
+
+) vs.
+ thickness 
+\begin_inset Formula $d_{1}/a$
+\end_inset
+
+ of 
+\begin_inset Formula $\varepsilon=12$
+\end_inset
+
+ layer.
+ The maximum gap occurs at 
+\begin_inset Formula $d_{1}\approx0.22a$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+To vary 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ from 0 to 
+\begin_inset Formula $a$
+\end_inset
+
+, the easiest thing is to write a loop.
+ One can write a loop in Scheme, modifying the bandgap1d.ctl file, but instead
+ I sometimes find it easier to vary the parameters directly at the Unix
+ shell that modifies the parameters, using the mpb 
+\family typewriter
+d1=0.3
+\family default
+ command to modify the 
+\family typewriter
+d1
+\family default
+ parameter.
+ Using the bash shell (note that the default Athena shell is tcsh, however),
+ one can do a sequence of parameters and extract the results via:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+(for d in `seq 0 0.01 1`; do echo -n "$d, "; mpbi d1=$d bandgap1d.ctl |grep
+ Gap |grep "band 1" |cut -d, -f2 |tr -d '%'; done) > p2a.dat
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+This results in the data shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p2a"
+
+\end_inset
+
+, with the maximum gap at about 
+\begin_inset Formula $0.22a$
+\end_inset
+
+, which is equal (within our 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ resolution) to the quarter-wave thickness 
+\begin_inset Formula $d_{1}/a=1/(\sqrt{12}+1)\approx0.22401$
+\end_inset
+
+, as expected.
+\end_layout
+
+\begin_layout Enumerate
+At the quarter-wave thickness 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+, the mid-gap is at 
+\begin_inset Formula $\omega a/2\pi c=a/\lambda\approx0.32217$
+\end_inset
+
+ (as can be found either from the MPB simulation or from the analytical
+ formula discussed in class).
+ Thus, 
+\begin_inset Formula $a=0.32217\lambda=0.32217\cdot1.55\mu\textrm{m}=0.49936\mu\textrm{m}$
+\end_inset
+
+, and 
+\begin_inset Formula $d_{1}=0.22401a=0.11186\mu\textrm{m}$
+\end_inset
+
+ (
+\begin_inset Formula $d_{2}=a-d_{1}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+In figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p2c"
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename p2c.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p2c"
+
+\end_inset
+
+TM band diagram of 
+\begin_inset Formula $\varepsilon=12/1$
+\end_inset
+
+ multilayer film, with quarter-wave thickness 
+\begin_inset Formula $d_{1}\approx0.22401a$
+\end_inset
+
+ (blue, solid) or thickness 
+\begin_inset Formula $d_{1}=0.12345a$
+\end_inset
+
+ (red, dashed) of the 
+\begin_inset Formula $\varepsilon=12$
+\end_inset
+
+ layer.
+ Quarter-wave gaps are shaded blue.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ are shown the TM band diagrams for the quarter-wave 
+\begin_inset Formula $d_{1}\approx0.22401a$
+\end_inset
+
+ and the 
+\begin_inset Quotes eld
+\end_inset
+
+random
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $d_{1}=0.12345a$
+\end_inset
+
+.
+ (I increased num-bands to 10 to get this many bands, and increased k-interp
+ to 19 to get smoother plots.) The quarter-wave bands have the following
+ special features (besides having the largest fundamental gap as already
+ noted above).
+ First, all of their gaps 
+\begin_inset Formula $\Delta\omega$
+\end_inset
+
+ are exactly the same size (in absolute units, not as a percentage of mid-gap).
+ Second, their mid-gap frequencies are spaced exactly at the 
+\emph on
+odd integer multiples
+\emph default
+ of the first mid-gap! Third, the quarter-wave structure has no gaps edges
+ at 
+\begin_inset Formula $k=0$
+\end_inset
+
+, where the bands are 
+\emph on
+accidentally degenerate
+\emph default
+.
+ (The 
+\begin_inset Formula $d_{1}=0.12345a$
+\end_inset
+
+ structure 
+\emph on
+almost
+\emph default
+ has an accidental degeneracy at 
+\begin_inset Formula $ka/2\pi=0.5$
+\end_inset
+
+ between its third and fourth bands, but there is actually a very small
+ gap there.) 
+\end_layout
+
+\begin_layout Subsection*
+Problem 4: (5+5+5+10 points)
+\end_layout
+
+\begin_layout Standard
+For the solution of this problem, I made various modifications to the defect1d.ct
+l file that was supplied to you.
+ The modified defect1dsol.ctl is given at the end.
+\end_layout
+
+\begin_layout Enumerate
+The supplied defect1d.ctl just computed the bands at a single 
+\begin_inset Formula $k=0$
+\end_inset
+
+ point, which is what we want normally for defect modes but is not what
+ is asked for here.
+ So, I modified the file to paste in the 
+\begin_inset Formula $k$
+\end_inset
+
+ interpolation code from bandgap1d.ctl, except that it is only invoked when
+ k-interp is nonzero.
+ Also, to show more than one gap we need more bands, so I added an 
+\begin_inset Quotes eld
+\end_inset
+
+extra-bands
+\begin_inset Quotes erd
+\end_inset
+
+ parameter that controls how many bands beyond the Nth we compute (instead
+ of just 1).
+ Then, running 
+\begin_inset Quotes eld
+\end_inset
+
+mpb N=5 k-interp=19 extra-bands=20 defect1dsol.ctl
+\begin_inset Quotes erd
+\end_inset
+
+ gives the plot shown in figure xxx (blue lines)—note that, since MPB gives
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ in units of 
+\begin_inset Formula $2\pi/(\textrm{cell size})$
+\end_inset
+
+, it is here in units of 
+\begin_inset Formula $2\pi/5a$
+\end_inset
+
+ and the edge of the folded Brillouin zone is still 
+\begin_inset Formula $k=0.5$
+\end_inset
+
+.
+ On top of this, I superimposed the 
+\begin_inset Quotes eld
+\end_inset
+
+folded
+\begin_inset Quotes erd
+\end_inset
+
+ bands from pset 3,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In Matlab, if 
+\begin_inset Quotes eld
+\end_inset
+
+k
+\begin_inset Quotes erd
+\end_inset
+
+ is the array of 
+\begin_inset Formula $k$
+\end_inset
+
+ coordinates, then we fold it by first setting 
+\begin_inset Quotes eld
+\end_inset
+
+k=5*k
+\begin_inset Quotes erd
+\end_inset
+
+ (since the folded bands are in units of 
+\begin_inset Formula $2\pi/5a$
+\end_inset
+
+), and then repeatedly set 
+\begin_inset Quotes eld
+\end_inset
+
+k(k > 0.5) = abs(k(k > 0.5) - 1)
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ shown as red circles, and we can see that they exactly coincide as expected.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename p4a.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p4a"
+
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+Folded
+\begin_inset Quotes erd
+\end_inset
+
+ band diagram of an 
+\begin_inset Formula $\varepsilon=12/1$
+\end_inset
+
+ quarter-wave stack with a supercell of 
+\begin_inset Formula $N=5$
+\end_inset
+
+ primitive cells.
+ The supercell computation (blue lines) exactly corresponds with the data
+ of pset
+\begin_inset space ~
+\end_inset
+
+3 (red circles) folded onto this smaller Brillouin zone (note that 
+\begin_inset Formula $k$
+\end_inset
+
+ is now in units of 
+\begin_inset Formula $2\pi/5a$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+When we increase the 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ of a layer, it pulls down a band from the upper edge of the gap, and thus
+ we look at band 
+\begin_inset Formula $N+1$
+\end_inset
+
+ in the supercell to get the defect mode.
+ The supplied input file is set up to increase the 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ of an 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ layer by the parameter 
+\begin_inset Quotes eld
+\end_inset
+
+deps2
+\begin_inset Quotes erd
+\end_inset
+
+.
+ To change an 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ layer, the easiest thing is just to swap 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+: 
+\begin_inset Quotes eld
+\end_inset
+
+mpb eps1=1 eps2=12 deps2=1 defect1d.ctl
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Unfortunately, it turns out that the 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ defect is rather weakly confined, so we also set our supercell size to
+ 
+\begin_inset Formula $N=120$
+\end_inset
+
+ (I increased it until I saw clearly localized modes).
+ The resulting 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field patterns, increasing 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ by 
+\begin_inset Formula $\Delta\varepsilon=1$
+\end_inset
+
+, are shown in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p4b"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename p4b.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p4b"
+
+\end_inset
+
+
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ pattern of localized modes formed by adding 
+\begin_inset Formula $\Delta\varepsilon=1$
+\end_inset
+
+ to either an 
+\begin_inset Formula $\varepsilon_{1}=12$
+\end_inset
+
+ layer (blue, solid lines) or to an 
+\begin_inset Formula $\varepsilon_{2}=1$
+\end_inset
+
+ layer (red, dashed lines).
+ In both cases, the 
+\begin_inset Formula $x$
+\end_inset
+
+ axis is centered so that 
+\begin_inset Formula $x=0$
+\end_inset
+
+ bisects the defect layer.
+ An enlarged view of the region near 
+\begin_inset Formula $x=0$
+\end_inset
+
+ is shown in the inset.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+From the inset of figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p4b"
+
+\end_inset
+
+, we can see that the 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ defect mode is 
+\emph on
+odd
+\emph default
+ and the 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ defect mode is 
+\emph on
+even
+\emph default
+ through the center of the defect.
+ The reason for this is that 
+\emph on
+both
+\emph default
+ bands are formed by pulling down the 
+\emph on
+upper
+\emph default
+ band-edge mode at 
+\begin_inset Formula $k=\pi/a$
+\end_inset
+
+ (by analytic continuation), and this band edge mode was 
+\emph on
+odd
+\emph default
+ in the 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ (high-
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+) layer and 
+\emph on
+even
+\emph default
+ in the 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ (low-
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+) layer (as we proved when we found the origin of the band gap).
+ From this, we can also see why the 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ mode is so much more strongly localized than the 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+ mode: the latter is odd in the defect layer, and therefore has less field
+ intensity there, and therefore 
+\begin_inset Quotes eld
+\end_inset
+
+feels
+\begin_inset Quotes erd
+\end_inset
+
+ the perturbation less strongly, and is therefore less localized.
+ 
+\end_layout
+
+\begin_layout Enumerate
+To make this part a little easier, I modified the .ctl file to only output
+ fields when they are inside the gap (as computed from the unit cell) and
+ to also output the frequencies just in that case.
+ Then I did a little loop of deps2 values from the bash shell:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(for dep in `seq 0 0.1 12`; do mpbi N=30 deps2=$dep extra-bands=2 defect1dsol.ctl
+ |grep gapfreq; done) > p4c.dat
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The resulting figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p4c"
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename p4c.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p4c"
+
+\end_inset
+
+Frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+ of point-defect modes formed by increasing a single 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ layer by 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+, localizing states in the gap (gap frequencies are shaded yellow).
+ At 
+\begin_inset Formula $\Delta\varepsilon\approx4.8$
+\end_inset
+
+, a second defect mode (red squares) enters into the gap; its 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field at 
+\begin_inset Formula $\Delta\varepsilon=10$
+\end_inset
+
+ is inset.
+ (At larger 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+, even higher-order modes are localized, but are not shown here.
+ )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ shows the 
+\begin_inset Formula $\omega$
+\end_inset
+
+ as a function of 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+ of the first two defect modes, where the second defect mode (whose 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ is inset for 
+\begin_inset Formula $\Delta\varepsilon=10$
+\end_inset
+
+) appears in the gap at 
+\begin_inset Formula $\Delta\varepsilon\approx4.8$
+\end_inset
+
+.
+ As it turned out, I need to go to larger values of 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+, all the way to 
+\begin_inset Formula $\Delta\varepsilon=30$
+\end_inset
+
+, in order for the first defect mode to reach the lower edge of the gap.
+ Here, we used a supercell 
+\begin_inset Formula $N=30$
+\end_inset
+
+, which should be large enough except for modes at very small 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+To extract the decay rate, it is sufficient to consider two points, at 
+\begin_inset Formula $x=Na/4$
+\end_inset
+
+ and 
+\begin_inset Formula $x=Na/4+a$
+\end_inset
+
+, which should have a relative phase of 
+\begin_inset Formula $-1$
+\end_inset
+
+ and a relative amplitude of 
+\begin_inset Formula $e^{-\kappa a}$
+\end_inset
+
+.
+ Or really, any two points separated by 
+\begin_inset Formula $a$
+\end_inset
+
+ will do, as long as they are far from 
+\emph on
+both
+\emph default
+ the defect and the boundaries.
+ Just to make sure we don't accidentally hit a node of the field, I used
+ 
+\begin_inset Formula $Na/4+0.182341a$
+\end_inset
+
+ instead (where the 
+\begin_inset Formula $0.182341$
+\end_inset
+
+ is just a random number).
+ Although we could extract the 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field amplitudes from the HDF5 file in Matlab or whatever, it is easier
+ to print them directly from MPB using the get-field-point function (which
+ returns the field at a point).
+ See the defect1dsol.ctl file to find out how I did it.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The resulting 
+\begin_inset Formula $\kappa(\omega)$
+\end_inset
+
+ is plotted in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p4f"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename p4f.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p4f"
+
+\end_inset
+
+The field decay rate 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ (
+\begin_inset Formula $E_{z}\sim e^{-\kappa x+i\pi x/a}$
+\end_inset
+
+) as a function of frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ as 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+ ranges from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $30$
+\end_inset
+
+, causing the defect mode to sweep across the gap (see figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p4c"
+
+\end_inset
+
+).
+ The gap frequencies are highlighted in yellow.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Just as we predicted in class, it increases as 
+\begin_inset Formula $\sqrt{\Delta\omega}$
+\end_inset
+
+ (i.e.
+ in a sideways parabola) away from the gap edges, and peaks in the center
+ of the gap! (The fact that it peaks 
+\emph on
+exactly
+\emph default
+ at the center of the gap is a property of the quarter-wave stack, and is
+ not true in general for photonic crystals.)
+\end_layout
+
+\begin_layout Section*
+defect1dsol.ctl
+\end_layout
+
+\begin_layout Standard
+The following is the modified .ctl input file that I used to solve problem
+ 4.
+\begin_inset CommandInset include
+LatexCommand verbatiminput
+filename "defect1dsol.ctl"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

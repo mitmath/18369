@@ -1,0 +1,371 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 5
+\end_layout
+
+\begin_layout Standard
+Due Monday, 9 April 2018.
+ 
+\series bold
+NOTE: 1-page final-project proposal due April 11 by email (subject line:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+18.369 final project proposal
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Group Velocity and Material Dispersion
+\end_layout
+
+\begin_layout Standard
+In class, we showed (following the book) that the group velocity 
+\begin_inset Formula $d\omega/dk=\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle/\langle H_{k},H_{k}\rangle$
+\end_inset
+
+ was equal to Poynting flux divided by energy density (both averaged over
+ the unit cell).
+\end_layout
+
+\begin_layout Standard
+Now, go through the same derivation, but in this case assume that we have
+ a lossless 
+\emph on
+dispersive
+\emph default
+ material with a real 
+\begin_inset Formula $\varepsilon(\vec{x},\omega)$
+\end_inset
+
+.
+ In this case, when you take the 
+\begin_inset Formula $k$
+\end_inset
+
+ derivative, apply the chain rule to obtain a term with 
+\begin_inset Formula $\frac{\partial\varepsilon}{\partial\omega}\frac{d\omega}{dk}$
+\end_inset
+
+ on the right-hand side.
+ Solve for 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+ and show that it is Poynting flux divided by energy density, but the energy
+ density is now the 
+\begin_inset Quotes eld
+\end_inset
+
+Brillouin
+\begin_inset Quotes erd
+\end_inset
+
+ energy density of a lossless dispersive medium, which we gave in the notes
+ for Lecture 6: 
+\begin_inset Formula 
+\[
+\frac{1}{4}\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+|\vec{H}|^{2}\right]
+\]
+
+\end_inset
+
+(for 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+, where we have an additional 
+\begin_inset Formula $1/2$
+\end_inset
+
+ factor from the time-average).
+ 
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: Projected Band Diagrams and Fabry-Perot Waveguides
+\end_layout
+
+\begin_layout Enumerate
+Starting with the bandgap1d.ctl MPB control file from problem set 4, which
+ computes the frequencies as a function of 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+.
+ Modify it to compute the frequencies as a function of 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ for some range of 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ (e.g.
+ 0 to 2, in units of 
+\begin_inset Formula $2\pi/a$
+\end_inset
+
+ ...
+ recall that the 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ Brillouin zone is infinite!) for some fixed value of 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+, and to use 
+\begin_inset Formula $\varepsilon_{2}=2.25$
+\end_inset
+
+ instead of 1.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+You might want to add a 
+\begin_inset Quotes eld
+\end_inset
+
+kx
+\begin_inset Quotes erd
+\end_inset
+
+ parameter via 
+\begin_inset Quotes eld
+\end_inset
+
+(define-param kx 0)
+\begin_inset Quotes erd
+\end_inset
+
+ so that you can change 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ from the command line with 
+\begin_inset Quotes eld
+\end_inset
+
+mpb kx=0.3 ...
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Compute and plot the TM projected band diagram for the quarter-wave stack
+ with 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ of 12 and 2.25.
+ That is, plot 
+\begin_inset Formula $\omega(k_{y})$
+\end_inset
+
+ for several bands, first with 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $k_{x}=0.1$
+\end_inset
+
+, then 0.2, then ...
+ then 0.5, and interpolate intermediate 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ to shade in the 
+\begin_inset Quotes eld
+\end_inset
+
+continuum
+\begin_inset Quotes erd
+\end_inset
+
+ regions of the projected bands.
+ Verify that the extrema of these continua lie at either 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+ or 
+\begin_inset Formula $k_{x}=0.5$
+\end_inset
+
+ (in units of 
+\begin_inset Formula $2\pi/a$
+\end_inset
+
+), i.e.
+ at the B.Z.
+ edges.
+\end_layout
+
+\begin_layout Enumerate
+Modify the MPB defect1d.ctl file from problem set 4 to compute the defect
+ mode as a function of 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ (for 
+\begin_inset Formula $k_{x}=0$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Changing a single 
+\begin_inset Formula $\varepsilon_{2}$
+\end_inset
+
+ layer by 
+\begin_inset Formula $\Delta\varepsilon=4$
+\end_inset
+
+, with an 
+\begin_inset Formula $N=20$
+\end_inset
+
+ supercell, plot the first 80 bands as a function of 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ for some reasonable range of 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+.
+ Overlay your TM projected band diagram from part (a), above, to show that
+ the bands fall into two categories: modes that fall within the projected
+ 
+\begin_inset Quotes eld
+\end_inset
+
+continuum
+\begin_inset Quotes erd
+\end_inset
+
+ regions from part (a), and discrete guided bands that lie within the empty
+ spaces.
+ (If there are any bands 
+\emph on
+just
+\emph default
+ outside the 
+\emph on
+edge
+\emph default
+ of the continuum region, you may need to increase the supercell size to
+ check whether those bands are an artifact of the finite size.) Plot the
+ fields for the guided bands (a couple of nonzero 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ points will do) to show that they are indeed localized.
+\end_layout
+
+\end_body
+\end_document
