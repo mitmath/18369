@@ -387,7 +387,7 @@ Analyzed effect of absorption in resonant filter, and why narrow-band filters re
 
 ### Lecture 29: 2 May
 
-**Handouts:** pages 144–195 of [my photonic-crystal tutorial slides](notes/spie-course-2012.pdf)
+**Handouts:** pages 120–135 of [my photonic-crystal tutorial slides](notes/spie-course-latest.pdf)
 
 More applications of TCMT (see slides). Nonlinear effects.
 
@@ -427,7 +427,7 @@ Discussed the origin of band gaps in the holey-fiber light cone, from the scalar
 
 **A** ψ = -_i_ **B** ∂ψ/∂_z_
 
-where ψ is a four-component vector field consisting of (_Ex_, _Ey_, _Hx_, _Hy_), and **A** and **B** are linear operators. This is the most convenient formulation for considering problems of propagation in the _z_ direction along a waveguide, where perturbations may break translational symmetry but frequency is still conserved. Showed that **A** and**B** are Hermitian (but _not_ positive-definite) for real ε and μ.
+where ψ is a four-component vector field consisting of (_Ex_, _Ey_, _Hx_, _Hy_), and **A** and **B** are linear operators. This is the most convenient formulation for considering problems of propagation in the _z_ direction along a waveguide, where perturbations may break translational symmetry but frequency is still conserved. Showed that **A** and **B** are Hermitian (but _not_ positive-definite) for real ε and μ.
 
 Discussed orthogonality of modes and unconjugated "inner products," propagating vs. evanescent modes (showing that the latter carry zero power)
 

@@ -1,0 +1,2027 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\newcommand{\tr}{\operatorname{tr}}
+
+\date{Created February 2016; last updated \today}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5in
+\rightmargin 1.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Notes on time evolution and conservation laws
+\begin_inset Newline newline
+\end_inset
+
+in electromagnetism
+\end_layout
+
+\begin_layout Author
+Steven G.
+ Johnson, notes for MIT course 18.369, Spring 2016
+\end_layout
+
+\begin_layout Section
+Maxwell's equations
+\end_layout
+
+\begin_layout Standard
+The time evolution of Maxwell's equations is governed by Ampere's law 
+\begin_inset Formula $\nabla\times\vec{H}=\frac{\partial}{\partial t}(\vec{E}+\vec{P})+\vec{J}$
+\end_inset
+
+ and Faraday's Law 
+\begin_inset Formula $-\nabla\times\vec{E}=\frac{\partial}{\partial t}(\vec{H}+\vec{M})+\vec{K}$
+\end_inset
+
+, where 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ are the electric and magnetic fields, 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{M}$
+\end_inset
+
+ are the electric and magnetic polarization densities, and 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{K}$
+\end_inset
+
+ are the electric and magnetic current densities, respectively.
+ (Magnetic current is the flow of magnetic charge, which is experimentally
+ zero, but it is convenient to include the possibility of 
+\begin_inset Formula $\vec{K}\neq0$
+\end_inset
+
+ theoretically.) It is nice to write this in the form 
+\begin_inset Formula $\hat{C}\psi=\frac{\partial}{\partial t}(\psi+\phi)+\xi$
+\end_inset
+
+, or: 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}\underbrace{\left(\begin{array}{c}
+\vec{E}\\
+\vec{H}
+\end{array}\right)}_{\psi}=\underbrace{\left(\begin{array}{cc}
+ & \nabla\times\\
+-\nabla\times
+\end{array}\right)}_{\hat{C}}\psi-\frac{\partial}{\partial t}\underbrace{\left(\begin{array}{c}
+\vec{P}\\
+\vec{M}
+\end{array}\right)}_{\phi}-\underbrace{\left(\begin{array}{c}
+\vec{J}\\
+\vec{K}
+\end{array}\right)}_{\xi},
+\]
+
+\end_inset
+
+so that 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is the six-component field state, 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is the six-component polarization, 
+\begin_inset Formula $\xi$
+\end_inset
+
+ is the six-component current, and 
+\begin_inset Formula $\hat{C}$
+\end_inset
+
+ is the 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+curl
+\begin_inset Quotes erd
+\end_inset
+
+ operator.
+ (For these notes I am using 
+\begin_inset Quotes eld
+\end_inset
+
+natural
+\begin_inset Quotes erd
+\end_inset
+
+ units in which 
+\begin_inset Formula $\varepsilon_{0}=\mu_{0}=1$
+\end_inset
+
+.) Our goal in these notes is to analyze some of the key algebraic properties
+ of these equations, especially as they relate to time evolution and conservatio
+n laws.
+ The basics of electromagnetic energy can be found in standard textbooks
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+, but a more complete treatment of arbitrary dispersive materials can be
+ found in the literature as recently reviewed and extended by Welters
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+The anti-Hermitian curl operator
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ curl operator 
+\begin_inset Formula $\hat{C}$
+\end_inset
+
+ is anti-Hermitian (
+\begin_inset Formula $\hat{C}^{\dagger}=-\hat{C}$
+\end_inset
+
+) under the usual inner product 
+\begin_inset Formula $\langle\psi,\psi'\rangle=\int\vec{E}^{*}\cdot\vec{E}'+\vec{H}^{*}\cdot\vec{H}'$
+\end_inset
+
+ with most boundary conditions.
+ The key identity to derive this is, as usual, 
+\begin_inset Formula 
+\[
+\nabla\cdot(\vec{a}\times\vec{b})=\vec{b}\cdot(\nabla\times\vec{a})-\vec{a}\cdot(\nabla\cdot\vec{b}).
+\]
+
+\end_inset
+
+Using this, we can integrate by parts over the domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+\langle\psi,\hat{C}\psi'\rangle & =\int_{\Omega}\left[\vec{E}^{*}\cdot(\nabla\times\vec{H}')-\vec{H}^{*}\cdot(\nabla\times\vec{E}')\right]dV\\
+ & =\int_{\Omega}\left[(\nabla\times\vec{E})^{*}\cdot\vec{H}'-(\nabla\times\vec{H})^{*}\cdot\vec{E}'-\nabla\cdot(\vec{E}^{*}\times\vec{H}'+\vec{E}'\times\vec{H}^{*})\right]dV\\
+ & =\langle-\hat{C}\psi,\psi'\rangle+\oiint_{\partial\Omega}(\vec{E}^{*}\times\vec{H}'+\vec{E}'\times\vec{H}^{*})\cdot d\vec{A}.
+\end{align*}
+
+\end_inset
+
+Hence, if we have boundary conditions such that the surface integral (
+\begin_inset Formula $\oiint_{\partial\Omega}$
+\end_inset
+
+) vanishes, then 
+\begin_inset Formula $\hat{C}^{\dagger}=-\hat{C}$
+\end_inset
+
+.
+ This will be the case in an infinite domain for square-integrable fields
+ (which must decay faster than 
+\begin_inset Formula $1/|\vec{x}|$
+\end_inset
+
+ asymptotically), or in a finite domain for periodic boundary conditions
+ (where the boundary terms cancel), or in a finite domain with perfect-electric-
+conductor (PEC) boundary conditions (where 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is normal to the boundary on 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+), or for perfect-magnetic conductor (PMC) boundary conditions (where 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ is normal to the boundary).
+\end_layout
+
+\begin_layout Standard
+One consequence of this, which we use below, is that 
+\begin_inset Formula 
+\[
+2\Re\langle\psi,\hat{C}\psi\rangle=\langle\psi,\hat{C}\psi\rangle+\langle\hat{C}\psi,\psi\rangle=\langle\psi,\hat{C}\psi\rangle+\langle\psi,-\hat{C}\psi\rangle=0,
+\]
+
+\end_inset
+
+i.e.
+ 
+\begin_inset Formula $\langle\psi,\hat{C}\psi\rangle$
+\end_inset
+
+ is purely imaginary.
+\end_layout
+
+\begin_layout Subsection
+The polarizations and susceptibilities in linear media
+\end_layout
+
+\begin_layout Standard
+In 
+\emph on
+linear
+\emph default
+ medium, the polarizations 
+\begin_inset Formula $\phi$
+\end_inset
+
+ arise from the fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ in a linear convolution relation 
+\begin_inset Formula 
+\[
+\phi(t)=\left.\chi\ast\psi\right|_{t}=\int_{-\infty}^{+\infty}\chi(t-t')\psi(t')dt',
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\chi(t)$
+\end_inset
+
+ is a 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ 
+\emph on
+susceptibility
+\emph default
+ matrix
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98,Welters14"
+
+\end_inset
+
+.
+ That is, the polarization is proportional to a weighted average of the
+ fields at different times.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Here, I have omitted the 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ dependence.
+ Typically, we have a 
+\emph on
+local
+\emph default
+ medium, in which 
+\begin_inset Formula $\phi(t,\vec{x})$
+\end_inset
+
+ depends on only on fields 
+\begin_inset Formula $\psi(t',\vec{x})$
+\end_inset
+
+ at the same point 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ in space, but in some cases authors also consider 
+\emph on
+nonlocal
+\emph default
+ media
+\emph on
+ 
+\emph default
+in which 
+\begin_inset Formula $\phi$
+\end_inset
+
+ can arise from fields at other points.
+ Nonlocal models are only relevant in conductors at lengthscales of a few
+ nanometers, however, and in practice local models are almost always accurate
+ enough to ignore nonlocal effects.
+\end_layout
+
+\end_inset
+
+ Physically, we require the material to be 
+\emph on
+causal
+\emph default
+: polarizations must come 
+\emph on
+after
+\emph default
+ the fields that create them, not before, which leads to the condition that
+ 
+\begin_inset Formula $\chi(t)=0$
+\end_inset
+
+ for 
+\begin_inset Formula $t<0$
+\end_inset
+
+.
+ As we discuss below, however, in a linear medium we will also require 
+\emph on
+passivity
+\emph default
+---the material can dissipate energy but not supply energy---and it turns
+ out that the assumption of passivity alone is enough to guarantee causality
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the frequency domain, the Fourier transform of a convolution is a multiplicat
+ion.
+ That is, if we denote the Fourier transforms by 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+, and 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\[
+\hat{\phi}(\omega)=\hat{\chi}(\omega)\hat{\psi}(\omega).
+\]
+
+\end_inset
+
+The frequency dependence of 
+\begin_inset Formula $\hat{\chi}(\omega)$
+\end_inset
+
+ is known as 
+\emph on
+material dispersion.
+
+\emph default
+ Passivity
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+, via causality
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+, turns out to guarantee that 
+\begin_inset Formula $\hat{\chi}(\omega)$
+\end_inset
+
+ is an 
+\emph on
+analytic
+\emph default
+ function (convergent Taylor series, no poles or other singularities) in
+ the upper-half complex-
+\begin_inset Formula $\omega$
+\end_inset
+
+ plane (i.e.
+ for 
+\begin_inset Formula $\Im\omega>0$
+\end_inset
+
+).
+ Passivity also turns out to imply that 
+\begin_inset Formula $\Im[\omega\hat{\chi}(\omega)]=\frac{\omega\hat{\chi}(\omega)-\omega^{*}\hat{\chi}(\omega)^{\dagger}}{2i}\succeq0$
+\end_inset
+
+ (a positive-semidefinite imaginary part) in the upper-half plane (and in
+ practice it is positive-definite for anything other than vacuum)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+.
+ Physically, the fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ and polarizations 
+\begin_inset Formula $\phi$
+\end_inset
+
+ are real quantities, and this implies that 
+\begin_inset Formula $\hat{\chi}(-\omega)=\hat{\chi}(\omega)^{*}$
+\end_inset
+
+ for real 
+\begin_inset Formula $\omega$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+.
+ If one adds the physical constraint that the material must cease to respond
+ at very high frequencies, and in particular that 
+\begin_inset Formula $\hat{\chi}(\omega)$
+\end_inset
+
+ goes to zero faster than 
+\begin_inset Formula $1/|\omega|$
+\end_inset
+
+ for large 
+\begin_inset Formula $|\omega|$
+\end_inset
+
+, then one obtains the famous Kramers--Kronig relations that relate integrals
+ of the real and imaginary parts of 
+\begin_inset Formula $\hat{\chi}(\omega$
+\end_inset
+
+)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Dispersionless linear media
+\end_layout
+
+\begin_layout Standard
+In many important cases it is possible to neglect material dispersion, in
+ which case matters are greatly simplified.
+
+\emph on
+ 
+\emph default
+If we have a field 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ that is 
+\emph on
+bandlimited
+\emph default
+---its Fourier transform 
+\begin_inset Formula $\hat{\psi}(\omega)$
+\end_inset
+
+ is nonzero only in a small bandwidth around some frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ (or around 
+\begin_inset Formula $\pm\omega_{0}$
+\end_inset
+
+)---and in this bandwidth 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ is nearly constant, then we can approximate 
+\begin_inset Formula $\hat{\chi}(\omega)\approx\hat{\chi}(\omega_{0})$
+\end_inset
+
+.
+ Furthermore, in most physical circumstances the matrix 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ block-diagonalizes 
+\begin_inset Formula 
+\[
+\hat{\chi}(\omega)=\left(\begin{array}{cc}
+\varepsilon(\omega)-1\\
+ & \mu(\omega)-1
+\end{array}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ are the electric permittivity and the magnetic permeability, respectively.
+ (Nonzero off-diagonal blocks in 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ are known as 
+\emph on
+bi-anisotropic susceptibilities
+\emph default
+, and are very rarely encountered---essentially unheard-of at infrared and
+ optical frequencies.) 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ can be 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrices in general (
+\emph on
+anisotropic materials
+\emph default
+), but in the common case of 
+\emph on
+isotropic
+\emph default
+ materials they are scalars.
+ (Furthermore, at infrared and optical frequencies, we almost always have
+ 
+\begin_inset Formula $\mu\approx1$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+Neglecting dispersion, therefore, and assuming non-bianisotropic media,
+ Maxwell's equations simplify to 
+\begin_inset Formula 
+\[
+\frac{\partial\psi}{\partial t}=\left(\begin{array}{cc}
+\varepsilon^{-1}\\
+ & \mu^{-1}
+\end{array}\right)\left[\hat{C}\psi-\xi\right]=\left(1+\hat{\chi}\right)^{-1}\left[\hat{C}\psi-\xi\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conservation laws in lossless media
+\end_layout
+
+\begin_layout Standard
+Suppose we have the simple case of lossless, dispersionless time-independent
+ media with real 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Conservation of energy
+\end_layout
+
+\begin_layout Standard
+In that case, define 
+\begin_inset Formula 
+\[
+\langle\psi,\psi'\rangle_{\hat{\chi}}=\langle\psi,(1+\hat{\chi})\psi'\rangle=\langle(1+\hat{\chi})\psi,\psi'\rangle=\int\left[\vec{E}^{*}\cdot\varepsilon\vec{E}'+\vec{H}^{*}\cdot\mu\vec{H}'\right].
+\]
+
+\end_inset
+
+This turns out to be a conserved 
+\begin_inset Quotes eld
+\end_inset
+
+energy
+\begin_inset Quotes erd
+\end_inset
+
+ (actually 
+\emph on
+twice
+\emph default
+ the physical energy in the fields, as shown below):
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial t}\langle\psi,\psi\rangle_{\hat{\chi}} & =\left\langle \left(1+\hat{\chi}\right)\frac{\partial\psi}{\partial t},\psi\right\rangle +\left\langle \psi,\left(1+\hat{\chi}\right)\frac{\partial\psi}{\partial t}\right\rangle \\
+ & =\left\langle \hat{C}\psi-\xi,\psi\right\rangle +\left\langle \psi,\hat{C}\psi-\xi\right\rangle \\
+ & =-2\Re\langle\psi,\xi\rangle,
+\end{align*}
+
+\end_inset
+
+where we have used the anti-Hermitian property of 
+\begin_inset Formula $\hat{C}$
+\end_inset
+
+ from above.
+ Thus, if there are no sources (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+) then 
+\begin_inset Formula $\langle\psi,\psi\rangle_{\hat{\chi}}$
+\end_inset
+
+ is 
+\emph on
+conserved
+\emph default
+ (constant in time).
+ More generally, as we shall see below, we can interpret 
+\begin_inset Formula $2\Re\langle\psi,\xi\rangle$
+\end_inset
+
+ as being (proportional to) the work done on the currents by the fields,
+ so that if this quantity is positive then the energy 
+\begin_inset Formula $\langle\psi,\psi\rangle_{\hat{\chi}}$
+\end_inset
+
+ in the fields is decreasing.
+\end_layout
+
+\begin_layout Standard
+Another way of expressing this is in terms of the 
+\emph on
+time-evolution operator
+\emph default
+ 
+\begin_inset Formula 
+\[
+\hat{U}_{t}=e^{(1+\hat{\chi})^{-1}\hat{C}t},
+\]
+
+\end_inset
+
+defined such that 
+\begin_inset Formula $\psi(t)=\hat{U}_{t}\psi(0)$
+\end_inset
+
+ solves the source-free (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+) problem.
+ Under the 
+\begin_inset Formula $\langle\psi,\psi'\rangle_{\hat{\chi}}$
+\end_inset
+
+ inner product, this operator is 
+\emph on
+unitary
+\emph default
+ (
+\begin_inset Formula $\hat{U}_{t}^{\dagger}=\hat{U}_{t}^{-1}$
+\end_inset
+
+) because the exponent is anti-Hermitian:
+\begin_inset Formula 
+\[
+\langle\psi,(1+\hat{\chi})^{-1}\hat{C}\psi'\rangle_{\hat{\chi}}=\langle\psi,\hat{C}\psi'\rangle=\langle-\hat{C}\psi,\psi'\rangle=\langle-(1+\hat{\chi})^{-1}\hat{C}\psi,\psi'\rangle_{\hat{\chi}}.
+\]
+
+\end_inset
+
+Unitary time-evolution is equivalent to conservation of norm (energy): 
+\begin_inset Formula $\langle\psi(t),\psi(t)\rangle_{\hat{\chi}}=\langle\hat{U}_{t}\psi(0),\hat{U}_{t}\psi(0)\rangle_{\hat{\chi}}=\langle\psi(0),\psi(0)\rangle_{\hat{\chi}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Conservation of irrep
+\end_layout
+
+\begin_layout Standard
+If we have a symmetry group 
+\begin_inset Formula $G$
+\end_inset
+
+ (of rotations, reflections, and/or translations 
+\begin_inset Formula $g\in G$
+\end_inset
+
+), recall that we can define the projection operator 
+\begin_inset Formula $\hat{P}^{(\alpha)}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}\chi^{(\alpha)}(g)^{*}\hat{O}_{g}$
+\end_inset
+
+, where 
+\begin_inset Formula $\chi^{(\alpha)}(g)=\tr D^{(\alpha)}(g)$
+\end_inset
+
+ is the character of an irreducible representation (
+\emph on
+irrep
+\emph default
+) 
+\begin_inset Formula $D^{(\alpha)}(g)$
+\end_inset
+
+ of 
+\begin_inset Formula $G$
+\end_inset
+
+ with dimension 
+\begin_inset Formula $d_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{O}_{g}$
+\end_inset
+
+ is the transformation (rotation/reflection/translation) acting on the Hilbert
+ space 
+\begin_inset Formula $\psi$
+\end_inset
+
+ corresponding to the operation 
+\begin_inset Formula $g$
+\end_inset
+
+ on the coordinates.
+ 
+\begin_inset Formula $\hat{P}^{(\alpha)}\psi$
+\end_inset
+
+ projects any function 
+\begin_inset Formula $\psi$
+\end_inset
+
+ onto a function (possibly zero) that transforms as a partner function (basis
+ function) of the irrep 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ It turns out that the irrep is 
+\begin_inset Quotes eld
+\end_inset
+
+conserved
+\begin_inset Quotes erd
+\end_inset
+
+ in the following sense: if your currents are partners of irrep 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, and your fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ are partners of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ at 
+\emph on
+any
+\emph default
+ time, then the fields are partners at 
+\emph on
+all
+\emph default
+ times.
+\end_layout
+
+\begin_layout Standard
+If the currents 
+\begin_inset Formula $\xi$
+\end_inset
+
+ are partners (possibly zero) of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, that means 
+\begin_inset Formula $\hat{P}^{(\alpha)}\xi=\xi$
+\end_inset
+
+ for all times.
+ Furthermore, if 
+\begin_inset Formula $G$
+\end_inset
+
+ is the symmetry group of the problem, then by definition 
+\begin_inset Formula $\hat{P}^{(\alpha)}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $(1+\hat{\chi})^{-1}\hat{C}$
+\end_inset
+
+ and hence with the time-evolution operator 
+\begin_inset Formula $\hat{U}_{t}.$
+\end_inset
+
+ Suppose at time 
+\begin_inset Formula $t=0$
+\end_inset
+
+ our fields 
+\begin_inset Formula $\psi(0)$
+\end_inset
+
+ are partners of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, i.e 
+\begin_inset Formula $\hat{P}^{(\alpha)}\psi(0)=\psi(0)$
+\end_inset
+
+, where the dependence 
+\begin_inset Formula $\psi(t,\vec{x})$
+\end_inset
+
+ on 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ is implied.
+ We can write 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ via 
+\begin_inset Formula $\hat{U}_{t}$
+\end_inset
+
+ as: 
+\begin_inset Formula 
+\[
+\psi(t)=\hat{U}_{t}\psi(0)+\int_{0}^{t}\hat{U}_{t-t'}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt'.
+\]
+
+\end_inset
+
+ (It is easily verified that this satisfies our PDE: just plug it in.) Therefore,
+ since 
+\begin_inset Formula $\hat{P}^{(\alpha)}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $\hat{U}_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $(1+\hat{\chi})^{-1}$
+\end_inset
+
+, it immediately follows that 
+\begin_inset Formula $\hat{P}^{(\alpha)}\psi(t)=\psi(t)$
+\end_inset
+
+, and 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ is a partner of irrep 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The simplest example is that of a problem with a mirror symmetry 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, in which case 
+\begin_inset Formula $G=\{E,\sigma\}$
+\end_inset
+
+ where 
+\begin_inset Formula $E$
+\end_inset
+
+ is the identity.
+ The irreps are 
+\begin_inset Formula $\chi^{(1)}=(1,1)$
+\end_inset
+
+ and 
+\begin_inset Formula $\chi^{(2)}=(1,-1)$
+\end_inset
+
+, with the corresponding partners being even and odd functions.
+ If you have even current sources, and even fields at 
+\emph on
+any
+\emph default
+ time, then fields are even at 
+\emph on
+all
+\emph default
+ times; similarly for odd currents and fields.
+\end_layout
+
+\begin_layout Subsection
+Poynting's theorem
+\end_layout
+
+\begin_layout Standard
+To make explicit the connection with the classical notion of energy, we
+ can briefly derive Poynting's theorem to relate electromagnetic energy
+ to mechanical energy
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+.
+ The key to deriving Poynting's theorem is to compute the rate of 
+\emph on
+mechanical
+\emph default
+ work done by the fields on the currents.
+ Recall that the electric field 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is the force per unit charge, and 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is current (charge/time) per area.
+ If we think of 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ as a charge density 
+\begin_inset Formula $\rho$
+\end_inset
+
+ (charge/volume) moving at a velocity 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+, then we can write 
+\begin_inset Formula $\vec{J}=\rho\vec{v}$
+\end_inset
+
+.
+ But since 
+\begin_inset Formula $\vec{E}\rho$
+\end_inset
+
+ is force per unit volume, and 
+\begin_inset Formula $\mbox{force}\cdot\vec{v}$
+\end_inset
+
+ is work per time, it follows that 
+\begin_inset Formula $\vec{E}\cdot\vec{J}$
+\end_inset
+
+ is the work per time per volume done 
+\emph on
+by
+\emph default
+ the field 
+\emph on
+on
+\emph default
+ the charges.
+ Similar for 
+\begin_inset Formula $\vec{H}\cdot\vec{K}$
+\end_inset
+
+ for the (apparently fictitious) case of magnetic charges.
+ Hence, we can interpret 
+\begin_inset Formula 
+\[
+\Re\langle\psi,\xi\rangle
+\]
+
+\end_inset
+
+as the rate of change of mechanical energy, where the 
+\begin_inset Formula $\Re$
+\end_inset
+
+ and the complex conjugations inside 
+\begin_inset Formula $\langle\cdot,\cdot\rangle$
+\end_inset
+
+ are irrelevant for the physical, real-valued fields.
+ From above, we have 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}\right]+\Re\langle\psi,\xi\rangle=0,
+\]
+
+\end_inset
+
+so if we interpret 
+\begin_inset Formula $\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}$
+\end_inset
+
+ as the 
+\emph on
+electromagnetic energy
+\emph default
+ (in a lossless, dispersionless system), then total energy is conserved.
+\end_layout
+
+\begin_layout Standard
+The above was if we assumed the surface term from the integration-by-parts
+ of 
+\begin_inset Formula $\hat{C}$
+\end_inset
+
+ vanished, which is the case if we are considering a closed system from
+ which no energy escapes (or enters).
+ More generally, if we imagine that the integration domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is some arbitrary volume---not necessarily the entire domain of the PDE---put
+ back in the surface terms from the integration by parts, we obtain:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}\right]+\Re\langle\psi,\xi\rangle & =\frac{1}{2}\left[\langle\psi,\hat{C}\psi\rangle+\langle\hat{C}\psi,\psi\rangle\right]\\
+ & =\oiint_{\partial\Omega}\Re\left[\vec{E}^{*}\times\vec{H}\right]\cdot d\vec{A},
+\end{align*}
+
+\end_inset
+
+where the 
+\emph on
+Poynting flux 
+\emph default
+
+\begin_inset Formula $\Re[\vec{E}^{*}\times\vec{H}]$
+\end_inset
+
+ is interpreted as the 
+\emph on
+electromagnetic energy flux
+\emph default
+: the flow of energy (per time, per area) out through the boundary 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+.
+ For physical, real-valued fields, this is simply 
+\begin_inset Formula $\vec{E}\times\vec{H}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+A note on complex numbers and time averages
+\end_layout
+
+\begin_layout Standard
+The physical fields and polarizations are always real, so one might be tempted
+ to simply omit the complex conjugations and 
+\begin_inset Formula $\Re$
+\end_inset
+
+ factors in the expressions above.
+ However, it is very convenient mathematically to allow complex solutions,
+ and it turns out that these complex conjugations have a simple physical
+ interpretation in the case of sinusoidally oscillating quantities.
+\end_layout
+
+\begin_layout Standard
+In linear systems, we often write sinusoidally oscillating quantities as
+ the real parts of complex exponentials, simply because complex exponentials
+ are much easier to work with than sines and cosines.
+ That is, we might work with complex quantities 
+\begin_inset Formula $a(t)=Ae^{-i\omega t}$
+\end_inset
+
+ and 
+\begin_inset Formula $b(t)=Be^{-i\omega t}$
+\end_inset
+
+, where 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are complex amplitudes, and then at the end of our calculation obtain the
+ physical solution from 
+\begin_inset Formula $\Re[a]$
+\end_inset
+
+ and 
+\begin_inset Formula $\Re[b]$
+\end_inset
+
+.
+ In this case, the following relationships are extremely useful:
+\begin_inset Formula 
+\[
+\mbox{time average of }\Re[a]\cdot\Re[b]=\frac{1}{2}\Re[a^{*}b]=\frac{1}{2}\Re[A^{*}B],
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mbox{time average of }\Re[a]^{2}=\frac{1}{2}|a|^{2}=\frac{1}{2}\Re|A|^{2}.
+\]
+
+\end_inset
+
+This can be derived by simply performing the time average 
+\begin_inset Formula $\frac{\omega}{2\pi}\int_{0}^{2\pi/\omega}dt$
+\end_inset
+
+ and evaluating the integral; the second identity is merely a special case
+ of the first.
+\end_layout
+
+\begin_layout Standard
+Hence, if 
+\begin_inset Formula $\frac{1}{2}\left[\varepsilon\vec{E}\cdot\vec{E}+\mu\vec{H}\cdot\vec{H}\right]$
+\end_inset
+
+ is the physical energy density in the field, then 
+\begin_inset Formula $\frac{1}{4}\left[\varepsilon|\vec{E}|^{2}+\mu|\vec{H}|^{2}\right]$
+\end_inset
+
+ is the time-average energy density for time-harmonic fields.
+ Similarly, 
+\begin_inset Formula $\frac{1}{2}\Re[\vec{E}^{*}\times\vec{H}]$
+\end_inset
+
+ is the time-average Poynting flux for time-harmonic fields, and 
+\begin_inset Formula $\frac{1}{2}\Re\langle\psi,\xi\rangle$
+\end_inset
+
+ is the time-average rate of work done on the currents.
+ This is 
+\emph on
+extremely useful
+\emph default
+! (But remember, only for time-harmonic fields!) At infrared and optical
+ frequencies, the fields are oscillating at 
+\begin_inset Formula $>10^{14}$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Hz, so any physical detector will typically only measure these time-average
+ quantities.
+\end_layout
+
+\begin_layout Section
+Conservation laws in passive linear media
+\end_layout
+
+\begin_layout Standard
+Let us now return to the case of an arbitrary 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ dispersive medium whose polarization is a convolution 
+\begin_inset Formula $\phi=\chi\ast\psi$
+\end_inset
+
+ with the susceptibility 
+\begin_inset Formula $\chi(t,\vec{x})$
+\end_inset
+
+.
+ In this case, we obtain: 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}\langle\psi,\psi\rangle=\langle\psi,\hat{C}\psi-\frac{\partial\phi}{\partial t}-\xi\rangle+\langle\hat{C}\psi-\frac{\partial\phi}{\partial t}-\xi,\psi\rangle
+\]
+
+\end_inset
+
+and hence 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle\right]+\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle+\Re\langle\psi,\xi\rangle=\oiint_{\partial\Omega}\Re\left[\vec{E}^{*}\times\vec{H}\right]\cdot d\vec{A}.
+\]
+
+\end_inset
+
+On the right-hand side is the Poynting flux out of the domain, from the
+ integration-by-parts of 
+\begin_inset Formula $\hat{C}$
+\end_inset
+
+ as before.
+ On the left hand side, the first term is the rate of change of the electromagne
+tic energy 
+\begin_inset Formula $\frac{1}{2}\langle\psi,\psi\rangle$
+\end_inset
+
+ in vacuum (
+\begin_inset Formula $\varepsilon=\mu=1$
+\end_inset
+
+): this can be thought of as the energy stored 
+\begin_inset Quotes eld
+\end_inset
+
+purely
+\begin_inset Quotes erd
+\end_inset
+
+ in the fields.
+ The third term 
+\begin_inset Formula $\Re\langle\psi,\xi\rangle$
+\end_inset
+
+ is the rate of work done on the currents 
+\begin_inset Formula $\xi$
+\end_inset
+
+ as before, i.e.
+ the rate of change of the mechanical energy in these 
+\begin_inset Quotes eld
+\end_inset
+
+free
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+external
+\begin_inset Quotes erd
+\end_inset
+
+ charges.
+ The second term 
+\begin_inset Formula $\Re\langle\psi,\partial\phi/\partial t\rangle$
+\end_inset
+
+ is similar, where 
+\begin_inset Formula $\partial\phi/\partial t$
+\end_inset
+
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+bound
+\begin_inset Quotes erd
+\end_inset
+
+ current
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+: this is a 
+\emph on
+physical
+\emph default
+ current corresponding of the motion of the polarizations (the little charges
+ 
+\begin_inset Quotes eld
+\end_inset
+
+bound
+\begin_inset Quotes erd
+\end_inset
+
+ to the material that are polarizing in response to the fields).
+ That is, the second term is the rate of work done 
+\emph on
+on the material
+\emph default
+ by the fields.
+\end_layout
+
+\begin_layout Subsection
+Passivity
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Quotes eld
+\end_inset
+
+passive
+\begin_inset Quotes erd
+\end_inset
+
+ medium is one which does 
+\emph on
+not supply energy
+\emph default
+.
+ In fact, all linear materials are necessarily passive, because a linear
+ 
+\begin_inset Quotes eld
+\end_inset
+
+active
+\begin_inset Quotes erd
+\end_inset
+
+ (or 
+\begin_inset Quotes eld
+\end_inset
+
+gain
+\begin_inset Quotes erd
+\end_inset
+
+) medium would lead to runaway exponential growth of the fields---all physical
+ gain must be nonlinear, because any energy source has to run out at some
+ point.
+ Mathematically, passivity means that the fields can do net work on the
+ medium but not vice versa.
+ From above, the net work done 
+\emph on
+on
+\emph default
+ the medium 
+\emph on
+by
+\emph default
+ the fields is precisely the work done on the polarization currents, and
+ passivity means that this must be nonnegative: 
+\begin_inset Formula 
+\[
+\int_{-\infty}^{t}\Re\langle\psi,\frac{\partial}{\partial t}(\chi\ast\psi)\rangle dt'\ge0
+\]
+
+\end_inset
+
+for all times 
+\begin_inset Formula $t$
+\end_inset
+
+ and all fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ (in a suitable function space)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+.
+ This constrains 
+\begin_inset Formula $\chi\ast{}$
+\end_inset
+
+ to be a 
+\begin_inset Quotes eld
+\end_inset
+
+passive convolution operator,
+\begin_inset Quotes erd
+\end_inset
+
+ and it follows (from nontrivial math!) that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is causal, its Fourier transform 
+\begin_inset Formula $\hat{\chi}(\omega)$
+\end_inset
+
+ is analytic for 
+\begin_inset Formula $\Im\omega>0$
+\end_inset
+
+, and 
+\begin_inset Formula $\Im[\omega\hat{\chi}(\omega)]$
+\end_inset
+
+ is positive semidefinite for 
+\begin_inset Formula $\Im\omega>0$
+\end_inset
+
+ as mentioned above
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that it is tempting to say that passivity means that 
+\begin_inset Formula $\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle\geq0$
+\end_inset
+
+, i.e.
+ that the 
+\emph on
+rate
+\emph default
+ of work done on the material is nonnegative, but this is not actually true.
+ Energy can be temporarily stored in the polarization of matter and then
+ extracted by the fields, as long as you don't get out more energy than
+ you put in.
+ (Physically, imagine a photon that is absorbed by an atom to pump the atom
+ into an excited state, but the atom subsequently undergoes spontaneous
+ emission to re-emit the photon.
+ Semiclassically, such a resonant absorption/re-emission is described by
+ a 
+\emph on
+resonance
+\emph default
+ in 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+: a pole in 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ at a complex frequency 
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+ in the lower-half plane.
+ The imaginary part 
+\begin_inset Formula $\Im\omega_{p}<0$
+\end_inset
+
+ is due to dissipation losses: physically, it represents the chance that
+ the atom drops back down to its ground state by a non-radiative process,
+ e.g.
+ a vibrational collision.) Below, we will see that this 
+\begin_inset Formula $\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle$
+\end_inset
+
+ term actually gives rise to the 
+\begin_inset Formula $(\varepsilon-1)|\vec{E}|^{2}+(\mu-1)|\vec{H}|^{2}$
+\end_inset
+
+ term that appears in the energy density of a lossless, dispersionless medium,
+ and which represents the energy that is temporarily stored in the medium,
+ only to be re-extracted into the fields.
+ 
+\end_layout
+
+\begin_layout Subsection
+Dissipation in the frequency domain
+\end_layout
+
+\begin_layout Standard
+The rate of work done by the fields on the material, which is the rate of
+ 
+\emph on
+energy dissipation
+\emph default
+ in the material, is given above by 
+\begin_inset Formula $\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle$
+\end_inset
+
+.
+ Suppose we Fourier transform to the frequency domain, so that we are looking
+ at time-harmonic fields with amplitudes 
+\begin_inset Formula $\hat{\psi}(\omega)$
+\end_inset
+
+ and polarizations 
+\begin_inset Formula $\hat{\phi}(\omega)=\hat{\chi}(\omega)\hat{\psi}(\omega)$
+\end_inset
+
+.
+ The polarization current 
+\begin_inset Formula $\partial\phi/\partial t$
+\end_inset
+
+ Fourier transforms to 
+\begin_inset Formula $-i\omega\hat{\phi}(\omega)$
+\end_inset
+
+, and so we get a dissipation rate (at 
+\begin_inset Formula $\omega$
+\end_inset
+
+) of:
+\begin_inset Formula 
+\[
+\Re\langle\hat{\psi},-i\omega\hat{\chi}(\omega)\hat{\psi}(\omega)\rangle=\int_{\Omega}\Re[-i\omega\hat{\chi}]\,|\hat{\psi}|^{2}=\int_{\Omega}\Im[\omega\hat{\chi}]\,|\hat{\psi}|^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\Im[\omega\hat{\chi}]=\omega\frac{\hat{\chi}-\hat{\chi}^{\dagger}}{2i}$
+\end_inset
+
+ is a direct measure of 
+\emph on
+how dissipative
+\emph default
+ the material is at 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+ Transparent materials are ones for which 
+\begin_inset Formula $\Im[\hat{\chi}]\approx0$
+\end_inset
+
+ (i.e., 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ is Hermitian) in the desired frequency bandwidth.
+\end_layout
+
+\begin_layout Standard
+As mentioned above, one of the consequences of passivity is that 
+\begin_inset Formula $\Im[\omega\hat{\chi}]\geq0$
+\end_inset
+
+ for 
+\begin_inset Formula $\Im\omega>0$
+\end_inset
+
+, by taking the limit as 
+\begin_inset Formula $\Im\omega\to0^{+}$
+\end_inset
+
+ one can obtain the same result on the real-
+\begin_inset Formula $\omega$
+\end_inset
+
+ axis (albeit with some technicalities to account for the possibility of
+ singularities on the real axis
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+), so that 
+\begin_inset Formula $\Im[\omega\hat{\chi}]\ge0$
+\end_inset
+
+ for real frequencies 
+\begin_inset Formula $\omega$
+\end_inset
+
+ in a passive medium, and the magnitude of this imaginary part is a direct
+ measure of how lossy the medium is at that frequency.
+\end_layout
+
+\begin_layout Subsection
+Dynamical and dispersive energy densities
+\end_layout
+
+\begin_layout Standard
+From our Poynting theorem above, if we want to define an 
+\begin_inset Quotes eld
+\end_inset
+
+electromagnetic energy density
+\begin_inset Quotes erd
+\end_inset
+
+ such that the sum of electromagnetic + mechanical energy of free charges
+ is conserved in the absence of incoming/outgoing Poynting flux, we should
+ define the electromagnetic energy density as 
+\begin_inset Formula 
+\[
+\frac{1}{2}\left(\psi^{*}\cdot\psi\right)+\int_{-\infty}^{t}\Re\left[\psi^{*}\cdot\frac{\partial}{\partial t}(\chi\ast\psi)\right]dt'.
+\]
+
+\end_inset
+
+The first term can be interpreted as the energy stored 
+\begin_inset Quotes eld
+\end_inset
+
+purely
+\begin_inset Quotes erd
+\end_inset
+
+ in the fields, while the second term is the energy dumped into the material.
+ This was dubbed the 
+\begin_inset Quotes eld
+\end_inset
+
+dynamical
+\begin_inset Quotes erd
+\end_inset
+
+ energy density
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Glasgow01,Welters14"
+
+\end_inset
+
+, and seems to be a relatively recent innovation.
+ It is the energy density that you need to make Poynting's theorem hold
+ in an arbitrary medium, and turns out to be a useful device for studying
+ energy velocities.
+\end_layout
+
+\begin_layout Standard
+This energy density simplifies in many cases.
+ Suppose you have time-harmonic fields 
+\begin_inset Formula $\sim e^{-i\omega t}$
+\end_inset
+
+, at a frequency where your materials have 
+\emph on
+negligible loss
+\emph default
+ (
+\begin_inset Formula $\Im\hat{\chi}\approx0$
+\end_inset
+
+ from above), it turns out that the dynamical energy density reduces to
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+dispersive
+\begin_inset Quotes erd
+\end_inset
+
+ energy density
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{1}{2}\psi^{*}\cdot\left[1+\frac{\partial(\omega\hat{\chi})}{\partial\omega}\right]\psi,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\frac{\partial(\omega\hat{\chi})}{\partial\omega}\ge0$
+\end_inset
+
+ is guaranteed from passivity
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welters14"
+
+\end_inset
+
+.
+ In the usual case where 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ diagonalizes into isotropic 
+\begin_inset Formula $\varepsilon(\omega)-1$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu(\omega)-1$
+\end_inset
+
+, this expression takes on the well-known form
+\begin_inset Formula 
+\[
+\frac{1}{2}\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+\frac{\partial(\omega\mu)}{\partial\omega}|\vec{H}|^{2}\right],
+\]
+
+\end_inset
+
+which is derived in many textbooks
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+.
+ (Note that this includes dispersion, but neglects loss! It is 
+\emph on
+not valid 
+\emph default
+in a lossy medium.)
+\end_layout
+
+\begin_layout Standard
+Finally, if we take the 
+\begin_inset Quotes eld
+\end_inset
+
+dispersive
+\begin_inset Quotes erd
+\end_inset
+
+ energy density for negligible loss, and 
+\emph on
+additionally
+\emph default
+ we neglect dispersion (i.e.
+ we approximate 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ as frequency-independent), then we obtain the formula 
+\begin_inset Formula 
+\[
+\frac{1}{2}\psi^{*}\cdot(1+\hat{\chi})\psi=\frac{1}{2}\left[\varepsilon|\vec{E}|^{2}+\mu|\vec{H}|^{2}\right]
+\]
+
+\end_inset
+
+ from above for the energy density in a dispersionless, lossless, isotropic
+ medium.
+\end_layout
+
+\begin_layout Subsection
+Conservation of irrep
+\end_layout
+
+\begin_layout Standard
+The time-evolution operator 
+\begin_inset Formula $\hat{U}_{t}$
+\end_inset
+
+ is more complicated to write down explicitly in a general dispersive medium,
+ so I omit it here.
+ However, it is still the case that it commutes with a projection operator
+ 
+\begin_inset Formula $\hat{P}^{(\alpha)}$
+\end_inset
+
+, because the time evolution must be invariant under the symmetry operations
+ 
+\begin_inset Formula $\hat{O}_{g}$
+\end_inset
+
+ (this is essentially the definition of the symmetry group of the problem).
+ Hence it will still be the case (proof as in the lossless case) that if
+ your currents are partners of irrep 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, and the fields at some time 
+\begin_inset Formula $t$
+\end_inset
+
+ are partners of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, that the fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ will be partners of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ at all times: the 
+\begin_inset Quotes eld
+\end_inset
+
+irrep is conserved.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "teaching"
+options "ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

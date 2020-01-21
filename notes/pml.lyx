@@ -1,0 +1,3025 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\usepackage{url}
+\usepackage{cite}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\date{Created August 2007; updated \today}
+\end_preamble
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 2
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Notes on Perfectly Matched Layers (PMLs)
+\end_layout
+
+\begin_layout Author
+Steven G.
+ Johnson
+\end_layout
+
+\begin_layout Abstract
+This note is intended as a brief introduction to the theory and practice
+ of perfectly matched layer (PML) absorbing boundaries for wave equations,
+ intended for future use in the courses 18.369 and 18.336 at MIT.
+ It focuses on the complex stretched-coordinate viewpoint, and also discusses
+ the limitations of PML.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Whenever one solves a PDE numerically by a volume discretization,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As opposed to a boundary discretization, e.g.
+ in boundary-element methods, where the unknowns are on the interfaces between
+ homogeneous regions, and the homogeneous regions are handled analtyically.
+ In this case, no artificial truncation is required...except in the case of
+ interfaces that extend to infinity, which lead to some interesting unsolved
+ problems in boundary-element methods.
+\end_layout
+
+\end_inset
+
+ one must truncate the computational grid in some way, and the key question
+ is how to perform this truncation without introducing significant artifacts
+ into the computation.
+ Some problems are naturally truncated, e.g.
+ for periodic structures where periodic boundary conditions can be applied.
+ Some problems involve solutions that are rapidly decaying in space, so
+ that the truncation is irrelevant as long as the computational grid is
+ large enough.
+ Other problems, such as Poisson's equation, involve solutions that vary
+ more and more slowly at greater distances---in this case, one can simply
+ employ a coordinate transformation, such as 
+\begin_inset Formula $\tilde{x}=\tanh x$
+\end_inset
+
+, to remap from 
+\begin_inset Formula $x\in(-\infty,\infty)$
+\end_inset
+
+ to 
+\begin_inset Formula $\tilde{x}\in(-1,1)$
+\end_inset
+
+, and solve the new finite system.
+ However, some of the most difficult problems to truncate involve 
+\emph on
+wave equations
+\emph default
+, where the solutions are 
+\emph on
+oscillating
+\emph default
+ and typically decay with distance 
+\begin_inset Formula $r$
+\end_inset
+
+ only as 
+\begin_inset Formula $1/r^{(d-1)/2}$
+\end_inset
+
+ in 
+\begin_inset Formula $d$
+\end_inset
+
+ dimensions.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The square of the solutions are typically related to a rate of energy transport,
+ e.g.
+ the Poynting vector in electromagnetism, and energy conservation requires
+ that this decay be proportional to the surface area 
+\begin_inset Formula $\sim r^{d-1}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ The slow decay means that simply truncating the grid with hard-wall (Dirichlet
+ or Neumann) or periodic boundary conditions will lead to unacceptable artifacts
+ from boundary reflections.
+ The oscillation means that any real coordinate remapping from an infinite
+ to a finite domain will result in solutions that oscillate infinitely fast
+ as the boundary is approached---such fast oscillations cannot be represented
+ by any finite-resolution grid, and will instead effectively form a reflecting
+ hard wall.
+ Therefore, wave equations require something different: an 
+\emph on
+absorbing boundary
+\emph default
+ that will somehow absorb waves that strike it, without reflecting them,
+ and without requiring infeasible resolution.
+\end_layout
+
+\begin_layout Standard
+The first attempts at such absorbing boundaries for wave equations involved
+ 
+\emph on
+absorbing boundary conditions
+\emph default
+ (
+\emph on
+ABC
+\emph default
+s) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Taflove00"
+
+\end_inset
+
+.
+ Given a solution on a discrete grid, a 
+\emph on
+boundary condition
+\emph default
+ is a rule to set the value at the edge of the grid.
+ For example, a simple Dirichlet boundary condition sets the solution to
+ zero at the edge of the grid (which will reflect waves that hit the edge).
+ An ABC tries to somehow 
+\emph on
+extrapolate
+\emph default
+ from the interior grid points to the edge grid point(s), to fool the solution
+ into 
+\begin_inset Quotes eld
+\end_inset
+
+thinking
+\begin_inset Quotes erd
+\end_inset
+
+ that it extends forever with no boundary.
+ It turns out that this is possible to do perfectly in one dimension, where
+ waves can only propagate in two directions (
+\begin_inset Formula $\pm x$
+\end_inset
+
+).
+ However, the main interest for numerical simulation lies in two and three
+ dimensions, and in these cases the infinite number of possible propagation
+ directions makes the ABC problem much harder.
+ It seems unlikely that there exists any efficient method to exactly absorb
+ radiating waves that strike a boundary at any possible angle.
+ Existing ABCs restrict themselves to absorbing waves exactly only at a
+ few angles, especially at normal incidence: as the size of the computational
+ grid grows, eventually normal-incident waves must become the dominant portion
+ of the radiation striking the boundaries.
+ Another difficulty is that, in many practical circumstances, the wave medium
+ is not homogeneous at the grid boundaries.
+ For example, to calculate the transmission around a dielectric waveguide
+ bend, the waveguide (an inhomogeneous region with a higher index of refraction)
+ should in principle extend to infinity before and after the bend.
+ Many standard ABCs are formulated only for homogeneous materials at the
+ boundaries, and may even become numerically unstable if the grid boundaries
+ are inhomogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename absorbing-layer.eps
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:absorbing-layer"
+
+\end_inset
+
+(a) Schematic of a typical wave-equation problem, in which there is some
+ finite region of interest where sources, inhomogeneous media, nonlinearities,
+ etcetera are being investigated, from which some radiative waves escape
+ to infinity.
+ (b) The same problem, where space has been truncated to some computational
+ region.
+ An absorbing layer is placed adjacent to the edges of the computational
+ region---a 
+\emph on
+perfect
+\emph default
+ absorbing layer would absorb outgoing waves without reflections from the
+ edge of the absorber.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In 1994, however, the problem of absorbing boundaries for wave equations
+ was transformed in a seminal paper by Berenger 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Berenger94"
+
+\end_inset
+
+.
+ Berenger changed the question: instead of finding an absorbing boundary
+ 
+\emph on
+condition
+\emph default
+, he found an absorbing boundary 
+\emph on
+layer
+\emph default
+, as depicted in Fig\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:absorbing-layer"
+
+\end_inset
+
+.
+ An absorbing boundary 
+\emph on
+layer
+\emph default
+ is a layer of artificial absorbing material that is placed adjacent to
+ the edges of the grid, completely 
+\emph on
+independent of the boundary condition
+\emph default
+.
+ When a wave enters the absorbing layer, it is attenuated by the absorption
+ and decays exponentially; even if it reflects off the boundary, the returning
+ wave after one round trip through the absorbing layer is exponentially
+ tiny.
+ The problem with this approach is that, whenever you have a transition
+ from one material to another,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Technically, reflections occur when translational symmetry is broken.
+ In a periodic structure (discrete translational symmetry), there are waves
+ that propagate without scattering, and a uniform medium is just a special
+ case with period 
+\begin_inset Formula $\rightarrow0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ waves generally reflect, and the transition from non-absorbing to absorbing
+ material is no exception---so, instead of having reflections from the grid
+ boundary, you now have reflections from the absorber boundary.
+ However, Berenger showed that a special absorbing medium could be constructed
+ so that waves do 
+\emph on
+not
+\emph default
+ reflect at the interface: a 
+\emph on
+perfectly matched layer
+\emph default
+, or 
+\emph on
+PML
+\emph default
+.
+ Although PML was originally derived for electromagnetism (Maxwell's equations),
+ the same ideas are immediately applicable to other wave equations.
+\end_layout
+
+\begin_layout Standard
+There are several equivalent formulations of PML.
+ Berenger's original formulation is called the 
+\emph on
+split-field
+\emph default
+ PML, because he artificially split the wave solutions into the sum of two
+ new artificial field components.
+ Nowadays, a more common formulation is the 
+\emph on
+uniaxial
+\emph default
+ PML or 
+\emph on
+UPML
+\emph default
+, which expresses the PML region as the ordinary wave equation with a combinatio
+n of artificial 
+\emph on
+anisotropic
+\emph default
+ absorbing materials 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sacks95"
+
+\end_inset
+
+.
+ Both of these formulations were originally derived by laboriously computing
+ the solution for a wave incident on the absorber interface at an arbitrary
+ angle (and polarization, for vector waves), and then solving for the conditions
+ in which the reflection is always zero.
+ This technique, however, is labor-intensive to extend to other wave equations
+ and other coordinate systems (e.g.
+ cylindrical or spherical rather than Cartesian).
+ It also misses an important fact: PML still works (can still be made theoretica
+lly reflectionless) for 
+\emph on
+inhomogeneous
+\emph default
+ media, such as waveguides, as long as the medium is homogeneous in the
+ direction perpendicular to the boundary, even though the wave solutions
+ for such media cannot generally be found analytically.
+ It turns out, however, that 
+\emph on
+both
+\emph default
+ the split-field and UPML formulations can be derived in a much more elegant
+ and general way, by viewing them as the result of a 
+\emph on
+complex coordinate stretching
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chew94,Rappaport95,Teixeira98"
+
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It is sometimes implied that only the split-field PML can be derived via
+ the stretched-coordinate approach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Taflove00"
+
+\end_inset
+
+, but the UPML media can be derived in this way as well 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Teixeira98"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ It is this complex-coordinate approach, which is essentially based on 
+\emph on
+analytic continuation
+\emph default
+ of Maxwell's equations into complex spatial coordinates where the fields
+ are exponentially decaying, that we review in this note.
+\end_layout
+
+\begin_layout Standard
+In the following, we first briefly remind the reader what a wave equation
+ is, focusing on the simple case of the scalar wave equation but also giving
+ a general definition.
+ We then derive PML as a combination of two steps: analytic continuation
+ into complex coordinates, then a coordinate transformation back to real
+ coordinates.
+ Finally, we discuss some limitations of PML, most notably the fact that
+ it is no longer reflectionless once the wave equation is discretized, and
+ common workarounds for these limitations.
+\end_layout
+
+\begin_layout Section
+Wave equations
+\end_layout
+
+\begin_layout Standard
+There are many formulations of waves and wave equations in the physical
+ sciences.
+ The prototypical example is the (source-free) 
+\emph on
+scalar wave equation:
+\emph default
+ 
+\begin_inset Formula \begin{equation}
+\nabla\cdot(a\nabla u)=\frac{1}{b}\frac{\partial^{2}u}{\partial t^{2}}=\frac{\ddot{u}}{b}\label{eq:scalar-wave}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $u(\vec{x},t)$
+\end_inset
+
+ is the scalar wave amplitude and 
+\begin_inset Formula $c=\sqrt{ab}$
+\end_inset
+
+ is the phase velocity of the wave for some parameters 
+\begin_inset Formula $a(\vec{x})$
+\end_inset
+
+ and 
+\begin_inset Formula $b(\vec{x})$
+\end_inset
+
+ of the (possibly inhomogeneous) medium.
+ For lossless, propagating waves, 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ should be real and positive.
+\end_layout
+
+\begin_layout Standard
+Both for computational convenience (in order to use a staggered-grid leap-frog
+ discretization) and for analytical purposes, it is more convenient to split
+ this second-order equation into two coupled first-order equation, by introducin
+g an auxiliary field 
+\begin_inset Formula $\vec{v}(\vec{x},t)$
+\end_inset
+
+: 
+\begin_inset Formula \begin{eqnarray}
+\frac{\partial u}{\partial t} & = & b\nabla\cdot\vec{v},\label{eq:scalar-wave-udot}\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\frac{\partial\vec{v}}{\partial t}=a\nabla u,\label{eq:scalar-wave-vdot}\end{equation}
+
+\end_inset
+
+which are easily seen to be equivalent to eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-wave"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Equations
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-wave-udot"
+
+\end_inset
+
+--
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-wave-vdot"
+
+\end_inset
+
+) can be written more abstractly as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\frac{\partial\vec{w}}{\partial t}=\frac{\partial}{\partial t}\left(\begin{array}{c}
+u\\
+\vec{v}\end{array}\right)=\left(\begin{array}{cc}
+ & b\nabla\cdot\\
+a\nabla\end{array}\right)\left(\begin{array}{c}
+u\\
+\vec{v}\end{array}\right)=\hat{D}\vec{w}\label{eq:scalar-wave-abstract}\end{equation}
+
+\end_inset
+
+for a 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ linear operator 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ and a 4-component vector 
+\begin_inset Formula $\vec{w}=(u;\vec{v})$
+\end_inset
+
+ (in three dimensions).
+ The key property that makes this a 
+\begin_inset Quotes eld
+\end_inset
+
+wave equation
+\begin_inset Quotes erd
+\end_inset
+
+ turns out to be that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is an 
+\emph on
+anti-Hermitian
+\emph default
+ operator in a proper choice of inner product, which leads to oscillating
+ solutions, conservation of energy, and other 
+\begin_inset Quotes eld
+\end_inset
+
+wave-like
+\begin_inset Quotes erd
+\end_inset
+
+ phenomena.
+ Every common wave equation, from scalar waves to Maxwell's equations (electroma
+gnetism) to Schrödinger's equation (quantum mechanics) to the Lamé-Navier
+ equations for elastic waves in solids, can be written in the abstract form
+ 
+\begin_inset Formula $\partial\vec{w}/\partial t=\hat{D}\vec{w}$
+\end_inset
+
+ for some wave function 
+\begin_inset Formula $\vec{w}(\vec{x},t)$
+\end_inset
+
+ and some anti-Hermitian operator 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+See e.g.
+ Ref\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Johnson07-wave-equations"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The same PML ideas apply equally well in all of these cases, although PML
+ is most commonly applied to Maxwell's equations for computational electromagnet
+ism.
+\end_layout
+
+\begin_layout Section
+Complex coordinate stretching
+\end_layout
+
+\begin_layout Standard
+Let us start with the solution 
+\begin_inset Formula $\vec{w}(\vec{x},t)$
+\end_inset
+
+ of some wave equation in infinite space, in a situation similar to that
+ in Fig\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:absorbing-layer"
+
+\end_inset
+
+(a): we have some region of interest near the origin 
+\begin_inset Formula $\vec{x}=0$
+\end_inset
+
+, and we want to truncate space outside the region of interest in such a
+ way as to absorb radiating waves.
+ In particular, we will focus on truncating the problem in the 
+\begin_inset Formula $+x$
+\end_inset
+
+ direction (the other directions will follow by the same technique).
+ This truncation occurs in three conceptual steps, summarized as follows:
+\end_layout
+
+\begin_layout Enumerate
+In infinite space, 
+\emph on
+analytically continue
+\emph default
+ the solutions and equations to a 
+\emph on
+complex
+\emph default
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ contour, which 
+\emph on
+changes
+\emph default
+ oscillating waves into 
+\emph on
+exponentially decaying waves
+\emph default
+ outside the region of interest 
+\emph on
+without
+\emph default
+ reflections.
+\end_layout
+
+\begin_layout Enumerate
+Still in infinite space, perform a 
+\emph on
+coordinate transformation
+\emph default
+ to express the complex 
+\begin_inset Formula $x$
+\end_inset
+
+ as a function of a real coordinate.
+ In the new coordinates, we have 
+\emph on
+real coordinates
+\emph default
+ and 
+\emph on
+complex materials
+\emph default
+.
+\end_layout
+
+\begin_layout Enumerate
+Truncate the domain of this new real coordinate inside the complex-material
+ region: since the solution is decaying there, as long as we truncate it
+ after a long enough distance (where the exponential tails are small), it
+ won't matter what boundary condition we use (hard-wall truncations are
+ fine).
+\end_layout
+
+\begin_layout Standard
+For now, we will make two simplifications:
+\end_layout
+
+\begin_layout Itemize
+We will assume that the space far from the region of interest is 
+\emph on
+homogeneous
+\emph default
+ (deferring the inhomogeneous case until later).
+ 
+\end_layout
+
+\begin_layout Itemize
+We will assume that the space far from the region of interest is linear
+ and time-invariant.
+\end_layout
+
+\begin_layout Standard
+Under these assumptions, the radiating solutions in infinite space must
+ take the form of a superposition of 
+\emph on
+planewaves
+\emph default
+: 
+\begin_inset Formula \begin{equation}
+\vec{w}(\vec{x},t)=\sum_{\vec{k},\omega}\vec{W}_{\vec{k},\omega}e^{i(\vec{k}\cdot\vec{x}-\omega t)},\label{eq:planewave-sum}\end{equation}
+
+\end_inset
+
+for some constant amplitudes 
+\begin_inset Formula $\vec{W}_{\vec{k},\omega}$
+\end_inset
+
+, where 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is the (angular) frequency and 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ is the wavevector.
+ (In an isotropic medium, 
+\begin_inset Formula $\omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ are related by 
+\begin_inset Formula $\omega=c|\vec{k}|$
+\end_inset
+
+ where 
+\begin_inset Formula $c(\omega)$
+\end_inset
+
+ is some phase velocity, but we don't need to assume that here.) In particular,
+ the key fact is that the radiating solutions may be decomposed into functions
+ of the form 
+\begin_inset Formula \begin{equation}
+\vec{W}(y,z)e^{i(kx-\omega t)}.\label{eq:planewave-x}\end{equation}
+
+\end_inset
+
+The ratio 
+\begin_inset Formula $\omega/k$
+\end_inset
+
+ is the phase velocity, which can be different from the group velocity 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+ (the velocity of energy transport, in lossless media).
+ For waves propagating in the 
+\begin_inset Formula $+x$
+\end_inset
+
+ direction, the group velocity is positive.
+ Except in very unusual cases, the phase velocity has the same sign as the
+ group velocity in a homogeneous medium,
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The formulation of PML absorbers when the phase velocity has sign opposite
+ to the group velocity, for example in the 
+\begin_inset Quotes eld
+\end_inset
+
+left-handed media
+\begin_inset Quotes erd
+\end_inset
+
+ of electromagnetism, is somewhat more tricky
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cummer04,Dong04"
+
+\end_inset
+
+; matters are even worse in certain waveguides with both signs of group
+ velocity at the same
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\omega$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LohOs09"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ so 
+\series bold
+we will assume
+\series default
+ that 
+\begin_inset Formula $k$
+\end_inset
+
+ is 
+\series bold
+positive
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Analytic continuation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pml-continuation.eps
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pml-continuation"
+
+\end_inset
+
+Top
+\emph default
+: real part of original oscillating solution 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ (right) corresponds to 
+\begin_inset Formula $x$
+\end_inset
+
+ along the real axis in the complex-
+\begin_inset Formula $x$
+\end_inset
+
+ plane (left).
+ 
+\emph on
+Bottom
+\emph default
+: We can instead evaluate this analytic function along a 
+\emph on
+deformed
+\emph default
+ contour in the complex plane: here (left) we deform it to increase along
+ the imaginary axis for 
+\begin_inset Formula $x>5$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ solution (right) is unchanged for 
+\begin_inset Formula $x<5$
+\end_inset
+
+, but is exponentially decaying for 
+\begin_inset Formula $x>5$
+\end_inset
+
+ where the contour is deformed, corresponding to an 
+\begin_inset Quotes eld
+\end_inset
+
+absorbing
+\begin_inset Quotes erd
+\end_inset
+
+ region.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The key fact about eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:planewave-x"
+
+\end_inset
+
+) is that it is an 
+\emph on
+analytic function
+\emph default
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ That means that we can freely 
+\emph on
+analytically continue
+\emph default
+ it, evaluating the solution at 
+\emph on
+complex values
+\emph default
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The original wave problem corresponds to 
+\begin_inset Formula $x$
+\end_inset
+
+ along the real axis, as shown in the top panels of Fig\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pml-continuation"
+
+\end_inset
+
+, which gives an oscillating 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ solution.
+ However, if instead of evaluating 
+\begin_inset Formula $x$
+\end_inset
+
+ along real axis, consider what happens if we evaluate it along the contour
+ shown in the bottom-left panel of Fig\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pml-continuation"
+
+\end_inset
+
+, where for 
+\begin_inset Formula $\Re x>5$
+\end_inset
+
+ we have added a linearly growing imaginary part.
+ In this case, the solution is 
+\emph on
+exponentially
+\emph default
+ decaying for 
+\begin_inset Formula $\Re x>5$
+\end_inset
+
+, because 
+\begin_inset Formula $e^{ik(\Re x+i\Im x)}=e^{ik\Re x}e^{-k\Im x}$
+\end_inset
+
+ is exponentially decaying (for 
+\begin_inset Formula $k>0$
+\end_inset
+
+) as 
+\begin_inset Formula $\Im x$
+\end_inset
+
+ increases.
+ That is, the solution in this region acts like the solution in an 
+\emph on
+absorbing material
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+However, there is one crucial difference here from an ordinary absorbing
+ material: the solution is 
+\emph on
+not changed
+\emph default
+ for 
+\begin_inset Formula $\Re x<5$
+\end_inset
+
+, where 
+\begin_inset Formula $x$
+\end_inset
+
+ is no different from before.
+ So, it not only acts like an absorbing material, it acts like a 
+\emph on
+reflectionless absorbing material
+\emph default
+, a PML.
+\end_layout
+
+\begin_layout Standard
+The thing to remember about this is that the analytically continued solution
+ satisfies the 
+\emph on
+same
+\emph default
+ differential equation.
+ We assumed the differential equation was 
+\begin_inset Formula $x$
+\end_inset
+
+-invariant in this region, so 
+\begin_inset Formula $x$
+\end_inset
+
+ only appeared in derivatives like 
+\begin_inset Formula $\frac{\partial}{\partial x}$
+\end_inset
+
+, and the derivative of an analytic function is the same along any 
+\begin_inset Formula $dx$
+\end_inset
+
+ direction in the complex plane.
+ So, we have succeeded in transforming our original wave equation to one
+ in which the radiating solutions (large 
+\begin_inset Formula $|x$
+\end_inset
+
+|) are exponentially decaying, while the part we care about (small 
+\begin_inset Formula $x$
+\end_inset
+
+) is unchanged.
+ The only problem is that solving differential equations along contours
+ in the complex plane is rather unfamiliar and inconvenient.
+ This difficulty is easily fixed.
+\end_layout
+
+\begin_layout Subsection
+Coordinate transformation back to real 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For convenience, let's denote the complex 
+\begin_inset Formula $x$
+\end_inset
+
+ contour by 
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+, and reserve the letter 
+\begin_inset Formula $x$
+\end_inset
+
+ for the real part.
+ Thus, we have 
+\begin_inset Formula $\tilde{x}(x)=x+if(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is some function indicating how we've deformed our contour along the imaginary
+ axis.
+ Since the complex coordinate 
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+ is inconvenient, we will just 
+\emph on
+change variables
+\emph default
+ to write the equations in terms of 
+\begin_inset Formula $x$
+\end_inset
+
+, the real part!
+\end_layout
+
+\begin_layout Standard
+Changing variables is easy.
+ Whereever our original equation has 
+\begin_inset Formula $\partial\tilde{x}$
+\end_inset
+
+ (the differential along the deformed contour 
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+), we now have 
+\begin_inset Formula $\partial\tilde{x}=(1+i\frac{df}{dx})\partial x$
+\end_inset
+
+.
+ That's it! Since our original wave equation was assumed 
+\begin_inset Formula $x$
+\end_inset
+
+-invariant (at least in the large-
+\begin_inset Formula $x$
+\end_inset
+
+ regions where 
+\begin_inset Formula $f\neq0$
+\end_inset
+
+), we have no other substitutions to make.
+ As we shall soon see, it will be convenient to denote 
+\begin_inset Formula $\frac{df}{dx}=\frac{\sigma_{x}(x)}{\omega}$
+\end_inset
+
+, for some function 
+\begin_inset Formula $\sigma_{x}(x)$
+\end_inset
+
+.
+ [For example, in the bottom panel of Fig\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pml-continuation"
+
+\end_inset
+
+, we chose 
+\begin_inset Formula $\sigma_{x}(x)$
+\end_inset
+
+ to be a step function: zero for 
+\begin_inset Formula $x\leq5$
+\end_inset
+
+ and a positive constant for 
+\begin_inset Formula $x>5$
+\end_inset
+
+, which gave us exponential decay.] In terms of 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+, the entire process of PML can be conceptually summed up by a single transforma
+tion of our original differential equation:
+\begin_inset Formula \begin{equation}
+\boxed{\frac{\partial}{\partial x}\rightarrow\frac{1}{1+i\frac{\sigma_{x}(x)}{\omega}}\frac{\partial}{\partial x}.}\label{eq:pml-transformation}\end{equation}
+
+\end_inset
+
+In the 
+\series bold
+PML regions
+\series default
+ where 
+\begin_inset Formula $\sigma_{x}>0$
+\end_inset
+
+, our oscillating solutions turn into exponentially decaying ones.
+ In the regions where 
+\begin_inset Formula $\sigma_{x}=0$
+\end_inset
+
+, our wave equation is unchanged and the 
+\emph on
+solution is unchanged
+\emph default
+: there are no reflections because this is only an analytic continuation
+ of the original solution from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+, and where 
+\begin_inset Formula $\tilde{x}=x$
+\end_inset
+
+ the solution cannot change.
+\end_layout
+
+\begin_layout Standard
+Why did we choose 
+\begin_inset Formula $\sigma_{x}/\omega$
+\end_inset
+
+, as opposed to just 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+? The answer comes if we look at what happens to our wave 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+.
+ In the new coordinates, we get: 
+\begin_inset Formula \begin{equation}
+e^{ikx}e^{-\frac{k}{\omega}\int^{x}\sigma_{x}(x')dx'}.\label{eq:pml-attenuation}\end{equation}
+
+\end_inset
+
+Notice the factor 
+\begin_inset Formula $k/\omega$
+\end_inset
+
+, which is equal to 
+\begin_inset Formula $1/c_{x}$
+\end_inset
+
+, the inverse of the phase velocity 
+\begin_inset Formula $c_{x}$
+\end_inset
+
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction.
+ In a dispersionless material (e.g.
+ vacuum for light), 
+\begin_inset Formula $c_{x}$
+\end_inset
+
+ is a constant independent of velocity for a fixed angle, in which case
+ the 
+\emph on
+attenuation rate
+\emph default
+ in the PML is 
+\emph on
+independent
+\emph default
+ of frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+: all wavelengths decay at the same rate! In contrast, if we had left out
+ the 
+\begin_inset Formula $1/\omega$
+\end_inset
+
+ then shorter wavelengths would decay faster than longer wavelengths.
+ On the other hand, the attenuation rate is 
+\emph on
+not
+\emph default
+ independent of the 
+\emph on
+angle
+\emph default
+ of the light, a difficulty discussed in Sec\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:angle-dependence"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Truncating the computational region
+\end_layout
+
+\begin_layout Standard
+Once we have performed the PML transformation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-transformation"
+
+\end_inset
+
+) of our wave equations, the solutions are unchanged in our region of interest
+ (small 
+\begin_inset Formula $x$
+\end_inset
+
+) and exponentially decaying in the outer regions (large 
+\begin_inset Formula $x$
+\end_inset
+
+).
+ That means that we can 
+\emph on
+truncate
+\emph default
+ the computational region at some sufficiently large 
+\begin_inset Formula $x$
+\end_inset
+
+, perhaps by putting a hard wall (Dirichlet boundary condition).
+ Because only the tiny exponential tails 
+\begin_inset Quotes eld
+\end_inset
+
+see
+\begin_inset Quotes erd
+\end_inset
+
+ this hard wall and reflect off it, and even 
+\emph on
+they
+\emph default
+ attenuate 
+\emph on
+on the way back
+\emph default
+ towards the region of interest, the effect on the solutions in our region
+ of interest will be exponentially small.
+ 
+\end_layout
+
+\begin_layout Standard
+In fact, in principle we can make the PML region as thin as we want, just
+ by making 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ very large (which makes the exponential decay rate rapid), thanks to the
+ fact that the decay rate is independent of 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (although the angle dependence can be a problem, as discussed in Sec\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:angle-dependence"
+
+\end_inset
+
+).
+ However, in practice, we will see in Sec\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:discretization"
+
+\end_inset
+
+ that using a very large 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ can cause 
+\begin_inset Quotes eld
+\end_inset
+
+numerical reflections
+\begin_inset Quotes erd
+\end_inset
+
+ once we discretize the problem onto a grid.
+ Instead, we turn on 
+\begin_inset Formula $\sigma_{x}(x)$
+\end_inset
+
+ quadratically or cubically from zero, over a region of length a half-wavelength
+ or so, and in practice the reflections will be tiny.
+\end_layout
+
+\begin_layout Subsection
+PML boundaries in other directions
+\end_layout
+
+\begin_layout Standard
+So far, we've seen how to truncate our computational region with a PML layer
+ in the 
+\begin_inset Formula $+x$
+\end_inset
+
+ direction.
+ What about other directions? The most important case to consider is the
+ 
+\begin_inset Formula $-x$
+\end_inset
+
+ direction.
+ The key is, in the 
+\begin_inset Formula $-x$
+\end_inset
+
+ direction we do 
+\emph on
+exactly the same thing
+\emph default
+: apply the PML transformation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-transformation"
+
+\end_inset
+
+) with 
+\begin_inset Formula $\sigma_{x}>0$
+\end_inset
+
+ at a sufficiently large negative 
+\begin_inset Formula $x$
+\end_inset
+
+, and then truncate the computational cell.
+ This works because, for 
+\begin_inset Formula $x<0$
+\end_inset
+
+, the radiating waves are propagating in the 
+\begin_inset Formula $-x$
+\end_inset
+
+ direction with 
+\begin_inset Formula $k<0$
+\end_inset
+
+ (negative phase velocity), and this makes our PML solutions (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-attenuation"
+
+\end_inset
+
+) decay in the opposite direction (exponentially decaying as 
+\begin_inset Formula $x\rightarrow-\infty$
+\end_inset
+
+) for the 
+\emph on
+same
+\emph default
+ positive 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now that we have dealt with 
+\begin_inset Formula $\pm x$
+\end_inset
+
+, the 
+\begin_inset Formula $\pm y$
+\end_inset
+
+ and 
+\begin_inset Formula $\pm z$
+\end_inset
+
+ directions are easy: just do the same transformation, except to 
+\begin_inset Formula $\partial/\partial y$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial/\partial z$
+\end_inset
+
+, respectively, using functions 
+\begin_inset Formula $\sigma_{y}(y)$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{z}(z)$
+\end_inset
+
+ that are non-zero in the 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ PML regions.
+ At the corners of the computational cell, we will have regions that are
+ PML along two or three directions simultaneously (i.e.
+ two or three 
+\begin_inset Formula $\sigma$
+\end_inset
+
+'s are nonzero), but that doesn't change anything.
+\end_layout
+
+\begin_layout Subsection
+Coordinate transformations and materials
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:coordinates-and-materials"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will see below that, in the context of the scalar wave equation, the
+ 
+\begin_inset Formula $1+i\sigma/\omega$
+\end_inset
+
+ term from the PML coordinate transformation appears as, effectively, an
+ 
+\emph on
+artificial anisotropic absorbing material
+\emph default
+ in the wave equation (effectively changing 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ to complex numbers, and a tensor in the case of 
+\begin_inset Formula $a$
+\end_inset
+
+).
+ At least in the case of Maxwell's equations (electromagnetism), this is
+ an instance of a more general theorem: Maxwell's equations under 
+\emph on
+any coordinate transformation
+\emph default
+ can be expressed as Maxwell's equations in Cartesian coordinates with 
+\emph on
+transformed materials
+\emph default
+.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This theorem appears to have been first clearly stated and derived by Ward
+ and Pendry
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ward96"
+
+\end_inset
+
+, and is summarized in a compact general form by my course notes
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Johnson07-coordinate-transforms"
+
+\end_inset
+
+ and in our paper
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KottkeFa08"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ That is, the coordinate transform is 
+\begin_inset Quotes eld
+\end_inset
+
+absorbed
+\begin_inset Quotes erd
+\end_inset
+
+ into a change of the permittivity 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and the permeability 
+\begin_inset Formula $\mu$
+\end_inset
+
+ (generally into anisotropic tensors).
+ This is the reason why UPML, which constructs reflectionless anisotropic
+ absorbers, is equivalent to a complex coordinate stretching: it is just
+ absorbing the coordinate stretching into the material tensors.
+\end_layout
+
+\begin_layout Section
+PML examples in frequency and time domain
+\end_layout
+
+\begin_layout Standard
+As we have seen, in 
+\emph on
+frequency domain
+\emph default
+, when we are solving for solutions with time-dependence 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+, PML is almost trivial: we just apply the PML transformation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-transformation"
+
+\end_inset
+
+) to every 
+\begin_inset Formula $\frac{\partial}{\partial x}$
+\end_inset
+
+ derivative in our wave equation.
+ (And similarly for derivatives in other directions, to obtain PML boundaries
+ in different directions.)
+\end_layout
+
+\begin_layout Standard
+In the time domain, however, things are a bit more complicated, because
+ we chose our transformation to be of the form 
+\begin_inset Formula $1+i\sigma/\omega$
+\end_inset
+
+: our complex 
+\begin_inset Quotes eld
+\end_inset
+
+stretch
+\begin_inset Quotes erd
+\end_inset
+
+ factor is frequency-
+\emph on
+dependent
+\emph default
+ in order that the attenuation rate be frequency-
+\emph on
+independent
+\emph default
+.
+ But how do we express a 
+\begin_inset Formula $1/\omega$
+\end_inset
+
+ dependence in the time domain, where we don't have 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (i.e.
+ the time-domain wave function may superimpose multiple frequencies at once)?
+ One solution is to punt, of course, and just use a stretch factor 
+\begin_inset Formula $1+i\sigma/\omega_{0}$
+\end_inset
+
+ for some constant frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ that is typical of our problem; as long as our bandwidth is narrow enough,
+ our attenuation rate (and thus the truncation error) will be fairly constant.
+ However, it turns out that there is a way to implement the ideal 
+\begin_inset Formula $1/\omega$
+\end_inset
+
+ dependence directly in the time domain, via the 
+\series bold
+auxiliary differential equation
+\series default
+ (ADE) approach.
+\end_layout
+
+\begin_layout Standard
+This approach is best illustrated by example, so we will consider PML boundaries
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction for the scalar wave equation in one and two dimensions.
+ (It turns out that an ADE is not required in 1d, however.)
+\end_layout
+
+\begin_layout Subsection
+An example: PML for 1d scalar waves
+\end_layout
+
+\begin_layout Standard
+Let's consider the 1d version of the scalar wave equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-wave-udot"
+
+\end_inset
+
+--
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-wave-vdot"
+
+\end_inset
+
+): 
+\begin_inset Formula \[
+\frac{\partial u}{\partial t}=b\frac{\partial v}{\partial x}=-i\omega u\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\frac{\partial v}{\partial t}=a\frac{\partial u}{\partial x}=-i\omega v,\]
+
+\end_inset
+
+where we have substituted an 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+ time-dependence.
+ Now, if we perform the PML transformation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-transformation"
+
+\end_inset
+
+), and multiply both sides by 
+\begin_inset Formula $1+i\sigma_{x}/\omega$
+\end_inset
+
+, we obtain: 
+\begin_inset Formula \[
+b\frac{\partial v}{\partial x}=-i\omega u+\sigma_{x}u\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+a\frac{\partial u}{\partial x}=-i\omega v+\sigma_{x}v.\]
+
+\end_inset
+
+The 
+\begin_inset Formula $1/\omega$
+\end_inset
+
+ terms have cancelled, and so in this 1d case we can trivially turn the
+ equations back into their time-domain forms:
+\begin_inset Formula \[
+\frac{\partial u}{\partial t}=b\frac{\partial v}{\partial x}-\sigma_{x}u\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\frac{\partial v}{\partial t}=a\frac{\partial u}{\partial x}-\sigma_{x}v.\]
+
+\end_inset
+
+Notice that, for 
+\begin_inset Formula $\sigma_{x}>0$
+\end_inset
+
+, the decay terms have exactly the right sign to make the solutions decay
+ in 
+\emph on
+time
+\emph default
+ if 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ were constants in space.
+ Similarly, they have the right sign to make it decay in space whereever
+ 
+\begin_inset Formula $\sigma_{x}>0$
+\end_inset
+
+.
+ But this is a true PML: there are 
+\emph on
+zero
+\emph default
+ reflections from any boundary where we change 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+, even if we change 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ discontinuously (not including the discretization problems mentioned above).
+\end_layout
+
+\begin_layout Standard
+By the way, the above equations reveal why we use the letter 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ for the PML absorption coefficient.
+ If the above equations are interpreted as the equations for electric (
+\begin_inset Formula $u$
+\end_inset
+
+) and magnetic (
+\begin_inset Formula $v$
+\end_inset
+
+) fields in 1d electromagnetism, then 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ plays the role of a 
+\emph on
+conductivity
+\emph default
+, and conductivity is traditionally denoted by 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ Unlike the usual electrical conductivity, however, in PML we have both
+ an electric and a 
+\emph on
+magnetic
+\emph default
+ conductivity, since we have terms corresponding to currents of electric
+ and magnetic charges.
+ There is no reason we need to be limited to 
+\emph on
+physical
+\emph default
+ materials to construct our PML for a computer 
+\emph on
+simulation
+\emph default
+!
+\end_layout
+
+\begin_layout Subsection
+An example: PML for 2d scalar waves
+\end_layout
+
+\begin_layout Standard
+Unfortunately, the 1d case above is a little too trivial to give you the
+ full flavor of how PML works.
+ So, let's go to a 2d scalar wave equation (again for 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+ time-dependence): 
+\begin_inset Formula \[
+\frac{\partial u}{\partial t}=b\nabla\cdot v=b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}=-i\omega u\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\frac{\partial v_{x}}{\partial t}=a\frac{\partial u}{\partial x}=-i\omega v_{x}\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\frac{\partial v_{y}}{\partial t}=a\frac{\partial u}{\partial y}=-i\omega v_{y}.\]
+
+\end_inset
+
+Again performing the PML transformation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-transformation"
+
+\end_inset
+
+) of 
+\begin_inset Formula $\frac{\partial}{\partial x}$
+\end_inset
+
+ in the first two equations, and multiplying both sides by 
+\begin_inset Formula $1+i\sigma_{x}/\omega$
+\end_inset
+
+, we obtain: 
+\begin_inset Formula \[
+b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}\left(1+i\frac{\sigma_{x}}{\omega}\right)=-i\omega u+\sigma_{x}u\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+a\frac{\partial u}{\partial x}=-i\omega v_{x}+\sigma_{x}v_{x}.\]
+
+\end_inset
+
+The the second equation is easy to transform back to time domain, just like
+ for the 1d scalar-wave equation: 
+\begin_inset Formula $-i\omega$
+\end_inset
+
+ becomes a time derivative.
+ The first equation, however, poses a problem: we have an extra 
+\begin_inset Formula $\frac{ib\sigma_{x}}{\omega}\frac{\partial v_{y}}{\partial y}$
+\end_inset
+
+ term with an explicit 
+\begin_inset Formula $1/\omega$
+\end_inset
+
+ factor.
+ What do we do with this?
+\end_layout
+
+\begin_layout Standard
+In a Fourier transform, 
+\begin_inset Formula $-i\omega$
+\end_inset
+
+ corresponds to differentiation, so 
+\begin_inset Formula $i/\omega$
+\end_inset
+
+ corresponds to 
+\emph on
+integration
+\emph default
+: our problematic 
+\begin_inset Formula $1/\omega$
+\end_inset
+
+ term is the 
+\emph on
+integral
+\emph default
+ of another quantity.
+ In particular, let's introduce a new 
+\emph on
+auxiliary
+\emph default
+ field variable 
+\begin_inset Formula $\psi$
+\end_inset
+
+, satisfying 
+\begin_inset Formula \[
+-i\omega\psi=b\sigma_{x}\frac{\partial v_{y}}{\partial y},\]
+
+\end_inset
+
+in which case
+\begin_inset Formula \[
+b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}+\psi=-i\omega u+\sigma_{x}u.\]
+
+\end_inset
+
+Now, we can Fourier transform everything back to the time-domain, to get
+ a set of 
+\emph on
+four
+\emph default
+ time-domain equations with PML absorbing boundaries in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction that we can solve by our favorite discretization scheme:
+\begin_inset Formula \[
+\frac{\partial u}{\partial t}=b\nabla\cdot v-\sigma_{x}u+\psi\]
+
+\end_inset
+
+ 
+\begin_inset Formula \[
+\frac{\partial v_{x}}{\partial t}=a\frac{\partial u}{\partial x}-\sigma_{x}v_{x}\]
+
+\end_inset
+
+ 
+\begin_inset Formula \[
+\frac{\partial v_{y}}{\partial t}=a\frac{\partial u}{\partial y}\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\frac{\partial\psi}{\partial t}=b\sigma_{x}\frac{\partial v_{y}}{\partial y},\]
+
+\end_inset
+
+where the last equation for 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is our 
+\emph on
+auxiliary differential equation
+\emph default
+ (with initial condition 
+\begin_inset Formula $\psi=0$
+\end_inset
+
+).
+ Notice that we have 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ absorption terms in the 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{x}$
+\end_inset
+
+ equation, but not for 
+\begin_inset Formula $v_{y}$
+\end_inset
+
+: the PML corresponds to an 
+\emph on
+anisotropic absorber
+\emph default
+, as if 
+\begin_inset Formula $a$
+\end_inset
+
+ were replaced by the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ complex tensor 
+\begin_inset Formula \[
+\left(\begin{array}{cc}
+\frac{1}{a}+i\frac{\sigma_{x}}{\omega a}\\
+ & \frac{1}{a}\end{array}\right)^{-1}.\]
+
+\end_inset
+
+This is an example of the general theorem alluded to in Sec\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:coordinates-and-materials"
+
+\end_inset
+
+ above.
+ 
+\end_layout
+
+\begin_layout Section
+PML in inhomogeneous media
+\end_layout
+
+\begin_layout Standard
+The derivation above didn't really depend at all on the assumption that
+ the medium was homogenous in 
+\begin_inset Formula $(y,z)$
+\end_inset
+
+ for the 
+\begin_inset Formula $x$
+\end_inset
+
+ PML layer.
+ We only assumed that the medium (and hence the wave equation) was invariant
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction for sufficiently large 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ For example, instead of empty space we could have a waveguide oriented
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction (i.e.
+ some 
+\begin_inset Formula $x$
+\end_inset
+
+-invariant 
+\begin_inset Formula $yz$
+\end_inset
+
+ cross-section).
+ Regardless of the 
+\begin_inset Formula $yz$
+\end_inset
+
+ dependence, translational invariance implies that radiating solutions can
+ be decomposed into a sum of functions of the form of eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:planewave-x"
+
+\end_inset
+
+), 
+\begin_inset Formula $\vec{W}(y,z)e^{i(kx-\omega t)}$
+\end_inset
+
+.
+ These solutions 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ are no longer plane waves.
+ Instead, they are the 
+\emph on
+normal modes
+\emph default
+ of the 
+\begin_inset Formula $x$
+\end_inset
+
+-invariant structure, and 
+\begin_inset Formula $k$
+\end_inset
+
+ is the 
+\emph on
+propagation constant
+\emph default
+.
+ These normal modes are the subject of waveguide theory in electromagnetism,
+ a subject extensively treated elsewhere 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Snyder70,Marcuse74"
+
+\end_inset
+
+.
+ The bottom line is: since the solution/equation is still analytic in 
+\begin_inset Formula $x$
+\end_inset
+
+, the PML is still reflectionless.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+There is a subtlety here because, in unusual cases, uniform waveguides can
+ support 
+\begin_inset Quotes eld
+\end_inset
+
+backward-wave
+\begin_inset Quotes erd
+\end_inset
+
+ modes where the phase and group velocities are opposite, i.e.
+ 
+\begin_inset Formula $k<0$
+\end_inset
+
+ for a right-traveling wave 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Clarricoats60,Waldron64,Omar87,Ibanescu04-anomalous"
+
+\end_inset
+
+.
+ It has problems even worse than those reported for left-handed media 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cummer04,Dong04"
+
+\end_inset
+
+, because the same frequency has both 
+\begin_inset Quotes eld
+\end_inset
+
+right-handed
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+left-handed
+\begin_inset Quotes erd
+\end_inset
+
+ modes; a deeper analysis of this interesting case can be found in our paper
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LohOs09"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+PML for evanescent waves
+\end_layout
+
+\begin_layout Standard
+In the discussion above, we considered waves of the form 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ and showed that they became exponentially decaying if we replace 
+\begin_inset Formula $x$
+\end_inset
+
+ by 
+\begin_inset Formula $x(1+i\sigma_{x}/\omega)$
+\end_inset
+
+ for 
+\begin_inset Formula $\sigma>0$
+\end_inset
+
+.
+ However, this discussion assumed that 
+\begin_inset Formula $k$
+\end_inset
+
+ was 
+\emph on
+real
+\emph default
+ (and positive).
+ This is not necessarily the case! In two or more dimensions, the wave equation
+ can have 
+\emph on
+evanescent
+\emph default
+ solutions where 
+\begin_inset Formula $k$
+\end_inset
+
+ is complex, most commonly where 
+\begin_inset Formula $k$
+\end_inset
+
+ is purely imaginary.
+ For example consider a planewave 
+\begin_inset Formula $e^{i(\vec{k}\cdot\vec{x}-\omega t)}$
+\end_inset
+
+ in a homogeneous two-dimensional medium with phase velocity 
+\begin_inset Formula $c$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\omega=c|\vec{k}|=c\sqrt{k_{x}^{2}+k_{y}^{2}}$
+\end_inset
+
+.
+ In this case, 
+\begin_inset Formula \[
+k=k_{x}=\sqrt{\frac{\omega^{2}}{c^{2}}-k_{y}^{2}}.\]
+
+\end_inset
+
+For sufficiently large 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ (i.e.
+ high-frequency Fourier components in the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction), 
+\begin_inset Formula $k$
+\end_inset
+
+ is purely imaginary.
+ As we go to large 
+\begin_inset Formula $x$
+\end_inset
+
+, the boundary condition at 
+\begin_inset Formula $x\rightarrow\infty$
+\end_inset
+
+ implies that we must have 
+\begin_inset Formula $\Im k>0$
+\end_inset
+
+ so that 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ is exponentially decaying.
+\end_layout
+
+\begin_layout Standard
+What happens to such a decaying, imaginary-
+\begin_inset Formula $k$
+\end_inset
+
+ evanescent wave in the PML medium? Let 
+\begin_inset Formula $k=i\kappa$
+\end_inset
+
+.
+ Then, in the PML: 
+\begin_inset Formula \begin{equation}
+e^{-\kappa x}\rightarrow e^{-\kappa x-i\frac{\sigma_{x}}{\omega}x}.\label{eq:evanescent-pml-attenuation}\end{equation}
+
+\end_inset
+
+That is, the PML added an oscillation to the evanescent wave, but 
+\emph on
+did not increase its decay rate
+\emph default
+.
+ The PML is still reflectionless, but it didn't 
+\emph on
+help
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Of course, you might object that an evanescent wave is decaying 
+\emph on
+anyway
+\emph default
+, so we hardly need a PML---we just need to make the computational region
+ large enough and it will go away on its own.
+ This is true, but it would be nice to accelerate the process: in some cases
+ 
+\begin_inset Formula $\kappa=\Im k$
+\end_inset
+
+ may be relatively small and we would need a large grid for it to decay
+ sufficiently.
+ This is no problem, however, because 
+\emph on
+nothing
+\emph default
+ in our analysis required 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ to be 
+\emph on
+real
+\emph default
+.
+ We can just as easily make 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ 
+\emph on
+complex
+\emph default
+, where 
+\begin_inset Formula $\Im\sigma_{x}<0$
+\end_inset
+
+ corresponds to a 
+\emph on
+real
+\emph default
+ coordinate stretching.
+ That is, the imaginary part of 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ will accelerate the decay of evanescent waves in eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:evanescent-pml-attenuation"
+
+\end_inset
+
+) above, without creating any reflections.
+\end_layout
+
+\begin_layout Standard
+Adding an imaginary part to 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ does come at a price, however.
+ What it does to the 
+\emph on
+propagating
+\emph default
+ (real 
+\begin_inset Formula $k$
+\end_inset
+
+) waves is to make them oscillate 
+\emph on
+faster
+\emph default
+, which exacerbates the numerical reflections described in Sec\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:discretization"
+
+\end_inset
+
+.
+ In short, everything in moderation.
+\end_layout
+
+\begin_layout Section
+Limitations of PML
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Limitations-of-PML"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PML, while it has revolutionized absorbing boundaries for wave equations,
+ especially (but not limited to) electromagnetism, is not a panacea.
+ Some of the limitations and failure cases of PML are discussed in this
+ section, along with workarounds.
+\end_layout
+
+\begin_layout Subsection
+Discretization and numerical reflections
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:discretization"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, and most famously, PML is only reflectionless if you are solving
+ the 
+\emph on
+exact
+\emph default
+ wave equations.
+ As soon as you discretize the problem (whether for finite difference or
+ finite elements), you are only solving an approximate wave equation and
+ the analytical perfection of PML is no longer valid.
+\end_layout
+
+\begin_layout Standard
+What is left, once you discretize? PML is still an absorbing material: waves
+ that propagate within it are still attenuated, even discrete waves.
+ The boundary between the PML and the regular medium is no longer reflectionless
+, but the reflections are small because the discretization is (presumably)
+ a good approximation for the exact wave equation.
+ How can we make the reflections smaller, as small as we want?
+\end_layout
+
+\begin_layout Standard
+The key fact is that, even without a PML, reflections can be made arbitrarily
+ small as long as the medium is 
+\emph on
+slowly varying
+\emph default
+.
+ That is, in the limit as you 
+\begin_inset Quotes eld
+\end_inset
+
+turn on
+\begin_inset Quotes erd
+\end_inset
+
+ absorption more and more slowly, reflections go to zero due to an 
+\emph on
+adiabatic theorem
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Johnson02:adiabatic"
+
+\end_inset
+
+.
+ With a non-PML absorber, you might need to go 
+\emph on
+very
+\emph default
+ slowly (i.e.
+ a very thick absorbing layer) to get acceptable reflections 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OskooiZh08"
+
+\end_inset
+
+.
+ With PML, however, the constant factor is very good to start with, so experienc
+e shows that a simple quadratic or cubic turn-on of the PML absorption usually
+ produces negligible reflections for a PML layer of only half a wavelength
+ or thinner 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Taflove00,OskooiZh08"
+
+\end_inset
+
+.
+ (Increasing the resolution also increases the effectiveness of the PML,
+ because it approaches the exact wave equation.) 
+\end_layout
+
+\begin_layout Subsection
+Angle-dependent absorption
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:angle-dependence"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another problem is that the PML absorption depends on angle.
+ In particular, consider eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pml-attenuation"
+
+\end_inset
+
+) for the exponential attenuation of waves in the PML, and notice that the
+ attenuation rate is proportional to the ratio 
+\begin_inset Formula $k/\omega$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $k$
+\end_inset
+
+, here, is really just 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+, the 
+\emph on
+component
+\emph default
+ of the wavevector 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction (for a planewave in a homogeneous medium).
+ Thus, the attenuation rate is proportional to 
+\begin_inset Formula $|\vec{k}|\cos\theta$
+\end_inset
+
+, where 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the angle the radiating wave makes with the 
+\begin_inset Formula $x$
+\end_inset
+
+ axis.
+ As the radiation approaches glancing incidence, the attenuation rate goes
+ to zero! This means that, for any fixed PML thickness, waves sufficiently
+ close to glancing incidence will have substantial 
+\begin_inset Quotes eld
+\end_inset
+
+round-trip
+\begin_inset Quotes erd
+\end_inset
+
+ reflections through the PML.
+ 
+\end_layout
+
+\begin_layout Standard
+In practice, this is not as much of a problem as it may sound like at first.
+ In most cases, all of the radiation originates in a localized region of
+ interest near the origin, as in Fig\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:absorbing-layer"
+
+\end_inset
+
+.
+ In this situation, all of the radiation striking the PML will be at an
+ angle 
+\begin_inset Formula $\theta<55^{\circ}\approx\cos^{-1}(1/\sqrt{3})$
+\end_inset
+
+ in the limit as the boundaries move farther and farther away (assuming
+ a cubic computational region).
+ So, if the boundaries are far enough away, we can guarantee a maximum angle
+ and hence make the PML thick enough to sufficiently absorb all waves within
+ this cone of angles.
+\end_layout
+
+\begin_layout Subsection
+Inhomogeneous media where PML fails
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:inhomogeneous-failure"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, PML fails completely in the case where the medium is not 
+\begin_inset Formula $x$
+\end_inset
+
+-invariant (for an 
+\begin_inset Formula $x$
+\end_inset
+
+ boundary) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OskooiZh08"
+
+\end_inset
+
+.
+ You might ask: why should we care about such cases, as if the medium is
+ varying in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction then we will surely get reflections (from the variation) anyway,
+ PML or no PML? Not necessarily.
+\end_layout
+
+\begin_layout Standard
+There are several important cases of 
+\begin_inset Formula $x$
+\end_inset
+
+-varying media that, in the infinite system, have reflectionless propagating
+ waves.
+ Perhaps the simplest is a waveguide that hits the boundary of the computational
+ cell at an angle (not normal to the boundary)---one can 
+\emph on
+usually
+\emph default
+ arrange for all waveguides to leave the computational region at right angles,
+ but not 
+\emph on
+always
+\emph default
+ (e.g.
+ what if you want the transmission through a 
+\begin_inset Formula $30^{\circ}$
+\end_inset
+
+ bend?).
+ Another, more complicated and perhaps more challenging case is that of
+ a 
+\emph on
+photonic crystal
+\emph default
+: for a 
+\emph on
+periodic
+\emph default
+ medium, there are wave solutions (
+\emph on
+Bloch waves
+\emph default
+) that propagate without scattering, and can have very interesting properties
+ that are unattainable in a physical uniform medium 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Joannopoulos95"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For any such case, PML seems to be irrevocably spoiled.
+ The central idea behind PML was that the wave equations, and solutions,
+ were analytic functions in the direction perpendicular to the boundary,
+ and so they could be analytically continued into the complex coordinate
+ plane.
+ If the medium is varying in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction, it is most likely varying discontinously, and hence the whole
+ idea of analytic continuation goes out the window.
+\end_layout
+
+\begin_layout Standard
+What can we do in such a case? Conventional ABCs don't work either (they
+ are typically designed for homogeneous media).
+ The only fallback is the adiabatic theorem alluded to above: even a non-PML
+ absorber, if turned on gradually enough and smoothly enough, will approach
+ a reflectionless limit.
+ The difficulty becomes how gradual is gradual enough, and in finding a
+ way to make the non-PML absorber a tractable thickness 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OskooiZh08"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There is also another interesting case where PML fails.
+ The basic analytic-continuation idea is valid in any 
+\begin_inset Formula $x$
+\end_inset
+
+-invariant medium, regardless of inhomogeneities in the 
+\begin_inset Formula $yz$
+\end_inset
+
+ plane.
+ However, certain inhomogeneous dielectric patterns in the 
+\begin_inset Formula $yz$
+\end_inset
+
+ plane give rise to unusual solutions: “left-handed” solutions where the
+ phase velocity is opposite to the group velocity in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction, while at the same 
+\begin_inset Formula $\omega$
+\end_inset
+
+ the medium 
+\emph on
+also 
+\emph default
+has “right-handed” solutions where the phase velocity and group velocity
+ have the same sign.
+ Most famously, this occurs for certain ``backward-wave'' coaxial waveguides
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Clarricoats60,Waldron64,Omar87,Ibanescu04-anomalous"
+
+\end_inset
+
+.
+ In this case, whatever sign one picks for the PML conductivity 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, either the left- or right-handed modes will be exponentially growing and
+ the PML fails in a spectacular instability
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LohOs09"
+
+\end_inset
+
+.
+ There is a subtle relationship of this failure to the orientation of the
+ fields for a left-handed mode and the anisotropy of the PML
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LohOs09"
+
+\end_inset
+
+.
+ In this case, one must once again abandon PML absorbers and use a different
+ technique, such as a scalar conductivity that is turned on sufficiently
+ gradually to adiabatically absorb outgoing waves.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/stevenj/papers/photon,/home/stevenj/papers/teaching/teaching"
+options "ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

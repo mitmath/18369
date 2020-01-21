@@ -1,0 +1,4113 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\trace}{\tr}
+
+\date{Created August 2007; updated November 1, 2010.}
+\end_preamble
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 2
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Notes on the algebraic structure
+\begin_inset Newline newline
+\end_inset
+
+of wave equations
+\end_layout
+
+\begin_layout Author
+Steven G.
+ Johnson
+\end_layout
+
+\begin_layout Standard
+There are many examples of wave equations in the physical sciences, characterize
+d by oscillating solutions that propagate through space and time while,
+ in lossless media, conserving energy.
+ Examples include the scalar wave equation (e.g.
+ pressure waves in a gas), Maxwell's equations (electromagnetism), Schrödinger's
+ equation (quantum mechanics), elastic vibrations, and so on.
+ From an algebraic perspective, all of these share certain common features.
+ They can 
+\emph on
+all
+\emph default
+ be written abstractly in a form 
+\begin_inset Formula \begin{equation}
+\frac{\partial\vec{w}}{\partial t}=\hat{D}\vec{w}+\vec{s}\label{eq:abstract-wave}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{w}(\vec{x},t)$
+\end_inset
+
+ is some vector-field 
+\emph on
+wave function
+\emph default
+ characterizing the solutions (e.g.
+ a 6-component electric+magnetic field in electromagnetism), 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is some 
+\emph on
+linear operator
+\emph default
+ (using the 
+\begin_inset Quotes eld
+\end_inset
+
+hat
+\begin_inset Quotes erd
+\end_inset
+
+ notation from quantum mechanics to denote linear operators), neglecting
+ nonlinear effects, and 
+\begin_inset Formula $\vec{s}(\vec{x},t)$
+\end_inset
+
+ is some source term.
+ The key property of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ for a wave equation is that it is 
+\emph on
+anti-Hermitian
+\emph default
+, as opposed to a parabolic equation (e.g.
+ a diffusion equation) where 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is Hermitian and negative semi-definite.
+ From this anti-Hermitian property follow familiar features of wave equations,
+ such as oscillating/propagating solutions and conservation of energy.
+ In many cases, we will set 
+\begin_inset Formula $\vec{s}=0$
+\end_inset
+
+ and focus on the source-free behavior.
+\end_layout
+
+\begin_layout Standard
+In the following note, we first derive some general properties of eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) from the characteristics of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+, and then give examples of physical wave equations that can be written
+ in this form and have these characteristics.
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+General properties of wave equations
+\end_layout
+
+\begin_layout Standard
+In lossless media, 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ turns out to be an 
+\emph on
+anti-Hermitian
+\emph default
+ operator under some inner product 
+\begin_inset Formula $(\vec{w},\vec{w}')$
+\end_inset
+
+ between any two fields 
+\begin_inset Formula $\vec{w}(\vec{x},t)$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{w}'(\vec{x},t)$
+\end_inset
+
+ at a given time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ This means that 
+\begin_inset Formula $(\vec{w},\hat{D}\vec{w}')=-(\hat{D}\vec{w},\vec{w}')$
+\end_inset
+
+ for any 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{w}'$
+\end_inset
+
+: 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ flips sign when it moves from one side to the other of an inner product.
+ This is proven below for several common wave equations.
+ Formally, 
+\begin_inset Formula $\hat{D}^{\dagger}=-\hat{D}$
+\end_inset
+
+, where 
+\begin_inset Formula $\dagger$
+\end_inset
+
+ is the adjoint: for any operator 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+, 
+\begin_inset Formula $(\vec{w},\hat{A}\vec{w}')=(\hat{A}^{\dagger}\vec{w},\vec{w}')$
+\end_inset
+
+ by definition of 
+\begin_inset Formula $\hat{A}^{\dagger}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The anti-Hermitian property of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ immediately leads to many useful consequences, and in particular the features
+ that make the equation 
+\begin_inset Quotes eld
+\end_inset
+
+wave-like:
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Harmonic modes and Hermitian eigenproblems
+\end_layout
+
+\begin_layout Standard
+First, we can write down an 
+\emph on
+eigen-equation
+\emph default
+ for the 
+\emph on
+harmonic-mode
+\emph default
+ solutions 
+\begin_inset Formula $\vec{w}(\vec{x},t)=\vec{W}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+, assuming 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is linear and time-invariant.
+ Substituting 
+\begin_inset Formula $\vec{W}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ into eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) for the source-free 
+\begin_inset Formula $\vec{s}=0$
+\end_inset
+
+ case, we obtain: 
+\begin_inset Formula \begin{equation}
+\omega\vec{W}=i\hat{D}\vec{W},\label{eq:abstract-eig}\end{equation}
+
+\end_inset
+
+which is a 
+\emph on
+Hermitian
+\emph default
+ eigenproblem: if 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is anti-Hermitian, then 
+\begin_inset Formula $i\hat{D}$
+\end_inset
+
+ is Hermitian.
+ It then follows that the eigenvalues 
+\begin_inset Formula $\omega$
+\end_inset
+
+ are real and that solutions 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ can be chosen orthogonal.
+ Notice that the real eigenvalues 
+\begin_inset Formula $\omega$
+\end_inset
+
+ corresponds directly to our assumption that the medium has no dissipation
+ (or gain)---if 
+\begin_inset Formula $\omega$
+\end_inset
+
+ were complex, waves would exponentially decay (or grow), but instead they
+ oscillate forever in time.
+ For any reasonable physical problem, it also follows that the eigenmodes
+ are a 
+\emph on
+complete basis
+\emph default
+ for all 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+, so they completely characterize all solutions.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Technically, we require 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ or its inverse to be 
+\emph on
+compact
+\emph default
+, which is true as long as we have a reasonable decaying Green's function
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gohberg00"
+
+\end_inset
+
+.
+ This is almost always true for physical wave problems, but functional analysts
+ love to come up with pathological exceptions to this rule.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a problem where 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is purely real (pretty much every wave equation except for Schrödinger),
+ the complex conjugate of an eigenfunction is also an eigenfunction with
+ the conjugated eigenvalue, so the eigenvalues come in 
+\begin_inset Formula $\pm i\omega$
+\end_inset
+
+ pairs---by adding complex conjugates, one can therefore get the purely
+ real solutions one expects in a real equation.
+\end_layout
+
+\begin_layout Subsection
+Planewave solutions
+\end_layout
+
+\begin_layout Standard
+Second, the most familar feature of wave equations is the existence of not
+ just oscillation in 
+\emph on
+time
+\emph default
+ (real 
+\begin_inset Formula $\omega$
+\end_inset
+
+), but oscillation in 
+\emph on
+space
+\emph default
+ as well.
+ In particular, with a wave equation one immediately thinks of sinusoidal
+ 
+\emph on
+planewave
+\emph default
+ solutions 
+\begin_inset Formula $\sim e^{i(\vec{k}\cdot\vec{x}-\omega t)}$
+\end_inset
+
+ for some real 
+\emph on
+wave vector
+\emph default
+ 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+.
+ These solutions arise in 
+\emph on
+any
+\emph default
+ equation of the anti-Hermitian form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) that additionally has 
+\emph on
+translational symmetry
+\emph default
+ (the medium is 
+\emph on
+homogeneous)
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Intuitively, translational symmetry means that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is the same at different points in space.
+ Formally, we can make this precise by defining a 
+\emph on
+translation operator
+\emph default
+ 
+\begin_inset Formula $\hat{T}_{\vec{d}}$
+\end_inset
+
+ that takes a function 
+\begin_inset Formula $\vec{w}(\vec{x},t)$
+\end_inset
+
+ and translates it in space by a displacement 
+\begin_inset Formula $\vec{d}$
+\end_inset
+
+: 
+\begin_inset Formula \[
+\hat{T}_{\vec{d}}\vec{w}(\vec{x},t)=\vec{w}(\vec{x}-\vec{d},t).\]
+
+\end_inset
+
+When we say that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ has translational symmetry, we mean that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is the same if we first translate by some 
+\begin_inset Formula $\vec{d}$
+\end_inset
+
+, then operate 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+, then translate back: 
+\begin_inset Formula $\hat{D}=\hat{T}_{\vec{d}}^{-1}\hat{D}\hat{T}_{\vec{d}}$
+\end_inset
+
+, or equivalently 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ 
+\emph on
+commutes
+\emph default
+ with 
+\begin_inset Formula $\hat{T}_{\vec{d}}$
+\end_inset
+
+: 
+\begin_inset Formula \[
+\hat{D}\hat{T}_{\vec{d}}=\hat{T}_{\vec{d}}\hat{D}\]
+
+\end_inset
+
+for 
+\emph on
+all
+\emph default
+ displacements 
+\begin_inset Formula $\vec{d}$
+\end_inset
+
+.
+ When one has commuting operators, however, one can choose simultaneous
+ eigenvectors of both operators 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tannoudji77"
+
+\end_inset
+
+ .
+ That means that the eigenvectors 
+\begin_inset Formula $\hat{D}(\vec{x})$
+\end_inset
+
+ of 
+\begin_inset Formula $i\hat{D}$
+\end_inset
+
+ (and 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+) can be written in the form of eigenfunctions of 
+\begin_inset Formula $\hat{T}_{\vec{d}}$
+\end_inset
+
+, which are exponential functions 
+\begin_inset Formula $e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+ for some 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+: 
+\begin_inset Formula \begin{equation}
+\vec{w}(\vec{x},t)=\vec{W}(\vec{x})e^{-i\omega t}=\vec{W}_{0}e^{i(\vec{k}\cdot\vec{x}-\omega t)}\label{eq:plane-wave}\end{equation}
+
+\end_inset
+
+for some constant vector 
+\begin_inset Formula $\vec{W}_{0}$
+\end_inset
+
+ (depending on 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\omega$
+\end_inset
+
+) determined by 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+.
+ The wave vector 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ must be real if we require our states to be bounded for all 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ (not exponentially growing in any direction).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Complex 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ solutions are called 
+\emph on
+evanescent waves
+\emph default
+, and can appear if 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is only translationally invariant over a finite region (e.g.
+ if the medium is piecewise-constant).
+ Even the real 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ solutions are a bit weird because they are not normalizable: 
+\begin_inset Formula $\Vert e^{i\vec{k}\cdot\vec{x}}\Vert^{2}$
+\end_inset
+
+ is not finite! By admitting such solutions, we are technically employing
+ a 
+\begin_inset Quotes eld
+\end_inset
+
+rigged
+\begin_inset Quotes erd
+\end_inset
+
+ Hilbert space, which requires a bit of care but is not a major problem.
+ Alternatively, we can put the whole system in a finite 
+\begin_inset Formula $L\times L\times L$
+\end_inset
+
+ box with periodic boundary conditions, in which case the components of
+ 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ are restricted to discrete multiples of 
+\begin_inset Formula $2\pi/L$
+\end_inset
+
+, and take the limit 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+ at the end of the day.
+\end_layout
+
+\end_inset
+
+ For each 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+, there will be a discrete set of eigenfrequencies 
+\begin_inset Formula $\omega_{n}(\vec{k})$
+\end_inset
+
+, called the 
+\emph on
+dispersion relation
+\emph default
+ or the 
+\emph on
+band structure
+\emph default
+ of the medium.
+\end_layout
+
+\begin_layout Standard
+Let us also mention two generalizations, both of which follow from the broader
+ viewpoint of 
+\emph on
+group representation theory
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tinkham03,Inui96"
+
+\end_inset
+
+.
+ First, the existence of planewave solutions can be thought of as a consequence
+ of group theory.
+ The symmetry operators that commute with 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ form the 
+\emph on
+symmetry group
+\emph default
+ (or 
+\emph on
+space group
+\emph default
+) of the problem (where the group operation is simply composition), and
+ it can be shown that the eigenfunctions of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ can be chosen to transform as 
+\emph on
+irreducible representations
+\emph default
+ of the symmetry group.
+ For the translation group 
+\begin_inset Formula $\{\hat{T}_{\vec{d}}\,|\,\vec{d}\in\mathbb{R}^{3}\}$
+\end_inset
+
+, the irreducible representations are the exponential functions 
+\begin_inset Formula $\{e^{-i\vec{k}\cdot\vec{d}}\}$
+\end_inset
+
+, but more complicated and interesting representations arise when one includes
+ rotations and other symmetries.
+ Second, in order to get wave solutions, one need not require 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ to commute with 
+\begin_inset Formula $\hat{T}_{\vec{d}}$
+\end_inset
+
+ for 
+\emph on
+all
+\emph default
+ 
+\begin_inset Formula $\vec{d}$
+\end_inset
+
+.
+ It is sufficient to require commutation for 
+\begin_inset Formula $\vec{d}=\vec{R}=n_{1}\vec{R}_{1}+n_{2}\vec{R}_{2}+n_{3}\vec{R}_{3}$
+\end_inset
+
+ on a discrete periodic 
+\emph on
+lattice
+\emph default
+ 
+\begin_inset Formula $\vec{R}$
+\end_inset
+
+ with 
+\emph on
+primitive
+\emph default
+ 
+\emph on
+lattice vectors
+\emph default
+ 
+\begin_inset Formula $\vec{R}_{\ell}$
+\end_inset
+
+ (and any 
+\begin_inset Formula $n_{\ell}\in\mathbb{Z}$
+\end_inset
+
+): 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is 
+\emph on
+periodic
+\emph default
+, with 
+\emph on
+discrete
+\emph default
+ translational symmetry.
+ In this case, one obtains the 
+\emph on
+Bloch-Floquet theorem
+\emph default
+ (most famous in solid-state physics): the eigenfunctions 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ can be chosen in the form of a plane wave multiplied by a periodic 
+\emph on
+Bloch envelope
+\emph default
+.
+ More explicitly, one has 
+\emph on
+Bloch wave
+\emph default
+ solutions: 
+\begin_inset Formula \begin{equation}
+\vec{w}(\vec{x},t)=\vec{W}_{\vec{k},n}(\vec{x})e^{i[\vec{k}\cdot\vec{x}-\omega_{n}(\vec{k})t]},\label{eq:bloch-wave}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{W}_{\vec{k},n}(\vec{x})$
+\end_inset
+
+ is a periodic function (invariant under translation by any 
+\begin_inset Formula $\vec{R}$
+\end_inset
+
+ in the lattice) satisfying the Hermitian eigenproblem: 
+\begin_inset Formula \[
+\omega_{n}(\vec{k})\vec{W}_{\vec{k},n}=ie^{-i\vec{k}\cdot\vec{x}}\hat{D}e^{i\vec{k}\cdot\vec{x}}\vec{W}_{\vec{k},n}.\]
+
+\end_inset
+
+The planewave case (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:plane-wave"
+
+\end_inset
+
+) [
+\emph on
+continuous
+\emph default
+ translational symmetry] is simply the special case of the Bloch wave (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bloch-wave"
+
+\end_inset
+
+) [
+\emph on
+discrete
+\emph default
+ translational symmetry] in the limit where the lattice vectors become infinites
+imal (
+\begin_inset Formula $|\vec{R}_{\ell}|\rightarrow0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Time evolution and conservation of energy
+\end_layout
+
+\begin_layout Standard
+Third, we obtain 
+\emph on
+conservation of energy
+\emph default
+ in the absence of sources (
+\begin_inset Formula $\vec{s}=0$
+\end_inset
+
+), where we define the 
+\begin_inset Quotes eld
+\end_inset
+
+energy
+\begin_inset Quotes erd
+\end_inset
+
+ of a field 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+ as its norm 
+\begin_inset Formula $\Vert\vec{w}\Vert^{2}=(\vec{w},\vec{w})$
+\end_inset
+
+.
+ The proof that 
+\begin_inset Formula $\Vert\vec{w}\Vert^{2}$
+\end_inset
+
+ is conserved for 
+\begin_inset Formula $\vec{s}=0$
+\end_inset
+
+ (sources would add or remove energy) is elementary, given an anti-Hermitian
+ 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+: 
+\begin_inset Formula \[
+\frac{\partial\Vert\vec{w}\Vert^{2}}{\partial t}=\frac{\partial}{\partial t}(\vec{w},\vec{w})=(\dot{\vec{w}},\vec{w})+(\vec{w},\dot{\vec{w}})=(\hat{D}\vec{w},\vec{w})+(\vec{w},\hat{D}\vec{w})=(\hat{D}\vec{w},\vec{w})-(\hat{D}\vec{w},\vec{w})=0.\]
+
+\end_inset
+
+This works even if 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is time-dependent, which may seem surprising: if you take a wave equation
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+shake it
+\begin_inset Quotes erd
+\end_inset
+
+ by varying 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ rapidly in time, you might think you could add energy to the system.
+ But no: a time-varying 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ can alter the 
+\emph on
+frequency
+\emph default
+ of the solution (which is not conserved in a time-varying problem), but
+ not the 
+\emph on
+energy
+\emph default
+.
+ However, this is not the whole story, because 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is not the only possible source of time-dependent behavior: the definition
+ of our 
+\emph on
+inner product
+\emph default
+ 
+\begin_inset Formula $(\vec{w},\vec{w}')$
+\end_inset
+
+ can depend on 
+\begin_inset Formula $t$
+\end_inset
+
+ as well.
+ In fact, we will see that this is often possible for physical systems such
+ as Maxwell's equations or even the scalar wave equation.
+ In particular, our inner product is often of the form 
+\begin_inset Formula $(\vec{w},\vec{w}')=(\vec{w},\hat{P}\vec{w}')_{0}$
+\end_inset
+
+, where 
+\begin_inset Formula $(\cdot,\cdot)_{0}$
+\end_inset
+
+ denotes an inner product independent of time and 
+\begin_inset Formula $\hat{P}$
+\end_inset
+
+ is some positive-definite Hermitian operator depending on the wave medium,
+ which may depend on time.
+ In this case, when taking the time derivative of 
+\begin_inset Formula $\Vert\vec{w}\Vert^{2}$
+\end_inset
+
+, we also get a term 
+\begin_inset Formula $(\vec{w},\frac{\partial\hat{P}}{\partial t}\vec{w})_{0}$
+\end_inset
+
+, which is not in general zero.
+ So, a 
+\emph on
+time-varying medium
+\emph default
+ can break conservation of energy if the time variation 
+\emph on
+changes the norm
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is time-independent, we can easily write down the explicit solution of
+ the initial-value problem.
+ In this case eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) for 
+\begin_inset Formula $\vec{s}=0$
+\end_inset
+
+ is solved formally by the operator exponential: 
+\begin_inset Formula \[
+\vec{w}(\vec{x},t)=e^{\hat{D}t}\vec{w}(\vec{x},0)=\hat{U}_{t}\vec{w}(\vec{x},0)\]
+
+\end_inset
+
+for an initial condition 
+\begin_inset Formula $\vec{w}(\vec{x},0)$
+\end_inset
+
+ and a 
+\emph on
+time-evolution operator
+\emph default
+ 
+\begin_inset Formula $\hat{U}_{t}=e^{\hat{D}t}$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is anti-Hermitian, it flips sign when it switches sides in an inner product,
+ and hence 
+\begin_inset Formula $\hat{U}_{t}$
+\end_inset
+
+ changes from 
+\begin_inset Formula $\hat{U}_{t}=e^{\hat{D}t}$
+\end_inset
+
+ to 
+\begin_inset Formula $\hat{U}_{t}^{\dagger}=e^{-\hat{D}t}=\hat{U}_{t}^{-1}=\hat{U}_{-t}$
+\end_inset
+
+.
+ This means that 
+\begin_inset Formula $\hat{U}_{t}$
+\end_inset
+
+ is a 
+\emph on
+unitary
+\emph default
+ operator, and hence
+\begin_inset Formula \[
+\left\Vert \hat{U}_{t}\vec{w}\right\Vert ^{2}=(\hat{U}_{t}\vec{w},\hat{U}_{t}\vec{w})=(\hat{U}_{t}^{-1}\hat{U}_{t}\vec{w},\vec{w})=\left\Vert \vec{w}\right\Vert ^{2}.\]
+
+\end_inset
+
+ Thus, 
+\begin_inset Formula $\Vert\vec{w}\Vert^{2}$
+\end_inset
+
+ does not change as the field evolves in time: energy is conserved!
+\end_layout
+
+\begin_layout Subsection
+Off-diagonal block form and reduced-rank eigenproblems
+\end_layout
+
+\begin_layout Standard
+There is another variant on the eigenequation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-eig"
+
+\end_inset
+
+) 
+\begin_inset Formula $\omega\vec{W}=i\hat{D}\vec{W}$
+\end_inset
+
+: if we operate 
+\begin_inset Formula $i\hat{D}$
+\end_inset
+
+ again on both sides, we get 
+\begin_inset Formula $\omega^{2}\vec{W}=-\hat{D}^{2}\vec{W}$
+\end_inset
+
+, where 
+\begin_inset Formula $-\hat{D}^{2}$
+\end_inset
+
+ is automatically Hermitian and positive semi-definite.
+ Why would we want to do this? The main reason is that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ often (not always) has a special block form: 
+\begin_inset Formula \begin{equation}
+\hat{D}=\left(\begin{array}{cc}
+ & \hat{D}_{2}\\
+\hat{D}_{1}\end{array}\right),\label{eq:abstract-block}\end{equation}
+
+\end_inset
+
+for some operators 
+\begin_inset Formula $\hat{D}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{D}_{2}$
+\end_inset
+
+.
+ The anti-Hermitian property 
+\begin_inset Formula $\hat{D}^{*}=-\hat{D}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $\hat{D}_{2}^{*}=-\hat{D}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{D}_{1}^{*}=-\hat{D}_{2}$
+\end_inset
+
+ under an appropriate inner product (see below).
+ In this case, 
+\begin_inset Formula $\hat{D}^{2}$
+\end_inset
+
+ is 
+\emph on
+block diagonal
+\emph default
+ and 
+\emph on
+negative-semidefinite
+\emph default
+:
+\begin_inset Formula \[
+\hat{D}^{2}=\left(\begin{array}{cc}
+\hat{D}_{2}\hat{D}_{1} & 0\\
+0 & \hat{D}_{1}\hat{D}_{2}\end{array}\right)=\left(\begin{array}{cc}
+-\hat{D}_{1}^{*}\hat{D}_{1} & 0\\
+0 & -\hat{D}_{2}^{*}\hat{D}_{2}\end{array}\right).\]
+
+\end_inset
+
+This means that the 
+\begin_inset Formula $\omega^{2}\vec{W}=-\hat{D}^{2}\vec{W}$
+\end_inset
+
+ problem breaks into two 
+\emph on
+lower-dimensional
+\emph default
+ eigenproblems with operators 
+\begin_inset Formula $-\hat{D}_{2}\hat{D}_{1}=\hat{D}_{1}^{*}\hat{D}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $-\hat{D}_{1}\hat{D}_{2}=\hat{D}_{2}^{*}\hat{D}_{2}$
+\end_inset
+
+.
+ In particular, let us break our solution 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+ into two pieces: 
+\begin_inset Formula \[
+\vec{w}=\left(\begin{array}{c}
+\vec{w}_{1}\\
+\vec{w}_{2}\end{array}\right)\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{D}_{k}$
+\end_inset
+
+ operates on 
+\begin_inset Formula $\vec{w}_{k}$
+\end_inset
+
+, and suppose that our inner product also divides additively between these
+ two pieces: 
+\begin_inset Formula \[
+(\vec{w},\vec{w}')=(\vec{w}_{1},\vec{w}_{1}')_{1}+(\vec{w}_{2},\vec{w}_{2}')_{2}\]
+
+\end_inset
+
+in terms of some lower-dimensional inner products 
+\begin_inset Formula $(\cdot,\cdot)_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $(\cdot,\cdot)_{2}$
+\end_inset
+
+.
+ In this case, it immediately follows that 
+\begin_inset Formula $-\hat{D}_{2}\hat{D}_{1}=\hat{D}_{1}^{*}\hat{D}_{1}$
+\end_inset
+
+ is Hermitian positive semi-definite under 
+\begin_inset Formula $(\cdot,\cdot)_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $-\hat{D}_{1}\hat{D}_{2}=\hat{D}_{2}^{*}\hat{D}_{2}$
+\end_inset
+
+ is Hermitian positive semi-definite under 
+\begin_inset Formula $(\cdot,\cdot)_{2}$
+\end_inset
+
+.
+ We therefore have obtained two smaller Hermitian positive semi-definite
+ eigenproblems 
+\begin_inset Formula \begin{equation}
+-\hat{D}_{2}\hat{D}_{1}\vec{W}_{1}=\omega^{2}\vec{W}_{1},\label{eq:abstract-eig1}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+-\hat{D}_{1}\hat{D}_{2}\vec{W}_{2}=\omega^{2}\vec{W}_{2},\label{eq:abstract-eig2}\end{equation}
+
+\end_inset
+
+again with real 
+\begin_inset Formula $\omega$
+\end_inset
+
+ solutions and orthogonality relations on the 
+\begin_inset Formula $\vec{W}_{k}$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The fact that they are positive semi-definite (and often positive-definite,
+ since it is typically possible to exclude the 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+ solutions) is especially advantageous for numerical methods.
+ Some of the best iterative eigensolver methods are restricted to positive-defin
+ite Hermitian problems, for example 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bai00"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Moreover, each of these has to give 
+\emph on
+all
+\emph default
+ of the eigenfrequencies 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+ Every eigenfunction of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ must obviously be an eigenfunction of 
+\begin_inset Formula $\hat{D}^{2}$
+\end_inset
+
+, and the converse is also true: given an eigenvector 
+\begin_inset Formula $\vec{W}_{1}$
+\end_inset
+
+ of eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-eig1"
+
+\end_inset
+
+) with eigenvalue 
+\begin_inset Formula $\omega^{2}$
+\end_inset
+
+, to get an eigenvector 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ with eigenvalue 
+\begin_inset Formula $\omega$
+\end_inset
+
+ we just set 
+\begin_inset Formula \begin{equation}
+\vec{W}_{2}=\frac{i}{\omega}\hat{D}_{1}\vec{W}_{1}.\label{eq:W2-from-W1}\end{equation}
+
+\end_inset
+
+This formula looks a bit suspicious in the case where 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+: the 
+\emph on
+static
+\emph default
+ (non-oscillatory) solutions.
+ For these (usually less-interesting) static solutions, the 
+\begin_inset Formula $\vec{W}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{W}_{2}$
+\end_inset
+
+ eigenproblems decouple from one another and we can just set 
+\begin_inset Formula $\vec{W}_{2}=0$
+\end_inset
+
+ in 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+.
+ Similarly, if we solve for an eigenvector 
+\begin_inset Formula $\vec{W}_{2}$
+\end_inset
+
+ of eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-eig2"
+
+\end_inset
+
+), we can construct 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ via 
+\begin_inset Formula $\vec{W}_{1}=i\hat{D}_{2}\vec{W}_{2}/\omega$
+\end_inset
+
+ for 
+\begin_inset Formula $\omega\neq0$
+\end_inset
+
+ or set 
+\begin_inset Formula $\vec{W}_{1}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We lost the sign of 
+\begin_inset Formula $\omega$
+\end_inset
+
+ by squaring it (which is precisely why we can solve an eigenproblem of
+ 
+\begin_inset Quotes eld
+\end_inset
+
+half
+\begin_inset Quotes erd
+\end_inset
+
+ the size), but this doesn't matter: 
+\begin_inset Formula $\omega=\pm\sqrt{\omega^{2}}$
+\end_inset
+
+ both yield eigensolutions 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ by (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:W2-from-W1"
+
+\end_inset
+
+).
+ Therefore, in problems of the block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+), the eigenvalues 
+\begin_inset Formula $\omega$
+\end_inset
+
+ 
+\emph on
+always
+\emph default
+ come in positive/negative pairs.
+ In the common case where 
+\begin_inset Formula $\hat{D}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{D}_{2}$
+\end_inset
+
+ are purely 
+\emph on
+real
+\emph default
+, the eigenvectors 
+\begin_inset Formula $\vec{W}_{1}$
+\end_inset
+
+ (or 
+\begin_inset Formula $\vec{W}_{2}$
+\end_inset
+
+) can also be chosen real, we can therefore obtain real solutions 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+ by adding the 
+\begin_inset Formula $+\omega$
+\end_inset
+
+ and 
+\begin_inset Formula $-\omega$
+\end_inset
+
+ eigenfunctions (which are complex conjugates).
+\end_layout
+
+\begin_layout Subsection
+Harmonic sources and reciprocity
+\end_layout
+
+\begin_layout Standard
+The most important kind of source 
+\begin_inset Formula $\vec{s}$
+\end_inset
+
+ is a 
+\emph on
+harmonic
+\emph default
+ source 
+\begin_inset Formula \[
+\vec{s}(\vec{x},t)=\vec{S}(\vec{x})e^{-i\omega t}.\]
+
+\end_inset
+
+ In this case, we are looking for the 
+\emph on
+steady-state
+\emph default
+ response 
+\begin_inset Formula $\vec{w}=\vec{W}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+.
+ Substituting these into eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) problem of solving for 
+\begin_inset Formula $\vec{W}(\vec{x})$
+\end_inset
+
+ is now in the form of an ordinary linear equation, rather than an eigenproblem:
+ 
+\begin_inset Formula \[
+\left(i\hat{D}-\omega\right)\vec{W}=\hat{O}\vec{W}=-i\vec{S}.\]
+
+\end_inset
+
+Notice that the operator 
+\begin_inset Formula $\hat{O}=i\hat{D}-\omega$
+\end_inset
+
+ on the left-hand side is Hermitian.
+ Suppose that we solve the equation twice, with sources 
+\begin_inset Formula $\vec{S}^{(1)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{S}^{(2)}$
+\end_inset
+
+ to get solutions 
+\begin_inset Formula $\vec{W}^{(1)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{W}^{(2)}$
+\end_inset
+
+.
+ Then, the Hermitian property means that we obtain the following identity
+ for the inner product: 
+\begin_inset Formula \[
+(\vec{W}^{(1)},\vec{S}^{(2)})=(\vec{W}^{(1)},i\hat{O}\vec{W}^{(2)})=(-i\hat{O}\vec{W}^{(1)},\vec{W}^{(2)})=-(\vec{S}^{(1)},\vec{W}^{(2)}).\]
+
+\end_inset
+
+This is 
+\emph on
+almost
+\emph default
+ the same as a very well known property of wave equations, known as 
+\emph on
+reciprocity
+\emph default
+.
+ The reason it is only 
+\emph on
+almost
+\emph default
+ the same is that reciprocity relations normally use an 
+\emph on
+unconjugated
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
+inner product,
+\begin_inset Quotes erd
+\end_inset
+
+ assuming 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ is not only Hermitian but real (or complex-symmetric).
+ This gets rid of the minus sign on the right-hand side, for one thing.
+ It also only requires 
+\begin_inset Formula $i\hat{D}$
+\end_inset
+
+ to be complex-symmetric (Hermitian under an unconjugated inner product)
+ rather than Hermitian, which allows reciprocity to apply even to systems
+ with dissipation.
+ (It also simplifies some technical difficulties regarding the boundary
+ conditions at infinity.) See e.g.
+ Ref\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Potton04"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+What if 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ is not real or complex-symmetric, e.g.
+ in the common case where 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is real-antisymmetric? Can we still have reciprocity with an unconjugated
+ inner product? In this case, we can often instead express reciprocity using
+ the block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+), since in that case the operator is real-symmetric if 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is real, as described below.
+\end_layout
+
+\begin_layout Standard
+Just as for the eigenproblem, it is common when we have the block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+) of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ to break the problem into a smaller linear equation for 
+\begin_inset Formula $\vec{W}_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\vec{W}_{2}$
+\end_inset
+
+, similarly subdividing 
+\begin_inset Formula $\vec{S}=(\vec{S}_{1};\vec{S}_{2}).$
+\end_inset
+
+ For example, the equation for 
+\begin_inset Formula $\vec{W}_{1}$
+\end_inset
+
+ is 
+\begin_inset Formula \begin{equation}
+(-\hat{D}_{2}\hat{D}_{1}-\omega^{2})\vec{W}_{1}=-i\omega\vec{S}_{1}+\hat{D}_{2}\vec{S}_{2}.\label{eq:abstract-helmholtz}\end{equation}
+
+\end_inset
+
+For example, in the case of the scalar wave equation below, this equation
+ becomes a inhomogeneous scalar Helmholtz equation.
+ Again, notice that the operator 
+\begin_inset Formula $-\hat{D}_{2}\hat{D}_{1}-\omega^{2}$
+\end_inset
+
+ on the left-hand side is Hermitian.
+ In fact, it is often purely real-symmetric (or complex-symmetric in a system
+ with dissipation), which allows us to derive recprocity using an unconjugated
+ inner product as described above.
+\end_layout
+
+\begin_layout Section
+The scalar wave equation
+\end_layout
+
+\begin_layout Standard
+There are many formulations of waves and wave equations in the physical
+ sciences, but the prototypical example is the (source-free) 
+\emph on
+scalar wave equation:
+\emph default
+ 
+\begin_inset Formula \begin{equation}
+\nabla\cdot(a\nabla u)=\frac{1}{b}\frac{\partial^{2}u}{\partial t^{2}}=\frac{\ddot{u}}{b}\label{eq:scalar-wave}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $u(\vec{x},t)$
+\end_inset
+
+ is the scalar wave amplitude and 
+\begin_inset Formula $c=\sqrt{ab}$
+\end_inset
+
+ is the phase velocity of the wave for some parameters 
+\begin_inset Formula $a(\vec{x})$
+\end_inset
+
+ and 
+\begin_inset Formula $b(\vec{x})$
+\end_inset
+
+ of the (possibly inhomogeneous) medium.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+More generally, 
+\begin_inset Formula $a$
+\end_inset
+
+ may be a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ tensor in an anisotropic medium.
+\end_layout
+
+\end_inset
+
+ This can be written in the form of eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) by splitting into two first-order equations, in terms of 
+\begin_inset Formula $u$
+\end_inset
+
+ and a new vector variable 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ satisfying 
+\begin_inset Formula $a\nabla u=\dot{\vec{v}}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\nabla\cdot\vec{v}=\dot{u}$
+\end_inset
+
+: 
+\begin_inset Formula \[
+\frac{\partial\vec{w}}{\partial t}=\frac{\partial}{\partial t}\left(\begin{array}{c}
+u\\
+\vec{v}\end{array}\right)=\left(\begin{array}{cc}
+ & b\nabla\cdot\\
+a\nabla\end{array}\right)\left(\begin{array}{c}
+u\\
+\vec{v}\end{array}\right)=\hat{D}\vec{w}\]
+
+\end_inset
+
+for a 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ linear operator 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ and a 4-component vector 
+\begin_inset Formula $\vec{w}=(u;\vec{v})$
+\end_inset
+
+, in 3 spatial dimensions.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, we need to show that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is anti-Hermitian, for the case of lossless media where 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are real and positive.
+ To do this, we must first define an inner product 
+\begin_inset Formula $(\vec{w},\vec{w}')$
+\end_inset
+
+ by the integral over all space: 
+\begin_inset Formula \[
+(\vec{w},\vec{w}')=\int\left[u^{*}\left(b^{-1}u'\right)+\vec{v}^{*}\left(a^{-1}\vec{v}'\right)\right]\, d^{3}\vec{x},\]
+
+\end_inset
+
+where 
+\begin_inset Formula $*$
+\end_inset
+
+ denotes the complex conjugate (allowing complex 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+ for generality).
+ 
+\end_layout
+
+\begin_layout Standard
+Now, in this inner product, it can easily be verified via integration by
+ parts that:
+\begin_inset Formula \[
+(\vec{u},\hat{D}\vec{u}')=\int[u^{*}\nabla\cdot\vec{v}'+\vec{v}^{*}\cdot\nabla u']\, d^{3}\vec{x},=\cdots=-(\hat{D}\vec{u},\vec{u}'),\]
+
+\end_inset
+
+which by definition means that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is 
+\emph on
+anti-Hermitian
+\emph default
+.
+ All the other properties---conservation of energy, real eigenvalues, etcetera--
+-then follow.
+\end_layout
+
+\begin_layout Standard
+Also, note that the 
+\begin_inset Formula ${-\hat{D}}^{2}$
+\end_inset
+
+ eigenproblem in this case gives us more-convenient smaller eigenproblems,
+ as noted earlier: 
+\begin_inset Formula $-b\nabla\cdot(a\nabla u)=\omega^{2}u$
+\end_inset
+
+, and 
+\begin_inset Formula $-a\nabla(b\nabla\cdot\vec{v})=\omega^{2}\vec{v}$
+\end_inset
+
+.
+ (These may not look Hermitian, but remember our inner product.) And in the
+ harmonic-source case, we get an operator 
+\begin_inset Formula $-\hat{D}_{2}\hat{D}_{1}-\omega^{2}=-b\nabla\cdot a\nabla-\omega^{2}$
+\end_inset
+
+ when solving for 
+\begin_inset Formula $u$
+\end_inset
+
+ via (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-helmholtz"
+
+\end_inset
+
+)---for the common case 
+\begin_inset Formula $a=b=1$
+\end_inset
+
+, this is the scalar Helmholtz operator 
+\begin_inset Formula $-(\nabla^{2}+\omega^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Maxwell's equations
+\end_layout
+
+\begin_layout Standard
+Maxwell's equations, in terms of the electric field 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+, magnetic field 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+, dielectric permittivity 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and magnetic permeability 
+\begin_inset Formula $\mu$
+\end_inset
+
+, are (neglecting material dispersion or nonlinear effects): 
+\begin_inset Formula \[
+\nabla\times\vec{E}=-\frac{\partial(\mu\vec{H})}{\partial t}\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\nabla\times\vec{H}=\frac{\partial(\varepsilon\vec{E})}{\partial t}+\vec{J},\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is a current source; 
+\begin_inset Formula $\vec{J}=0$
+\end_inset
+
+ in the source-free case.
+ The other two Maxwell's equations 
+\begin_inset Formula $\nabla\cdot\varepsilon\vec{E}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\cdot\mu\vec{H}=0$
+\end_inset
+
+ express constraints on the fields (in the absence of free charge) that
+ are preserved by the above two dynamical equations, and can thus be ignored
+ for the purposes of this analysis (they are just constraints on the initial
+ conditions).
+ For simplicity, we restrict ourselves to the case where 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ do not depend on time: the materials may vary with position 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+, but they are not moving or changing.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+One can get very interesting physics by including the possibility of time-varyin
+g materials!
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ may also be 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ tensors rather than scalars, in an anisotropic medium, but we assume that
+ they are Hermitian positive-definite in order to be a lossless and transparent
+ medium.
+ In this case, the equations can be written in the form of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) via: 
+\begin_inset Formula \[
+\frac{\partial\vec{w}}{\partial t}=\frac{\partial}{\partial t}\left(\begin{array}{c}
+\vec{E}\\
+\vec{H}\end{array}\right)=\left(\begin{array}{cc}
+ & \frac{1}{\varepsilon}\nabla\times\\
+-\frac{1}{\mu}\nabla\times\end{array}\right)\left(\begin{array}{c}
+\vec{E}\\
+\vec{H}\end{array}\right)+\left(\begin{array}{c}
+-\vec{J}/\varepsilon\\
+\vec{0}\end{array}\right)=\hat{D}\vec{w}+\vec{s},\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+ here is a 6-component vector field.
+\end_layout
+
+\begin_layout Standard
+To show that this 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is anti-Hermitian, we must again define an inner product by an integral
+ over space at a fixed time: 
+\begin_inset Formula \[
+(\vec{w},\vec{w}')=\frac{1}{2}\int[\vec{E}^{*}\cdot(\varepsilon\vec{E}')+\vec{H}^{*}\cdot(\mu\vec{H}')]\, d^{3}\vec{x},\]
+
+\end_inset
+
+which is precisely the classical electromagnetic energy in the 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ fields (for non-dispersive materials) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+! 
+\end_layout
+
+\begin_layout Standard
+Given this inner product, the rest is easy, given a single vector identity:
+ for any vector fields 
+\begin_inset Formula $\vec{F}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla\cdot(\vec{F}\times\vec{G})=\vec{G}\cdot(\nabla\times\vec{F})-\vec{F}\cdot(\nabla\times\vec{G})$
+\end_inset
+
+.
+ This vector identity allows us to integrate 
+\begin_inset Formula $\nabla\times$
+\end_inset
+
+ by parts easily: 
+\begin_inset Formula $\int\vec{F}\cdot(\nabla\times\vec{G})=\int\vec{G}\cdot(\nabla\times\vec{F})$
+\end_inset
+
+ plus a surface term (from the divergence theorem) that goes to zero assuming
+ 
+\begin_inset Formula $\Vert\vec{F}\Vert$
+\end_inset
+
+ and 
+\begin_inset Formula $\Vert\vec{G}\Vert$
+\end_inset
+
+ are 
+\begin_inset Formula $<\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now we can just plug in 
+\begin_inset Formula $(\vec{w},\hat{D}\vec{w}')$
+\end_inset
+
+ and integrate by parts: 
+\begin_inset Formula \begin{eqnarray*}
+(\vec{w},\hat{D}\vec{w}') & = & \frac{1}{2}\int[\vec{E}^{*}\cdot(\nabla\times\vec{H}')-\vec{H}^{*}\cdot(\nabla\times\vec{E}')]\, d^{3}\vec{x}\\
+ & = & \frac{1}{2}\int[{(\nabla\times\vec{E})}^{*}\cdot\vec{H}'-{(\nabla\times\vec{H})}^{*}\cdot\vec{E}']\, d^{3}\vec{x}=(-\hat{D}\vec{w},\vec{w}').\end{eqnarray*}
+
+\end_inset
+
+Thus, 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is Hermitian and conservation of energy, real 
+\begin_inset Formula $\omega$
+\end_inset
+
+, orthogonality, etcetera follow.
+\end_layout
+
+\begin_layout Standard
+Again, 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is in the block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+), so the 
+\begin_inset Formula $\hat{D}^{2}$
+\end_inset
+
+ eigenproblem simplifies into two separate Hermitian positive semi-definite
+ eigenproblems for 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+: 
+\begin_inset Formula \begin{equation}
+\frac{1}{\varepsilon}\nabla\times(\frac{1}{\mu}\nabla\times\vec{E})=\omega^{2}\vec{E},\label{eq:E-eig}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\frac{1}{\mu}\nabla\times(\frac{1}{\varepsilon}\nabla\times\vec{H})=\omega^{2}\vec{H}.\label{eq:H-eig}\end{equation}
+
+\end_inset
+
+These convenient formulations are a more common way to write the electromagnetic
+ eigenproblem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Joannopoulos95"
+
+\end_inset
+
+ than (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-eig"
+
+\end_inset
+
+).
+ Again, they may not look very Hermitian because of the 
+\begin_inset Formula $1/\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $1/\mu$
+\end_inset
+
+ terms multiplying on the left, but don't forget the 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ factors in our inner product, which makes these operators Hermitian.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Alternatively, if we defined inner products without the 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+, we could write it as a 
+\emph on
+generalized
+\emph default
+ Hermitian eigenproblem.
+ For example, if we used the inner product 
+\begin_inset Formula $(\vec{E},\vec{E}')=\int\vec{E}^{*}\cdot\vec{E}'$
+\end_inset
+
+, we would write the generalized Hermitian eigenproblem 
+\begin_inset Formula $\nabla\times(\frac{1}{\mu}\nabla\times\vec{E})=\omega^{2}\varepsilon\vec{E}$
+\end_inset
+
+.
+ This gives the same result: for generalized Hermitian eigenproblems 
+\begin_inset Formula $\hat{A}u=\lambda\hat{B}u$
+\end_inset
+
+, the orthogonality relation is 
+\begin_inset Formula $(u_{1},\hat{B}u_{2})=0$
+\end_inset
+
+ for distinct eigenvectors 
+\begin_inset Formula $u_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{2}$
+\end_inset
+
+.
+ This formulation is often more convenient than having 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ or 
+\begin_inset Formula $\mu$
+\end_inset
+
+ factors 
+\begin_inset Quotes eld
+\end_inset
+
+hidden
+\begin_inset Quotes erd
+\end_inset
+
+ inside the inner product.
+\end_layout
+
+\end_inset
+
+ Therefore, for example, two different eigensolutions 
+\begin_inset Formula $\vec{E}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{E}_{2}$
+\end_inset
+
+ are orthogonal under the inner product 
+\begin_inset Formula $(\vec{E}_{1},\vec{E}_{2})_{\vec{E}}=\int\vec{E}_{1}^{*}\cdot(\varepsilon\vec{E}_{2})=0$
+\end_inset
+
+.
+ Bloch's theorem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bloch-wave"
+
+\end_inset
+
+) for this Hermitian eigenproblem in the case of periodic materials leads
+ to 
+\emph on
+photonic crystals
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Joannopoulos95"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Recall that something funny happens at 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+, where 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ decouple.
+ In this case, there are infinitely many 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+ 
+\emph on
+static-charge
+\emph default
+ solutions with 
+\begin_inset Formula $\nabla\cdot\varepsilon\vec{E}\neq0$
+\end_inset
+
+ and/or 
+\begin_inset Formula $\nabla\cdot\mu\vec{H}\neq0$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $\omega\neq0$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla\cdot\varepsilon\vec{E}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\cdot\mu\vec{H}=0$
+\end_inset
+
+ follow automatically from the equations 
+\begin_inset Formula $-i\omega\varepsilon\vec{E}=\nabla\times\vec{H}$
+\end_inset
+
+ and 
+\begin_inset Formula $i\omega\mu\vec{H}=\nabla\times\vec{E}$
+\end_inset
+
+.
+ (These divergence equations are just Gauss' laws for the free electric
+ and magnetic charge densities, respectively.)
+\end_layout
+
+\begin_layout Standard
+In the case with a current source 
+\begin_inset Formula $\vec{J}\neq0$
+\end_inset
+
+, we can solve for 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ via eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-helmholtz"
+
+\end_inset
+
+), which here becomes: 
+\begin_inset Formula \[
+\left(\frac{1}{\varepsilon}\nabla\times\frac{1}{\mu}\nabla\times-\omega^{2}\right)\vec{E}=i\omega\vec{J}/\varepsilon,\]
+
+\end_inset
+
+or (multiplying both sides by 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\left(\nabla\times\frac{1}{\mu}\nabla\times-\omega^{2}\varepsilon\right)\vec{E}=i\omega\vec{J}.\]
+
+\end_inset
+
+The operator on the left side is Hermitian in lossless media, or complex-symmetr
+ic in most dissipative materials where 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ are complex scalars.
+ This gives rise to the well-known Rayleigh-Carson and Lorentz reciprocity
+ relations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Landau84:electro,Potton04"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+The one-way scalar wave equation
+\end_layout
+
+\begin_layout Standard
+As a break from the complexity of Maxwell's equations, let's look at the
+ source-free one-way scalar wave equation: 
+\begin_inset Formula \[
+-c\frac{\partial u}{\partial x}=\frac{\partial u}{\partial t},\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $c(\vec{x})>0$
+\end_inset
+
+ is the phase velocity.
+ This is a 
+\emph on
+one-way
+\emph default
+ wave equation because, for 
+\begin_inset Formula $c=\mbox{constant}$
+\end_inset
+
+, the solutions are functions 
+\begin_inset Formula $u(x,t)=f(x-ct)$
+\end_inset
+
+ traveling in the 
+\begin_inset Formula $+x$
+\end_inset
+
+ direction 
+\emph on
+only
+\emph default
+ with speed 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This equation is 
+\emph on
+already
+\emph default
+ in our form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+), with 
+\begin_inset Formula $\hat{D}=-c\frac{\partial}{\partial x}$
+\end_inset
+
+, which is obviously anti-Hermitian under the inner product 
+\begin_inset Formula \[
+(u,u')=\int_{-\infty}^{\infty}\frac{u^{*}u'}{c}dx,\]
+
+\end_inset
+
+via elementary integration by parts.
+ Hence energy is conserved, we have real eigenvalues, orthogonality, and
+ all of that good stuff.
+ We 
+\emph on
+don't
+\emph default
+ have the block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+), which is not surprising: we can hardly split this trivial equation into
+ two simpler ones.
+\end_layout
+
+\begin_layout Section
+The Schrödinger equation
+\end_layout
+
+\begin_layout Standard
+Perhaps the most famous equation in form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) is the Schrödinger equation of quantum mechanics: 
+\begin_inset Formula \[
+\frac{\partial\psi}{\partial t}=-\frac{i}{\hbar}\left(-\frac{\hbar^{2}}{2m}\nabla^{2}+V\right)\psi,\]
+
+\end_inset
+
+for the wave function 
+\begin_inset Formula $\psi(\vec{x},t)$
+\end_inset
+
+ of a particle with mass 
+\begin_inset Formula $m$
+\end_inset
+
+ in a (real) potential 
+\begin_inset Formula $V(\vec{x})$
+\end_inset
+
+.
+ Famous, not so much because Schrödinger is more well known than, say, Maxwell's
+ equations, but rather because the Schrödinger equation (unlike Maxwell)
+ is commonly taught almost precisely in the abstract form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tannoudji77,Sakurai94"
+
+\end_inset
+
+, where the operator 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is given by 
+\begin_inset Formula \[
+\hat{D}=-\frac{i}{\hbar}\hat{H}=-\frac{i}{\hbar}\left(-\frac{\hbar^{2}}{2m}\nabla^{2}+V\right)\]
+
+\end_inset
+
+for the 
+\emph on
+Hamiltonian
+\emph default
+ operator 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+.
+ This is the equation where many students delve into abstract Hermitian
+ operators and Hilbert spaces for the first time.
+\end_layout
+
+\begin_layout Standard
+The fact that 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is Hermitian under the inner product 
+\begin_inset Formula $(\psi,\psi')=\int\psi^{*}\psi'$
+\end_inset
+
+, and hence 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is anti-Hermitian, is well known (and easy to show via integration by parts).
+ From this follow the familar properties of the Schrödinger equation.
+ The eigenvalues 
+\begin_inset Formula $\omega$
+\end_inset
+
+ are interpreted as the energies 
+\begin_inset Formula $E=\hbar\omega$
+\end_inset
+
+, which are real (like any quantum observable), and the eigenstates 
+\begin_inset Formula $\psi$
+\end_inset
+
+ are orthogonal.
+ Conservation of 
+\begin_inset Quotes eld
+\end_inset
+
+energy
+\begin_inset Quotes erd
+\end_inset
+
+ here means that 
+\begin_inset Formula $\int|\psi|^{2}$
+\end_inset
+
+ is a constant over time, and this is interpreted in quantum mechanics as
+ the conservation of probability.
+\end_layout
+
+\begin_layout Standard
+Again, we 
+\emph on
+don't
+\emph default
+ have a block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+) for the Schrödinger problem, nor do we want it.
+ In this case, the operator 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is 
+\emph on
+not
+\emph default
+ real, and we 
+\emph on
+do
+\emph default
+ distinguish positive and negative 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (which give very different energies 
+\begin_inset Formula $E$
+\end_inset
+
+!).
+ We want to stick with the full eigenproblem 
+\begin_inset Formula $\hat{D}\psi=\omega\psi$
+\end_inset
+
+, or equivalently 
+\begin_inset Formula $\hat{H}\psi=E\psi$
+\end_inset
+
+, thank you very much.
+ Bloch's theorem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bloch-wave"
+
+\end_inset
+
+) for this Hermitian eigenproblem in the case of a periodic potential 
+\begin_inset Formula $V$
+\end_inset
+
+ leads to the field of 
+\emph on
+solid-state physics
+\emph default
+ for crystalline materials 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kittel96,Ashcroft76"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Elastic vibrations in linear solids
+\end_layout
+
+\begin_layout Standard
+One of the more complicated wave equations is that of elastic (acoustic)
+ waves in solid media, for which there are three kinds of vibrating waves:
+ longitudinal (pressure/compression) waves and two orthogonal transverse
+ (shear) waves.
+ All of these solutions are characterized by the displacement vector 
+\begin_inset Formula $\vec{u}(\vec{x},t)$
+\end_inset
+
+, which describes the displacement 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+ of the point 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ in the solid at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ However, it will turn out that 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+ itself is not the natural dynamic variable with which to characterize the
+ wave equation, because it does not yield our preferred anti-Hermitian form
+ in which energy-conservation is obvious.
+ To begin with, we will consider the common simplified case of isotropic
+ solids, and generalize to the anisotropic case in Sec.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:anisotropic-elastic"
+
+\end_inset
+
+.
+ We will neglect material dispersion (a valid approximation in a narrow
+ enough bandwidth for nearly lossless materials) and consider only the linear
+ regime of sufficiently small displacements.
+\end_layout
+
+\begin_layout Subsection
+Isotropic materials
+\end_layout
+
+\begin_layout Standard
+In the linear regime, an isotropic elastic medium is characterized by its
+ density 
+\begin_inset Formula $\rho$
+\end_inset
+
+ and the Lamé elastic constants 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+: 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is  the shear modulus and 
+\begin_inset Formula $\lambda=K-\frac{2}{3}\mu$
+\end_inset
+
+, where 
+\begin_inset Formula $K$
+\end_inset
+
+ is the bulk modulus.
+ All three of these quantities are functions of 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ for an inhomogeneous medium.
+ The displacement 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+ then satisfies the Lamé-Navier equation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Landou:elastic,Slaughter02"
+
+\end_inset
+
+:
+\begin_inset Formula \begin{equation}
+\rho\frac{\partial^{2}\vec{u}}{\partial t^{2}}=\nabla(\lambda\nabla\cdot\vec{u})+\nabla\cdot\left[\mu\left(\nabla\vec{u}+(\nabla\vec{u})^{T}\right)\right]+\vec{f},\label{eq:lame-navier}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{f}(\vec{x},t)$
+\end_inset
+
+ is a source term (an external force density).
+ This notation requires a bit of explanation.
+ By 
+\begin_inset Formula $\nabla\vec{u}$
+\end_inset
+
+, we mean the rank-2 tensor (
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrix) with 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+th entry 
+\begin_inset Formula $\partial u_{m}/\partial x_{n}$
+\end_inset
+
+ (that is, its rows are the gradients of each component of 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+), and 
+\begin_inset Formula $(\nabla\vec{u})^{T}$
+\end_inset
+
+ is the transpose of this tensor.
+ By the divergence 
+\begin_inset Formula $\nabla\cdot$
+\end_inset
+
+ of such a tensor, we mean the vector formed by taking the divergence of
+ each 
+\emph on
+column
+\emph default
+ of the tensor (exactly like the usual rule for taking the dot product of
+ a vector with a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrix).
+\end_layout
+
+\begin_layout Standard
+Clearly, we must break eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lame-navier"
+
+\end_inset
+
+) into two first-order equations in order to cast it into our abstract form
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+), but what variables should we choose? Here, we can be guided by the fact
+ that we eventually want to obtain conservation of energy, so we can look
+ at what determines the physical energy of a vibrating wave.
+ The kinetic energy is obviously the integral of 
+\begin_inset Formula $\frac{1}{2}\rho|\vec{v}|^{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ is the velocity 
+\begin_inset Formula $\dot{\vec{u}}$
+\end_inset
+
+, so 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ should be one of our variables.
+ To get the potential energy, is convenient to first define the (symmetric)
+ 
+\emph on
+strain tensor 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Slaughter02"
+
+\end_inset
+
+: 
+\begin_inset Formula \begin{equation}
+\varepsilon=\frac{1}{2}\left(\nabla\vec{u}+(\nabla\vec{u})^{T}\right),\label{eq:strain}\end{equation}
+
+\end_inset
+
+which should look familiar because 
+\begin_inset Formula $2\varepsilon$
+\end_inset
+
+ appears in eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lame-navier"
+
+\end_inset
+
+).
+ In terms of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, the potential energy density is then 
+\begin_inset Formula $\mu\tr(\varepsilon^{\dagger}\varepsilon)+\lambda|\tr\varepsilon|^{2}/2$
+\end_inset
+
+, where 
+\begin_inset Formula $\dagger$
+\end_inset
+
+ is the conjugate-transpose (adjoint) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Slaughter02"
+
+\end_inset
+
+.
+ Note also that 
+\begin_inset Formula $\tr\varepsilon=\nabla\cdot\vec{u}$
+\end_inset
+
+, by definition of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, we should define our wave field 
+\begin_inset Formula $\vec{w}$
+\end_inset
+
+ as the 9-component 
+\begin_inset Formula $\vec{w}=(\vec{v};\varepsilon)$
+\end_inset
+
+, with an inner product 
+\begin_inset Formula \[
+(\vec{w},\vec{w}')=\frac{1}{2}\int\left[\rho\vec{v}^{*}\cdot\vec{v}'+2\mu\tr(\varepsilon^{\dagger}\varepsilon')+\lambda(\tr\varepsilon)^{*}(\tr\varepsilon')\right]\, d^{3}\vec{x},\]
+
+\end_inset
+
+so that 
+\begin_inset Formula $\Vert\vec{w}\Vert^{2}$
+\end_inset
+
+ is the physical energy.
+ Now, in terms of 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, our equations of motion must be: 
+\begin_inset Formula \begin{equation}
+\frac{\partial\vec{w}}{\partial t}=\frac{\partial}{\partial t}\left(\begin{array}{c}
+\vec{v}\\
+\varepsilon\end{array}\right)=\left(\begin{array}{cc}
+ & \hat{D}_{2}\\
+\hat{D}_{1}\end{array}\right)\left(\begin{array}{c}
+\vec{v}\\
+\varepsilon\end{array}\right)+\left(\begin{array}{c}
+\vec{f}/\rho\\
+0\end{array}\right)=\hat{D}\vec{w}+\vec{s},\label{eq:elastic-wave}\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula \begin{equation}
+\dot{\varepsilon}=\hat{D}_{1}\vec{v}=\frac{1}{2}\left(\nabla\vec{v}+(\nabla\vec{v})^{T}\right),\label{eq:strain-deriv}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\dot{\vec{v}}=\hat{D}_{2}\varepsilon=\frac{1}{\rho}\left[\nabla(\lambda\tr\varepsilon)+2\nabla\cdot(\mu\varepsilon)\right].\label{eq:v-deriv}\end{equation}
+
+\end_inset
+
+Now, we can check that 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is anti-Hermitian (assuming lossless materials, i.e.
+ real 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+).
+ For compactness, we will use the Einstein index notation that repeated
+ indices are summed, e.g.
+ 
+\begin_inset Formula $\vec{a}\cdot\vec{b}=a_{n}b_{n}$
+\end_inset
+
+ with an implicit sum over 
+\begin_inset Formula $n$
+\end_inset
+
+ since it is repeated, and let 
+\begin_inset Formula $\partial_{k}$
+\end_inset
+
+ denote 
+\begin_inset Formula $\frac{\partial}{\partial x_{k}}$
+\end_inset
+
+.
+ Then, plugging in the definitions above and integrating by parts:
+\begin_inset Formula \begin{align*}
+(\vec{w},\hat{D}\vec{w}') & =\frac{1}{2}\int\left[\rho\vec{v}^{*}\cdot(\hat{D}_{2}\varepsilon')+2\mu\tr(\varepsilon^{\dagger}\hat{D}_{1}\vec{v}')+\lambda(\tr\varepsilon)^{*}(\tr\hat{D}_{1}\vec{v}')\right]\, d^{3}\vec{x}\\
+ & =\frac{1}{2}\int\left[v_{m}^{*}\left(\partial_{m}\lambda\varepsilon_{nn}'+2\partial_{n}\mu\varepsilon_{nm}'\right)+2\mu\varepsilon_{mn}^{*}\partial_{m}v_{n}'+\lambda(\varepsilon_{mm})^{*}(\partial_{n}v_{n}')\right]\, d^{3}\vec{x}\\
+ & =\frac{-1}{2}\int\left[\left(\lambda\partial_{m}v_{m}\right)^{*}\varepsilon_{nn}'+\left(2\mu\partial_{n}v_{m}\right)^{*}\varepsilon_{nm}+\left(2\partial_{m}\mu\varepsilon_{mn}\right)^{*}v_{n}'+(\partial_{n}\lambda\varepsilon_{mm})^{*}v_{n}'\right]\, d^{3}\vec{x}\\
+ & =(\hat{D}\vec{w},\vec{w}').\end{align*}
+
+\end_inset
+
+Note that we used the symmetry of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ to write 
+\begin_inset Formula $2\tr(\varepsilon^{\dagger}\hat{D}_{1}\vec{v}')=\varepsilon_{mn}^{*}\partial_{m}v_{n}'+\varepsilon_{mn}^{*}\partial_{n}v_{m}'=2\varepsilon_{mn}^{*}\partial_{m}v_{n}'$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We are done! After a bit of effort to define everything properly and prove
+ the anti-Hermitian property of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+, we can again immediately quote all of the useful general properties of
+ wave equations: oscillating solutions, planewaves in homogeneous media,
+ conservation of energy, and so on!
+\end_layout
+
+\begin_layout Subsection
+Scalar pressure waves in a fluid or gas
+\end_layout
+
+\begin_layout Standard
+For a fluid or gas, the shear modulus 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is zero---there are no transverse waves---and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is just the bulk modulus.
+ In this case, we can reduce the problem to a scalar wave equation in terms
+ of the pressure 
+\begin_inset Formula $P=-\lambda\nabla\cdot\vec{u}=-\tr\varepsilon$
+\end_inset
+
+.
+ We obtain 
+\emph on
+precisely
+\emph default
+ the scalar wave equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-wave"
+
+\end_inset
+
+) if we set 
+\begin_inset Formula $a=1/\rho$
+\end_inset
+
+, 
+\begin_inset Formula $b=\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $u=P$
+\end_inset
+
+, and 
+\begin_inset Formula $\vec{v}=-\dot{\vec{u}}$
+\end_inset
+
+ (the velocity, with a sign flip by the conventions defined in our scalar-wave
+ section).
+ The wave speed is 
+\begin_inset Formula $c=\sqrt{\lambda/\rho}$
+\end_inset
+
+.
+ Our 
+\begin_inset Quotes eld
+\end_inset
+
+energy
+\begin_inset Quotes erd
+\end_inset
+
+ in the scalar wave equation is again interpreted as (twice) the physical
+ energy: the integral of (twice) the potential energy 
+\begin_inset Formula $P^{2}/\lambda$
+\end_inset
+
+ and (twice) the kinetic energy 
+\begin_inset Formula $\rho|\vec{v}|^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Eigenequations and constraints
+\end_layout
+
+\begin_layout Standard
+Again, we have the block form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-block"
+
+\end_inset
+
+) of 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+, so again we can write an eigenproblem for 
+\begin_inset Formula $\omega^{2}$
+\end_inset
+
+ by solving for harmonic 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ or 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ individually.
+ Given a harmonic 
+\begin_inset Formula $\vec{u}=\vec{U}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+, the equation for 
+\begin_inset Formula $\vec{U}$
+\end_inset
+
+ just comes from the eigen-equation for 
+\begin_inset Formula $\vec{v}=-i\omega\vec{U}e^{-i\omega t}$
+\end_inset
+
+, which is just the same as plugging a harmonic 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+ into our original equation
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lame-navier"
+
+\end_inset
+
+): 
+\begin_inset Formula \[
+\omega^{2}\vec{U}=-\frac{1}{\rho}\left\{ \nabla(\lambda\nabla\cdot\vec{U})+\nabla\cdot\left[\mu\left(\nabla\vec{U}+(\nabla\vec{U})^{T}\right)\right]\right\} ,\]
+
+\end_inset
+
+which again is a Hermitian positive semi-definite eigenproblem thanks to
+ the factor of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ in our inner product 
+\begin_inset Formula $(\vec{U},\vec{U}')=\int\rho\vec{U}^{*}\cdot\vec{U}'$
+\end_inset
+
+.
+ (Alternatively, one obtains a generalized Hermitian eigenproblem for an
+ inner product without 
+\begin_inset Formula $\rho$
+\end_inset
+
+.) Bloch's theorem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bloch-wave"
+
+\end_inset
+
+) for this Hermitian eigenproblem in the case of periodic materials leads
+ to the study of 
+\emph on
+phononic crystals
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sigalas92"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We could also write the eigenequation in terms of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, of course.
+ Sometimes, 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is more convenient because of how boundary conditions are expressed in
+ elastic problems 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Slaughter02"
+
+\end_inset
+
+.
+ However, in the case of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ we need to enforce the constraint 
+\begin_inset Formula \begin{equation}
+\nabla\times(\nabla\times\varepsilon)^{T}=0,\label{eq:strain-constraint}\end{equation}
+
+\end_inset
+
+which follows from the definition (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strain"
+
+\end_inset
+
+) of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+.
+ Note that the curl of a tensor, here, is defined as the curl of each column
+ of the tensor, so 
+\begin_inset Formula $\nabla\times(\nabla\times\varepsilon)^{T}$
+\end_inset
+
+ means that we take the curl of every row and column of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ This is zero because 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is defined as the sum of a tensor whose rows are gradients and its transpose,
+ and the curl of a gradient is zero.
+ The same constraint also follows from eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strain-deriv"
+
+\end_inset
+
+) for 
+\begin_inset Formula $\omega\neq0$
+\end_inset
+
+, which is part of the eigenequation, but 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is decoupled from eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strain-deriv"
+
+\end_inset
+
+) for 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+ and in that case we need to impose (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strain-constraint"
+
+\end_inset
+
+) explicitly 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Slaughter02"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Anisotropic linear materials
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:anisotropic-elastic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The above equations assumed that the solid is isotropic, e.g.
+ that it responds in the same way to compression along any axis.
+ The more general equation involves a rank-4 
+\emph on
+elastic-modulus tensor
+\emph default
+ 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ (a 
+\begin_inset Quotes eld
+\end_inset
+
+four-dimensional matrix
+\begin_inset Quotes erd
+\end_inset
+
+) with components 
+\begin_inset Formula $C_{ijk\ell}$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bower09"
+
+\end_inset
+
+.
+ This tensor must satisfy the symmetries 
+\begin_inset Formula $C_{ijk\ell}=C_{jik\ell}=C_{k\ell ij}$
+\end_inset
+
+ (implied by time-reversal symmetry
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Day71"
+
+\end_inset
+
+ and also by more basic considerations
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Matarazzo01"
+
+\end_inset
+
+, and furthermore 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ must be real in the absence of dissipation), which means that it is characteriz
+ed by 21 parameters
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bower09"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The definition (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strain"
+
+\end_inset
+
+) of the strain tensor 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is the same, and we still write 
+\begin_inset Formula $\vec{w}=(\vec{v},\varepsilon)$
+\end_inset
+
+ in terms of the same dynamical variables 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and the same off-diagonal form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:elastic-wave"
+
+\end_inset
+
+) of the wave equation.
+ The relationship (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strain-deriv"
+
+\end_inset
+
+) between 
+\begin_inset Formula $\dot{\varepsilon}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ is unchanged, so 
+\begin_inset Formula $\hat{D}_{1}$
+\end_inset
+
+ is unchanged.
+ However, 
+\begin_inset Formula $\hat{D}_{2}$
+\end_inset
+
+ and the stress--strain relationship which gives equation
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:v-deriv"
+
+\end_inset
+
+) for 
+\begin_inset Formula $\dot{\vec{v}}$
+\end_inset
+
+ (via Newton's law) is now generalized to: 
+\begin_inset Formula \begin{equation}
+\dot{\vec{v}}=\hat{D}_{2}\varepsilon=\frac{1}{\rho}\nabla\cdot(\mathbf{C}:\varepsilon),\label{eq:v-deriv-aniso}\end{equation}
+
+\end_inset
+
+where by 
+\begin_inset Formula $\mathbf{C}:\varepsilon$
+\end_inset
+
+ we mean the tensor contraction of the last two indices of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ with those of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ In Einstein index notation (implicit sums of repeated indices) and denoting
+ 
+\begin_inset Formula $\frac{\partial}{\partial x}_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $\partial_{i}$
+\end_inset
+
+ as above, eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:v-deriv-aniso"
+
+\end_inset
+
+) is equivalent to 
+\begin_inset Formula $\dot{v}_{i}=\partial_{j}C_{jik\ell}\varepsilon_{k\ell}=\partial_{j}C_{ijk\ell}\varepsilon_{k\ell}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now, the key to showing that this wave equation is still anti-Hermitian
+ is to choose the correct inner product:
+\begin_inset Formula \[
+(\vec{w},\vec{w}')=\frac{1}{2}\int\left[\rho\vec{v}^{*}\cdot\vec{v}+\varepsilon^{*}:\mathbf{C}:\varepsilon'\right]\, d^{3}\vec{x},\]
+
+\end_inset
+
+where by 
+\begin_inset Formula $\varepsilon^{\dagger}:\mathbf{C}:\varepsilon'$
+\end_inset
+
+ we mean the contraction 
+\begin_inset Formula $\varepsilon_{ji}^{*}C_{ijk\ell}\varepsilon_{k\ell}'=(\varepsilon_{\ell k}'^{*}C_{k\ell ij}\varepsilon_{ji})^{*}$
+\end_inset
+
+, which still has the correct symmetry (thanks to the symmetry of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+) to make this a proper inner product.
+ This is chosen to give the correct expression for the energy 
+\begin_inset Formula $(\vec{w},\vec{w})=\frac{1}{2}\int[\rho|\vec{v}|^{2}+\varepsilon^{*}:\mathbf{C}:\varepsilon]$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bower09"
+
+\end_inset
+
+.
+ It is now easily verified that 
+\begin_inset Formula $\hat{D}^{\dagger}=-\hat{D}$
+\end_inset
+
+ as desired, and hence energy is conserved: 
+\begin_inset Formula \begin{align*}
+(\vec{w},\hat{D}\vec{w}') & =\frac{1}{2}\int\left[\rho\vec{v}^{*}\cdot(\hat{D}_{2}\varepsilon')+\varepsilon^{*}:\mathbf{C}:(\hat{D}_{1}\vec{v}')\right]\, d^{3}\vec{x}\\
+ & =\frac{1}{2}\int\left[v_{i}^{*}\partial_{j}C_{jik\ell}\varepsilon'_{k\ell}+\varepsilon_{ji}^{*}C_{ijk\ell}\frac{\partial_{k}v_{\ell}'+\partial_{\ell}v_{k}'}{2}\right]\, d^{3}\vec{x}\\
+ & =\frac{1}{2}\int\left[v_{i}^{*}\partial_{j}C_{jik\ell}\varepsilon'_{k\ell}+\varepsilon_{ji}^{*}C_{ijk\ell}\partial_{k}v_{\ell}'\right]\, d^{3}\vec{x}\\
+ & =-\frac{1}{2}\int\left[\varepsilon'_{k\ell}C_{k\ell ji}\partial_{j}v_{i}^{*}+v_{\ell}'\partial_{k}C_{ijk\ell}\varepsilon_{ji}^{*}\right]\, d^{3}\vec{x}\\
+ & =(-\hat{D}\vec{w},\vec{w}').\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The scalar wave equation in space
+\end_layout
+
+\begin_layout Standard
+Now, let's consider something a little different.
+ We'll start with the scalar wave equation from above, 
+\begin_inset Formula $a\nabla u=\dot{\vec{v}}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\nabla\cdot\vec{v}=\dot{u}$
+\end_inset
+
+, but instead of solving for 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ as a function of time 
+\begin_inset Formula $t$
+\end_inset
+
+, we'll solve the equations as a function of 
+\emph on
+space
+\emph default
+ for harmonic modes 
+\begin_inset Formula $u(\vec{x},t)=U(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{v}(\vec{x},t)=\vec{V}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ with 
+\begin_inset Formula $\omega\neq0$
+\end_inset
+
+.
+ In particular, we'll pick one direction, 
+\begin_inset Formula $z$
+\end_inset
+
+, and look at propagation along the 
+\begin_inset Formula $z$
+\end_inset
+
+ direction.
+ Plugging these harmonic modes into the scalar wave equations, and putting
+ all of the 
+\begin_inset Formula $\partial/\partial z$
+\end_inset
+
+ derivatives on the left-hand side, we obtain:
+\begin_inset Formula \[
+\frac{\partial\vec{w}}{\partial z}=\frac{\partial}{\partial z}\left(\begin{array}{c}
+U\\
+V_{z}\end{array}\right)=\left(\begin{array}{cc}
+0 & \frac{-i\omega}{a}\\
+\frac{-i\omega}{b}+\nabla_{t}\cdot\frac{a}{i\omega}\nabla_{t} & 0\end{array}\right)\left(\begin{array}{c}
+U\\
+V_{z}\end{array}\right)=\hat{D}\vec{w},\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\nabla_{t}=\vec{\hat{x}}\frac{\partial}{\partial x}+\vec{\hat{y}}\frac{\partial}{\partial y}$
+\end_inset
+
+ denotes the 
+\begin_inset Quotes eld
+\end_inset
+
+transverse
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Formula $xy$
+\end_inset
+
+) del operator, and we have eliminated the transverse components 
+\begin_inset Formula $\vec{V}_{t}$
+\end_inset
+
+ of 
+\begin_inset Formula $\vec{V}$
+\end_inset
+
+ via 
+\begin_inset Formula $-i\omega\vec{V}_{t}=a\nabla_{t}U$
+\end_inset
+
+.
+ This is again of the form of our abstract equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:abstract-wave"
+
+\end_inset
+
+), with 
+\begin_inset Formula $z$
+\end_inset
+
+ replacing 
+\begin_inset Formula $t$
+\end_inset
+
+! But is this 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ anti-Hermitian?
+\end_layout
+
+\begin_layout Standard
+Let's define our 
+\begin_inset Quotes eld
+\end_inset
+
+inner product
+\begin_inset Quotes erd
+\end_inset
+
+ via an integral over the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane: 
+\begin_inset Formula \begin{equation}
+(\vec{w},\vec{w}')=\int\left[U^{*}V_{z}'+U'V_{z}^{*}\right]\, d^{2}\vec{x}.\label{eq:scalar-flux}\end{equation}
+
+\end_inset
+
+This is actually 
+\emph on
+not a true inner product
+\emph default
+ by the strict definition, because it is not positive definite: it is possible
+ for 
+\begin_inset Formula $\Vert\vec{w}\Vert^{2}=(\vec{w},\vec{w})$
+\end_inset
+
+ to be non-positive for 
+\begin_inset Formula $\vec{w}\neq0$
+\end_inset
+
+.
+ We'll have to live with the consequences of that later.
+ But first, let's verify that 
+\begin_inset Formula $(\vec{w},\hat{D}\vec{w}')=-(\hat{D}\vec{w},\vec{w}')$
+\end_inset
+
+ for real 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, via integration by parts: 
+\begin_inset Formula \begin{align*}
+(\vec{w},\hat{D}\vec{w}') & =\int\left[U^{*}\left(-\frac{i\omega}{b}U'\right)+U^{*}\nabla_{t}\cdot\frac{a}{i\omega}\nabla_{t}U'+\left(-\frac{i\omega}{a}V_{z}'\right)V_{z}^{*}\right]\, d^{2}\vec{x}\\
+ & =-\int\left[\left(-\frac{i\omega}{b}U\right)^{*}U'+(\nabla_{t}\cdot\frac{a}{i\omega}\nabla_{t}U^{*})U'+\left(-\frac{i\omega}{b}V_{z}\right)^{*}+V_{z}'\left(-\frac{i\omega}{a}V_{z}^{*}\right)\right]\, d^{2}\vec{x}\\
+ & =-(\hat{D}\vec{w},\vec{w}').\end{align*}
+
+\end_inset
+
+ So 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+anti-Hermitian,
+\begin_inset Quotes erd
+\end_inset
+
+ but in a 
+\begin_inset Quotes eld
+\end_inset
+
+fake
+\begin_inset Quotes erd
+\end_inset
+
+ inner product.
+ To figure out the consequences of this, we have to go back to our original
+ abstract derivations and look carefully to see where (if at all) we relied
+ on the positive-definite property of inner products.
+\end_layout
+
+\begin_layout Standard
+Looking back at our proof, we see that we didn't rely on positive-definiteness
+ at all in our derivation of conservation of energy; we just took the derivative
+ of 
+\begin_inset Formula $(\vec{w},\vec{w})$
+\end_inset
+
+.
+ So, 
+\begin_inset Quotes eld
+\end_inset
+
+energy
+\begin_inset Quotes erd
+\end_inset
+
+ is conserved in 
+\emph on
+space
+\emph default
+.
+ What does that mean? Equation
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scalar-flux"
+
+\end_inset
+
+) can be interpreted as an integral of a time-average 
+\emph on
+energy flux
+\emph default
+ through the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane at 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ Conservation of energy means that, in the absence of sources, with a steady-sta
+te (harmonic) solution, energy cannot be building up or decaying at any
+ 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+What about the Hermitian eigenproblem? What is the eigenproblem? We already
+ have time-harmonic solutions.
+ We can set up an eigenproblem in 
+\begin_inset Formula $z$
+\end_inset
+
+ only when the problem (i.e., 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+) is 
+\begin_inset Formula $z$
+\end_inset
+
+-invariant (analogous to the time-invariance required for time-harmonic
+ modes).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Actually, we only need it to be periodic in 
+\begin_inset Formula $z$
+\end_inset
+
+, in which case we can look for Bloch modes.
+\end_layout
+
+\end_inset
+
+ In a 
+\begin_inset Formula $z$
+\end_inset
+
+-invariant problem, the 
+\begin_inset Formula $z$
+\end_inset
+
+ direction is separable and we can look for solutions of the form 
+\begin_inset Formula $\vec{w}(x,y,z)=\vec{W}(x,y)e^{i\beta z}$
+\end_inset
+
+, where 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is a 
+\emph on
+propagation constant
+\emph default
+.
+ Such solutions satisfy 
+\begin_inset Formula \[
+i\hat{D}\vec{W}=\beta\vec{W},\]
+
+\end_inset
+
+which is a Hermitian eigenproblem but in our non-positive norm.
+ Now, if one goes back to the derivation of real eigenvalues for Hermitian
+ eigenproblems, something goes wrong: the eigenvalue 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is only real if 
+\begin_inset Formula $(\vec{W},\vec{W})\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This, however is a useful and important result, once we recall that 
+\begin_inset Formula $(\vec{W},\vec{W})$
+\end_inset
+
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+energy flux
+\begin_inset Quotes erd
+\end_inset
+
+ in the 
+\emph on
+z
+\emph default
+ direction.
+ Modes with real 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are called 
+\emph on
+propagating modes
+\emph default
+, and they have non-zero flux: propagating modes 
+\emph on
+transport energy
+\emph default
+ since 
+\begin_inset Formula $(\vec{W},\vec{W})\neq0$
+\end_inset
+
+ for a typical real-
+\begin_inset Formula $\beta$
+\end_inset
+
+ mode.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It is possible to have 
+\emph on
+standing-wave
+\emph default
+ modes with real 
+\begin_inset Formula $\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $(\vec{W},\vec{W})=0$
+\end_inset
+
+, but these mainly occur at 
+\begin_inset Formula $\beta=0$
+\end_inset
+
+ (where symmetry causes the flux to be zero).
+\end_layout
+
+\end_inset
+
+ Modes with complex (most often, purely imaginary) 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are called 
+\emph on
+evanescent modes
+\emph default
+, and they do 
+\emph on
+not
+\emph default
+ transport energy since 
+\begin_inset Formula $(\vec{W},\vec{W})=0$
+\end_inset
+
+ for them.
+\end_layout
+
+\begin_layout Standard
+What about orthogonality? Again, going back to the derivation of orthogonality
+ for Hermitian eigenproblems, and not assuming the eigenvalues are real
+ (since they aren't for evanescent modes).
+ The orthogonality condition follows from the equation 
+\begin_inset Formula $[\beta^{*}-\beta']\cdot(\vec{W},\vec{W}')=0$
+\end_inset
+
+ for eigensolutions 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{W}'$
+\end_inset
+
+ with eigenvalues 
+\begin_inset Formula $\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta'$
+\end_inset
+
+.
+ That is, modes are orthogonal 
+\emph on
+if their eigenvalues are not complex conjugates
+\emph default
+.
+ Moreover, since 
+\begin_inset Formula $i\hat{D}$
+\end_inset
+
+ is 
+\emph on
+purely real
+\emph default
+, the eigenvalues must come in complex-conjugate pairs.
+ This very useful, because it means if we want a field 
+\begin_inset Quotes eld
+\end_inset
+
+parallel
+\begin_inset Quotes erd
+\end_inset
+
+ to some eigenfield 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ and orthogonal to all the other eigenfields, we just use the eigenfield
+ with the conjugate eigenvalue to 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+.
+ And since 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ is real, that is just 
+\begin_inset Formula $\vec{W}^{*}$
+\end_inset
+
+! So, in short, we have: 
+\begin_inset Formula \[
+(\vec{W}^{*},\vec{W}')=0\]
+
+\end_inset
+
+for distinct eigenvectors 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{W}'$
+\end_inset
+
+: the eigenvectors are orthogonal under the 
+\emph on
+unconjugated
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+inner product
+\emph default
+.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Why have we gone through all this analysis of what seems like a rather odd
+ problem? Because this is a simpler version of something that turns out
+ to be extremely useful in more complicated wave equations.
+ In particular, the 
+\begin_inset Formula $z$
+\end_inset
+
+-propagation version of the time-harmonic Maxwell equations plays a central
+ role in understanding waveguides and 
+\begin_inset Quotes eld
+\end_inset
+
+coupled-wave theory
+\begin_inset Quotes erd
+\end_inset
+
+ in electromagnetism 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Johnson02:adiabatic"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/stevenj/papers/photon"
+options "ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

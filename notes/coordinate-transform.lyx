@@ -1,0 +1,751 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\newcommand{\tr}{\operatorname{tr}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\newcommand{\epstens}{\boldsymbol{\varepsilon}}
+\newcommand{\mutens}{\boldsymbol{\mu}}
+\newcommand{\Jac}{\mathcal{J}}
+\newcommand{\Jactens}{\boldsymbol{\Jac}}
+\newcommand{\sign}{\operatorname{sign}}
+
+\date{Created April 2007; updated \today}
+\end_preamble
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 2
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\topmargin 0.8in
+\bottommargin 0.8in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Coordinate Transformation & Invariance in Electromagnetism
+\end_layout
+
+\begin_layout Author
+Steven G.
+ Johnson, notes for the course 18.369 at MIT
+\end_layout
+
+\begin_layout Standard
+It is a remarkable fact 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ward96"
+
+\end_inset
+
+ that Maxwell's equations under 
+\emph on
+any
+\emph default
+ coordinate transformation can be written in an 
+\emph on
+identical
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Cartesian
+\begin_inset Quotes erd
+\end_inset
+
+ form, if simple transformations are applied to the materials (
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+), the fields (
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+), and the sources (
+\begin_inset Formula $\rho$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+).
+ This result has numerous useful and/or beautiful consequences, from designs
+ of 
+\begin_inset Quotes eld
+\end_inset
+
+invisibility cloaks
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pendry06"
+
+\end_inset
+
+, to a simple derivation of PML absorbing boundaries 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Teixeira98"
+
+\end_inset
+
+, to enabling analyses of bent and twisted waveguides in terms analogous
+ to a quantum Stark effect 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Johnson01:og"
+
+\end_inset
+
+ , to providing a simple way of applying numerical methods designed for
+ Cartesian coordinates to other coordinate systems 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ward96"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Here, we review the proof in a compact form (from
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KottkeFa08"
+
+\end_inset
+
+), generalized to arbitrary anisotropic media.
+ (Most previous derivations seem to have been for isotropic media in at
+ least one coordinate frame 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ward96"
+
+\end_inset
+
+, or for coordinate transformations with purely diagonal Jacobians 
+\begin_inset Formula $\Jactens$
+\end_inset
+
+ where 
+\begin_inset Formula $\Jac_{ii}$
+\end_inset
+
+ depends only on 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Teixeira98"
+
+\end_inset
+
+, or for constant affine coordinate transforms 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lindell92"
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Section*
+Summary of the Result
+\end_layout
+
+\begin_layout Standard
+Maxwell's equations in Cartesian coordinates 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ are written (in natural units 
+\begin_inset Formula $\varepsilon_{0}=\mu_{0}=1$
+\end_inset
+
+):
+\begin_inset Formula \begin{eqnarray}
+\nabla\times\vec{H} & = & \epstens\frac{\partial\vec{E}}{\partial t}+\vec{J}\label{eq:maxwell-H}\\
+\nabla\times\vec{E} & = & -\mutens\frac{\partial\vec{H}}{\partial t}\label{eq:maxwell-E}\\
+\nabla\cdot(\epstens\vec{E}) & = & \rho\label{eq:maxwell-Gauss-E}\\
+\nabla\cdot(\mutens\vec{H}) & = & 0,\label{eq:maxwell-Gauss-H}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ are the usual free current and charge densities, respectively, and 
+\begin_inset Formula $\epstens(\vec{x})$
+\end_inset
+
+ and 
+\begin_inset Formula $\mutens(\vec{x})$
+\end_inset
+
+ are the 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ relative permittivity and permeability tensors, respectively.
+ Now, suppose that we make some (differentiable) coordinate transformation
+ 
+\begin_inset Formula $\vec{x}\mapsto\vec{x}'$
+\end_inset
+
+ (usually chosen to be non-singular, with some exceptions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pendry06"
+
+\end_inset
+
+).
+ Let 
+\begin_inset Formula $\Jactens$
+\end_inset
+
+ denote the 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ Jacobian matrix: 
+\begin_inset Formula \begin{equation}
+\Jac_{ij}=\frac{\partial x_{i}'}{\partial x_{j}}.\label{eq:Jacobian}\end{equation}
+
+\end_inset
+
+We will show that Maxwell's equations take on the 
+\emph on
+same
+\emph default
+ form (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:maxwell-H"
+
+\end_inset
+
+--
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:maxwell-Gauss-H"
+
+\end_inset
+
+) in the primed coordinate system, with 
+\begin_inset Formula $\nabla$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $\nabla'$
+\end_inset
+
+, if we make the transformations:
+\begin_inset Formula \begin{equation}
+\vec{E}'=(\Jactens^{T})^{-1}\vec{E},\label{eq:E-trans}\end{equation}
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+\vec{H}'=(\Jactens^{T})^{-1}\vec{H},\label{eq:H-trans}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\epstens'=\frac{\Jactens\epstens\Jactens^{T}}{\det\Jactens},\label{eq:eps-trans}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\mutens'=\frac{\Jactens\mutens\Jactens^{T}}{\det\Jactens},\label{eq:mu-trans}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\vec{J}'=\frac{\Jactens\vec{J}}{\det\Jactens},\label{eq:J-trans}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\rho'=\frac{\rho}{\det\Jactens},\label{eq:rho-trans}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Jactens^{T}$
+\end_inset
+
+ is the transpose.
+\end_layout
+
+\begin_layout Standard
+Note that, even if we start out with isotropic materials (scalar 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+), after a coordinate transformation we in general obtain 
+\emph on
+an
+\emph default
+isotropic materials (tensors 
+\begin_inset Formula $\epstens'$
+\end_inset
+
+ and 
+\begin_inset Formula $\mutens'$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+For example, if 
+\begin_inset Formula $\vec{x}'=s\vec{x}$
+\end_inset
+
+ for some scale factor 
+\begin_inset Formula $s\neq0$
+\end_inset
+
+, then 
+\begin_inset Formula $\epstens'=\epstens/s$
+\end_inset
+
+ and 
+\begin_inset Formula $\mutens'=\mutens/s$
+\end_inset
+
+, which is precisely the material scaling required to keep e.g.
+ the eigenfrequencies fixed under a rescaling of a structure.
+ Note also that if 
+\begin_inset Formula $s=-1$
+\end_inset
+
+, i.e.
+ a coordinate inversion, then we set 
+\begin_inset Formula $\vec{E}'=-\vec{E}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{H}'=-\vec{H},$
+\end_inset
+
+ 
+\begin_inset Formula $\epstens'=-\epstens$
+\end_inset
+
+ and 
+\begin_inset Formula $\mutens'=-\mutens$
+\end_inset
+
+, and the system switches 
+\begin_inset Quotes eld
+\end_inset
+
+handed-ness
+\begin_inset Quotes erd
+\end_inset
+
+ (flipping the sign of the refractive index).
+ [A more common alternative choice in that case would be to set 
+\begin_inset Formula $\vec{H}'=\vec{H}$
+\end_inset
+
+, transforming 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ as a pseudovector 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jackson98"
+
+\end_inset
+
+, while keeping 
+\begin_inset Formula $\epstens$
+\end_inset
+
+ and 
+\begin_inset Formula $\mutens$
+\end_inset
+
+ unchanged.
+ This corresponds to sprinkling a few factors of 
+\begin_inset Formula $\sign(\det\Jactens)$
+\end_inset
+
+ in the above equations, which we are free to do as long as the sign is
+ constant.]
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Proof
+\end_layout
+
+\begin_layout Standard
+We will proceed in index notation, employing the Einstein convention whereby
+ repeated indices are summed over.
+ Eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:maxwell-H"
+
+\end_inset
+
+) is now expressed:
+\begin_inset Formula \begin{equation}
+\partial_{a}H_{b}\epsilon_{abc}=\varepsilon_{cd}\frac{\partial E_{d}}{\partial t}+J_{c}\label{eq:maxwell-H-Einstein}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\epsilon_{abc}$
+\end_inset
+
+ is the usual Levi-Civita permutation tensor and 
+\begin_inset Formula $\partial_{a}=\partial/\partial x_{a}$
+\end_inset
+
+.
+ Under a coordinate change 
+\begin_inset Formula $\vec{x}\mapsto\vec{x}'$
+\end_inset
+
+, if we let 
+\begin_inset Formula $\Jac_{ab}=\frac{\partial x_{a}'}{\partial x_{b}}$
+\end_inset
+
+ be the (non-singular) Jacobian matrix associated with the coordinate transform
+ (which may be a function of 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+), we have 
+\begin_inset Formula \begin{equation}
+\partial_{a}=\Jac_{ba}\partial_{b}'.\label{eq:del-Jac}\end{equation}
+
+\end_inset
+
+Furthermore, as in eqs\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E-trans"
+
+\end_inset
+
+--
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:H-trans"
+
+\end_inset
+
+), let 
+\begin_inset Formula \begin{eqnarray}
+E_{a} & = & \Jac_{ba}E_{b}',\label{eq:E-trans-Einstein}\\
+H_{a} & = & \Jac_{ba}H_{b}'.\label{eq:H-trans-Einstein}\end{eqnarray}
+
+\end_inset
+
+Hence, eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:maxwell-H-Einstein"
+
+\end_inset
+
+) becomes 
+\begin_inset Formula \begin{equation}
+\Jac_{ia}\partial_{i}'\Jac_{jb}H'_{j}\epsilon_{abc}=\varepsilon_{cd}\Jac_{ld}\frac{\partial E'_{l}}{\partial t}+J_{c}.\label{eq:maxwell-H-transform-1}\end{equation}
+
+\end_inset
+
+ Here, the 
+\begin_inset Formula $\Jac_{ia}\partial_{i}'=\partial_{a}$
+\end_inset
+
+ derivative falls on both the 
+\begin_inset Formula $\Jac_{jb}$
+\end_inset
+
+ and 
+\begin_inset Formula $H'_{j}$
+\end_inset
+
+ terms, but we can eliminate the former thanks to the 
+\begin_inset Formula $\epsilon_{abc}$
+\end_inset
+
+: 
+\begin_inset Formula $\partial_{a}\Jac_{jb}\epsilon_{abc}=0$
+\end_inset
+
+ because 
+\begin_inset Formula $\partial_{a}\Jac_{jb}=\partial_{b}\Jac_{ja}$
+\end_inset
+
+.
+ Then, again multiplying both sides by the Jacobian 
+\begin_inset Formula $\Jac_{kc}$
+\end_inset
+
+, we obtain 
+\begin_inset Formula \begin{equation}
+\Jac_{kc}\Jac_{jb}\Jac_{ia}\partial_{i}'H'_{j}\epsilon_{abc}=\Jac_{kc}\varepsilon_{cd}\Jac_{ld}\frac{\partial E'_{l}}{\partial t}+\Jac_{kc}J_{c}\label{eq:maxwell-H-transform-2}\end{equation}
+
+\end_inset
+
+ Noting that 
+\begin_inset Formula $\Jac_{ia}\Jac_{jb}\Jac_{kc}\epsilon_{abc}=\epsilon_{ijk}\det\Jactens$
+\end_inset
+
+ by definition of the determinant, we finally have
+\begin_inset Formula \begin{equation}
+\partial_{i}'H'_{j}\epsilon_{ijk}=\frac{1}{\det\Jactens}\Jac_{kc}\varepsilon_{cd}\Jac_{ld}\frac{\partial E'_{l}}{\partial t}+\frac{\Jac_{kc}J_{c}}{\det\Jactens}\label{eq:maxwell-H-transform-3}\end{equation}
+
+\end_inset
+
+ or, back in vector notation, 
+\begin_inset Formula \begin{equation}
+\nabla'\times\vec{H}'=\frac{\Jactens\epstens\Jactens^{T}}{\det\Jactens}\frac{\partial\vec{E}'}{\partial t}+\vec{J}',\label{eq:maxwell-H-transform}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{J}'=\Jactens\vec{J}/\det\Jactens$
+\end_inset
+
+ according to (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:J-trans"
+
+\end_inset
+
+).
+ Thus, we see that we can interpret Ampere's Law in arbitrary coordinates
+ as the usual equation in Euclidean coordinates, as long as we replace the
+ materials etc.
+ by eqs\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E-trans"
+
+\end_inset
+
+--
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eps-trans"
+
+\end_inset
+
+).
+ By an identical argument, we obtain
+\begin_inset Formula \begin{equation}
+\nabla'\times\vec{E}'=-\frac{\Jactens\mutens\Jactens^{T}}{\det\Jactens}\frac{\partial\vec{H}'}{\partial t},\label{eq:maxwell-E-transform}\end{equation}
+
+\end_inset
+
+which yields the transformation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mu-trans"
+
+\end_inset
+
+) for 
+\begin_inset Formula $\mutens$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The transformation of the remaining divergence equations into equivalent
+ forms in the new coordinates is also straightforward.
+ Gauss' Law, eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:maxwell-Gauss-E"
+
+\end_inset
+
+), becomes 
+\begin_inset Formula \begin{align}
+\rho & =\partial_{a}\varepsilon_{ab}E_{b}=\Jac_{ia}\partial_{i}'\varepsilon_{ab}\Jac_{jb}E_{j}'\nonumber \\
+ & =\Jac_{ia}\partial_{i}'(\det\Jactens)\Jac_{ak}^{-1}\varepsilon_{kj}'E_{j}'\nonumber \\
+ & =(\det\Jactens)\partial_{i}'\varepsilon_{ij}'E_{j}'+(\partial_{a}\Jac_{ak}^{-1}\det\Jactens)\varepsilon_{kj}'E_{j}'\nonumber \\
+ & =(\det\Jactens)\partial_{i}'\varepsilon_{ij}'E_{j}',\label{eq:maxwell-Gauss-E-transform}\end{align}
+
+\end_inset
+
+which gives 
+\begin_inset Formula $\nabla'\cdot(\epstens'\vec{E}')=\rho'$
+\end_inset
+
+ for 
+\begin_inset Formula $\rho'=\rho/\det\Jactens$
+\end_inset
+
+, corresponding to eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rho-trans"
+
+\end_inset
+
+).
+ Similarly for eq\SpecialChar \@.
+
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:maxwell-Gauss-H"
+
+\end_inset
+
+).
+ Here, we have used the fact that
+\begin_inset Formula \begin{equation}
+\partial_{a}\Jac_{ak}^{-1}\det\Jactens=\partial_{a}\epsilon_{anm}\epsilon_{kij}\Jac_{in}\Jac_{jm}/2=0,\label{eq:Jac-inv-deriv-identity}\end{equation}
+
+\end_inset
+
+from the cofactor formula for the matrix inverse, and recalling that 
+\begin_inset Formula $\partial_{a}\Jac_{jb}\epsilon_{abc}=0$
+\end_inset
+
+ from above.
+ In particular, note that 
+\begin_inset Formula $\rho=0\Longleftrightarrow\rho'=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{J}=0\Longleftrightarrow\vec{J}'=0$
+\end_inset
+
+, so a non-singular coordinate transformation preserves the absence (or
+ presence) of sources.d
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/stevenj/papers/pert-aniso/pert"
+options "ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
