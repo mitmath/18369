@@ -225,7 +225,7 @@ Computationally, e.g. in MPB, we often compute localized cavity modes by imposin
 
 ### Lecture 16: 16 Mar
 
-**Handouts:** [MPB demo](notes/mpb-demo.pdf) (see also [the MPB home page](https://github.com/NanoComp/mpb)) and example files: [2dwaveguide.ctl](notes/2dwaveguide.ctl) and [2dwaveguide-periodic.ctl](notes/2dwaveguide-periodic.ctl); [IJulia notebook](http://nbviewer.jupyter.org/url/math.mit.edu/~stevenj/18.369/MPB-demo.ipynb)
+**Handouts:** [MPB demo](notes/mpb-demo.pdf) (see also [the MPB home page](https://github.com/NanoComp/mpb)) and example files: [2dwaveguide.ctl](notes/2dwaveguide.ctl) and [2dwaveguide-periodic.ctl](notes/2dwaveguide-periodic.ctl); [IJulia notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb)
 
 Gave demo of MPB eigensolver software for 2d dielectric waveguide (available on Athena, e.g. in the clusters or via ssh to `athena.dialup.mit.edu`).
 
