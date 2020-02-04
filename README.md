@@ -37,7 +37,7 @@ Lecture Summaries and Handouts
 
 ### Lecture 1: 4 Feb 2020
 
-**Handouts:** syllabus (this web page), [introductory slides](notes/18.369-intro.pdf), [collaboration policy](psets/homework-policy.pdf), [pset 1](psets/pset1-spring18.pdf) (due Wed Feb 14).
+**Handouts:** syllabus (this web page), [introductory slides](notes/18.369-intro.pdf), [pset 1](psets/pset1.pdf) (due Thur Feb 13).
 
 Motivation and introduction: this class is about electromagnetism where the wavelength is neither very large (quasi-static) nor very small (ray optics), and the analytical and computational methods we can use to understand phenomena in materials that are structured on the wavelength scale. In that situation, there are very few cases that can be solved analytically, but lots of interesting phenomena that we can derive from the _structure_ of the equations.
 
