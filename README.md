@@ -20,6 +20,8 @@ Syllabus
 
 **Grading**: 33% problem sets (weekly/biweekly). 33% take-home mid-term exam (Posted **April 20**, due **April 21**.). 34% final project (proposal due April 14, project due May 12).
 
+* Psets will be [submitted electronically via Stellar](https://learning-modules.mit.edu/gradebook/index.html?uuid=/course/18/sp20/18.369).  Submit a good-quality PDF *scan* of any handwritten solutions (or a PDF printout of computer output).
+
 **Collaboration policy**: Talk to anyone you want to and read anything you want to, with three exceptions: First, you **may not refer to homework solutions from the previous terms** in which I taught 18.369. Second, make a solid effort to solve a problem on your own before discussing it with classmates or googling. Third, no matter whom you talk to or what you read, write up the solution on your own, without having their answer in front of you.
 
 **Books**: [Photonic Crystals: Molding the Flow of Light (Second Edition)](http://ab-initio.mit.edu/book) (**readable online**). (This book is at an undergraduate level and 18.369/8.315 is somewhat more advanced, but the book should provide a useful foundation.)
