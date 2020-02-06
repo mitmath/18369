@@ -14,7 +14,7 @@ Syllabus
 > For beginning graduate students and advanced undergraduates.
 
 
-**Lectures**: Tues-Thurs 11am–12:30pm (4-153). **Office Hours:** Tues. 4–5pm (2-345). TA/grader: TBD
+**Lectures**: Tues-Thurs 11am–12:30pm (4-153). **Office Hours:** Tues. 4–5pm (2-345). TA/grader: [Chenyang Shao](http://math.mit.edu/directory/profile.php?pid=2035).
 
 **Probable topics**: _Methods_: linear algebra & eigensystems for Maxwell's equations, symmetry groups and representation theory, Bloch's theorem, numerical eigensolver methods, time and frequency-domain computation, perturbation theory, coupled-mode theories, waveguide theory, adiabatic transitions. _Optical phenomena_: photonic crystals & band gaps, anomalous diffraction, mechanisms for optical confinement, optical fibers (new & old), nonlinearities, integrated optical devices.
 
