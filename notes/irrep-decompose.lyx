@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -50,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -61,7 +64,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -89,8 +95,8 @@ In the representation-theory handout for 18.369, it says that any function
 \begin_inset Formula $\psi(\vec{x})$
 \end_inset
 
- can be decomposed into a sum of partner functions of the different irreps
- of any symmetry group 
+ can be decomposed into a sum of partner (basis) functions of the different
+ irreps of any symmetry group 
 \begin_inset Formula $G$
 \end_inset
 
@@ -110,7 +116,7 @@ In the representation-theory handout for 18.369, it says that any function
 
 .
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Some authors just use 
@@ -118,8 +124,8 @@ Some authors just use
 \end_inset
 
  interchangeably for rotations of the coordinate space or rotations of the
- Hilbert space, but for vector fields it is confusing if you don't distinguish
- the two.
+ function space, but for vector fields it can be confusing if you don't
+ distinguish the two.
  e.g.
  for a covariant vector field 
 \begin_inset Formula $\vec{F}(\vec{x})$
@@ -275,7 +281,11 @@ Comparing the first and last lines, which must be true for any
 \begin_inset Formula $G$
 \end_inset
 
-, i.e.
+ (with dimension 
+\begin_inset Formula $d^{(\alpha)}$
+\end_inset
+
+), i.e.
  we can perform a change of basis to 
 \begin_inset Formula $\tilde{D}=S^{-1}DS$
 \end_inset
@@ -290,23 +300,28 @@ Comparing the first and last lines, which must be true for any
 \end_inset
 
  to obtain the corresponding basis functions 
-\begin_inset Formula $\tilde{\psi}_{j}=\sum_{i}\psi_{i}S_{ij}$
+\begin_inset Formula $\tilde{\psi}_{j}^{(\alpha)}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ denotes the block, i.e.
+ the irrep, and 
+\begin_inset Formula $j$
+\end_inset
+
+ is the index within the block).
+ By construction, the 
+\begin_inset Formula $\tilde{\psi}_{i}^{(\alpha)}$
+\end_inset
+
+ are partners of the irrep blocks 
+\begin_inset Formula $D^{(\alpha)}$
 \end_inset
 
 .
- By construction, the 
-\begin_inset Formula $\tilde{\psi}_{j}$
-\end_inset
-
- are partners of 
-\begin_inset Formula $\tilde{D}$
-\end_inset
-
-, and hence they are partners of the irreps that 
-\begin_inset Formula $\tilde{D}$
-\end_inset
-
- reduces into.
 \end_layout
 
 \begin_layout Enumerate
@@ -326,16 +341,16 @@ Comparing the first and last lines, which must be true for any
 \end_inset
 
  and hence of 
-\begin_inset Formula $\tilde{\psi}_{i}$
+\begin_inset Formula $\tilde{\psi}_{i}^{(\alpha)}$
 \end_inset
 
 .
  Hence 
-\begin_inset Formula $\psi=\sum_{i}c_{i}\tilde{\psi}_{i}$
+\begin_inset Formula $\psi=\sum_{\alpha}\sum_{i=1}^{d^{(\alpha)}}c_{i}^{(\alpha)}\tilde{\psi}_{i}^{(\alpha)}$
 \end_inset
 
  for some coefficients 
-\begin_inset Formula $c_{i}$
+\begin_inset Formula $c_{i}^{(\alpha)}$
 \end_inset
 
 , which from above is a sum of partner functions of one or more of various
@@ -344,13 +359,22 @@ Comparing the first and last lines, which must be true for any
 \end_inset
 
 .
- (Note it is easy to show that the partner functions of an irrep form a
- vector space: summing two partners of the same irrep or multipling them
- by scalars 
-\begin_inset Formula $c_{i}$
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The same irrep may appear multiple times in the reduction of 
+\begin_inset Formula $D$
 \end_inset
 
- yields another partner function.) Q.E.D.
+, but in that case we can combine the respective partner functions into
+ new partner functions (it is easy to show that summing/scaling partner
+ functions of the same irrep yields another partner function).
+\end_layout
+
+\end_inset
+
+ Q.E.D.
 \end_layout
 
 \end_body
