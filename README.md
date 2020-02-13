@@ -75,7 +75,7 @@ Build the simple character table for the {E,σ} mirror-symmetry group, reprising
 
 **Further reading:** Chapter 3 of the text, but this doesn't get into representation theory. See e.g. _Group Theory and Its Applications in Physics_ by Inui et al. (especially sections 4.1, 6.1, and 6.2) or _Group Theory and Quantum Mechanics_ by Michael Tinkham (especially sections 3-1 and 3-6), or any book with a similar title.  Character tables for all of the common symmetry groups are tabulated in both textbooks and online, e.g. see this [page on the C4v group](http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=404&option=4). See Inui section 6.6 on projection operators.
 
-### Lecture 4: 11 Feb
+### Lecture 4: 13 Feb
 
 **Handout:** [notes on decomposition of functions into partner functions](notes/irrep-decompose.pdf);  [pset 1 solutions](pset1/pset1sol.pdf); [pset 2](psets/pset2.pdf) (due Thurs Feb 27).
 
@@ -90,3 +90,21 @@ Showed how we can apply the projection operator to "random" functions to find pa
 Next time, we will show the irreducible representation is conserved over time in a linear system, by showing that the projection operator commutes with the time-evolution operator.
 
 **Further reading:** Character tables for all of the common symmetry groups are tabulated in both textbooks and online, e.g. see this [page on the C4v group](http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=404&option=4). See Inui section 6.6 on projection operators.
+
+### No class: 18 Feb
+
+This is an "MIT Monday" due to the holiday on the previous day.
+
+### Lecture 5: 20 Feb
+
+Guest lecture, [Prof. Marin Soljačić, MIT Physics](https://www.rle.mit.edu/marin/): Novel devices and applications in photonics.
+
+### Lecture 6: 25 Feb
+
+**Handout:** [notes on time evolution and conservation laws](notes/time-evolution.pdf)
+
+The irreducible representation is "conserved" over time in a linear system, because the projection operator commutes with the time-evolution operator.
+
+Defined the time-evolution operator explicitly via an exponentiated operator on the 6-component vector-field (**E**, **H**). Showed that the time-evolution operator is unitary in an appropriate inner product, for lossless materials, and that this leads to conservation of energy.
+
+**Further reading:** See my [Notes on the algebraic structure of wave equations](notes/wave-equations.pdf) for a general discussion of many wave equations, showing that they share the common form dψ/dt D ψ where D is anti-Hermitian. For Poynting's theorem, see any graduate-level book on electromagnetism, e.g. Jackson's _Classical Electrodynamics_. The result is summarized in chapter 2 of the textbook. Beware that matters are more complicated for dispersive media (ones in which ε and μ depend on ω), as discussed briefly in Jackson. A much more complete review of passive dispersive media, including the consequences of passivity for causality etcetera, can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf): see in particular the discussion of passivity in section II.B and of "dynamical" energy density in section V.A.
