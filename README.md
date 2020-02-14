@@ -77,7 +77,7 @@ Build the simple character table for the {E,σ} mirror-symmetry group, reprising
 
 ### Lecture 4: 13 Feb
 
-**Handout:** [notes on decomposition of functions into partner functions](notes/irrep-decompose.pdf);  [pset 1 solutions](pset1/pset1sol.pdf); [pset 2](psets/pset2.pdf) (due Thurs Feb 27).
+**Handout:** [notes on decomposition of functions into partner functions](notes/irrep-decompose.pdf);  [pset 1 solutions](psets/pset1sol.pdf); [pset 2](psets/pset2.pdf) (due Thurs Feb 27).
 
 Using the rules from the representation theory handout, we build up the character table for the symmetry group of the square (called _C_4v). Then, look at the eigenfunction solutions that we previously had for this case, and show how we could classify them into the various irreducible representations.
 
