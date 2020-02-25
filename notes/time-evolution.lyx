@@ -1046,7 +1046,7 @@ If the currents
  as: 
 \begin_inset Formula 
 \[
-\psi(t)=\hat{U}_{t}\psi(0)+\int_{0}^{t}\hat{U}_{t-t'}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt'.
+\psi(t)=\hat{U}_{t}\psi(0)-\int_{0}^{t}\hat{U}_{t-t'}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt'.
 \]
 
 \end_inset
