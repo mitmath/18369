@@ -291,12 +291,25 @@ Using this, we can integrate by parts over the domain
 \begin{align*}
 \langle\psi,\hat{C}\psi'\rangle & =\int_{\Omega}\left[\vec{E}^{*}\cdot(\nabla\times\vec{H}')-\vec{H}^{*}\cdot(\nabla\times\vec{E}')\right]dV\\
  & =\int_{\Omega}\left[(\nabla\times\vec{E})^{*}\cdot\vec{H}'-(\nabla\times\vec{H})^{*}\cdot\vec{E}'-\nabla\cdot(\vec{E}^{*}\times\vec{H}'+\vec{E}'\times\vec{H}^{*})\right]dV\\
- & =\langle-\hat{C}\psi,\psi'\rangle+\oiint_{\partial\Omega}(\vec{E}^{*}\times\vec{H}'+\vec{E}'\times\vec{H}^{*})\cdot d\vec{A}.
+ & =\langle-\hat{C}\psi,\psi'\rangle-\oiint_{\partial\Omega}(\vec{E}^{*}\times\vec{H}'+\vec{E}'\times\vec{H}^{*})\cdot d\vec{A},
 \end{align*}
 
 \end_inset
 
-Hence, if we have boundary conditions such that the surface integral (
+where 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ denotes the boundary of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $d\vec{A}$
+\end_inset
+
+ is the outward normal.
+ Hence, if we have boundary conditions such that the surface integral (
 \begin_inset Formula $\oiint_{\partial\Omega}$
 \end_inset
 
@@ -898,7 +911,7 @@ If we have a symmetry group
 \end_inset
 
 ), recall that we can define the projection operator 
-\begin_inset Formula $\hat{P}^{(\alpha)}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}\chi^{(\alpha)}(g)^{*}\hat{O}_{g}$
+\begin_inset Formula $\hat{P}^{(\alpha)}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}\chi^{(\alpha)}(g)^{*}\hat{g}$
 \end_inset
 
 , where 
@@ -922,19 +935,63 @@ irrep
 \end_inset
 
  and 
-\begin_inset Formula $\hat{O}_{g}$
+\begin_inset Formula $\hat{g}$
 \end_inset
 
- is the transformation (rotation/reflection/translation) acting on the Hilbert
- space 
+ is the transformation (rotation/reflection/translation) acting on functions
+ 
 \begin_inset Formula $\psi$
 \end_inset
 
- corresponding to the operation 
+ (or 
+\begin_inset Formula $\phi$
+\end_inset
+
+ or 
+\begin_inset Formula $\xi$
+\end_inset
+
+) corresponding to the operation 
 \begin_inset Formula $g$
 \end_inset
 
  on the coordinates.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ rotation matrix 
+\begin_inset Formula $g^{-1}=g^{T}$
+\end_inset
+
+ acting on the coordinates 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+, for example, then 
+\begin_inset Formula $\left.\hat{g}\psi\right|_{\vec{x}}=\left(\begin{array}{c}
+g\vec{E}(g^{-1}\vec{x})\\
+g\vec{H}(g^{-1}\vec{x})\det g
+\end{array}\right)$
+\end_inset
+
+, where the extra 
+\begin_inset Formula $\det g$
+\end_inset
+
+ factor arises because the magnetic field is a pseudo-vector.
+\end_layout
+
+\end_inset
+
  
 \begin_inset Formula $\hat{P}^{(\alpha)}\psi$
 \end_inset
@@ -1243,14 +1300,46 @@ The above was if we assumed the surface term from the integration-by-parts
 \begin_inset Formula 
 \begin{align*}
 \frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}\right]+\Re\langle\psi,\xi\rangle & =\frac{1}{2}\left[\langle\psi,\hat{C}\psi\rangle+\langle\hat{C}\psi,\psi\rangle\right]\\
- & =\oiint_{\partial\Omega}\Re\left[\vec{E}^{*}\times\vec{H}\right]\cdot d\vec{A},
+ & =-\oiint_{\partial\Omega}\Re\left[\vec{E}^{*}\times\vec{H}\right]\cdot d\vec{A},
 \end{align*}
 
 \end_inset
 
 where the 
 \emph on
-Poynting flux 
+Poynting
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Named after John Henry Poynting, who developed the first version of this
+ equation in 1884 (
+\begin_inset Quotes eld
+\end_inset
+
+On the transfer of energy in the electromagnetic field,
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+Philsophical Transactions
+\emph default
+ vol.
+\begin_inset space ~
+\end_inset
+
+175, pp.
+\begin_inset space ~
+\end_inset
+
+343–361).
+ The pre-vector notation, following Maxwell from 1865, is horrifying.
+\end_layout
+
+\end_inset
+
+ flux 
 \emph default
 
 \begin_inset Formula $\Re[\vec{E}^{*}\times\vec{H}]$
@@ -1270,6 +1359,44 @@ electromagnetic energy flux
 \end_inset
 
 .
+ The left-hand side is the time derivative of the 
+\emph on
+total
+\emph default
+ (electromagnetic + mechanical) energy in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and the right-hand side is the rate at which energy is flowing 
+\emph on
+into 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ 
+\emph default
+That is, since we defined 
+\begin_inset Formula $d\vec{A}$
+\end_inset
+
+ as the 
+\emph on
+outward
+\emph default
+ normal, when the Poynting vector is 
+\emph on
+inwards
+\emph default
+ (into 
+\begin_inset Formula $\Omega$
+\end_inset
+
+) we obtain positive right-hand side and hence 
+\emph on
+increasing
+\emph default
+ total energy.
 \end_layout
 
 \begin_layout Subsection
@@ -1407,13 +1534,13 @@ Let us now return to the case of an arbitrary
 and hence 
 \begin_inset Formula 
 \[
-\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle\right]+\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle+\Re\langle\psi,\xi\rangle=\oiint_{\partial\Omega}\Re\left[\vec{E}^{*}\times\vec{H}\right]\cdot d\vec{A}.
+\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle\right]+\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle+\Re\langle\psi,\xi\rangle=-\oiint_{\partial\Omega}\Re\left[\vec{E}^{*}\times\vec{H}\right]\cdot d\vec{A}.
 \]
 
 \end_inset
 
-On the right-hand side is the Poynting flux out of the domain, from the
- integration-by-parts of 
+On the right-hand side is the Poynting flux into the domain, from the integratio
+n-by-parts of 
 \begin_inset Formula $\hat{C}$
 \end_inset
 
@@ -2014,10 +2141,11 @@ The time-evolution operator
 
 , because the time evolution must be invariant under the symmetry operations
  
-\begin_inset Formula $\hat{O}_{g}$
+\begin_inset Formula $\hat{g}$
 \end_inset
 
- (this is essentially the definition of the symmetry group of the problem).
+ (again, this is essentially the definition of the symmetry group of the
+ problem).
  Hence it will still be the case (proof as in the lossless case) that if
  your currents are partners of irrep 
 \begin_inset Formula $\alpha$
