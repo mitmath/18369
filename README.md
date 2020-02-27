@@ -111,7 +111,7 @@ Defined the time-evolution operator explicitly via an exponentiated operator on 
 
 ### Lecture 7: 27 Feb
 
-* pset 2 solutions: coming soon
+* [pset 2 solutions](psets/pset2sol.pdf)
 * pset 3: coming soon
 
 Finished time-evolution notes from last lecture: dispersive media, passivity, and dissipation.
