@@ -111,12 +111,15 @@ Defined the time-evolution operator explicitly via an exponentiated operator on 
 
 ### Lecture 7: 27 Feb
 
+* pset 2 solutions: coming soon
+* pset 3: coming soon
+
 Finished time-evolution notes from last lecture: dispersive media, passivity, and dissipation.
 
 **Translational symmetry:** Showed that for continuous translational symmetry, the representations are exponential functions exp(ikx) for some real number k (for unitary representations).  In a uniform medium, this gives **planewave** solutions.
 
 Explained how conservation of the exp(-ikx) representation, which gives conservation of k, means that planewaves are produced by a line-current source Jz(x,y)=δ(x) exp[-i(ky-ωt)] in 2d, assuming outgoing (radiation) boundary conditions.
 
-Explained how conservation of the exp(-ikx) representation, which gives conservation of k, leads immediately to Snell's law at a flat interface.
+Next time: Conservation of the exp(-ikx) representation, which gives conservation of k, leads immediately to Snell's law at a flat interface.
 
 **Further reading:** Textbook, chapter 3 on continuous translational symmetry.
