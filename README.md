@@ -108,3 +108,15 @@ The irreducible representation is "conserved" over time in a linear system, beca
 Defined the time-evolution operator explicitly via an exponentiated operator on the 6-component vector-field (**E**, **H**). Showed that the time-evolution operator is unitary in an appropriate inner product, for lossless materials, and that this leads to conservation of energy.
 
 **Further reading:** See my [Notes on the algebraic structure of wave equations](notes/wave-equations.pdf) for a general discussion of many wave equations, showing that they share the common form dψ/dt D ψ where D is anti-Hermitian. For Poynting's theorem, see any graduate-level book on electromagnetism, e.g. Jackson's _Classical Electrodynamics_. The result is summarized in chapter 2 of the textbook. Beware that matters are more complicated for dispersive media (ones in which ε and μ depend on ω), as discussed briefly in Jackson. A much more complete review of passive dispersive media, including the consequences of passivity for causality etcetera, can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf): see in particular the discussion of passivity in section II.B and of "dynamical" energy density in section V.A.
+
+### Lecture 7: 27 Feb
+
+Finished time-evolution notes from last lecture: dispersive media, passivity, and dissipation.
+
+**Translational symmetry:** Showed that for continuous translational symmetry, the representations are exponential functions exp(ikx) for some real number k (for unitary representations).  In a uniform medium, this gives **planewave** solutions.
+
+Explained how conservation of the exp(-ikx) representation, which gives conservation of k, means that planewaves are produced by a line-current source Jz(x,y)=δ(x) exp[-i(ky-ωt)] in 2d, assuming outgoing (radiation) boundary conditions.
+
+Explained how conservation of the exp(-ikx) representation, which gives conservation of k, leads immediately to Snell's law at a flat interface.
+
+**Further reading:** Textbook, chapter 3 on continuous translational symmetry.
