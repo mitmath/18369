@@ -1741,7 +1741,7 @@ passive convolution operator,
 \end_inset
 
 , and 
-\begin_inset Formula $\Im[\omega\hat{\chi}(\omega)]$
+\begin_inset Formula $\Im[\omega\hat{\chi}(\omega)]=\omega\frac{\hat{\chi}-\hat{\chi}^{\dagger}}{2i}$
 \end_inset
 
  is positive semidefinite for 
@@ -1860,7 +1860,7 @@ energy dissipation
 ) of:
 \begin_inset Formula 
 \[
-\Re\langle\hat{\psi},-i\omega\hat{\chi}(\omega)\hat{\psi}(\omega)\rangle=\int_{\Omega}\Re[-i\omega\hat{\chi}]\,|\hat{\psi}|^{2}=\int_{\Omega}\Im[\omega\hat{\chi}]\,|\hat{\psi}|^{2},
+\Re\langle\hat{\psi},-i\omega\hat{\chi}(\omega)\hat{\psi}(\omega)\rangle=\int_{\Omega}\hat{\psi}^{*}\cdot\Re[-i\omega\hat{\chi}]\,\hat{\psi}=\int_{\Omega}\hat{\psi}^{*}\cdot\Im[\omega\hat{\chi}]\,\hat{\psi},
 \]
 
 \end_inset
@@ -1894,7 +1894,7 @@ As mentioned above, one of the consequences of passivity is that
 \begin_inset Formula $\Im[\omega\hat{\chi}]\geq0$
 \end_inset
 
- for 
+ (in the matrix sense: positive semidefinite) for 
 \begin_inset Formula $\Im\omega>0$
 \end_inset
 
