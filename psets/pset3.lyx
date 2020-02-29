@@ -9,6 +9,9 @@
 \usepackage{braket}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
 \renewcommand{\labelenumi}{(\alph{enumi})}
 \renewcommand{\labelenumii}{(\roman{enumii})}
 \end_preamble
@@ -40,10 +43,10 @@
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_package amsmath 1
+\use_package amsmath 2
 \use_package amssymb 1
 \use_package cancel 1
-\use_package esint 0
+\use_package esint 1
 \use_package mathdots 1
 \use_package mathtools 1
 \use_package mhchem 1
@@ -100,19 +103,16 @@ Problem 0: Scattering and energy
 
 \begin_layout Standard
 \begin_inset Float figure
+placement !b
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename inc-scat.pdf
-	width 60text%
+	width 100col%
 
 \end_inset
 
@@ -180,7 +180,12 @@ inside
 
 \end_inset
 
-As in the course notes, we can write Maxwell's equations as 
+As in the course notes, we can write Maxwell's equations for the 6-component
+ fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ as 
 \begin_inset Formula $\frac{\partial\psi}{\partial t}=\hat{C}\psi-\frac{\partial\phi}{\partial t}-\xi$
 \end_inset
 
@@ -188,7 +193,7 @@ As in the course notes, we can write Maxwell's equations as
 \begin_inset Formula $\phi=\chi\ast\psi$
 \end_inset
 
- are a (passive, causal) convolution in time with a linear susceptibility
+ are a convolution in time with a (passive and causal) linear susceptibility
  
 \begin_inset Formula $\chi(\vec{x},t)$
 \end_inset
@@ -212,7 +217,321 @@ noprefix "false"
 
 \end_inset
 
+: sources (
+\begin_inset Formula $\xi\ne0)$
+\end_inset
+
+ lying 
+\emph on
+outside
+\emph default
+ some bounded volume 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ produce an incident wave 
+\begin_inset Formula $\psi_{\text{inc}}$
+\end_inset
+
+ that scatters off materials (
+\begin_inset Formula $\chi\neq0$
+\end_inset
+
+) 
+\emph on
+inside
+\emph default
+ of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ to produce a scattered wave 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
 .
+ Outside of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ there are no materials (
+\begin_inset Formula $\chi=0$
+\end_inset
+
+), while inside of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ there are no sources (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write the total fields as 
+\begin_inset Formula $\psi=\psi_{\text{inc}}+\psi_{\text{scat}}$
+\end_inset
+
+, where 
+\begin_inset Formula $\psi_{\text{inc}}=\left(\begin{array}{c}
+\vec{E}_{\text{inc}}\\
+\vec{H}_{\text{inc}}
+\end{array}\right)$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $\frac{\partial\psi_{\text{inc}}}{\partial t}=\hat{C}\psi_{\text{inc}}-\xi$
+\end_inset
+
+ (Maxwell's equations with the same currents but no materials), and the
+ initial conditions at 
+\begin_inset Formula $t=-\infty$
+\end_inset
+
+ are 
+\begin_inset Formula $\psi=\psi_{\text{inc}}=\psi_{\text{scat}}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+What differential
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Technically, if you include a convolution 
+\begin_inset Formula $\chi\ast{}$
+\end_inset
+
+ then you have a 
+\begin_inset Quotes eld
+\end_inset
+
+pseudodifferential
+\begin_inset Quotes erd
+\end_inset
+
+ operator.
+\end_layout
+
+\end_inset
+
+ equation must 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+ satisfy?
+\end_layout
+
+\begin_layout Enumerate
+Fourier transform in time to find equations for 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}(x,\omega)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ (in terms of 
+\begin_inset Formula $\hat{\xi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+); equivalently, look for time-harmonic solutions 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}e^{-i\omega t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}e^{-i\omega t}$
+\end_inset
+
+ from a time-harmonic source 
+\begin_inset Formula $\hat{\xi}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Applying Poynting's theorem and passivity to your time-harmonic fields,
+ show that 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{\text{abs}}=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}^{*}\times\hat{\vec{H}}]\cdot d\vec{A}\ge0$
+\end_inset
+
+ (the absorbed power = inward total flux).
+ (Note that here, 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a subset of the whole domain!)
+\end_layout
+
+\begin_layout Enumerate
+In order to ensure 
+\begin_inset Formula $P_{\text{scat}}=\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}\ge0$
+\end_inset
+
+ (the scattered power = outward scattered flux), we need something more:
+ an 
+\emph on
+outgoing boundary condition
+\emph default
+ (or 
+\begin_inset Quotes eld
+\end_inset
+
+radiation
+\begin_inset Quotes erd
+\end_inset
+
+ boundary condition): if we consider 
+\emph on
+any point
+\emph default
+ on sphere of radius 
+\begin_inset Formula $R$
+\end_inset
+
+ (around any point in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+), then 
+\emph on
+in the limit
+\emph default
+ as 
+\begin_inset Formula $R\to\infty$
+\end_inset
+
+ we require that 
+\begin_inset Formula $R^{2}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]$
+\end_inset
+
+ must point 
+\emph on
+radially outward
+\emph default
+.
+ Use Poynting's theorem to show that such a radiation boundary condition
+ implies 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}\ge0$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We also will also need some boundary condition to uniquely determine 
+\begin_inset Formula $\psi_{\text{inc}}$
+\end_inset
+
+.
+ Not necessarily an outgoing boundary condition, however—often it is convenient
+ to have an incident wave coming in 
+\begin_inset Quotes eld
+\end_inset
+
+from infinity
+\begin_inset Quotes erd
+\end_inset
+
+, such as an incident planewave, perhaps with no explicit sources (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+) and just appropriate boundary conditions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Show that the 
+\begin_inset Quotes eld
+\end_inset
+
+extinguished power
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $P_{\text{ext}}=P_{\text{abs}}+P_{\text{scat}}$
+\end_inset
+
+ can be written in terms of an integral over 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ involving 
+\begin_inset Formula $\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{scat}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{inc}}$
+\end_inset
+
+ 
+\emph on
+only.
+
+\emph default
+ This is a version of a famous result known as the 
+\series bold
+optical theorem
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+Derive an alternative form of the optical theorem: show that 
+\begin_inset Formula $P_{\text{ext}}$
+\end_inset
+
+ can be written as an integral over 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ involving 
+\emph on
+only
+\emph default
+ 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}^{*}\hat{\phi}$
+\end_inset
+
+.
+ (Hint: use Poynting's theorem to relate 
+\begin_inset Formula $P_{\text{abs}}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{\text{scat}}$
+\end_inset
+
+ to work on polarization currents, and write 
+\begin_inset Formula $\psi_{\text{scat}}=\psi-\psi_{\text{inc}}$
+\end_inset
+
+.)
 \end_layout
 
 \begin_layout Subsection*
@@ -693,6 +1012,49 @@ can be written as a superposition of solutions
 \end_layout
 
 \begin_layout Enumerate
+Instead of considering an infinite domain, it is often useful to consider
+ a 
+\begin_inset Quotes eld
+\end_inset
+
+supercell:
+\begin_inset Quotes erd
+\end_inset
+
+ suppose that we have 
+\begin_inset Formula $N$
+\end_inset
+
+ periods, with periodic boundary conditions 
+\begin_inset Formula $\vec{E}(x+Na)=\vec{E}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{J}(x+Na)=\vec{J}(x)$
+\end_inset
+
+.
+ Show that we can 
+\emph on
+still
+\emph default
+ write this 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ as a superposition of Bloch-periodic 
+\begin_inset Formula $\vec{E}_{k}$
+\end_inset
+
+ solutions in individual unit cells, exactly as in the previous part, but
+ with some restriction on 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
 Suppose that we want to compute the radiated power 
 \begin_inset Formula $P$
 \end_inset
@@ -730,7 +1092,28 @@ Show that
 separately
 \emph default
  for each periodic subproblem above.
- (Hint: orthogonality of partner functions.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(Hint: orthogonality of partner functions.
+ These infinite integrals can be somewhat awkward to work with, so it might
+ be easier to consider 
+\begin_inset Formula $P$
+\end_inset
+
+ for a supercell with 
+\begin_inset Formula $N$
+\end_inset
+
+ periods, and then take the limit as 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ of your final expression.)
 \end_layout
 
 \end_body
