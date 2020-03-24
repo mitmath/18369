@@ -172,6 +172,8 @@ As an application of conservation of k (up to addition of reciprocal lattice vec
 
 ### Lecture 11: 12 Mar
 
+* [pset 3 solutions](psets/pset3sol.pdf)
+
 Began new topic: **photonic crystals in one dimension**. Sketched the form of the dispersion relation (band structure) and explained several qualitative features we can predict without solving:
 
 *   From symmetry and periodicity, ω(k)=ω(-k)=ω(k+2π/a), and consequently ω(π/a-k)=ω(π/a+k) (i.e., ω is symmetric around both k=0 and k=π/a)

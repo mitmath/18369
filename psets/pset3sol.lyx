@@ -1,0 +1,1869 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 3 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 0: (6+6+5+5+5 points)
+\end_layout
+
+\begin_layout Enumerate
+Solutions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+From 
+\begin_inset Formula $\frac{\partial\psi}{\partial t}=\hat{C}\psi-\frac{\partial\phi}{\partial t}-\xi$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial\psi_{\text{inc}}}{\partial t}=\hat{C}\psi_{\text{inc}}-\xi$
+\end_inset
+
+, and 
+\begin_inset Formula $\psi=\psi_{\text{inc}}+\psi_{\text{scat}}$
+\end_inset
+
+, it follows that 
+\begin_inset Formula 
+\[
+\frac{\partial\psi_{\text{scat}}}{\partial t}=\hat{C}\psi_{\text{scat}}-\frac{\partial\phi}{\partial t}
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\phi=\chi\ast\psi=\chi\ast\left(\psi_{\text{inc}}+\psi_{\text{scat}}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Because of the dependence on 
+\begin_inset Formula $\phi$
+\end_inset
+
+, we can't solve the 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+ equation without first solving the 
+\begin_inset Formula $\psi_{\text{inc}}$
+\end_inset
+
+ equation.
+ Dividing the solutions into 
+\begin_inset Formula $\psi=\psi_{\text{inc}}+\psi_{\text{scat}}$
+\end_inset
+
+ doesn't make Maxwell's equations easier to solve, but it does give us a
+ new perspective on the solutions (and leads to some numerical approaches
+ such as integral-equation formulations).
+\end_layout
+
+\begin_layout Enumerate
+The Fourier transform merely changes 
+\begin_inset Formula $\frac{\partial}{\partial t}\to-i\omega$
+\end_inset
+
+, giving 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\hat{\psi}_{\text{inc}}}{\partial t} & =\hat{C}\hat{\psi}_{\text{inc}}-\hat{\xi}\\
+\frac{\partial\hat{\psi}_{\text{scat}}}{\partial t} & =\hat{C}\hat{\psi}_{\text{scat}}-\hat{\phi},
+\end{align*}
+
+\end_inset
+
+where the convolution 
+\begin_inset Formula $\phi=\chi\ast\psi$
+\end_inset
+
+ becomes a multiplication 
+\begin_inset Formula $\hat{\phi}=\hat{\chi}\hat{\psi}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Note: when we apply Poynting's theorem (from section
+\begin_inset space ~
+\end_inset
+
+3 of the notes) to a time-harmonic field 
+\begin_inset Formula $\psi(\vec{x},t)=\hat{\psi}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+, then the 
+\begin_inset Formula $\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle\right]$
+\end_inset
+
+ term is zero.
+ In general, the 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+ terms cancel from all of the products thanks to the complex conjugations.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+If we apply the remaining of Poynting's theorem 
+\emph on
+for the volume 
+\emph default
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+ to the 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+ equation, there is no 
+\begin_inset Formula $\phi$
+\end_inset
+
+ term in the equation and 
+\begin_inset Formula $\xi=0$
+\end_inset
+
+ inside 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ so the 
+\begin_inset Formula $\langle\psi_{\text{inc}},\xi\rangle$
+\end_inset
+
+ integral vanishes as well! So the only remaining term is 
+\begin_inset Formula $-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}$
+\end_inset
+
+ on the right-hand side, with the left-hand-side equal to zero, so 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}=0$
+\end_inset
+
+ as desired.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Applying Poynting's theorem to the 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+ equation in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, the 
+\begin_inset Formula $\langle\psi,\xi\rangle$
+\end_inset
+
+ term is still 
+\begin_inset Formula $=0$
+\end_inset
+
+ for an integral over 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ because 
+\begin_inset Formula $\xi=0$
+\end_inset
+
+ there, but we 
+\emph on
+do 
+\emph default
+have a 
+\begin_inset Formula $\phi$
+\end_inset
+
+ term.
+ As shown in section
+\begin_inset space ~
+\end_inset
+
+3.2 of the notes, the 
+\begin_inset Formula $\phi$
+\end_inset
+
+ term in the frequency domain simplifies to 
+\begin_inset Formula $\langle\hat{\psi},\Im[\omega\hat{\chi}]\hat{\psi}\rangle$
+\end_inset
+
+, and as we explained in the notes one always has 
+\begin_inset Formula $\Im[\omega\hat{\chi}]\ge0$
+\end_inset
+
+ (positive semidefinite) for a passive material.
+ Hence 
+\begin_inset Formula $\langle\hat{\psi},\Im[\omega\hat{\chi}]\hat{\psi}\rangle\ge0$
+\end_inset
+
+, and it follows from Poynting's theorem that 
+\begin_inset Formula 
+\[
+\langle\hat{\psi},\Im[\omega\hat{\chi}]\hat{\psi}\rangle=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}^{*}\times\hat{\vec{H}}]\cdot d\vec{A}=P_{\text{abs}}\ge0
+\]
+
+\end_inset
+
+as desired.
+\end_layout
+
+\begin_layout Enumerate
+Consider a ball 
+\begin_inset Formula $B$
+\end_inset
+
+ of radius 
+\begin_inset Formula $R$
+\end_inset
+
+ (the interior of the sphere 
+\begin_inset Formula $\partial B$
+\end_inset
+
+ of radius 
+\begin_inset Formula $R$
+\end_inset
+
+) centered on some point in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, for any 
+\begin_inset Formula $R$
+\end_inset
+
+ large enough so that 
+\begin_inset Formula $B$
+\end_inset
+
+ encloses 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $\Omega\subseteq B$
+\end_inset
+
+), and apply Poynting's theorem to the volume 
+\begin_inset Formula $B\backslash\Omega$
+\end_inset
+
+ that lies 
+\emph on
+between
+\emph default
+ 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial B$
+\end_inset
+
+.
+ Poynting's theorem immediately implies that 
+\begin_inset Formula 
+\[
+0=-\oiint_{\partial(B\backslash\Omega)}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}=\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}-\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Longrightarrow P_{\text{scat}}=\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}=\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $d\vec{A}$
+\end_inset
+
+ pointing 
+\emph on
+out
+\emph default
+ of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ for 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial B$
+\end_inset
+
+, respectively.
+ More generally, by a similar argument one can show that 
+\begin_inset Formula $P_{\text{scat}}$
+\end_inset
+
+ is equal to the Poynting flux through 
+\emph on
+any
+\emph default
+ surface enclosing 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Since outgoing boundary conditions require 
+\begin_inset Formula $R^{2}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]$
+\end_inset
+
+ to point radially outward for large 
+\begin_inset Formula $R$
+\end_inset
+
+, it follows that the 
+\emph on
+integrand
+\emph default
+ 
+\begin_inset Formula $\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot\vec{n}$
+\end_inset
+
+ of the 
+\begin_inset Formula $\oiint_{\partial B}$
+\end_inset
+
+ integral must be 
+\begin_inset Formula $\ge0$
+\end_inset
+
+ for a sufficiently large 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ If the integrand is nonnegative, then the integral 
+\begin_inset Formula $\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}$
+\end_inset
+
+ must also be 
+\begin_inset Formula $\ge0$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $P_{\text{scat}}=\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}$
+\end_inset
+
+ for 
+\emph on
+all
+\emph default
+ radii 
+\begin_inset Formula $R$
+\end_inset
+
+ that enclose 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $P_{\text{scat}}\ge0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+We just plug in the definitions in terms of Poynting-flux integrals:
+\begin_inset Formula 
+\[
+P_{\text{ext}}=\underbrace{-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}^{*}\times\hat{\vec{H}}]\cdot d\vec{A}}_{P_{\text{abs}}}+\underbrace{\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}}_{P_{\text{scat}}}.
+\]
+
+\end_inset
+
+Then, we substitute the identities 
+\begin_inset Formula $\vec{E}=\vec{E}_{\text{inc}}+\vec{E}_{\text{scat}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}=\vec{H}_{\text{inc}}+\vec{H}_{\text{scat}}$
+\end_inset
+
+, and note that the minus sign in the 
+\begin_inset Formula $P_{\text{abs}}$
+\end_inset
+
+ term leads to several cancellations.
+ Another term vanishes due to the 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}=0$
+\end_inset
+
+ property that we showed above.
+ The only remaining terms are the scat–inc cross terms:
+\begin_inset Formula 
+\[
+\boxed{P_{\text{ext}}=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{inc}}+\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+From the first part above (or section 3.2 of the notes), we have 
+\begin_inset Formula $P_{\text{abs}}=\Re\langle\hat{\psi},-i\omega\hat{\phi}\rangle=\Im\langle\hat{\psi},\omega\hat{\phi}\rangle$
+\end_inset
+
+.
+ (The absorbed power is the work done 
+\series bold
+on
+\series default
+ the polarization currents 
+\begin_inset Formula $-i\omega\hat{\phi}$
+\end_inset
+
+ 
+\series bold
+by
+\series default
+ the total field 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+.) In the same way, applying Poynting's theorem to 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+ yields
+\begin_inset Formula 
+\[
+\Re\langle\hat{\psi}_{\text{scat}},-i\omega\hat{\phi}\rangle=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}=-P_{\text{scat}}.
+\]
+
+\end_inset
+
+(The scattered power is the work done 
+\series bold
+by
+\series default
+ the polarization currents 
+\begin_inset Formula $-i\omega\hat{\phi}$
+\end_inset
+
+ 
+\series bold
+on
+\series default
+ the scattered field 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+.) Combining these two, we obtain 
+\begin_inset Formula 
+\[
+P_{\text{ext}}=\underbrace{\Re\langle\hat{\psi},-i\omega\hat{\phi}\rangle}_{P_{\text{abs}}}\underbrace{-\Re\langle\hat{\psi}_{\text{scat}},-i\omega\hat{\phi}\rangle}_{P_{\text{abs}}}=\boxed{\Re\langle\hat{\psi}_{\text{inc}},-i\omega\hat{\phi}\rangle}.
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Comment: 
+\series default
+The optical theorem is often phrased in terms of a 
+\begin_inset Quotes eld
+\end_inset
+
+forward-scattering amplitude.
+\begin_inset Quotes erd
+\end_inset
+
+ Recall that 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ is produced by the polarization currents 
+\begin_inset Formula $\frac{\partial\phi}{\partial t}=-i\omega\hat{\phi}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+ is a planewave 
+\begin_inset Formula $\sim e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+, then 
+\begin_inset Formula $\langle\hat{\psi}_{\text{inc}},-i\omega\hat{\phi}\rangle$
+\end_inset
+
+ is a Fourier transform: the 
+\begin_inset Formula $e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+ 
+\emph on
+Fourier component
+\emph default
+ of the polarization current.
+ From class, a current 
+\begin_inset Formula $\sim e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+ in vacuum (like the 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ equations given 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+) generates fields 
+\begin_inset Formula $\sim e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+, which are the 
+\begin_inset Quotes eld
+\end_inset
+
+forward-scattered
+\begin_inset Quotes erd
+\end_inset
+
+ fields.
+ So 
+\begin_inset Formula $\langle\hat{\psi}_{\text{inc}},-i\omega\hat{\phi}\rangle$
+\end_inset
+
+ is proportional to the amplitude of the forward-scattered fields.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Comment: 
+\series default
+It is also worth commenting on the physical intuition behind the optical
+ theorem.
+ The basic idea is that any scattered or absorbed light leaves a shadow,
+ so one can determine 
+\begin_inset Formula $P_{\text{ext}}$
+\end_inset
+
+ by looking at the darkness of the shadow.
+ The shadow, a region on the 
+\begin_inset Quotes eld
+\end_inset
+
+forward
+\begin_inset Quotes erd
+\end_inset
+
+ side where 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+ is small, corresponds to a forward-scattered 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ that partially 
+\emph on
+cancels
+\emph default
+ 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+.
+ Hence, 
+\begin_inset Formula $P_{\text{ext}}$
+\end_inset
+
+ is determined by the 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ that is generated in the forward direction (the same direction as 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+), i.e.
+ the forward-scattering amplitude.
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: (10+15 points)
+\end_layout
+
+\begin_layout Standard
+In both parts of this problem, similar to class, we need to prove that the
+ Rayleigh quotient satisfies 
+\begin_inset Formula $\langle H,\hat{\Theta}_{\vec{k}}H\rangle/\langle H,H\rangle<k^{2}$
+\end_inset
+
+ for some trial function 
+\begin_inset Formula $H$
+\end_inset
+
+, or equivalently that
+\begin_inset Formula 
+\[
+\int_{0}^{a}\int_{-\infty}^{\infty}(1-\Delta)\left|(\nabla+i\vec{k})\times\vec{H}_{\vec{k}}\right|^{2}dx\,dy-k^{2}\int_{0}^{a}\int_{-\infty}^{\infty}\left|\vec{H}_{\vec{k}}\right|^{2}dx\,dy<0
+\]
+
+\end_inset
+
+ for the trial Bloch envelope 
+\begin_inset Formula $\vec{H}_{\vec{k}}=\vec{H}e^{-ikx}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{k}=k\hat{\vec{x}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\varepsilon^{-1}=1-\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+We will choose 
+\begin_inset Formula $u(x,y)=e^{-|y|/L}$
+\end_inset
+
+ for some 
+\begin_inset Formula $L>0$
+\end_inset
+
+, exactly as in class—that is, it is the simplest conceivable periodic function
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+, a constant.
+ Thus, 
+\begin_inset Formula $\int|u|^{2}=2a\int_{0}^{\infty}e^{-2y/L}dy=aL$
+\end_inset
+
+ over the unit cell.
+ In this case, the variational criterion above becomes, exactly as in class
+ except for the factor of 
+\begin_inset Formula $a$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\int_{0}^{a}\int_{-\infty}^{\infty}(1-\Delta)\left(k^{2}+L^{-2}\right)e^{-2|y|/L}dxdy-k^{2}aL & < & 0\\
+ & = & \frac{a}{L}-\int_{0}^{a}\int_{-\infty}^{\infty}\Delta\cdot\left(k^{2}+L^{-2}\right)e^{-2|y|/L}dx\,dy,
+\end{eqnarray*}
+
+\end_inset
+
+which becomes negative in the limit 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+ thanks to our assumption that 
+\begin_inset Formula $\int_{0}^{a}\int_{-\infty}^{\infty}\Delta(x,y)\,dx\,dy>0$
+\end_inset
+
+.
+ Note that the fact that 
+\begin_inset Formula $\int|\Delta|<\infty$
+\end_inset
+
+ ensures that we can interchange the limits and integration, via the dominated
+ convergence theorem discussed in class.
+\end_layout
+
+\begin_layout Enumerate
+Let us guess that we can choose 
+\begin_inset Formula $u(y)$
+\end_inset
+
+ and 
+\begin_inset Formula $v(y)$
+\end_inset
+
+ to be functions of 
+\begin_inset Formula $y$
+\end_inset
+
+ only (i.e., again the trivial constant-function periodicity in 
+\begin_inset Formula $x$
+\end_inset
+
+).
+ The fact that 
+\begin_inset Formula $\nabla\cdot\vec{H}=0$
+\end_inset
+
+ implies that 
+\begin_inset Formula $(\nabla+i\vec{k})\cdot[u(y)\hat{\vec{x}}+v(y)\hat{\vec{y}}]=0=iku+v'$
+\end_inset
+
+, and therefore 
+\begin_inset Formula $u=iv'/k$
+\end_inset
+
+.
+ Therefore, it is convenient to choose 
+\begin_inset Formula $v(y)$
+\end_inset
+
+ to be a smooth function so that 
+\begin_inset Formula $u$
+\end_inset
+
+ is differentiable.
+ Let us choose 
+\begin_inset Formula 
+\[
+v(y)=e^{-y^{2}/2L^{2}}
+\]
+
+\end_inset
+
+in which case 
+\begin_inset Formula $u(y)=-\frac{iy}{kL^{2}}e^{-y^{2}/2L^{2}}$
+\end_inset
+
+.
+ Recall the Gaussian integrals 
+\begin_inset Formula $\int_{-\infty}^{\infty}e^{-y^{2}/L^{2}}dy=L\sqrt{\pi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\int_{-\infty}^{\infty}y^{2}e^{-y^{2}/L^{2}}dy=L^{3}\sqrt{\pi}/2$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\int|\vec{H}|^{2}=a\int|u|^{2}+|v|^{2}=aL\sqrt{\pi}[1+\frac{1}{k^{2}L^{2}}]$
+\end_inset
+
+.
+ Also, 
+\begin_inset Formula $(\nabla+i\vec{k})\times[u(y)\hat{\vec{x}}+v(y)\hat{\vec{y}}]=(ikv-u')\hat{\vec{z}}$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula 
+\[
+|\nabla\times\vec{H}|^{2}=\left|(\nabla+i\vec{k})\times\vec{H}_{\vec{k}}\right|^{2}=|u'|^{2}+k^{2}|v|^{2}=k^{2}\left[1+\frac{1}{k^{4}L^{4}}\left(1-\frac{y^{2}}{L^{2}}\right)\right]e^{-y^{2}/L^{2}}.
+\]
+
+\end_inset
+
+Then, if we look at our variational criterion, we have two terms: 
+\begin_inset Formula $\int|\nabla\times\vec{H}|^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $-\int\Delta\cdot|\nabla\times\vec{H}|^{2}$
+\end_inset
+
+.
+ Again, we can swap limits with integration in the latter by the dominated
+ convergence theorem.
+ Combining the former with the 
+\begin_inset Formula $-k^{2}\int|\vec{H}|^{2}$
+\end_inset
+
+ term in the variational criterion, we get: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\int|\nabla\times\vec{H}|^{2}-k^{2}\int|\vec{H}|^{2} & = & a\int_{-\infty}^{\infty}k^{2}\left[1+\frac{1}{k^{4}L^{4}}\left(1-\frac{y^{2}}{L^{2}}\right)\right]e^{-y^{2}/L^{2}}dy-k^{2}aL\sqrt{\pi}\left[1+\frac{1}{k^{2}L^{2}}\right]\\
+ & = & a\int_{-\infty}^{\infty}\frac{k^{2}}{k^{4}L^{4}}\left(1-\frac{y^{2}}{L^{2}}\right)e^{-y^{2}/L^{2}}dy-\frac{k^{2}aL\sqrt{\pi}}{k^{2}L^{2}}\\
+ & = & \frac{a}{k^{2}L^{4}}L\sqrt{\pi}\left(1-\frac{L^{2}}{2L^{2}}\right)-\frac{a\sqrt{\pi}}{L},
+\end{eqnarray*}
+
+\end_inset
+
+which goes to zero as 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+.
+ Thus: 
+\begin_inset Formula 
+\[
+\int(1-\Delta)\left|(\nabla+i\vec{k})\times\vec{H}_{\vec{k}}\right|^{2}-k^{2}\int\left|\vec{H}_{\vec{k}}\right|^{2}\rightarrow-k^{2}\int_{0}^{a}\int_{-\infty}^{\infty}\Delta(x,y)\,dx\,dy<0.
+\]
+
+\end_inset
+
+as 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: (5+15 points)
+\end_layout
+
+\begin_layout Enumerate
+Maxwell's equations are (in terms of 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+) given by the eigen-equation 
+\begin_inset Formula $\nabla\times\frac{1}{\varepsilon}\nabla\times\vec{H}=\frac{\omega^{2}}{c^{2}}\vec{H}$
+\end_inset
+
+.
+ Suppose that we replace 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ by 
+\begin_inset Formula $\alpha\varepsilon$
+\end_inset
+
+ where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is some constant.
+ By inspection, one obtains the 
+\emph on
+same
+\emph default
+ eigensolution 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ with 
+\begin_inset Formula $\omega$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $\omega/\sqrt{\alpha}$
+\end_inset
+
+ (we just divided both sides by 
+\begin_inset Formula $\alpha$
+\end_inset
+
+).
+ Thus, scaling epsilon everywhere by a constant just trivially scales the
+ eigenvalues.
+ [We could have alternatively rescaled the geometry and fields: 
+\begin_inset Formula $\varepsilon(\vec{x})\to\varepsilon(\vec{x}\sqrt{\alpha})$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}(\vec{x})\rightarrow\vec{H}(\vec{x}\sqrt{\alpha})$
+\end_inset
+
+.] Therefore, we can set 
+\begin_inset Formula $\varepsilon_{lo}=1$
+\end_inset
+
+ (that is, 
+\begin_inset Formula $\alpha=1/\varepsilon_{lo}$
+\end_inset
+
+), without loss of generality.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Since we are looking for 
+\begin_inset Quotes eld
+\end_inset
+
+TM
+\begin_inset Quotes erd
+\end_inset
+
+ solutions 
+\begin_inset Formula $E_{z}(x,y)=e^{ikx}E_{k}(y)$
+\end_inset
+
+, i.e.
+ with 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ in the 
+\begin_inset Formula $z$
+\end_inset
+
+ direction, then we already saw from the last problem set that the eigen-equatio
+n simplifies to 
+\begin_inset Formula $-\nabla^{2}E_{z}=\frac{\omega^{2}}{c^{2}}\varepsilon E_{z}$
+\end_inset
+
+, and when we plug in the 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ form we get: 
+\begin_inset Formula 
+\[
+-\frac{d^{2}}{dy^{2}}E_{y}=(\omega^{2}\varepsilon-k^{2})E_{y}
+\]
+
+\end_inset
+
+ (where I have chosen 
+\begin_inset Formula $c=1$
+\end_inset
+
+ units for simplicity).
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In any region where 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is constant, the above equation is solved simply by sines and cosines if
+ 
+\begin_inset Formula $\omega^{2}\varepsilon-k^{2}>0$
+\end_inset
+
+ and by exponentials otherwise.
+ Since we have a 
+\begin_inset Formula $y=0$
+\end_inset
+
+ mirror plane, the solutions can be chosen either even or odd, and therefore
+ in the 
+\begin_inset Formula $|y|<h/2$
+\end_inset
+
+ region we have solutions 
+\begin_inset Formula $E_{k}=A\cos(k_{\perp}y)$
+\end_inset
+
+ or 
+\begin_inset Formula $A\sin(k_{\perp}y)$
+\end_inset
+
+, where 
+\begin_inset Formula 
+\[
+k_{\perp}=\sqrt{\omega^{2}\varepsilon_{hi}-k^{2}}.
+\]
+
+\end_inset
+
+If 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ is imaginary, these become 
+\begin_inset Formula $\cosh$
+\end_inset
+
+ and 
+\begin_inset Formula $\sinh$
+\end_inset
+
+ solutions, but we will see below that this won't happen.
+ In the 
+\begin_inset Formula $|y|>h/2$
+\end_inset
+
+ region, since we are looking for solutions below the light line (
+\begin_inset Formula $\omega^{2}\varepsilon_{lo}<k^{2}$
+\end_inset
+
+), we must have exponentials...and requiring the solutions to be finite at
+ infinity we must have 
+\begin_inset Formula $E_{k}=Be^{-\kappa y}$
+\end_inset
+
+ for 
+\begin_inset Formula $y>h/2$
+\end_inset
+
+ and 
+\begin_inset Formula $\pm Be^{\kappa y}$
+\end_inset
+
+ for 
+\begin_inset Formula $y<-h/2$
+\end_inset
+
+ (with 
+\begin_inset Formula $\pm$
+\end_inset
+
+ depending on whether the state is even or odd, where:
+\begin_inset Formula 
+\[
+\kappa=\sqrt{k^{2}-\omega^{2}\varepsilon_{lo}}=\sqrt{k^{2}(1-f)-k_{\perp}^{2}f},
+\]
+
+\end_inset
+
+where we define 
+\begin_inset Formula $f=\varepsilon_{lo}/\varepsilon_{hi}<1$
+\end_inset
+
+ (the dielectric contrast), and we have used the definition of 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ from above.
+\end_layout
+
+\begin_layout Enumerate
+Let's consider first the 
+\emph on
+even
+\emph default
+ solutions (cosine).
+ Continuity of 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $A\cos(k_{\perp}h/2)=Be^{-\kappa h/2}$
+\end_inset
+
+, and continuity of 
+\begin_inset Formula $E_{k}'\sim H_{x}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $-k_{\perp}A\sin(k_{\perp}h/2)=-\kappa Be^{-\kappa h/2}$
+\end_inset
+
+.
+ Dividing these two equations, we find: 
+\begin_inset Formula 
+\[
+\tan(k_{\perp}h/2)=\frac{\kappa}{k_{\perp}}=\frac{\sqrt{k^{2}(1-f)-k_{\perp}^{2}f}}{k_{\perp}}.
+\]
+
+\end_inset
+
+Similarly, for the 
+\emph on
+odd
+\emph default
+ solutions (sine), we obtain: 
+\begin_inset Formula 
+\[
+\cot(k_{\perp}h/2)=-\frac{\sqrt{k^{2}(1-f)-k_{\perp}^{2}f}}{k_{\perp}}.
+\]
+
+\end_inset
+
+ These are transcendental equations for 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+.
+ We plot the left and right hand sides of these two equations in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transcend"
+
+\end_inset
+
+, where the intersections of the curves give the guided-mode solutions.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename wvg-transcend.eps
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:transcend"
+
+\end_inset
+
+Plot of the two transcendental equations for even modes (left plot) and
+ odd modes (right plot) as a function of 
+\begin_inset Formula $k_{\perp}h/2$
+\end_inset
+
+.
+ The thick lines show the right hand sides, while the thin lines show the
+ left hand sides (
+\begin_inset Formula $\tan$
+\end_inset
+
+ or 
+\begin_inset Formula $\cot$
+\end_inset
+
+) of the equations, and the intersections correspond to guided-mode solutions.
+ This plot is for the particular case of 
+\begin_inset Formula $f=0.1$
+\end_inset
+
+ and 
+\begin_inset Formula $kh/2=2$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+What about imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ solutions? In this case, the left hand side (
+\begin_inset Formula $\tan$
+\end_inset
+
+ or 
+\begin_inset Formula $\cot$
+\end_inset
+
+) would be purely imaginary, while the right hand side would also be purely
+ imaginary, so it seems like there might be some such solutions.
+ Consider the even mode (
+\begin_inset Formula $\tan$
+\end_inset
+
+) equation.
+ The tangent of an imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ is always imaginary with the 
+\emph on
+same
+\emph default
+ sign as the imaginary part of 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+, whereas the right hand side will be imaginary with the 
+\emph on
+opposite
+\emph default
+ sign (
+\begin_inset Formula $1/i=-i$
+\end_inset
+
+)—because of that, the two curves will 
+\emph on
+never
+\emph default
+ intersect for imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ and there will be no solution.
+ Conversely for the odd-mode case.
+ So, there are no imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ solutions, as promised—this means that the guided modes must always be
+ 
+\emph on
+above
+\emph default
+ the light line for 
+\begin_inset Formula $\varepsilon_{hi}$
+\end_inset
+
+, which makes physical sense (they must correspond to 
+\emph on
+propagating
+\emph default
+ modes in the 
+\begin_inset Formula $\varepsilon_{hi}$
+\end_inset
+
+ region and 
+\emph on
+evanescent
+\emph default
+ modes in the 
+\begin_inset Formula $\varepsilon_{lo}$
+\end_inset
+
+ regions).
+\end_layout
+
+\begin_layout Enumerate
+We can see immediately that the right-hand side of the transcendental equations
+ is a real number only when 
+\begin_inset Formula $k_{\perp}\leq|k|\sqrt{\frac{1}{f}-1}=k_{\perp}^{max}$
+\end_inset
+
+.
+ Furthermore, we will clearly have an intersection for 
+\emph on
+every
+\emph default
+ branch of the tangent/cotangent curve that passes through zero 
+\emph on
+before
+\emph default
+ 
+\begin_inset Formula $k_{\perp}^{max}$
+\end_inset
+
+.
+ The tangent curves pass through zero whenever 
+\begin_inset Formula $k_{\perp}h/2$
+\end_inset
+
+ is an integer multiple of 
+\begin_inset Formula $\pi$
+\end_inset
+
+, and the cotangent curves pass through zero when 
+\begin_inset Formula $k_{\perp}h/2+\pi/2$
+\end_inset
+
+ is an integer multiple of 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+ Therefore, the number of even modes is simply the number of zero crossings
+ before 
+\begin_inset Formula $k_{\perp}^{max}$
+\end_inset
+
+, namely:
+\begin_inset Formula 
+\[
+\textrm{\# even modes}=\left\lfloor \frac{|k|h\sqrt{\frac{1}{f}-1}}{2\pi}\right\rfloor +1,
+\]
+
+\end_inset
+
+ where the 
+\begin_inset Formula $+1$
+\end_inset
+
+ is for the first branch of the tangent (which has a zero crossing at 
+\begin_inset Formula $k_{\perp}=0$
+\end_inset
+
+ and therefore 
+\emph on
+always
+\emph default
+ intersects the right-hand-side at least once).
+ Here, by 
+\begin_inset Formula $\left\lfloor x\right\rfloor $
+\end_inset
+
+ we mean the greatest
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+There is some ambiguity about whether to define the mode as guided when
+ the argument of 
+\begin_inset Formula $\left\lfloor x\right\rfloor $
+\end_inset
+
+ here is exactly an integer, because that corresponds to the case where
+ the mode is exactly on the light line and hence has 
+\begin_inset Formula $\kappa=0$
+\end_inset
+
+.
+ If we don't call that a guided mode, then we have to modify our formula
+ by one in that case, but since this situation has measure zero in the parameter
+ space, the question has no practical significance.
+\end_layout
+
+\end_inset
+
+ integer 
+\begin_inset Formula $\leq x$
+\end_inset
+
+.
+ Similarly, the number of odd modes is also given by the number of zero
+ crossings: 
+\begin_inset Formula 
+\[
+\textrm{\# odd modes}=\left\lfloor \frac{|k|h\sqrt{\frac{1}{f}-1}+\pi}{2\pi}\right\rfloor ,
+\]
+
+\end_inset
+
+ where in this case we see that we will not have 
+\emph on
+any
+\emph default
+ odd guided modes for 
+\begin_inset Formula $|k|h\sqrt{\frac{1}{f}-1}<\pi$
+\end_inset
+
+.
+ Therefore, as 
+\begin_inset Formula $k\rightarrow0$
+\end_inset
+
+ we get exactly one (even) guided mode.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Just for fun, let's look at the TE polarization (
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ in the 
+\begin_inset Formula $\hat{\vec{z}}$
+\end_inset
+
+ direction).
+ For the 
+\begin_inset Formula $H_{z}=H_{k}e^{ikx}$
+\end_inset
+
+ polarization, we have very similar equations except that the boundary condition
+s are that 
+\begin_inset Formula $H_{k}$
+\end_inset
+
+ is continuous and 
+\begin_inset Formula $H_{k}'/\varepsilon$
+\end_inset
+
+ is continuous (since 
+\begin_inset Formula $H_{k}'\sim D_{x}=D_{\Vert}$
+\end_inset
+
+).
+ Thus, for example for the 
+\begin_inset Formula $\cos(k_{\perp}y)$
+\end_inset
+
+ mode (the 
+\emph on
+odd
+\emph default
+ mode, since 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ is a pseudovector), we have 
+\begin_inset Formula $-k_{\perp}A\sin(k_{\perp}h/2)/\varepsilon_{hi}=-\kappa Be^{-\kappa h/2}/\varepsilon_{lo}$
+\end_inset
+
+.
+ Therefore, both the 
+\begin_inset Formula $\tan$
+\end_inset
+
+ and 
+\begin_inset Formula $\cot$
+\end_inset
+
+ in the transcendental equations get multipled by 
+\begin_inset Formula $f=\varepsilon_{lo}/\varepsilon_{hi}$
+\end_inset
+
+.
+ What effect does this have on the solutions? Multiplying by 
+\begin_inset Formula $f<1$
+\end_inset
+
+ 
+\emph on
+decreases
+\emph default
+ the tangent curves, but does 
+\emph on
+not
+\emph default
+ change the locations of their zeros.
+ Therefore, the 
+\emph on
+number
+\emph default
+ of modes at a given 
+\begin_inset Formula $k$
+\end_inset
+
+ is 
+\emph on
+unaffected
+\emph default
+.
+ However, the intersection point is clearly pulled towards 
+\emph on
+larger
+\emph default
+ values of 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ when the tan/cot is shrunk, which corresponds to 
+\emph on
+smaller
+\emph default
+ values of 
+\begin_inset Formula $\kappa$
+\end_inset
+
+, the decay rate.
+ Therefore, the modes are 
+\emph on
+less
+\emph default
+ strongly confined for the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ (TE) polarization.
+ (Later in the class, we will see how this generally follows from the boundary
+ conditions and the variational theorem.)
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: (10+10+10 points)
+\end_layout
+
+\begin_layout Enumerate
+Trivially from the given identity, 
+\begin_inset Formula 
+\[
+\vec{J}=\frac{a}{2\pi}\int_{0}^{2\pi/a}\left[\sum_{n=-\infty}^{\infty}\delta(x-na)\delta(y)e^{ikna-i\omega t}\hat{z}\right]dk,
+\]
+
+\end_inset
+
+where the term 
+\begin_inset Formula $[\cdots]$
+\end_inset
+
+ is Bloch-periodic.
+ Because irrep is conserved, from class and homework, the resulting steady-state
+/time-harmonic 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ field from each Bloch-periodic term is also Bloch-periodic (from periodicity)
+ and TM-polarized (from 
+\begin_inset Formula $z\leftrightarrow-z$
+\end_inset
+
+ mirror symmetry), i.e.
+ the field of the current 
+\begin_inset Formula $[\cdots]$
+\end_inset
+
+ is: 
+\begin_inset Formula 
+\[
+\vec{E}_{k}(x,y,t)=E_{k}(x,y)e^{ikx-i\omega t}\hat{z},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{k}(x+a,y)=E_{k}(x,y)$
+\end_inset
+
+.
+ By linearity, we can simply add up the solutions 
+\begin_inset Formula $\vec{E}_{k}$
+\end_inset
+
+ from the integrand of 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ to get the total field by superposition: 
+\begin_inset Formula 
+\[
+\vec{E}=\frac{a}{2\pi}\int_{0}^{2\pi/a}\vec{E}_{k}dk=\hat{z}\frac{a}{2\pi}\int_{0}^{2\pi/a}E_{k}(x,y)e^{ikx-i\omega t}dk.
+\]
+
+\end_inset
+
+The field 
+\begin_inset Formula $\vec{E}_{k}$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $(\nabla\times\nabla\times{}-\omega^{2}\epsilon)\vec{E}_{k}=i\omega\vec{J}$
+\end_inset
+
+, and since both 
+\begin_inset Formula $\vec{E}_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ are Bloch-periodic we can trivially reduce the domain to the unit cell
+ 
+\begin_inset Formula $(x,y)\in[0,a]\times(-\infty,\infty)$
+\end_inset
+
+ with Bloch-periodic boundary conditions.
+\end_layout
+
+\begin_layout Enumerate
+For such a supercell we get a subset of the Bloch solutions, only 
+\begin_inset Formula $k_{m}=\frac{2\pi}{Na}m$
+\end_inset
+
+ for integers 
+\begin_inset Formula $m=0,\ldots,P-1$
+\end_inset
+
+, since these are the only 
+\begin_inset Formula $k$
+\end_inset
+
+ that satisfy periodic boundary conditions (
+\begin_inset Formula $kNa$
+\end_inset
+
+ is an integer multiple of 
+\begin_inset Formula $2\pi$
+\end_inset
+
+).
+ Equivalently, one can easily show: 
+\begin_inset Formula 
+\[
+\vec{J}=\frac{1}{M}\sum_{m=0}^{M-1}\left[\sum_{n=0}^{M-1}\delta(x-na)\delta(y)e^{ik_{m}na-i\omega t}\hat{z}\right],
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\vec{E}=\hat{z}\frac{1}{M}\sum_{m=0}^{M-1}E_{k_{m}}(x,y)e^{ik_{m}x-i\omega t}
+\]
+
+\end_inset
+
+for the 
+\emph on
+same
+\emph default
+ 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ solutions as above.
+\end_layout
+
+\begin_layout Enumerate
+To get the total power, we also need 
+\begin_inset Formula 
+\[
+\vec{H}=\frac{1}{i\omega}\nabla\times\vec{E}=\frac{a}{2\pi}\int_{0}^{2\pi/a}\vec{H}_{k}(x,y)e^{ikx-i\omega t}dk,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\vec{H}_{k}=\nabla_{k}\times(E_{k}\hat{z})$
+\end_inset
+
+ is a periodic function.
+ Hence, 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+, like 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+, is a superposition of Bloch-periodic functions.
+ Because partners of different irreps are orthogonal, the 
+\begin_inset Formula $\int dx$
+\end_inset
+
+ of 
+\begin_inset Formula $\hat{y}\cdot(E_{k}\hat{z}e^{ikx})^{*}\times(\vec{H}_{k'}e^{ik'x})$
+\end_inset
+
+ must necessarily be zero unless 
+\begin_inset Formula $k=k'$
+\end_inset
+
+, hence the total power 
+\begin_inset Formula $P$
+\end_inset
+
+ will be a superposition of terms 
+\begin_inset Formula $P_{k}$
+\end_inset
+
+ that are integrals of 
+\begin_inset Formula $\hat{y}\cdot(E_{k}\hat{z}e^{ikx})^{*}\times(\vec{H}_{k}e^{ikx})$
+\end_inset
+
+: the Poynting flux of one 
+\begin_inset Formula $k$
+\end_inset
+
+ at a time.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Performing the integrals in the infinite domain is a bit tricky, so it is
+ easier to consider the Poynting flux for our periodic supercell of 
+\begin_inset Formula $N$
+\end_inset
+
+ periods from the previous part.
+ The Poynting flux is then 
+\begin_inset Formula 
+\begin{align*}
+P & =\frac{1}{2}\int_{0}^{Na}\hat{y}\cdot\Re\left[\vec{E}^{*}(x,y_{0})\times\vec{H}(x,y_{0})\right]dx\\
+ & =\frac{1}{2}\hat{y}\cdot\Re\int_{0}^{Na}\left[\hat{z}\frac{1}{N}\sum_{m=0}^{N-1}E_{k_{m}}(x,y_{0})e^{ik_{m}x-i\omega t}\right]^{*}\times\left[\frac{1}{N}\sum_{m'=0}^{N-1}\vec{H}_{k_{m'}}(x,y_{0})e^{ik_{m'}x-i\omega t}\right]dx.
+\end{align*}
+
+\end_inset
+
+As above, the 
+\begin_inset Formula $m\neq m'$
+\end_inset
+
+ cross terms must integrate to zero (since they are partner functions of
+ different irreps of the symmetry group: translations by 
+\begin_inset Formula $na$
+\end_inset
+
+ for 
+\begin_inset Formula $n=0,\ldots,N-1$
+\end_inset
+
+).
+ What remains is 
+\begin_inset Formula 
+\begin{align*}
+P & =\frac{1}{2}\hat{y}\cdot\Re\frac{1}{N^{2}}\sum_{m=0}^{N-1}\int_{0}^{Na}\left[\hat{z}E_{k_{m}}(x,y_{0})\right]^{*}\times\left[\vec{H}_{k_{m}}(x,y_{0})\right]dx\\
+ & =\frac{1}{2}\hat{y}\cdot\Re\frac{1}{N}\sum_{m=0}^{N-1}\int_{0}^{a}\left[\hat{z}E_{k_{m}}(x,y_{0})\right]^{*}\times\left[\vec{H}_{k_{m}}(x,y_{0})\right]dx\\
+ & =\frac{1}{N}\sum_{m=0}^{N-1}P_{k_{m}},
+\end{align*}
+
+\end_inset
+
+where we have used the periodicity of 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}_{k}$
+\end_inset
+
+ and defined 
+\begin_inset Formula $P_{k}$
+\end_inset
+
+ as above.
+ Finally, by multiplying and dividing by 
+\begin_inset Formula $\Delta k=\frac{2\pi}{Na}$
+\end_inset
+
+, we can take the 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ limit to recover the integral 
+\begin_inset Formula 
+\[
+\boxed{P=\frac{a}{2\pi}\int_{0}^{2\pi/a}P_{k}dk}.
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
