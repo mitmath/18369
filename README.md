@@ -202,3 +202,13 @@ To apply perturbation to the opening of the gap, there is a slight complication 
 Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in the gap. We have no propagating solutions in the crystal, so by conservation of energy we must have 100% reflection. However, showed by analytical continuation of the band edge that we expect exponentially decaying "evanescent" solutions in the crystal, with a complex wavevector k ≈ sqrt(Δω/α) + π/a, where Δω is how far we are into the gap and α is the band-edge curvature.
 
 **Further reading:** For the same derivation of perturbation theory, see "time-independent perturbation theory" in any quantum-mechanics text, e.g. Cohen-Tannoudji. See also the section on small perturbations in chapter 2 of the book. See chapter 4 of the book on the origin of the 1d gap, and on the special formulas for quarter-wave stacks in 1d (discussed in more detail in Yeh's _Optical Waves in Layered Media_). For evanescent waves and defect cavities, see chapter 4 of the textbook.
+
+### Lecture 13: 2 April
+
+* [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb); see also [the MPB home page](https://github.com/NanoComp/mpb) and documentation
+
+Gave demo of MPB eigensolver software for 2d dielectric waveguide (also available on Athena, e.g. in the clusters or via ssh to `athena.dialup.mit.edu`).  I recommend you try to install it via the [Anaconda Python packages](https://meep.readthedocs.io/en/latest/Installation/#conda-packages), and if you are on Windows [use the WSL method](https://meep.readthedocs.io/en/latest/Installation/#installation-on-windows).
+
+In the handout, I used a Jupyter/IPython notebook, which is a nice way to do these calculations interactively.  The plotting here is done using the Python [matplotlib](http://matplotlib.org/) package. As explained in the [MPB tutorial](https://mpb.readthedocs.io/en/latest/Python_Tutorial/), you can also run simulations in a standalone Python (`.py`) file (or a [Scheme](https://mpb.readthedocs.io/en/latest/Scheme_User_Interface/) file if you prefer!), extract the data with `grep` and or HDF5 output, and plot results using whatever software you like.
+
+**Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
