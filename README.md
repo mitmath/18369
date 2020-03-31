@@ -187,3 +187,13 @@ Began new topic: **photonic crystals in one dimension**. Sketched the form of th
 We will use perturbation theory to derive the magnitude of the gap and other features by starting with a homogeneous medium and then adding a little bit of periodic ε contrast.
 
 **Further reading:** Chapter 4 of the textbook.
+
+### Lecture 12: 31 Mar (via Zoom videoconference)
+
+* pset 4: coming soon
+
+A quantitative estimate of the size of the band gap in 1d, via perturbation theory. In particular, derived first-order perturbation theory for the eigenvalue of any Hermitian operator with some small change, by expanding the eigenvalue and eigenfunction as power series in the change and solving order-by-order. We then write down this perturbative expression for the Maxwell operator, and see that the fractional change in frequency is just the fractional change in index multiplied by the fraction of electric-field energy in the changed material.
+
+Discussed how perturbation theory can be used to derive the effect of absorption losses (to lowest order): adding a small imaginary part to ε yields a corresponding imaginary part in ω, giving loss or gain depending on the sign.
+
+**Further reading:** For the same derivation of perturbation theory, see "time-independent perturbation theory" in any quantum-mechanics text, e.g. Cohen-Tannoudji. See also the section on small perturbations in chapter 2 of the book. See chapter 4 of the book on the origin of the 1d gap, and on the special formulas for quarter-wave stacks in 1d (discussed in more detail in Yeh's _Optical Waves in Layered Media_).
