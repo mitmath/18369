@@ -192,6 +192,7 @@ We will use perturbation theory to derive the magnitude of the gap and other fea
 
 * pset 4: coming soon
 * [handwritten notes from lecture](notes/notes12.pdf)
+* [video lecture recording](https://mit.zoom.us/rec/play/65Ysfrqg_DM3HN2S5gSDBqArW9S9equshycfrqIPmh3mViZVOwf3YLUVNuVqQxpPp4co2wGcmgv2FAzC?continueMode=true)
 
 A quantitative estimate of the size of the band gap in 1d, via perturbation theory. In particular, derived first-order perturbation theory for the eigenvalue of any Hermitian operator with some small change, by expanding the eigenvalue and eigenfunction as power series in the change and solving order-by-order. We then write down this perturbative expression for the Maxwell operator, and see that the fractional change in frequency is just the fractional change in index multiplied by the fraction of electric-field energy in the changed material.
 
