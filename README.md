@@ -14,7 +14,7 @@ Syllabus
 > For beginning graduate students and advanced undergraduates.
 
 
-**Lectures**: Tues-Thurs 11am–12:30pm (4-153). **Office Hours:** Tues. 4–5pm (2-345). TA/grader: [Chenyang Shao](http://math.mit.edu/directory/profile.php?pid=2035).
+**Lectures**: Tues-Thurs 11am–12:30pm (4-153). **Office Hours:** Tues. 4–5pm (2-345). TA/grader: [Chenyang Shao](http://math.mit.edu/directory/profile.php?pid=2035).   [Handwritten notes](https://www.dropbox.com/s/1c3l54mf3rh8qw3/18.369%20spring%202020.pdf?dl=0).
 
 **Probable topics**: _Methods_: linear algebra & eigensystems for Maxwell's equations, symmetry groups and representation theory, Bloch's theorem, numerical eigensolver methods, time and frequency-domain computation, perturbation theory, coupled-mode theories, waveguide theory, adiabatic transitions. _Optical phenomena_: photonic crystals & band gaps, anomalous diffraction, mechanisms for optical confinement, optical fibers (new & old), nonlinearities, integrated optical devices.
 
@@ -191,7 +191,7 @@ We will use perturbation theory to derive the magnitude of the gap and other fea
 ### Lecture 12: 31 Mar (via Zoom videoconference)
 
 * pset 4: coming soon
-* [handwritten notes from lecture](notes/notes12.pdf)
+* [handwritten notes from lecture](https://www.dropbox.com/s/1c3l54mf3rh8qw3/18.369%20spring%202020.pdf?dl=0) — all subsequent notes will be at the same link.
 * [video lecture recording](https://mit.zoom.us/rec/play/65Ysfrqg_DM3HN2S5gSDBqArW9S9equshycfrqIPmh3mViZVOwf3YLUVNuVqQxpPp4co2wGcmgv2FAzC?continueMode=true)
 
 A quantitative estimate of the size of the band gap in 1d, via perturbation theory. In particular, derived first-order perturbation theory for the eigenvalue of any Hermitian operator with some small change, by expanding the eigenvalue and eigenfunction as power series in the change and solving order-by-order. We then write down this perturbative expression for the Maxwell operator, and see that the fractional change in frequency is just the fractional change in index multiplied by the fraction of electric-field energy in the changed material.
