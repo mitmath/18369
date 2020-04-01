@@ -190,7 +190,7 @@ We will use perturbation theory to derive the magnitude of the gap and other fea
 
 ### Lecture 12: 31 Mar (via Zoom videoconference)
 
-* [pset 4](psets/pset4.pdf) and accompanying * [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset4.ipynb) (due Thursday, April 16).
+* [pset 4](psets/pset4.pdf) and accompanying [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset4.ipynb) (due Thursday, April 16).
 * [handwritten notes from lecture](https://www.dropbox.com/s/1c3l54mf3rh8qw3/18.369%20spring%202020.pdf?dl=0) — all subsequent notes will be at the same link.
 * [video lecture recording](https://mit.zoom.us/rec/play/65Ysfrqg_DM3HN2S5gSDBqArW9S9equshycfrqIPmh3mViZVOwf3YLUVNuVqQxpPp4co2wGcmgv2FAzC?continueMode=true)
 
