@@ -207,6 +207,7 @@ Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in
 ### Lecture 13: 2 April
 
 * [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb); see also [the MPB home page](https://github.com/NanoComp/mpb) and documentation
+* [video recording](https://mit.zoom.us/rec/share/tNJWHqz57npJWI3V13Hge6E5Aaqmaaa80SEaqPsEnhwyLmI4wIwzqJhVFRa8sRSC )
 
 Gave demo of MPB eigensolver software for 2d dielectric waveguide (also available on Athena, e.g. in the clusters or via ssh to `athena.dialup.mit.edu`).  I recommend you try to install it via the [Anaconda Python packages](https://meep.readthedocs.io/en/latest/Installation/#conda-packages), and if you are on Windows [use the WSL method](https://meep.readthedocs.io/en/latest/Installation/#installation-on-windows).
 
