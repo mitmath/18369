@@ -211,6 +211,8 @@ Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in
 
 Gave demo of MPB eigensolver software for 2d dielectric waveguide (also available on Athena, e.g. in the clusters or via ssh to `athena.dialup.mit.edu`).  I recommend you try to install it via the [Anaconda Python packages](https://meep.readthedocs.io/en/latest/Installation/#conda-packages), and if you are on Windows [use the WSL method](https://meep.readthedocs.io/en/latest/Installation/#installation-on-windows).
 
+MPB and Meep also installed on MIT's Athena system, which you can log into via `ssh athena.dialup.mit.edu` and then run `setup mpb`.   You can then run `python3 some_mpb_simulation.py` and it will run.  However, this way is a little painful to use interactively (you can't use Jupyter notebooks, and instead have to save results to files etcetera), so I recommend installing the software on your personal computer if possible.
+
 In the handout, I used a Jupyter/IPython notebook, which is a nice way to do these calculations interactively.  The plotting here is done using the Python [matplotlib](http://matplotlib.org/) package. As explained in the [MPB tutorial](https://mpb.readthedocs.io/en/latest/Python_Tutorial/), you can also run simulations in a standalone Python (`.py`) file (or a [Scheme](https://mpb.readthedocs.io/en/latest/Scheme_User_Interface/) file if you prefer!), extract the data with `grep` and or HDF5 output, and plot results using whatever software you like.
 
 **Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
