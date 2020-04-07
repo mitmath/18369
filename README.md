@@ -216,3 +216,12 @@ MPB and Meep also installed on MIT's Athena system, which you can log into via `
 In the handout, I used a Jupyter/IPython notebook, which is a nice way to do these calculations interactively.  The plotting here is done using the Python [matplotlib](http://matplotlib.org/) package. As explained in the [MPB tutorial](https://mpb.readthedocs.io/en/latest/Python_Tutorial/), you can also run simulations in a standalone Python (`.py`) file (or a [Scheme](https://mpb.readthedocs.io/en/latest/Scheme_User_Interface/) file if you prefer!), extract the data with `grep` and or HDF5 output, and plot results using whatever software you like.
 
 **Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
+
+
+### Lecture 14: 7 April
+
+* [video recording](https://mit.zoom.us/rec/share/ye1wPr7C2UFLE52T7HnFa60mRo_Feaa8gSVI_PAFzE--_HdTOSKcdSKv_q8aTAjq)
+
+Off-axis propagation, projected band diagrams for multilayer films, Fabry-Perot defect modes, and surface states. Omnidirectional reflection.
+
+**Further reading:** For off-axis propagation in multilayer films, see chapter 4 of the textbook. See also [projected TM band diagram](http://jdj.mit.edu/book/chapter4-fig10-14-corrected.pdf) from multilayer film (corrected from figure 10 of chapter 4 in the book). See chapter 4 of the book, final section on omnidirectional reflection; see any book on optics or advanced electromagnetism for Brewster's angle (e.g. Jackson or Hecht).
