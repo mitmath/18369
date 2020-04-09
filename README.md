@@ -228,6 +228,8 @@ Off-axis propagation, projected band diagrams for multilayer films, Fabry-Perot 
 
 ### Lecture 15: 9 April
 
+* [video recording](https://mit.zoom.us/rec/share/tOZRMLjQ9npJZdLgsGTRU7EvL4XlX6a8gCUX_PINmknpLxKvEbrVP_m4zDBYmmPt)
+
 (Finished discussing surface states from last lecture.)
 
 Wave propagation velocity: defined phase velocity (along homogeneous directions) and group velocity. Explained why phase velocity is not uniquely defined in a periodic medium (and even in a uniform waveguide it can easily be infinite). Showed that group velocity is the velocity of propagation of wave packets, by considering a narrow-bandwidth packet and Taylor-expanding the dispersion ω(k) to first order.
