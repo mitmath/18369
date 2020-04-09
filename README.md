@@ -225,3 +225,13 @@ In the handout, I used a Jupyter/IPython notebook, which is a nice way to do the
 Off-axis propagation, projected band diagrams for multilayer films, Fabry-Perot defect modes, and surface states. Omnidirectional reflection.
 
 **Further reading:** For off-axis propagation in multilayer films, see chapter 4 of the textbook. See also [projected TM band diagram](http://jdj.mit.edu/book/chapter4-fig10-14-corrected.pdf) from multilayer film (corrected from figure 10 of chapter 4 in the book). See chapter 4 of the book, final section on omnidirectional reflection; see any book on optics or advanced electromagnetism for Brewster's angle (e.g. Jackson or Hecht).
+
+### Lecture 15: 9 April
+
+(Finished discussing surface states from last lecture.)
+
+Wave propagation velocity: defined phase velocity (along homogeneous directions) and group velocity. Explained why phase velocity is not uniquely defined in a periodic medium (and even in a uniform waveguide it can easily be infinite). Showed that group velocity is the velocity of propagation of wave packets, by considering a narrow-bandwidth packet and Taylor-expanding the dispersion ω(k) to first order.
+
+Another viewpoint is that group velocity is the energy-propagation velocity (in a lossless medium), and explained the general principle that the velocity of any "stuff" can be expressed as the ratio of the flux rate of the stuff to the density of the stuff...we will show that in the electromagnetic case, this ratio gives exactly dω/dk. In particular, we will apply the Hellmann-Feynman theorem to our Θ**k** eigenproblem to show that the group velocity dω/dk is precisely the energy velocity (ratio of energy flux to energy density, averaged over time and the unit cell).
+
+**Further reading:** See chapter 3 of the book, section on phase and group velocity. See the footnotes in that section, e.g. Jackson, _Classical Electrodynamics_, for a derivation of group velocity from the Fourier perspective; see also my [notes on wave velocity and Fourier transforms](https://github.com/mitmath/18303/blob/fall16/fourier-dispersion.pdf) from [18.303](https://github.com/mitmath/18303/tree/fall16). A much more complete review of velocity in lossy and dispersive media can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf).
