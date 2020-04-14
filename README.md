@@ -240,6 +240,8 @@ Another viewpoint is that group velocity is the energy-propagation velocity (in 
 
 ### Lecture 16: 14 April
 
+* [video recording](https://mit.zoom.us/rec/share/_otKA7zZ92FIHbORtAaFcJF4Gob5eaa81HUd-vQIzBuHD3TAErHswjUs2m_iJ2fi )
+
 Applied the Hellmann-Feynman theorem to our Θ**k** eigenproblem to show that the group velocity dω/dk is precisely the energy velocity (ratio of energy flux to energy density, averaged over time and the unit cell).
 
 From the energy velocity expression, proved that this group velocity is always ≤c for ε≥1. (At a deeper level, it turns out that you can prove this for any passive media.) Also gave a simple proof that the "front velocity" (the rate at which the wave "front" of nonzero fields can move) is bounded by the upper bound of the energy velocity.
