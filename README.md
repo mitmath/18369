@@ -237,3 +237,13 @@ Wave propagation velocity: defined phase velocity (along homogeneous directions)
 Another viewpoint is that group velocity is the energy-propagation velocity (in a lossless medium), and explained the general principle that the velocity of any "stuff" can be expressed as the ratio of the flux rate of the stuff to the density of the stuff...we will show that in the electromagnetic case, this ratio gives exactly dω/dk. In particular, we will apply the Hellmann-Feynman theorem to our Θ̂ₖ eigenproblem to show that the group velocity dω/dk is precisely the energy velocity (ratio of energy flux to energy density, averaged over time and the unit cell).
 
 **Further reading:** See chapter 3 of the book, section on phase and group velocity. See the footnotes in that section, e.g. Jackson, _Classical Electrodynamics_, for a derivation of group velocity from the Fourier perspective; see also my [notes on wave velocity and Fourier transforms](https://github.com/mitmath/18303/blob/fall16/fourier-dispersion.pdf) from [18.303](https://github.com/mitmath/18303/tree/fall16). A much more complete review of velocity in lossy and dispersive media can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf).
+
+### Lecture 16: 14 April
+
+Applied the Hellmann-Feynman theorem to our Θ**k** eigenproblem to show that the group velocity dω/dk is precisely the energy velocity (ratio of energy flux to energy density, averaged over time and the unit cell).
+
+From the energy velocity expression, proved that this group velocity is always ≤c for ε≥1. (At a deeper level, it turns out that you can prove this for any passive media.) Also gave a simple proof that the "front velocity" (the rate at which the wave "front" of nonzero fields can move) is bounded by the upper bound of the energy velocity.
+
+Discussed group-velocity dispersion: when the group velocity depends on frequency (true for any non-scale-invariant system), wave packets spread out as they propagate.  This can be quantified (to lowest order) in terms of the "dispersion parameter" D.
+
+**Further reading:** See chapter 3 of the book for a similar Hellman-Ferynman approach, and the [Welters (2014) paper](http://math.mit.edu/~stevenj/papers/Welters14.pdf) for much more on group and front velocity bounds. For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
