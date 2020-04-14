@@ -18,7 +18,7 @@ Syllabus
 
 **Probable topics**: _Methods_: linear algebra & eigensystems for Maxwell's equations, symmetry groups and representation theory, Bloch's theorem, numerical eigensolver methods, time and frequency-domain computation, perturbation theory, coupled-mode theories, waveguide theory, adiabatic transitions. _Optical phenomena_: photonic crystals & band gaps, anomalous diffraction, mechanisms for optical confinement, optical fibers (new & old), nonlinearities, integrated optical devices.
 
-**Grading**: 33% problem sets (weekly/biweekly). 33% take-home mid-term exam (Posted **April 20**, due **April 21**.). 34% final project (proposal due April 14, project due May 12).
+**Grading**: 33% problem sets (weekly/biweekly). 33% take-home ~~mid-term exam (Posted **April 20**, due **April 21**.)~~.  34% final project (proposal due April 14, project due May 12).  **Midterm exam cancelled**: grading will be 50% psets and 50% final project.
 
 * Psets will be [submitted electronically via Stellar](https://learning-modules.mit.edu/gradebook/index.html?uuid=/course/18/sp20/18.369).  Submit a good-quality PDF *scan* of any handwritten solutions (or a PDF printout of computer output).
 
@@ -246,4 +246,8 @@ From the energy velocity expression, proved that this group velocity is always â
 
 Discussed group-velocity dispersion: when the group velocity depends on frequency (true for any non-scale-invariant system), wave packets spread out as they propagate.  This can be quantified (to lowest order) in terms of the "dispersion parameter" D.
 
-**Further reading:** See chapter 3 of the book for a similar Hellman-Ferynman approach, and the [Welters (2014) paper](http://math.mit.edu/~stevenj/papers/Welters14.pdf) for much more on group and front velocity bounds. For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
+New topic: **2d periodicity**
+
+Reviewed Bloch's theorem, the primitive lattice vectors, the [Bravais lattice](http://en.wikipedia.org/wiki/Bravais_lattice), the primitive reciprocal lattice vectors, and the reciprocal lattice, for 2d periodicity. Reviewed the periodicity in k-space (reciprocal space), the Brillouin zone, and the irreducible Brillouin zone.
+
+**Further reading:** See chapter 3 of the book for a similar Hellman-Ferynman approach, and the [Welters (2014) paper](http://math.mit.edu/~stevenj/papers/Welters14.pdf) for much more on group and front velocity bounds. For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.  For 2d periodicity, see the beginning of chapter 5 of the book (2d photonic crystals), and appendix B on the reciprocal lattice and Brillouin zone.
