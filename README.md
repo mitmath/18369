@@ -242,7 +242,7 @@ Another viewpoint is that group velocity is the energy-propagation velocity (in 
 
 * [video recording](https://mit.zoom.us/rec/share/_otKA7zZ92FIHbORtAaFcJF4Gob5eaa81HUd-vQIzBuHD3TAErHswjUs2m_iJ2fi )
 
-Applied the Hellmann-Feynman theorem to our Θ**k** eigenproblem to show that the group velocity dω/dk is precisely the energy velocity (ratio of energy flux to energy density, averaged over time and the unit cell).
+Applied the Hellmann-Feynman theorem to our Θₖ eigenproblem to show that the group velocity dω/dk is precisely the energy velocity (ratio of energy flux to energy density, averaged over time and the unit cell).
 
 From the energy velocity expression, proved that this group velocity is always ≤c for ε≥1. (At a deeper level, it turns out that you can prove this for any passive media.) Also gave a simple proof that the "front velocity" (the rate at which the wave "front" of nonzero fields can move) is bounded by the upper bound of the energy velocity.
 
@@ -252,4 +252,22 @@ New topic: **2d periodicity**
 
 Reviewed Bloch's theorem, the primitive lattice vectors, the [Bravais lattice](http://en.wikipedia.org/wiki/Bravais_lattice), the primitive reciprocal lattice vectors, and the reciprocal lattice, for 2d periodicity. Reviewed the periodicity in k-space (reciprocal space), the Brillouin zone, and the irreducible Brillouin zone.
 
+Gave the example of the square lattice, its Brillouin zone, and its irreducible Brillouin zone for structures with the same (C₄ᵥ) symmetry as the lattice.
+
 **Further reading:** See chapter 3 of the book for a similar Hellman-Ferynman approach, and the [Welters (2014) paper](http://math.mit.edu/~stevenj/papers/Welters14.pdf) for much more on group and front velocity bounds. For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.  For 2d periodicity, see the beginning of chapter 5 of the book (2d photonic crystals), and appendix B on the reciprocal lattice and Brillouin zone.
+
+### Lecture 17: 16 April
+
+* [video recording](https://mit.zoom.us/rec/share/98BZJKrBr3FOeJ3j2FrWZpwgIIbOT6a82idM8qcMy0Y7WVbLjoqMoLP3o0-j5AvB?startTime=1587049051000)
+
+Considered the TM band diagram of the square lattice of rods (figure 1 of the handout). Furthermore, from the symmetry of the points between Γ and M or Γ and X, explained why we have degeneracies at Γ and M, zero group velocity at the Γ and X and M points except at degeneracies, and why the band extrema *usually* lie along the I.B.Z. boundaries.  Showed that Γ and M have the full symmetry of the lattice, whereas X has a reduced symmetry group, which is why we have non-accidental degeneracies at those points.
+
+Considered the TM band diagram of the square lattice of rods (figure 2 in chapter 5). Discussed the origin of the gap from the variational theorem (explaining the band-edge field patterns in figure 2), and the reason for a minimum index contrast to get a gap (the differing periodicities and hence differing gaps in different directions).
+
+Influence of boundary conditions on TE vs TM gaps, and why TE gaps prefer "hole" (connected) structures to "rod" (disconnected) structures. Mentioned TE+TM gap in hexagonal lattice of rodes.
+
+Discussed the more general definition of a Brillouin zone as a Wigner–Seitz/Voronoi cell in the reciprocal lattice.  As an example, considered the Brillouin zone and irreducible Brillouin zone of a hexagonal lattice.
+
+Discussed why higher symmetry (Brillouin zones closer to circles/spheres) typically makes it easier to get a gap. (In 3d, the closest B.Z. to a sphere is from an fcc lattice, and most 3d gaps are in fcc-like structures.)
+
+**Further reading:** beginning of chapter 5 of the book (2d photonic crystals), and appendix B on the reciprocal lattice and Brillouin zone. See [this paper](http://arxiv.org/abs/math-ph/0702035) for some counterexamples and further discussion regarding the occurrence of band extrema at the edges of the I.B.Z.
