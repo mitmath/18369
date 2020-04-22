@@ -275,6 +275,7 @@ Discussed why higher symmetry (Brillouin zones closer to circles/spheres) typica
 
 ### Lecture 18: 21 April
 
+* [pset 5](psets/pset5.pdf) and accompanying [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset5.ipynb) (due Tuesday, May 5).
 * [slides on 2d gaps](notes/2d-gaps.pdf)
 * [video recording](https://mit.zoom.us/rec/share/78BxF6_oqXFJBYntskDmBKo6RLrpX6a80CEZ-fRZmErqSCwaxeRcB3BA9RtW_dcP?startTime=1587481134000)
 
