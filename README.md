@@ -258,6 +258,7 @@ Gave the example of the square lattice, its Brillouin zone, and its irreducible 
 
 ### Lecture 17: 16 April
 
+* [pset 4 solutions](psets/pset4sol.pdf) and accompanying [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset4sol.ipynb)
 * [video recording](https://mit.zoom.us/rec/share/98BZJKrBr3FOeJ3j2FrWZpwgIIbOT6a82idM8qcMy0Y7WVbLjoqMoLP3o0-j5AvB?startTime=1587049051000)
 
 Considered the TM band diagram of the square lattice of rods (figure 1 of the handout). Furthermore, from the symmetry of the points between Γ and M or Γ and X, explained why we have degeneracies at Γ and M, zero group velocity at the Γ and X and M points except at degeneracies, and why the band extrema *usually* lie along the I.B.Z. boundaries.  Showed that Γ and M have the full symmetry of the lattice, whereas X has a reduced symmetry group, which is why we have non-accidental degeneracies at those points.
