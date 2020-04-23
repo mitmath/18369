@@ -294,7 +294,8 @@ Discussed waveguides and projected band diagrams formed by line defects and surf
 
 ### Lecture 19: 23 April
 
-**Handout:** [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+* [video recording](https://mit.zoom.us/rec/share/1JRZJb-t2UJIS43C5HzcBvYPBt3CX6a81yUZ86ANmUkZo8JwosUuZje8FF5zNvIe)
 
 New topic: **Computational photonics**. Began by categorizing computational methods along three axes: what problem is solved, what basis/discretization is used to reduce the problem to finitely many unknowns, and how are the resulting finitely many equations solved? Discussed three categories of problems: full time-dependent Maxwell solvers, responses to time-harmonic currents, and eigenproblems (finding ω from k or vice-versa). Emphasized that there is no "best" method; each method has its strengths and weaknesses, and there are often strong tradeoffs (e.g. between generality/simplicity and efficiency).
 
