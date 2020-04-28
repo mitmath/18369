@@ -305,6 +305,8 @@ Discussion of eigensolver algorithms, resonant modes, FDTD time-domain methods, 
 
 ### Lecture 20: 28 April
 
+* [video recording](https://mit.zoom.us/rec/share/-vdedLjfrXlJU6_08EbiBv8wLKTJX6a82idM-6EIxU3-XZef5VsEVM6EANjvs1RE)
+
 Went over the Principle and Equivalence, mode sources, and integral-equation methods; see slides from lecture 19.   Discussed large-scale optimization in photonics.
 
 **Further reading:** See the review article[Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366).  See also [SCUFF-EM](https://github.com/HomerReid/scuff-em), Homer Reid's free BEM code for electromagnetic scattering problems. See also this [SCUFF video tutorial](https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a7449e51-2fe1-4d95-a53a-a9050106c542) (June 2018).     The Stanford [Spins code](https://nqp.stanford.edu/inverse-design-photonics) is software for topology optimization in photonics, and the [Meep adjoint solver](https://meep.readthedocs.io/en/latest/Python_Tutorials/AdjointSolver/) can also be used for topology optimization.
