@@ -313,6 +313,8 @@ Went over the Principle and Equivalence, mode sources, and integral-equation met
 
 ### Lecture 20: 28 April
 
+* [video recording](https://mit.zoom.us/rec/share/5dJQH4Ou52hIYqecskfSYY0eMIC8X6a8gCcf-vIJxRuN0eXss-aVs2VxbuHs1eyl?startTime=1588258268000)
+
 Discussed more examples of optimization problems in photonics from the computation slides.  Used bandgap optimization to illustrate epigraph formulations of min-max problems, discussed the local density of states and its advantages for resonant-mode optimization, talked about incorporating manufacturing constraints, etcetera.
 
 An approach that lets us talk about the "local" spectrum of finite periodic structures, open resonators, and other lossy cases, is the **local density of states**. Showed that the LDOS is also proportional to the power radiated by a dipole source at a given position and frequency: this latter definition has the advantage of being much easier to generalize, and easier to connect to other physical processes like spontaneous emission or antennas.
