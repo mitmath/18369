@@ -310,3 +310,14 @@ Discussion of eigensolver algorithms, resonant modes, FDTD time-domain methods, 
 Went over the Principle and Equivalence, mode sources, and integral-equation methods; see slides from lecture 19.   Discussed large-scale optimization in photonics.
 
 **Further reading:** See the review article[Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366).  See also [SCUFF-EM](https://github.com/HomerReid/scuff-em), Homer Reid's free BEM code for electromagnetic scattering problems. See also this [SCUFF video tutorial](https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a7449e51-2fe1-4d95-a53a-a9050106c542) (June 2018).     The Stanford [Spins code](https://nqp.stanford.edu/inverse-design-photonics) is software for topology optimization in photonics, and the [Meep adjoint solver](https://meep.readthedocs.io/en/latest/Python_Tutorials/AdjointSolver/) can also be used for topology optimization.
+
+### Lecture 20: 28 April
+
+Discussed more examples of optimization problems in photonics from the computation slides.  Used bandgap optimization to illustrate epigraph formulations of min-max problems, discussed the local density of states and its advantages for resonant-mode optimization, talked about incorporating manufacturing constraints, etcetera.
+
+An approach that lets us talk about the "local" spectrum of finite periodic structures, open resonators, and other lossy cases, is the **local density of states**. Showed that the LDOS is also proportional to the power radiated by a dipole source at a given position and frequency: this latter definition has the advantage of being much easier to generalize, and easier to connect to other physical processes like spontaneous emission or antennas.
+
+Discussed the "principle of limiting absorption:" the "right" way to define a "lossless" system is to add a little bit of loss everywhere and take the limit as this loss goes to zero from above (Im ωε = 0+). This allows us to rigorously deal with poles on the real-ω axis, and also automatically gives us outgoing ("radiation" or "Sommerfield") boundary conditions. It also allows us to correctly derived the LDOS connection to the power.
+
+**Further reading:**  See section 4.4 (LDOS) of [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366) and references therein for more information on DOS and LDOS. For the limiting absorption principle, see e.g. [Schulenberger and Wilcox (1971).](http://texas.math.ttu.edu/~gilliam/jrschul_home/schul_3.pdf).  See the slides for references on the specific optimization algorithms described therein.   Two recent review articles on topology optimization in photonics are: Jensen and Sigmund, “[Topology optimization for nano-photonics](https://doi.org/10.1002/lpor.201000014),” *Laser Photonics Rev.* 5, pp. 308–321
+(2011); and Molesky et al., “[Inverse design in nanophotonics](https://doi.org/10.1038/s41566-018-0246-9),” *Nat.  Photonics* 12, pp. 659–670 (2018).
