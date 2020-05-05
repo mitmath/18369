@@ -323,3 +323,14 @@ Discussed the "principle of limiting absorption:" the "right" way to define a "l
 
 **Further reading:**  See section 4.4 (LDOS) of [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366) and references therein for more information on DOS and LDOS. For the limiting absorption principle, see e.g. [Schulenberger and Wilcox (1971).](http://texas.math.ttu.edu/~gilliam/jrschul_home/schul_3.pdf).  See the slides for references on the specific optimization algorithms described therein.   Two recent review articles on topology optimization in photonics are: Jensen and Sigmund, “[Topology optimization for nano-photonics](https://doi.org/10.1002/lpor.201000014),” *Laser Photonics Rev.* 5, pp. 308–321
 (2011); and Molesky et al., “[Inverse design in nanophotonics](https://doi.org/10.1038/s41566-018-0246-9),” *Nat.  Photonics* 12, pp. 659–670 (2018).
+
+
+### Lecture 21: 5 May
+
+**Handout:** [TCMT slides](notes/TCMT.pdf)
+
+New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical device, a waveguide-cavity-waveguide filter, and began to derive how the universal behavior of device in this class can be derived from very general principles such as conservation of energy, parameterized only by the (geometry-dependent) frequency and lifetime of the cavity mode. Began with a high-level overview (see slides), with derivations to come next time.
+
+Furthermore defined the **quality factor** Q of the cavity, which is simply a dimensionless lifetime Q=ω₀τ/2.
+
+**Further reading:** chapter 10 of the book.
