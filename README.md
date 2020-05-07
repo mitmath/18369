@@ -340,5 +340,12 @@ Followed chapter 10 in the book to derive TCMT in a couple of simple cases, and 
 ### Lecture 22: 7 May
 
 * [tutorial slides](https://www.dropbox.com/s/69jmybp912xcshs/spie-course-latest.pptx?dl=0)
+* [video recording](https://mit.zoom.us/rec/share/5MwlP-_zz19JGInjuXD-WZw-BbXoeaa8hCUe8_ULyBvUJOexq5Z3LsvXAynNns4H?startTime=1588863488000)
 
-Index guiding and incomplete gaps (starting on page 142 of the tutorial slides). Chapters 7–8 of the book.
+New topic **periodic dielectric waveguides** and **photonic-crystal slabs** (chapters 7-8).  Starting on page 142 of the tutorial slides.
+
+Partial confinement of light by defects, and intrinsic radiation losses due to coupling to light-line mode. Tradeoff between localization and loss (due to Fourier components inside the light cone). Discussed two mechanisms for large radiation Q despite the incomplete gap: delocalization and cancellation.
+
+New topic: photonic-crystal fibers. Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals). Emphasized the importance of the band gap lying above the light line of air.
+
+**Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.
