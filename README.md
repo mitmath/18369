@@ -324,7 +324,6 @@ Discussed the "principle of limiting absorption:" the "right" way to define a "l
 **Further reading:**  See section 4.4 (LDOS) of [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366) and references therein for more information on DOS and LDOS. For the limiting absorption principle, see e.g. [Schulenberger and Wilcox (1971).](http://texas.math.ttu.edu/~gilliam/jrschul_home/schul_3.pdf).  See the slides for references on the specific optimization algorithms described therein.   Two recent review articles on topology optimization in photonics are: Jensen and Sigmund, “[Topology optimization for nano-photonics](https://doi.org/10.1002/lpor.201000014),” *Laser Photonics Rev.* 5, pp. 308–321
 (2011); and Molesky et al., “[Inverse design in nanophotonics](https://doi.org/10.1038/s41566-018-0246-9),” *Nat.  Photonics* 12, pp. 659–670 (2018).
 
-
 ### Lecture 21: 5 May
 
 * [TCMT slides](notes/TCMT.pdf)
@@ -334,4 +333,12 @@ New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical dev
 
 Furthermore defined the **quality factor** Q of the cavity, which is simply a dimensionless lifetime Q=ω₀τ/2.
 
+Followed chapter 10 in the book to derive TCMT in a couple of simple cases, and then summarized results in other cases, including nonlinear bistability.
+
 **Further reading:** chapter 10 of the book.
+
+### Lecture 22: 7 May
+
+* [tutorial slides](https://www.dropbox.com/s/69jmybp912xcshs/spie-course-latest.pptx?dl=0)
+
+Index guiding and incomplete gaps (starting on page 142 of the tutorial slides). Chapters 7–8 of the book.
