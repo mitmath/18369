@@ -352,6 +352,7 @@ New topic: photonic-crystal fibers. Discussed the various types from the handout
 
 ### Lecture 23: 11 May
 
+* [video recording](https://mit.zoom.us/rec/share/_5F6HpDCyz5ITpXnzH_nAY4PQofKT6a8hyZN-KVfxU2iTWgvMSG8ACIkBfhWJn_B?startTime=1589294950000)
 * [notes](notes/beta-eigenproblem.pdf); see also first few pages of [our 2002 adiabatic-theorem paper](http://math.mit.edu/~stevenj/papers/JohnsonBi02.pdf)
 
 **New topic (see notes)**: Going full-circle back to the beginning of the course, we again derive an algebraic (linear operator / eigenproblem) formulation of Maxwell's equations. This time, however, we do so for constant-ω separating out the _z_ derivative and the corresponding **k** component (for _z_\-periodic structures) _kz_ (denoted β). That is, we write Maxwell's equations in the form:
