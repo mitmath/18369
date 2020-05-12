@@ -361,3 +361,5 @@ New topic: photonic-crystal fibers. Discussed the various types from the handout
 where ψ is a four-component vector field consisting of (_Ex_, _Ey_, _Hx_, _Hy_), and **A** and **B** are linear operators. This is the most convenient formulation for considering problems of propagation in the _z_ direction along a waveguide, where perturbations may break translational symmetry but frequency is still conserved. Showed that **A** and **B** are Hermitian (but _not_ positive-definite) for real ε and μ.
 
 Discussed orthogonality of modes and unconjugated "inner products," propagating vs. evanescent modes (showing that the latter carry zero power)
+
+Coupled-wave equations for _nearly_ uniform cross sections: small perturbations, slowly varying perturbations, and the adiabatic theorem.
