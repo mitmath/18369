@@ -348,7 +348,7 @@ Partial confinement of light by defects, and intrinsic radiation losses due to c
 
 New topic: photonic-crystal fibers. Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals). Emphasized the importance of the band gap lying above the light line of air.
 
-**Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.
+**Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.  A nice way to understand holey fibers is the β⟶0 limit, which turns out to give a *scalar* wave equation as described in chapter 9 of the book. For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).
 
 ### Lecture 23: 11 May
 
