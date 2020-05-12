@@ -350,21 +350,7 @@ New topic: photonic-crystal fibers. Discussed the various types from the handout
 
 **Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.
 
-### Lecture 23: 12 May
-
-
-
-### Lecture 32: 9 May
-
-The short-wavelength scalar approximation and its consequences for holey fibers.
-
-Discussed consequences of the scalar limit. First for a dielectric waveguide with a square or rectangular cross-section (which maps to the square TM metallic cavity of pset 2), and then for a holey fiber with a solid core (which maps to a 2d metallic photonic crystal). In both cases, applied product representation theory to the relationship between the scalar LP modes and the vector modes. Noted that holey fibers will support only a finite number of guided modes (and can even be "endlessly single mode" for the right parameters).
-
-Discussed the origin of band gaps in the holey-fiber light cone, from the scalar limit, and band-gap guidance in hollow-core fibers.
-
-**Further reading:** chapter 9 (section on index-guiding holey fibers and the scalar limit). For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).
-
-### Lecture 33: 11 May
+### Lecture 23: 11 May
 
 * [notes](notes/beta-eigenproblem.pdf); see also first few pages of [our 2002 adiabatic-theorem paper](http://math.mit.edu/~stevenj/papers/JohnsonBi02.pdf)
 
