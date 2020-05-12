@@ -349,3 +349,29 @@ Partial confinement of light by defects, and intrinsic radiation losses due to c
 New topic: photonic-crystal fibers. Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals). Emphasized the importance of the band gap lying above the light line of air.
 
 **Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.
+
+### Lecture 23: 12 May
+
+
+
+### Lecture 32: 9 May
+
+The short-wavelength scalar approximation and its consequences for holey fibers.
+
+Discussed consequences of the scalar limit. First for a dielectric waveguide with a square or rectangular cross-section (which maps to the square TM metallic cavity of pset 2), and then for a holey fiber with a solid core (which maps to a 2d metallic photonic crystal). In both cases, applied product representation theory to the relationship between the scalar LP modes and the vector modes. Noted that holey fibers will support only a finite number of guided modes (and can even be "endlessly single mode" for the right parameters).
+
+Discussed the origin of band gaps in the holey-fiber light cone, from the scalar limit, and band-gap guidance in hollow-core fibers.
+
+**Further reading:** chapter 9 (section on index-guiding holey fibers and the scalar limit). For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).
+
+### Lecture 33: 11 May
+
+* [notes](notes/beta-eigenproblem.pdf); see also first few pages of [our 2002 adiabatic-theorem paper](http://math.mit.edu/~stevenj/papers/JohnsonBi02.pdf)
+
+**New topic (see notes)**: Going full-circle back to the beginning of the course, we again derive an algebraic (linear operator / eigenproblem) formulation of Maxwell's equations. This time, however, we do so for constant-ω separating out the _z_ derivative and the corresponding **k** component (for _z_\-periodic structures) _kz_ (denoted β). That is, we write Maxwell's equations in the form:
+
+**A** ψ = -_i_ **B** ∂ψ/∂_z_
+
+where ψ is a four-component vector field consisting of (_Ex_, _Ey_, _Hx_, _Hy_), and **A** and **B** are linear operators. This is the most convenient formulation for considering problems of propagation in the _z_ direction along a waveguide, where perturbations may break translational symmetry but frequency is still conserved. Showed that **A** and **B** are Hermitian (but _not_ positive-definite) for real ε and μ.
+
+Discussed orthogonality of modes and unconjugated "inner products," propagating vs. evanescent modes (showing that the latter carry zero power)
