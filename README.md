@@ -363,3 +363,5 @@ where ψ is a four-component vector field consisting of (_Ex_, _Ey_, _Hx_, _Hy_)
 Discussed orthogonality of modes and unconjugated "inner products," propagating vs. evanescent modes (showing that the latter carry zero power)
 
 Coupled-wave equations for _nearly_ uniform cross sections: small perturbations, slowly varying perturbations, and the adiabatic theorem.
+
+**Further reading:** For a connection between the adiabatic limit to the rate of convergence of the Fourier transform of the rate of change, see section 2.1 of [Oskooi et al. (2012)](https://www.osapublishing.org/oe/abstract.cfm?URI=oe-20-19-21558).
