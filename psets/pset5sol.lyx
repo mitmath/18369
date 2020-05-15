@@ -1,0 +1,1100 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 5 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: (20 points)
+\end_layout
+
+\begin_layout Standard
+Our derivation is similar to before, except that we have an additional term
+ 
+\begin_inset Formula $-\varepsilon^{-2}\frac{\partial\varepsilon}{\partial\omega}\frac{d\omega}{dk}$
+\end_inset
+
+ from the derivative 
+\begin_inset Formula $\frac{d}{dk}$
+\end_inset
+
+ acting on the frequency argument of 
+\begin_inset Formula $\varepsilon^{-1}(\vec{x},\omega)$
+\end_inset
+
+ inside 
+\begin_inset Formula $\hat{\Theta}_{k}$
+\end_inset
+
+.
+ This gives us: 
+\begin_inset Formula 
+\[
+\frac{d(\omega^{2})}{dk}=2\omega\frac{d\omega}{dk}=\frac{\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle-\frac{d\omega}{dk}\langle H_{k},\left(\nabla+i\vec{k}\right)\times\varepsilon^{-2}\frac{\partial\varepsilon}{\partial\omega}\left(\nabla+i\vec{k}\right)\times H_{k}\rangle}{\langle H_{k},H_{k}\rangle}.
+\]
+
+\end_inset
+
+If we solve for 
+\begin_inset Formula $\frac{d\omega}{dk}$
+\end_inset
+
+, we obtain: 
+\begin_inset Formula 
+\[
+\frac{d\omega}{dk}=\frac{\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle}{2\omega\langle H_{k},H_{k}\rangle+\langle H_{k},\left(\nabla+i\vec{k}\right)\times\varepsilon^{-2}\frac{\partial\varepsilon}{\partial\omega}\left(\nabla+i\vec{k}\right)\times H_{k}\rangle},
+\]
+
+\end_inset
+
+where the only new term compared to class is 
+\begin_inset Formula 
+\begin{align*}
+\langle H_{k},\left(\nabla+i\vec{k}\right)\times\varepsilon^{-2}\frac{\partial\varepsilon}{\partial\omega}\left(\nabla+i\vec{k}\right)\times H_{k}\rangle & =\langle\left(\nabla+i\vec{k}\right)\times H_{k},\varepsilon^{-2}\frac{\partial\varepsilon}{\partial\omega}\left(\nabla+i\vec{k}\right)\times H_{k}\rangle\\
+ & =\langle-i\omega\varepsilon E_{k},\varepsilon^{-2}\frac{\partial\varepsilon}{\partial\omega}(-i\omega\varepsilon E_{k})\rangle\\
+ & =\omega^{2}\int\frac{\partial\varepsilon}{\partial\omega}|E|^{2},
+\end{align*}
+
+\end_inset
+
+using Ampere's law and the fact that 
+\begin_inset Formula $E_{k}=Ee^{-ikx}$
+\end_inset
+
+.
+ From class, 
+\begin_inset Formula $2\langle H_{k},H_{k}\rangle=2\int|H|^{2}=\int(|H|^{2}+\varepsilon|E|^{2})$
+\end_inset
+
+ for time-harmonic fields.
+ So, putting it all together, and using 
+\begin_inset Formula $\frac{\partial(\omega\varepsilon)}{\partial\omega}=\varepsilon+\omega\frac{\partial\varepsilon}{\partial\omega}$
+\end_inset
+
+, we have 
+\begin_inset Formula 
+\[
+\frac{d\omega}{dk}=\frac{\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle}{\omega\int\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+|\vec{H}|^{2}\right]}=\frac{\frac{1}{4\omega}\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle}{\frac{1}{4}\int\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+|\vec{H}|^{2}\right]},
+\]
+
+\end_inset
+
+and the numerator was shown in class (and in the book) to be the time-average
+ Poynting flux.
+ Thus the energy density is modified to the Brillouin formula 
+\begin_inset Formula $\frac{1}{4}\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+|\vec{H}|^{2}\right]$
+\end_inset
+
+ as desired.
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: (10+5+5+5 points)
+\end_layout
+
+\begin_layout Standard
+The accompanying Jupyter notebook gives an example calculation of the TM
+ (
+\begin_inset Formula $E_{z}$
+\end_inset
+
+) band diagram and gap for a 2d hexagonal lattice of dielectric rods (radius
+ 
+\begin_inset Formula $0.2a$
+\end_inset
+
+, 
+\begin_inset Formula $\varepsilon=12$
+\end_inset
+
+) in air.
+ Modify this calculation so that the angle between the primitive lattice
+ vectors is 
+\series bold
+75°
+\series default
+ instead of 60°.
+\end_layout
+
+\begin_layout Enumerate
+For this part, let us take the lattice vectors to be 
+\begin_inset Formula $\vec{R}_{1}=a\hat{\vec{x}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{R}_{2}=a(\hat{\vec{x}}\cos\theta+\hat{\vec{y}}\sin\theta$
+\end_inset
+
+), where 
+\begin_inset Formula $\theta=75^{\circ}$
+\end_inset
+
+, which are shown in fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p1b"
+
+\end_inset
+
+a—with cylindrical rods, this structure has 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ symmetry plus the two mirror planes shown as dashed lines.
+ The reciprocal lattice vectors, by the usual formula, are then 
+\begin_inset Formula $\vec{G}_{1}=\frac{2\pi}{a}(\hat{\vec{x}}-\hat{\vec{y}}\cot\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{2}=\frac{2\pi}{a}\hat{\vec{y}}\csc\theta$
+\end_inset
+
+, so that 
+\begin_inset Formula $\vec{R}_{i}\cdot\vec{G}_{j}=2\pi\delta_{ij}$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $|\vec{G}_{i}|=\frac{2\pi}{a}\csc\theta$
+\end_inset
+
+, and that the angle 
+\begin_inset Formula $\phi$
+\end_inset
+
+ between 
+\begin_inset Formula $\vec{G}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{2}$
+\end_inset
+
+ is 
+\begin_inset Formula $\cos\phi=\vec{G}_{1}\cdot\vec{G}_{2}/|\vec{G}_{1}|^{2}=-\cos\theta$
+\end_inset
+
+, and thus 
+\begin_inset Formula $\phi=\pi-\theta=105^{\circ}$
+\end_inset
+
+.
+ Therefore, the reciprocal lattice (shown in fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p1b"
+
+\end_inset
+
+b) is the same lattice 
+\emph on
+rotated
+\emph default
+ by 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+, with with a different choice of lattice vectors (an obtuse instead of
+ an acute angle between them).
+ The first Brillouin zone, shaded yellow+blue in fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p1b"
+
+\end_inset
+
+b, is determined by the usual perpendicular bisectors (black lines), and
+ is a sort of distorted hexagon.
+ Note that the first Brillouin zone still has the 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ and mirror symmetries of the lattice, as it must! Applying these symmetries,
+ we find the irreducible Brillouin zone to be the blue shaded region in
+ fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p1b"
+
+\end_inset
+
+b, whose special points we have labelled 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+, 
+\begin_inset Formula $M$
+\end_inset
+
+, 
+\begin_inset Formula $K$
+\end_inset
+
+, and 
+\begin_inset Formula $J$
+\end_inset
+
+ as shown.
+ The 
+\begin_inset Formula $K$
+\end_inset
+
+ point is somewhat subtle, in that (as labeled) several corners are equivalent
+ to 
+\begin_inset Formula $K$
+\end_inset
+
+ in non-obvious ways: if you take the 
+\begin_inset Formula $K$
+\end_inset
+
+ in the upper-right and translate it by 
+\begin_inset Formula $-\vec{G}_{2}$
+\end_inset
+
+, you get the 
+\begin_inset Formula $K$
+\end_inset
+
+ in the upper-left, which via 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ rotation gives you the 
+\begin_inset Formula $K$
+\end_inset
+
+ at the lower-right.
+ Because of this, we are treating 
+\begin_inset Formula $J$
+\end_inset
+
+ as a special point, even though it is not a corner (see below).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+To compute the band diagram, we must find the actual coordinates of these
+ points, in the 
+\begin_inset Formula $(\vec{G}_{1},\vec{G}_{2})$
+\end_inset
+
+ reciprocal basis for MPB.
+ The easiest ones (besides 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+) are the 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $J$
+\end_inset
+
+ points, which are clearly 
+\begin_inset Formula $M=(0.5,0.5)$
+\end_inset
+
+ and 
+\begin_inset Formula $J=(0.5,0)$
+\end_inset
+
+ in the reciprocal basis.
+ To get the 
+\begin_inset Formula $K$
+\end_inset
+
+ point, we must find the intersections of the perpendicular bisectors.
+ The perpendicular bisector between 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{1}$
+\end_inset
+
+ is the line of points 
+\begin_inset Formula $(\vec{k}-\vec{G}_{1}/2)\cdot\vec{G}_{1}=0,$
+\end_inset
+
+ and the perpendicular bisector between 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{+}=\vec{G}_{1}+\vec{G}_{2}$
+\end_inset
+
+ is the line of points 
+\begin_inset Formula $(\vec{k}-\vec{G}_{+}/2)\cdot\vec{G}_{+}=0.$
+\end_inset
+
+ The interesection of these two perpendicular bisectors is the 
+\begin_inset Formula $K$
+\end_inset
+
+ point (at the upper right), given by the solution to: 
+\begin_inset Formula 
+\[
+\vec{k}_{K}=\left(\begin{array}{c}
+\vec{G}_{1}\\
+\vec{G}_{+}
+\end{array}\right)^{-1}\left(\begin{array}{c}
+|\vec{G}_{1}|^{2}\\
+|\vec{G}_{+}|^{2}
+\end{array}\right)/2=\left(\begin{array}{c}
+\frac{\csc\theta-\cot\theta}{2}+(1-\cos\theta)\cot\theta\\
+-\frac{1}{2}+(1-\cos\theta)
+\end{array}\right)\cdot\frac{2\pi}{a}\csc\theta.
+\]
+
+\end_inset
+
+ Here, the first parenthesized quantity is the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix whose rows are 
+\begin_inset Formula $\vec{G}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{+}$
+\end_inset
+
+, and we have used the fact that the inverse of a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix 
+\begin_inset Formula $(\begin{array}{cc}
+a & b\\
+c & d
+\end{array})$
+\end_inset
+
+ is given by 
+\begin_inset Formula $(\begin{array}{cc}
+d & -b\\
+-c & a
+\end{array})/(ad-bc)$
+\end_inset
+
+.
+ However, for MPB we want to compute this vector in the basis of 
+\begin_inset Formula $\vec{G}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{2}$
+\end_inset
+
+, which is related to the Cartesian 
+\begin_inset Formula $\vec{k}_{K}$
+\end_inset
+
+ by the inverse of the matrix whose 
+\emph on
+columns
+\emph default
+ are 
+\begin_inset Formula $\vec{G}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{2}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+K=\left(\begin{array}{cc}
+\vec{G}_{1} & \vec{G}_{2}\end{array}\right)^{-1}\vec{k}_{K}=\left(\begin{array}{cc}
+\csc\theta & 0\\
+\cot\theta & 1
+\end{array}\right)\left(\begin{array}{c}
+\frac{\csc\theta-\cot\theta}{2}+(1-\cos\theta)\cot\theta\\
+-\frac{1}{2}+(1-\cos\theta)
+\end{array}\right)=\left(\begin{array}{c}
+1-\alpha\\
+\alpha
+\end{array}\right),
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\alpha=\sin^{2}(\theta/2)/\sin^{2}\theta$
+\end_inset
+
+ (we have used several trig.
+ identities to gratuitously simplify the result).
+ 
+\emph on
+Let's check it:
+\emph default
+ for 
+\begin_inset Formula $\theta=60^{\circ}$
+\end_inset
+
+, this gives us 
+\begin_inset Formula $K=(2/3,1/3)$
+\end_inset
+
+ which is equivalent to what MPB uses (via a 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ rotation); for 
+\begin_inset Formula $\theta=90^{\circ}$
+\end_inset
+
+ it gives us the point 
+\begin_inset Formula $(0.5,0.5)$
+\end_inset
+
+, which is the same as the 
+\begin_inset Formula $M$
+\end_inset
+
+ point of the square lattice.
+ For 
+\begin_inset Formula $\theta=75^{\circ}$
+\end_inset
+
+, 
+\begin_inset Formula $K\approx(0.60280,0.39720)$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pset5sol-lattice75.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:p1b"
+
+\end_inset
+
+(a) Lattice of dielectric rods with 
+\begin_inset Formula $|\vec{R}_{1}|=|\vec{R}_{2}|=a$
+\end_inset
+
+ and an an angle 
+\begin_inset Formula $75^{\circ}$
+\end_inset
+
+ between 
+\begin_inset Formula $\vec{R}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{R}_{2}$
+\end_inset
+
+.
+ (Lattice is to scale.) Dashed lines are mirror planes.
+ (b) Reciprocal lattice (to scale), with the first Brillouin zone (shaded
+ yellow+blue) surrounded by the perpendicular bisectors (black lines) between
+ 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and neighboring 
+\begin_inset Formula $\vec{G}$
+\end_inset
+
+ vectors.
+ Dashed lines are mirror planes.
+ Irreducible B.Z.
+ is shaded blue, with special points labelled; note that the three labelled
+ 
+\begin_inset Formula $K$
+\end_inset
+
+ points are equivalent due to periodicity + symmetry.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Let's check that the 
+\begin_inset Formula $K$
+\end_inset
+
+ point at the lower-right of fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:p1b"
+
+\end_inset
+
+b is indeed related to the one at the upper-right.
+ Denote the lower-right 
+\begin_inset Formula $K$
+\end_inset
+
+ point by 
+\begin_inset Formula $K'$
+\end_inset
+
+; then 
+\begin_inset Formula $K'$
+\end_inset
+
+ is the intersection of the perpendicular bisectors between 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{G}_{1}$
+\end_inset
+
+ and between 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $-\vec{G}_{2}$
+\end_inset
+
+, which is given by: 
+\begin_inset Formula 
+\[
+K'=\left(\begin{array}{cc}
+\vec{G}_{1} & \vec{G}_{2}\end{array}\right)^{-1}\left(\begin{array}{c}
+\vec{G}_{1}\\
+\vec{G}_{2}
+\end{array}\right)^{-1}\left(\begin{array}{c}
+|\vec{G}_{1}|^{2}\\
+-|\vec{G}_{2}|^{2}
+\end{array}\right)/2=\left(\begin{array}{c}
+\alpha\\
+-\alpha
+\end{array}\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is the same as defined above.
+ Now, we should have 
+\begin_inset Formula $K'=-(K-\vec{G}_{1})=-K+(1,0)$
+\end_inset
+
+, and indeed this is clearly the case (well, we helped by using lots of
+ trig.
+ identities in simplifying 
+\begin_inset Formula $K$
+\end_inset
+
+ above).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now you can (hopefully) see why we are treating 
+\begin_inset Formula $J$
+\end_inset
+
+ as a special point, even though it isn't at a corner: the 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ range from upper-right 
+\begin_inset Formula $K$
+\end_inset
+
+ to lower-right 
+\begin_inset Formula $K$
+\end_inset
+
+ (
+\begin_inset Formula $K'$
+\end_inset
+
+) is actually the same 
+\emph on
+along the boundary
+\emph default
+, so we expect to get band extrema at 
+\begin_inset Formula $J$
+\end_inset
+
+ even though it is not a corner of the I.B.Z.! Note, however, that 
+\begin_inset Formula $\Gamma-J$
+\end_inset
+
+ is 
+\emph on
+not
+\emph default
+ a mirror symmetry plane
+\end_layout
+
+\begin_layout Enumerate
+To compute the band structure we'll just look around the edge of the irreducible
+ Brillouin zone plus 
+\begin_inset Formula $\Gamma-J$
+\end_inset
+
+ for good measure: 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ to 
+\begin_inset Formula $M$
+\end_inset
+
+ to 
+\begin_inset Formula $K$
+\end_inset
+
+ to 
+\begin_inset Formula $J$
+\end_inset
+
+ and back to 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and then from 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ to 
+\begin_inset Formula $K'$
+\end_inset
+
+.
+ which includes all of the high-symmetry directions (i.e.
+ along the mirror planes) and no redundant points except for the repeated
+ corners.
+ This is implemented Jupyter notebook accompanying these solutions.
+ Note that we don't have enough symmetry to have any exact degeneracies
+ at the special points, though some bands come very close; we only get accidenta
+l degeneracies (crossings of even/odd modes) at intermediate points.) For
+ 
+\begin_inset Formula $\theta=75^{\circ}$
+\end_inset
+
+, we find a 42.4% TM gap between band 1 at the 
+\begin_inset Formula $M$
+\end_inset
+
+ point to band 2 at the 
+\begin_inset Formula $J$
+\end_inset
+
+ point, which is in between the gap sizes of the square and triangular lattices
+ as you might expect.
+\end_layout
+
+\begin_layout Enumerate
+The band diagram and the 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ structure (over several periods) are plotted in the solutions
+\end_layout
+
+\begin_layout Enumerate
+As shown in the solutions, the gap size was 42.4%, compared to 47.4% for the
+ hexagonal lattice.
+ Breaking the symmetry often (though not always) decreases the gap, because
+ in some directions the gap shrinks even if in other directions the gap
+ increases.
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: (10+10 points)
+\end_layout
+
+\begin_layout Standard
+Based on the sample code in the Jupyter notebook, compute the TM transmission
+ spectrum for planewaves incident upon 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+ layers of the hexagonal lattice of rods from problem
+\begin_inset space ~
+\end_inset
+
+2.
+\end_layout
+
+\begin_layout Enumerate
+See the solution notebook for the calculatoins and plots.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+In the band diagram, there was a TM gap from a frequency of 
+\begin_inset Formula $0.28$
+\end_inset
+
+ to 
+\begin_inset Formula $0.42\,c/a$
+\end_inset
+
+.
+ In the transmission spectrum, we clearly see a dip in the transmission—decreasi
+ng 
+\emph on
+exponentially
+\emph default
+ with 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+ as expected (since fields are evanescent in the gap)—around these frequencies.
+ However, if we look closely, we see that the transmission dip is 
+\series bold
+wider
+\series default
+ than the overall band gap, from about 0.24 to 0.42.
+ What's happening is that our structure is periodic in 
+\begin_inset Formula $y$
+\end_inset
+
+, so 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ is conserved, and a normal-incident planewave 
+\series bold
+only couples to 
+\begin_inset Formula $k_{y}=0$
+\end_inset
+
+ bands
+\series default
+, which are those along the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+–
+\begin_inset Formula $X$
+\end_inset
+
+ portion of the band diagram.
+ If we just look at 
+\begin_inset Formula $\Gamma\text{–}X$
+\end_inset
+
+, then the gap is indeed wider, from 0.24 to 0.42
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $c/a$
+\end_inset
+
+!
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Also as expected from class, the transmission dip is largest near the middle
+ of the gap, since we showed that the evanescent decay rates increase away
+ from the band edges.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Another feature that you might notice is that, as we increase 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+, we see that a transmission dip is appearing round 0.71–0.74
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $c/a$
+\end_inset
+
+.
+ If you look closely at the 
+\begin_inset Formula $\Gamma\text{–}X$
+\end_inset
+
+ band diagram you will see that there is indeed 
+\series bold
+another gap
+\series default
+ (just for 
+\begin_inset Formula $\Gamma\text{–}X$
+\end_inset
+
+, not for the whole Brillouin zone) at those frequencies.
+ Since that gap is much smaller, the evanescent decay rate is much slower,
+ and so the transmission dip is weaker for the same 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+From the analysis in class (and chapter 10), 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ is conserved up to integer multiples of 
+\begin_inset Formula $2\pi/a$
+\end_inset
+
+.
+ Since the incident wave is 
+\begin_inset Formula $k_{y}=0$
+\end_inset
+
+, the first diffracted order corresponds to 
+\begin_inset Formula $k_{y}=\pm2\pi/a$
+\end_inset
+
+.
+ However, the corresponding 
+\begin_inset Formula $k_{x}=\sqrt{(\omega/c)^{2}-k_{y}^{2}}$
+\end_inset
+
+ is imaginary (evanescent) until 
+\begin_inset Formula $\omega\ge2\pi c/a$
+\end_inset
+
+, or a frequency 
+\begin_inset Formula $f\ge c/a$
+\end_inset
+
+ .
+ Since 
+\begin_inset Formula $c/a=1$
+\end_inset
+
+ in our Meep units, this means we expect to see an additional diffracted
+ order actually propagating away in the reflected (and transmitted) wave
+ for 
+\begin_inset Formula $\boxed{f\geq1}$
+\end_inset
+
+ in Meep units.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The resulting fields are shown for 
+\begin_inset Formula $f=0.95c/a$
+\end_inset
+
+ and 
+\begin_inset Formula $f=1.05c/a$
+\end_inset
+
+ in the solution notebook, and clearly exhibit the transition to additional
+ diffracted orders for 
+\begin_inset Formula $f>1\,c/a$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The solution notebook also shows the results for 
+\begin_inset Formula $f=0.995\,c/a$
+\end_inset
+
+, much closer to the diffraction threshold.
+ In this case, we needed to increase the 
+\begin_inset Quotes eld
+\end_inset
+
+pad
+\begin_inset Quotes erd
+\end_inset
+
+ parameter to increase the width of the air region.
+ The reason for this is that, as 
+\begin_inset Formula $f\to1^{-}$
+\end_inset
+
+ (that is, approaching 1 from 
+\emph on
+below
+\emph default
+), the first reflected diffracted order's evanescent decay rate gets slower
+ and slower (
+\begin_inset Formula $k_{x}\to i0^{-}$
+\end_inset
+
+ from above), so we see its transverse oscillations in the field farther
+ and farther from the crystal.
+\end_layout
+
+\end_body
+\end_document
