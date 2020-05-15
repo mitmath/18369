@@ -328,7 +328,7 @@ Discussed the "principle of limiting absorption:" the "right" way to define a "l
 
 * [TCMT slides](notes/TCMT.pdf)
 * [video recording](https://mit.zoom.us/rec/share/5uV2CpPex3JIQ9Lc1kPlAJIrJ7S9eaa81HRM-_Zbn0vht5F5FK82-e418c7mTh5y?startTime=1588690733000)
-* [pset 5 solutions](psets/pset5sol.pdf) and accompanying [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset5sol.ipynb)
+* [pset 5 solutions](psets/pset5sol.pdf) and accompanying [Jupyter notebook](psets/pset5sol.ipynb)
 
 New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical device, a waveguide-cavity-waveguide filter, and began to derive how the universal behavior of device in this class can be derived from very general principles such as conservation of energy, parameterized only by the (geometry-dependent) frequency and lifetime of the cavity mode. Began with a high-level overview (see slides), with derivations to come next time.
 
