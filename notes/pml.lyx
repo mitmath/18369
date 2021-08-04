@@ -1,7 +1,9 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \renewcommand{\vec}[1]{\mathbf{#1}}
@@ -13,40 +15,73 @@
 \date{Created August 2007; updated \today}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
-\font_roman default
-\font_sans default
-\font_typewriter default
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
-
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_amsmath 2
-\use_esint 0
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
-\quotes_language english
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -63,7 +98,7 @@ Steven G.
 \begin_layout Abstract
 This note is intended as a brief introduction to the theory and practice
  of perfectly matched layer (PML) absorbing boundaries for wave equations,
- intended for future use in the courses 18.369 and 18.336 at MIT.
+ originally developed for MIT courses 18.369 and 18.336.
  It focuses on the complex stretched-coordinate viewpoint, and also discusses
  the limitations of PML.
 \end_layout
@@ -106,7 +141,7 @@ As opposed to a boundary discretization, e.g.
  that the truncation is irrelevant as long as the computational grid is
  large enough.
  Other problems, such as Poisson's equation, involve solutions that vary
- more and more slowly at greater distances---in this case, one can simply
+ more and more slowly at greater distances—in this case, one can simply
  employ a coordinate transformation, such as 
 \begin_inset Formula $\tilde{x}=\tanh x$
 \end_inset
@@ -162,7 +197,7 @@ The square of the solutions are typically related to a rate of energy transport,
  from boundary reflections.
  The oscillation means that any real coordinate remapping from an infinite
  to a finite domain will result in solutions that oscillate infinitely fast
- as the boundary is approached---such fast oscillations cannot be represented
+ as the boundary is approached—such fast oscillations cannot be represented
  by any finite-resolution grid, and will instead effectively form a reflecting
  hard wall.
  Therefore, wave equations require something different: an 
@@ -187,6 +222,7 @@ s)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Taflove00"
+literal "true"
 
 \end_inset
 
@@ -255,7 +291,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -271,7 +307,7 @@ name "fig:absorbing-layer"
  (b) The same problem, where space has been truncated to some computational
  region.
  An absorbing layer is placed adjacent to the edges of the computational
- region---a 
+ region—a 
 \emph on
 perfect
 \emph default
@@ -291,6 +327,7 @@ In 1994, however, the problem of absorbing boundaries for wave equations
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Berenger94"
+literal "true"
 
 \end_inset
 
@@ -304,7 +341,7 @@ condition
 \emph on
 layer
 \emph default
-, as depicted in Fig\SpecialChar \@.
+, as depicted in Fig\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -350,7 +387,7 @@ Technically, reflections occur when translational symmetry is broken.
 \end_inset
 
  waves generally reflect, and the transition from non-absorbing to absorbing
- material is no exception---so, instead of having reflections from the grid
+ material is no exception—so, instead of having reflections from the grid
  boundary, you now have reflections from the absorber boundary.
  However, Berenger showed that a special absorbing medium could be constructed
  so that waves do 
@@ -395,6 +432,7 @@ anisotropic
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sacks95"
+literal "true"
 
 \end_inset
 
@@ -427,6 +465,7 @@ complex coordinate stretching
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chew94,Rappaport95,Teixeira98"
+literal "true"
 
 \end_inset
 
@@ -440,6 +479,7 @@ It is sometimes implied that only the split-field PML can be derived via
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Taflove00"
+literal "true"
 
 \end_inset
 
@@ -447,6 +487,7 @@ key "Taflove00"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Teixeira98"
+literal "true"
 
 \end_inset
 
@@ -487,8 +528,10 @@ There are many formulations of waves and wave equations in the physical
 scalar wave equation:
 \emph default
  
-\begin_inset Formula \begin{equation}
-\nabla\cdot(a\nabla u)=\frac{1}{b}\frac{\partial^{2}u}{\partial t^{2}}=\frac{\ddot{u}}{b}\label{eq:scalar-wave}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+\nabla\cdot(a\nabla u)=\frac{1}{b}\frac{\partial^{2}u}{\partial t^{2}}=\frac{\ddot{u}}{b}\label{eq:scalar-wave}
+\end{equation}
 
 \end_inset
 
@@ -529,18 +572,22 @@ g an auxiliary field
 \end_inset
 
 : 
-\begin_inset Formula \begin{eqnarray}
-\frac{\partial u}{\partial t} & = & b\nabla\cdot\vec{v},\label{eq:scalar-wave-udot}\end{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
+\frac{\partial u}{\partial t} & = & b\nabla\cdot\vec{v},\label{eq:scalar-wave-udot}
+\end{eqnarray}
 
 \end_inset
 
 
-\begin_inset Formula \begin{equation}
-\frac{\partial\vec{v}}{\partial t}=a\nabla u,\label{eq:scalar-wave-vdot}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\vec{v}}{\partial t}=a\nabla u,\label{eq:scalar-wave-vdot}
+\end{equation}
 
 \end_inset
 
-which are easily seen to be equivalent to eq\SpecialChar \@.
+which are easily seen to be equivalent to eq\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -567,7 +614,7 @@ reference "eq:scalar-wave-udot"
 
 \end_inset
 
---
+–
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:scalar-wave-vdot"
@@ -578,14 +625,19 @@ reference "eq:scalar-wave-vdot"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{equation}
+\begin_inset Formula 
+\begin{equation}
 \frac{\partial\vec{w}}{\partial t}=\frac{\partial}{\partial t}\left(\begin{array}{c}
 u\\
-\vec{v}\end{array}\right)=\left(\begin{array}{cc}
+\vec{v}
+\end{array}\right)=\left(\begin{array}{cc}
  & b\nabla\cdot\\
-a\nabla\end{array}\right)\left(\begin{array}{c}
+a\nabla
+\end{array}\right)\left(\begin{array}{c}
 u\\
-\vec{v}\end{array}\right)=\hat{D}\vec{w}\label{eq:scalar-wave-abstract}\end{equation}
+\vec{v}
+\end{array}\right)=\hat{D}\vec{w}\label{eq:scalar-wave-abstract}
+\end{equation}
 
 \end_inset
 
@@ -649,7 +701,7 @@ status open
 
 \begin_layout Plain Layout
 See e.g.
- Ref\SpecialChar \@.
+ Ref\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -658,6 +710,7 @@ See e.g.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Johnson07-wave-equations"
+literal "true"
 
 \end_inset
 
@@ -681,7 +734,7 @@ Let us start with the solution
 \end_inset
 
  of some wave equation in infinite space, in a situation similar to that
- in Fig\SpecialChar \@.
+ in Fig\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -789,8 +842,10 @@ Under these assumptions, the radiating solutions in infinite space must
 planewaves
 \emph default
 : 
-\begin_inset Formula \begin{equation}
-\vec{w}(\vec{x},t)=\sum_{\vec{k},\omega}\vec{W}_{\vec{k},\omega}e^{i(\vec{k}\cdot\vec{x}-\omega t)},\label{eq:planewave-sum}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+\vec{w}(\vec{x},t)=\sum_{\vec{k},\omega}\vec{W}_{\vec{k},\omega}e^{i(\vec{k}\cdot\vec{x}-\omega t)},\label{eq:planewave-sum}
+\end{equation}
 
 \end_inset
 
@@ -826,8 +881,10 @@ for some constant amplitudes
  is some phase velocity, but we don't need to assume that here.) In particular,
  the key fact is that the radiating solutions may be decomposed into functions
  of the form 
-\begin_inset Formula \begin{equation}
-\vec{W}(y,z)e^{i(kx-\omega t)}.\label{eq:planewave-x}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+\vec{W}(y,z)e^{i(kx-\omega t)}.\label{eq:planewave-x}
+\end{equation}
 
 \end_inset
 
@@ -868,6 +925,7 @@ left-handed media
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Cummer04,Dong04"
+literal "true"
 
 \end_inset
 
@@ -888,6 +946,7 @@ key "Cummer04,Dong04"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LohOs09"
+literal "true"
 
 \end_inset
 
@@ -933,7 +992,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 
@@ -1007,7 +1066,7 @@ absorbing
 \end_layout
 
 \begin_layout Standard
-The key fact about eq\SpecialChar \@.
+The key fact about eq\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1045,7 +1104,7 @@ complex values
 \begin_inset Formula $x$
 \end_inset
 
- along the real axis, as shown in the top panels of Fig\SpecialChar \@.
+ along the real axis, as shown in the top panels of Fig\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1067,7 +1126,7 @@ reference "fig:pml-continuation"
 \end_inset
 
  along real axis, consider what happens if we evaluate it along the contour
- shown in the bottom-left panel of Fig\SpecialChar \@.
+ shown in the bottom-left panel of Fig\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1257,7 +1316,7 @@ Changing variables is easy.
 \end_inset
 
 .
- [For example, in the bottom panel of Fig\SpecialChar \@.
+ [For example, in the bottom panel of Fig\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1287,8 +1346,10 @@ reference "fig:pml-continuation"
 
 , the entire process of PML can be conceptually summed up by a single transforma
 tion of our original differential equation:
-\begin_inset Formula \begin{equation}
-\boxed{\frac{\partial}{\partial x}\rightarrow\frac{1}{1+i\frac{\sigma_{x}(x)}{\omega}}\frac{\partial}{\partial x}.}\label{eq:pml-transformation}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+\boxed{\frac{\partial}{\partial x}\rightarrow\frac{1}{1+i\frac{\sigma_{x}(x)}{\omega}}\frac{\partial}{\partial x}.}\label{eq:pml-transformation}
+\end{equation}
 
 \end_inset
 
@@ -1340,8 +1401,10 @@ Why did we choose
 
 .
  In the new coordinates, we get: 
-\begin_inset Formula \begin{equation}
-e^{ikx}e^{-\frac{k}{\omega}\int^{x}\sigma_{x}(x')dx'}.\label{eq:pml-attenuation}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+e^{ikx}e^{-\frac{k}{\omega}\int^{x}\sigma_{x}(x')dx'}.\label{eq:pml-attenuation}
+\end{equation}
 
 \end_inset
 
@@ -1394,7 +1457,7 @@ not
 \emph on
 angle
 \emph default
- of the light, a difficulty discussed in Sec\SpecialChar \@.
+ of the light, a difficulty discussed in Sec\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1402,7 +1465,7 @@ angle
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:angle-dependence"
+reference "subsec:angle-dependence"
 
 \end_inset
 
@@ -1472,7 +1535,7 @@ In fact, in principle we can make the PML region as thin as we want, just
 \begin_inset Formula $\omega$
 \end_inset
 
- (although the angle dependence can be a problem, as discussed in Sec\SpecialChar \@.
+ (although the angle dependence can be a problem, as discussed in Sec\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1480,12 +1543,12 @@ In fact, in principle we can make the PML region as thin as we want, just
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:angle-dependence"
+reference "subsec:angle-dependence"
 
 \end_inset
 
 ).
- However, in practice, we will see in Sec\SpecialChar \@.
+ However, in practice, we will see in Sec\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -1493,7 +1556,7 @@ reference "sub:angle-dependence"
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:discretization"
+reference "subsec:discretization"
 
 \end_inset
 
@@ -1644,7 +1707,7 @@ Now that we have dealt with
 Coordinate transformations and materials
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:coordinates-and-materials"
+name "subsec:coordinates-and-materials"
 
 \end_inset
 
@@ -1698,6 +1761,7 @@ This theorem appears to have been first clearly stated and derived by Ward
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Ward96"
+literal "true"
 
 \end_inset
 
@@ -1709,6 +1773,7 @@ key "Ward96"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Johnson07-coordinate-transforms"
+literal "true"
 
 \end_inset
 
@@ -1720,6 +1785,7 @@ key "Johnson07-coordinate-transforms"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "KottkeFa08"
+literal "true"
 
 \end_inset
 
@@ -1855,7 +1921,7 @@ reference "eq:scalar-wave-udot"
 
 \end_inset
 
---
+–
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:scalar-wave-vdot"
@@ -1863,14 +1929,18 @@ reference "eq:scalar-wave-vdot"
 \end_inset
 
 ): 
-\begin_inset Formula \[
-\frac{\partial u}{\partial t}=b\frac{\partial v}{\partial x}=-i\omega u\]
+\begin_inset Formula 
+\[
+\frac{\partial u}{\partial t}=b\frac{\partial v}{\partial x}=-i\omega u
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-\frac{\partial v}{\partial t}=a\frac{\partial u}{\partial x}=-i\omega v,\]
+\begin_inset Formula 
+\[
+\frac{\partial v}{\partial t}=a\frac{\partial u}{\partial x}=-i\omega v,
+\]
 
 \end_inset
 
@@ -1891,14 +1961,18 @@ reference "eq:pml-transformation"
 \end_inset
 
 , we obtain: 
-\begin_inset Formula \[
-b\frac{\partial v}{\partial x}=-i\omega u+\sigma_{x}u\]
+\begin_inset Formula 
+\[
+b\frac{\partial v}{\partial x}=-i\omega u+\sigma_{x}u
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-a\frac{\partial u}{\partial x}=-i\omega v+\sigma_{x}v.\]
+\begin_inset Formula 
+\[
+a\frac{\partial u}{\partial x}=-i\omega v+\sigma_{x}v.
+\]
 
 \end_inset
 
@@ -1908,14 +1982,18 @@ The
 
  terms have cancelled, and so in this 1d case we can trivially turn the
  equations back into their time-domain forms:
-\begin_inset Formula \[
-\frac{\partial u}{\partial t}=b\frac{\partial v}{\partial x}-\sigma_{x}u\]
+\begin_inset Formula 
+\[
+\frac{\partial u}{\partial t}=b\frac{\partial v}{\partial x}-\sigma_{x}u
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-\frac{\partial v}{\partial t}=a\frac{\partial u}{\partial x}-\sigma_{x}v.\]
+\begin_inset Formula 
+\[
+\frac{\partial v}{\partial t}=a\frac{\partial u}{\partial x}-\sigma_{x}v.
+\]
 
 \end_inset
 
@@ -2015,20 +2093,26 @@ Unfortunately, the 1d case above is a little too trivial to give you the
 \end_inset
 
  time-dependence): 
-\begin_inset Formula \[
-\frac{\partial u}{\partial t}=b\nabla\cdot v=b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}=-i\omega u\]
+\begin_inset Formula 
+\[
+\frac{\partial u}{\partial t}=b\nabla\cdot v=b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}=-i\omega u
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-\frac{\partial v_{x}}{\partial t}=a\frac{\partial u}{\partial x}=-i\omega v_{x}\]
+\begin_inset Formula 
+\[
+\frac{\partial v_{x}}{\partial t}=a\frac{\partial u}{\partial x}=-i\omega v_{x}
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-\frac{\partial v_{y}}{\partial t}=a\frac{\partial u}{\partial y}=-i\omega v_{y}.\]
+\begin_inset Formula 
+\[
+\frac{\partial v_{y}}{\partial t}=a\frac{\partial u}{\partial y}=-i\omega v_{y}.
+\]
 
 \end_inset
 
@@ -2048,14 +2132,18 @@ reference "eq:pml-transformation"
 \end_inset
 
 , we obtain: 
-\begin_inset Formula \[
-b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}\left(1+i\frac{\sigma_{x}}{\omega}\right)=-i\omega u+\sigma_{x}u\]
+\begin_inset Formula 
+\[
+b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}\left(1+i\frac{\sigma_{x}}{\omega}\right)=-i\omega u+\sigma_{x}u
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-a\frac{\partial u}{\partial x}=-i\omega v_{x}+\sigma_{x}v_{x}.\]
+\begin_inset Formula 
+\[
+a\frac{\partial u}{\partial x}=-i\omega v_{x}+\sigma_{x}v_{x}.
+\]
 
 \end_inset
 
@@ -2108,14 +2196,18 @@ auxiliary
 \end_inset
 
 , satisfying 
-\begin_inset Formula \[
--i\omega\psi=b\sigma_{x}\frac{\partial v_{y}}{\partial y},\]
+\begin_inset Formula 
+\[
+-i\omega\psi=b\sigma_{x}\frac{\partial v_{y}}{\partial y},
+\]
 
 \end_inset
 
 in which case
-\begin_inset Formula \[
-b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}+\psi=-i\omega u+\sigma_{x}u.\]
+\begin_inset Formula 
+\[
+b\frac{\partial v_{x}}{\partial x}+b\frac{\partial v_{y}}{\partial y}+\psi=-i\omega u+\sigma_{x}u.
+\]
 
 \end_inset
 
@@ -2129,26 +2221,34 @@ four
 \end_inset
 
  direction that we can solve by our favorite discretization scheme:
-\begin_inset Formula \[
-\frac{\partial u}{\partial t}=b\nabla\cdot v-\sigma_{x}u+\psi\]
+\begin_inset Formula 
+\[
+\frac{\partial u}{\partial t}=b\nabla\cdot v-\sigma_{x}u+\psi
+\]
 
 \end_inset
 
  
-\begin_inset Formula \[
-\frac{\partial v_{x}}{\partial t}=a\frac{\partial u}{\partial x}-\sigma_{x}v_{x}\]
+\begin_inset Formula 
+\[
+\frac{\partial v_{x}}{\partial t}=a\frac{\partial u}{\partial x}-\sigma_{x}v_{x}
+\]
 
 \end_inset
 
  
-\begin_inset Formula \[
-\frac{\partial v_{y}}{\partial t}=a\frac{\partial u}{\partial y}\]
+\begin_inset Formula 
+\[
+\frac{\partial v_{y}}{\partial t}=a\frac{\partial u}{\partial y}
+\]
 
 \end_inset
 
 
-\begin_inset Formula \[
-\frac{\partial\psi}{\partial t}=b\sigma_{x}\frac{\partial v_{y}}{\partial y},\]
+\begin_inset Formula 
+\[
+\frac{\partial\psi}{\partial t}=b\sigma_{x}\frac{\partial v_{y}}{\partial y},
+\]
 
 \end_inset
 
@@ -2194,14 +2294,17 @@ anisotropic absorber
 \end_inset
 
  complex tensor 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \left(\begin{array}{cc}
 \frac{1}{a}+i\frac{\sigma_{x}}{\omega a}\\
- & \frac{1}{a}\end{array}\right)^{-1}.\]
+ & \frac{1}{a}
+\end{array}\right)^{-1}.
+\]
 
 \end_inset
 
-This is an example of the general theorem alluded to in Sec\SpecialChar \@.
+This is an example of the general theorem alluded to in Sec\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -2209,7 +2312,7 @@ This is an example of the general theorem alluded to in Sec\SpecialChar \@.
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:coordinates-and-materials"
+reference "subsec:coordinates-and-materials"
 
 \end_inset
 
@@ -2262,7 +2365,7 @@ The derivation above didn't really depend at all on the assumption that
 \end_inset
 
  dependence, translational invariance implies that radiating solutions can
- be decomposed into a sum of functions of the form of eq\SpecialChar \@.
+ be decomposed into a sum of functions of the form of eq\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -2306,6 +2409,7 @@ propagation constant
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Snyder70,Marcuse74"
+literal "true"
 
 \end_inset
 
@@ -2337,6 +2441,7 @@ backward-wave
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Clarricoats60,Waldron64,Omar87,Ibanescu04-anomalous"
+literal "true"
 
 \end_inset
 
@@ -2345,6 +2450,7 @@ key "Clarricoats60,Waldron64,Omar87,Ibanescu04-anomalous"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Cummer04,Dong04"
+literal "true"
 
 \end_inset
 
@@ -2372,6 +2478,7 @@ left-handed
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LohOs09"
+literal "true"
 
 \end_inset
 
@@ -2443,8 +2550,10 @@ evanescent
 
 .
  In this case, 
-\begin_inset Formula \[
-k=k_{x}=\sqrt{\frac{\omega^{2}}{c^{2}}-k_{y}^{2}}.\]
+\begin_inset Formula 
+\[
+k=k_{x}=\sqrt{\frac{\omega^{2}}{c^{2}}-k_{y}^{2}}.
+\]
 
 \end_inset
 
@@ -2492,8 +2601,10 @@ What happens to such a decaying, imaginary-
 
 .
  Then, in the PML: 
-\begin_inset Formula \begin{equation}
-e^{-\kappa x}\rightarrow e^{-\kappa x-i\frac{\sigma_{x}}{\omega}x}.\label{eq:evanescent-pml-attenuation}\end{equation}
+\begin_inset Formula 
+\begin{equation}
+e^{-\kappa x}\rightarrow e^{-\kappa x-i\frac{\sigma_{x}}{\omega}x}.\label{eq:evanescent-pml-attenuation}
+\end{equation}
 
 \end_inset
 
@@ -2514,7 +2625,7 @@ Of course, you might object that an evanescent wave is decaying
 \emph on
 anyway
 \emph default
-, so we hardly need a PML---we just need to make the computational region
+, so we hardly need a PML—we just need to make the computational region
  large enough and it will go away on its own.
  This is true, but it would be nice to accelerate the process: in some cases
  
@@ -2557,7 +2668,7 @@ real
 \begin_inset Formula $\sigma_{x}$
 \end_inset
 
- will accelerate the decay of evanescent waves in eq\SpecialChar \@.
+ will accelerate the decay of evanescent waves in eq\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -2590,7 +2701,7 @@ propagating
 \emph on
 faster
 \emph default
-, which exacerbates the numerical reflections described in Sec\SpecialChar \@.
+, which exacerbates the numerical reflections described in Sec\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -2598,7 +2709,7 @@ faster
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:discretization"
+reference "subsec:discretization"
 
 \end_inset
 
@@ -2628,7 +2739,7 @@ PML, while it has revolutionized absorbing boundaries for wave equations,
 Discretization and numerical reflections
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:discretization"
+name "subsec:discretization"
 
 \end_inset
 
@@ -2679,6 +2790,7 @@ adiabatic theorem
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Johnson02:adiabatic"
+literal "true"
 
 \end_inset
 
@@ -2692,6 +2804,7 @@ very
 \begin_inset CommandInset citation
 LatexCommand cite
 key "OskooiZh08"
+literal "true"
 
 \end_inset
 
@@ -2703,6 +2816,7 @@ e shows that a simple quadratic or cubic turn-on of the PML absorption usually
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Taflove00,OskooiZh08"
+literal "true"
 
 \end_inset
 
@@ -2715,7 +2829,7 @@ key "Taflove00,OskooiZh08"
 Angle-dependent absorption
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:angle-dependence"
+name "subsec:angle-dependence"
 
 \end_inset
 
@@ -2724,7 +2838,7 @@ name "sub:angle-dependence"
 
 \begin_layout Standard
 Another problem is that the PML absorption depends on angle.
- In particular, consider eq\SpecialChar \@.
+ In particular, consider eq\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -2793,7 +2907,7 @@ round-trip
 \begin_layout Standard
 In practice, this is not as much of a problem as it may sound like at first.
  In most cases, all of the radiation originates in a localized region of
- interest near the origin, as in Fig\SpecialChar \@.
+ interest near the origin, as in Fig\SpecialChar endofsentence
 
 \begin_inset space ~
 \end_inset
@@ -2822,7 +2936,7 @@ reference "fig:absorbing-layer"
 Inhomogeneous media where PML fails
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:inhomogeneous-failure"
+name "subsec:inhomogeneous-failure"
 
 \end_inset
 
@@ -2842,6 +2956,7 @@ Finally, PML fails completely in the case where the medium is not
 \begin_inset CommandInset citation
 LatexCommand cite
 key "OskooiZh08"
+literal "true"
 
 \end_inset
 
@@ -2863,7 +2978,7 @@ There are several important cases of
 -varying media that, in the infinite system, have reflectionless propagating
  waves.
  Perhaps the simplest is a waveguide that hits the boundary of the computational
- cell at an angle (not normal to the boundary)---one can 
+ cell at an angle (not normal to the boundary)—one can 
 \emph on
 usually
 \emph default
@@ -2896,6 +3011,7 @@ Bloch waves
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Joannopoulos95"
+literal "true"
 
 \end_inset
 
@@ -2927,6 +3043,7 @@ What can we do in such a case? Conventional ABCs don't work either (they
 \begin_inset CommandInset citation
 LatexCommand cite
 key "OskooiZh08"
+literal "true"
 
 \end_inset
 
@@ -2971,6 +3088,7 @@ has “right-handed” solutions where the phase velocity and group velocity
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Clarricoats60,Waldron64,Omar87,Ibanescu04-anomalous"
+literal "true"
 
 \end_inset
 
@@ -2988,6 +3106,7 @@ key "Clarricoats60,Waldron64,Omar87,Ibanescu04-anomalous"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LohOs09"
+literal "true"
 
 \end_inset
 
@@ -3001,6 +3120,7 @@ key "LohOs09"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LohOs09"
+literal "true"
 
 \end_inset
 
