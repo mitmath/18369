@@ -13,7 +13,7 @@ Syllabus
 >
 > For beginning graduate students and advanced undergraduates.
 
-**Lectures**: Tues-Thurs 9:30–11am (2-132). **Office Hours:** Tues. 4–5pm (2-345). TA/grader: TBA.   [Handwritten notes from spring 2020](https://www.dropbox.com/s/1c3l54mf3rh8qw3/18.369%20spring%202020.pdf?dl=0).
+**Lectures**: Tues-Thurs 9:30–11am (2-132). **Office Hours:** Mondays 4–5pm ([virtual/zoom](https://mit.zoom.us/j/94231408634?pwd=T0R2d3N1RnhjWUgwS2pxMG53QkVpQT09)). TA/grader: TBA.   [Handwritten notes from spring 2020](https://www.dropbox.com/s/1c3l54mf3rh8qw3/18.369%20spring%202020.pdf?dl=0).
 
 **Probable topics**: _Methods_: linear algebra & eigensystems for Maxwell's equations, symmetry groups and representation theory, Bloch's theorem, numerical eigensolver methods, time and frequency-domain computation, perturbation theory, coupled-mode theories, waveguide theory, adiabatic transitions. _Optical phenomena_: photonic crystals & band gaps, anomalous diffraction, mechanisms for optical confinement, optical fibers (new & old), nonlinearities, integrated optical devices.
 
