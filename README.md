@@ -17,7 +17,7 @@ Syllabus
 
 **Probable topics**: _Methods_: linear algebra & eigensystems for Maxwell's equations, symmetry groups and representation theory, Bloch's theorem, numerical eigensolver methods, time and frequency-domain computation, perturbation theory, coupled-mode theories, waveguide theory, adiabatic transitions. _Optical phenomena_: photonic crystals & band gaps, anomalous diffraction, mechanisms for optical confinement, optical fibers (new & old), nonlinearities, integrated optical devices.
 
-**Grading**: 33% problem sets (weekly/biweekly). 33% take-home ~~mid-term exam (Posted **Nov 9**, due **Nov 10**.)~~.  34% final project (proposal due Nov 16, project due Dec 9).
+**Grading**: 33% problem sets (weekly/biweekly). 33% take-home mid-term exam (Posted **Nov 9**, due **Nov 10**.).  34% final project (proposal due Nov 16, project due Dec 9).
 
 * Psets will be submitted electronically on [the 18.369 Canvas page](https://canvas.mit.edu/courses/10376).  Submit a good-quality PDF *scan* of any handwritten solutions (or a PDF printout of computer output).
 
