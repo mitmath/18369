@@ -36,7 +36,7 @@ Supplementary lecture notes will be made available as the term progresses.
 Lecture Summaries and Handouts
 ------------------------------
 
-### Lecture 1: 10 Sep 2021
+### Lecture 1: 9 Sep 2021
 
 **Handouts:** syllabus (this web page), [introductory slides](notes/18.369-intro.pdf), [pset 1](psets/pset1.pdf) (due Thur Sep 16 at noon).
 
