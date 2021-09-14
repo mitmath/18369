@@ -44,8 +44,23 @@ Motivation and introduction: this class is about electromagnetism where the wave
 
 We start by setting up the source-free Maxwell equations as a linear eigenproblem, which will allow us to bring all of the machinery of linear algebra and (eventually) group theory to bear on this problem without having to solve the PDE explicitly (which is usually impossible to do analytically).
 
-Notational introductions: Hilbert spaces (vector space + inner product), notation for inner products and states (magnetic fields etc.). Defined the adjoint (denoted †) of linear operators and Hermitian operators (Â=Â†).
+Notational introductions: Hilbert spaces (vector space + inner product), notation for inner products and states (magnetic fields etc.). Defined the adjoint (denoted †) of linear operators and Hermitian operators (Â=Â†).  Showed that Hermitian operators have real eigenvalues and orthogonal eigenvectors/functions/states.
 
-Showed that the Maxwell eigen-operator ∇×ε⁻¹∇× is Hermitian for real ε (by showing that ∇× is Hermitian). The Maxwell operator is also positive semidefinite for ε>0, and it follows that the eigenfrequencies are real.
+Gave simple example of Â=d²/dx² on u(x) with u(0)=u(L)=0.  This is Hermitian, and has orthogonal eigenfunctions uₙ=sin(nπx/L) and real
+eigenvalues λₙ=–(πn/L)², corresponding to the [Fourier sine series](https://en.wikipedia.org/wiki/Fourier_sine_and_cosine_series) basis.
 
-**Further reading:** See chapter 2 of the _Photonic Crystals_ textbook for Maxwell's equations as an eigenproblem etc. For a more sophisticated treatment of Hilbert spaces, adjoints, and other topics in functional analysis, a good text is _Basic Classes of Linear Operators_ by Gohberg et al. The basics of electromagnetism in macroscopic media (ε and μ) are covered in any non-freshman electromagnetism textbook, e.g. _Classical Electrodynamics_ by Jackson or _Introduction to Electromagnetism_ by Griffiths.
+**Further reading:** See chapter 2 of the _Photonic Crystals_ textbook for Maxwell's equations as an eigenproblem etc. For a more sophisticated treatment of Hilbert spaces, adjoints, and other topics in functional analysis, a good text is _Basic Classes of Linear Operators_ by Gohberg et al. The basics of electromagnetism in macroscopic media (ε and μ) are covered in any non-freshman electromagnetism textbook, e.g. _Classical Electrodynamics_ by Jackson or _Introduction to Electromagnetism_ by Griffiths.   See also
+these [notes on function spaces and Hermitian operators](http://web.mit.edu/18.06/www/Fall07/operators.pdf) from 18.06 (Johnson).
+
+
+### Lecture 2: 14 September
+
+Showed that the Maxwell eigen-operator ∇×ε⁻¹∇× is Hermitian for real ε (by showing that ∇× is Hermitian). Also showed that the Maxwell operator is positive semidefinite for ε>0, and it follows that the eigenfrequencies ±ω are real, corresponding to *oscillating solutions*.
+
+Constructed simple one-dimensional example of fields in metallic cavity, and showed that consequences match predictions from linear algebra.
+
+**Further reading:** Chapter 2 of the photonic-crystals text.
+
+### Lecture 2: 16 September
+
+**Handouts:** [representation theory summary](notes/representation-theory.pdf)
