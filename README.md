@@ -59,7 +59,7 @@ these [notes on function spaces and Hermitian operators](http://web.mit.edu/18.0
 
 ### Lecture 2: 14 September
 
-* [https://www.dropbox.com/s/rar1m39caqext1d/18.369%20Fall%202021.pdf?dl=0](Lecture notes) for 18.369 are now available online.
+* [Lecture notes](https://www.dropbox.com/s/rar1m39caqext1d/18.369%20Fall%202021.pdf?dl=0) for 18.369 are now available online.
 
 Showed that the Maxwell eigen-operator ∇×ε⁻¹∇× is Hermitian for real ε (by showing that ∇× is Hermitian). Also showed that the Maxwell operator is positive semidefinite for ε>0, and it follows that the eigenfrequencies ±ω are real, corresponding to *oscillating solutions*.
 
