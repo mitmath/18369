@@ -1449,6 +1449,40 @@ i.e., over what width
 \end_inset
 
  at half-maximum!
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+From the plot, notice also that 
+\begin_inset Formula $\Re\varepsilon-1$
+\end_inset
+
+ 
+\emph on
+oscillates in sign
+\emph default
+ around the resonance frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+.
+ If this oscillation is large enough (if 
+\begin_inset Formula $\sigma_{0}/\omega_{0}\gamma_{0}$
+\end_inset
+
+ is large enough), then 
+\begin_inset Formula $\Re\varepsilon$
+\end_inset
+
+ can actually flip sign and become 
+\begin_inset Formula $<0$
+\end_inset
+
+ — it is totally possible to have a negative permittivity near a strong
+ resonance (although it typically comes hand in hand with large absorption)!
 \end_layout
 
 \begin_layout Enumerate
