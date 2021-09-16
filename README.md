@@ -66,6 +66,17 @@ Constructed simple one-dimensional example of fields in metallic cavity, and sho
 
 **Further reading:** Chapter 2 of the photonic-crystals text.
 
-### Lecture 2: 16 September
+### Lecture 3: 16 September
+* pset 1 solutions: coming soon
+* pset 2: coming soon
 
-**Handouts:** [representation theory summary](notes/representation-theory.pdf)
+Discussed consequences of symmetry, and in particular showed that mirror symmetry implies even/odd solutions. Discussed subtleties of mirror symmetries for electromagnetism: although the E and H fields seem to have opposite symmetry, they don't, because H is a pseudovector. Defined general rotation operators _R̂_ for vector and pseudovector fields.
+
+Gave a simple 2d example of fields in a 2d metal box, and showed that the symmetries are more complicated, and may include degeneracies. In order to understand this, we need to understand the relationship of different symmetry operations to one another — this relationship is expressed more precisely by the _group_ of symmetry operators, which we will get to next time.
+
+**Further reading:** Chapter 3 of the photonic-crystals text. See the Inui textbook, or many similar sources, on group theory; the most helpful in this context are the many "group theory in physics" books.
+
+### Lecture 4: 21 September
+
+* [representation theory summary](notes/representation-theory.pdf)
+
