@@ -708,18 +708,35 @@ frequency-dependent
 
 \begin_layout Enumerate
 Sketch a plot of 
-\begin_inset Formula $\Re\varepsilon$
+\begin_inset Formula $\Re\varepsilon-1=\Re\chi_{e}$
 \end_inset
 
  and 
-\begin_inset Formula $\Im\varepsilon$
+\begin_inset Formula $\Im\varepsilon=\Im\chi_{e}$
 \end_inset
 
  versus 
-\begin_inset Formula $\omega$
+\begin_inset Formula $\omega/\omega_{0}$
 \end_inset
 
-.
+, in the regime where the friction term is fairly small (but not zero!)
+ compared the 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ term (i.e.
+\begin_inset space ~
+\end_inset
+
+where the loss rate is small, say
+\begin_inset space ~
+\end_inset
+
+5%, compared to 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+).
  
 \begin_inset Formula $\Im\varepsilon$
 \end_inset

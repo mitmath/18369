@@ -1052,7 +1052,7 @@ anti
 \end_layout
 
 \begin_layout Subsection*
-Problem 3: Dispersion (XX points)
+Problem 3: Dispersion (5+5+10+5 points)
 \end_layout
 
 \begin_layout Enumerate
@@ -1325,7 +1325,64 @@ By inspection of the formula, when
 \begin_inset Formula $\gamma_{0}$
 \end_inset
 
- is small, it's pretty easy to see that 
+ is small, it's pretty easy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For small 
+\begin_inset Formula $\gamma_{0}\ll\omega_{0}$
+\end_inset
+
+, the denominator of 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+ becomes very small when 
+\begin_inset Formula $(\omega_{0}^{2}-\omega^{2})^{2}\lesssim(\omega\gamma_{0})^{2}$
+\end_inset
+
+, i.e.
+ for 
+\begin_inset Formula $\omega\approx\omega_{0}$
+\end_inset
+
+.
+ Furthermore, in the vicinity of 
+\begin_inset Formula $\omega=\omega_{0}$
+\end_inset
+
+ (similarly for 
+\begin_inset Formula $-\omega_{0}$
+\end_inset
+
+), we can approximate 
+\begin_inset Formula $(\omega\gamma_{0})^{2}\approx(\omega_{0}\gamma_{0})^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $(\omega_{0}^{2}-\omega^{2})^{2}=(\omega_{0}-\omega)^{2}(\omega_{0}+\omega)^{2}\approx4\omega_{0}^{2}(\omega_{0}-\omega)^{2}$
+\end_inset
+
+, so that the latter is smaller than the former for 
+\begin_inset Formula $|\omega-\omega_{0}|\lesssim\gamma_{0}/2$
+\end_inset
+
+.
+ This corresponds to a peak for 
+\begin_inset Formula $\omega\in[\omega_{0}-\gamma_{0}/2,\omega_{0}+\gamma_{0}/2]$
+\end_inset
+
+, or a peak width 
+\begin_inset Formula $\sim\gamma_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ to see that 
 \begin_inset Formula $\Im\varepsilon$
 \end_inset
 
@@ -1337,7 +1394,7 @@ By inspection of the formula, when
 \begin_inset Formula $\sigma_{0}/(\omega_{0}\gamma_{0})$
 \end_inset
 
- and that the peak width must be proportional to 
+ and a peak width proportional to 
 \begin_inset Formula $\gamma_{0}$
 \end_inset
 
@@ -1387,7 +1444,7 @@ We can solve for the peak more precisely by setting
 \begin_inset Newline newline
 \end_inset
 
-We can solve for the peak width (the 
+Similarly, we can solve for the peak width (the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1395,12 +1452,12 @@ linewidth
 \begin_inset Quotes erd
 \end_inset
 
-) by realizing that near the peak for small 
+) more precisely by realizing that near the peak for small 
 \begin_inset Formula $\gamma_{0}$
 \end_inset
 
  (narrow peaks), 
-\begin_inset Formula $\omega\gamma_{0}\approx\omega_{0}\gamma_{0}$
+\begin_inset Formula $|\omega|\gamma_{0}\approx\omega_{0}\gamma_{0}$
 \end_inset
 
 .
@@ -1448,7 +1505,12 @@ i.e., over what width
 \begin_inset Formula $\gamma_{0}$
 \end_inset
 
- at half-maximum!
+ at half-maximum! (Again, we could be even more precise by doing an expansion
+ in powers of 
+\begin_inset Formula $\gamma_{0}/\omega_{0}$
+\end_inset
+
+.)
 \begin_inset Newline newline
 \end_inset
 
@@ -1482,7 +1544,7 @@ oscillates in sign
 \end_inset
 
  — it is totally possible to have a negative permittivity near a strong
- resonance (although it typically comes hand in hand with large absorption)!
+ resonance (although this typically comes hand in hand with large absorption)!
 \end_layout
 
 \begin_layout Enumerate
@@ -1523,7 +1585,7 @@ oppose
 \begin_inset Formula $\sigma_{0}\ge0$
 \end_inset
 
-.
+ as claimed above.
 \begin_inset Newline newline
 \end_inset
 
