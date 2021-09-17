@@ -68,7 +68,7 @@ Constructed simple one-dimensional example of fields in metallic cavity, and sho
 
 ### Lecture 3: 16 September
 * [pset 1 solutions](psets/pset1sol.pdf)
-* pset 2: coming soon
+* [pset 2](psets/pset2.pdf) (due Thursday Sep 30 at noon)
 
 Discussed consequences of symmetry, and in particular showed that mirror symmetry implies even/odd solutions. Discussed subtleties of mirror symmetries for electromagnetism: although the E and H fields seem to have opposite symmetry, they don't, because H is a pseudovector. Defined general rotation operators _R̂_ for vector and pseudovector fields.
 
