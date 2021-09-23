@@ -91,3 +91,14 @@ Build the simple character table for the {E,σ} mirror-symmetry group, reprising
 Using the rules from the representation theory handout, we can build up the character table for the symmetry group of the square (called _C_4v).  Or we can just look it up.  Either way, there are 5 irreps, one of which is 2d … so we expect 2-fold non-accidental degeneracies.
 
 **Further reading:** Chapter 3 of the text, but this doesn't get into representation theory. See e.g. _Group Theory and Its Applications in Physics_ by Inui et al. (especially sections 4.1, 6.1, and 6.2) or _Group Theory and Quantum Mechanics_ by Michael Tinkham (especially sections 3-1 and 3-6), or any book with a similar title.  Character tables for all of the common symmetry groups are tabulated in both textbooks and online, e.g. see this [page on the C4v group](http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=404&option=4). See Inui section 6.6 on projection operators.
+
+### Lecture 5: 23 September
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+* [Meep square-cavity simulations](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/meep-square-cavity.ipynb)
+
+Look at the eigenfunction solutions that we previously had for the square case, and show how we could classify them into the various irreducible representations.   In fact, we could even "guess" what the lowest-ω solutions might look like.   An even better way to do this classification, and many other tasks involving symmetry, is to use "projection operators," which we will get to soon.
+
+Began talking about computational electromagnetism (first few slides), then jumped straight to time-domain FDTD simulations (slide 38).  We won't go into much detail now other than that FDTD solves the "full" time-dependent Maxwell equations (and hence can handle nonlinearies, arbitrary time-varying sources, materials, etcetera) by discretizing both space and time (on a funny "staggered" grid) and "marching" forward in time.   I jumped straight into some example simulations — of our familiar square cavity! — using [Meep, our free/open-source FDTD software](https://meep.readthedocs.io/en/latest/).
+
+**Further reading:**  For FDTD in general, see e.g. Allen Taflove and Susan C. Hagness, _Computational Electrodynamics: The Finite-Difference Time-Domain Method_ (Artech, 2005). For the CFL condition in general, see e.g. this [book chapter by Trefethen](http://people.maths.ox.ac.uk/trefethen/4all.pdf). See also our [free FDTD software: Meep](https://github.com/NanoComp/meep), and in particular the introduction and tutorial sections of the Meep manual.
