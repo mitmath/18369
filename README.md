@@ -96,6 +96,7 @@ Using the rules from the representation theory handout, we can build up the char
 
 * [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
 * [Meep square-cavity simulations](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/meep-square-cavity.ipynb)
+* Run this Meep notebook in the cloud: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mochen4/meepdocker/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fmitmath%252F18369%26urlpath%3Dtree%252F18369%252Fnotes%252Fmeep-square-cavity.ipynb%26branch%3Dmaster)
 
 Look at the eigenfunction solutions that we previously had for the square case, and show how we could classify them into the various irreducible representations.   In fact, we could even "guess" what the lowest-ω solutions might look like.   An even better way to do this classification, and many other tasks involving symmetry, is to use "projection operators," which we will get to soon.
 
