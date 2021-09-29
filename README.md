@@ -68,7 +68,7 @@ Constructed simple one-dimensional example of fields in metallic cavity, and sho
 
 ### Lecture 3: 16 September
 * [pset 1 solutions](psets/pset1sol.pdf)
-* [pset 2](psets/pset2.pdf) (due Thursday Sep 30 at noon)
+* [pset 2](psets/pset2.pdf) (due Tuesday Oct 5 at noon)
 
 Discussed consequences of symmetry, and in particular showed that mirror symmetry implies even/odd solutions. Discussed subtleties of mirror symmetries for electromagnetism: although the E and H fields seem to have opposite symmetry, they don't, because H is a pseudovector. Defined general rotation operators _R̂_ for vector and pseudovector fields.
 
@@ -103,3 +103,23 @@ Look at the eigenfunction solutions that we previously had for the square case, 
 Began talking about computational electromagnetism (first few slides), then jumped straight to time-domain FDTD simulations (slide 38).  We won't go into much detail now other than that FDTD solves the "full" time-dependent Maxwell equations (and hence can handle nonlinearies, arbitrary time-varying sources, materials, etcetera) by discretizing both space and time (on a funny "staggered" grid) and "marching" forward in time.   I jumped straight into some example simulations — of our familiar square cavity! — using [Meep, our free/open-source FDTD software](https://meep.readthedocs.io/en/latest/).
 
 **Further reading:**  For FDTD in general, see e.g. Allen Taflove and Susan C. Hagness, _Computational Electrodynamics: The Finite-Difference Time-Domain Method_ (Artech, 2005). For the CFL condition in general, see e.g. this [book chapter by Trefethen](http://people.maths.ox.ac.uk/trefethen/4all.pdf). See also our [free FDTD software: Meep](https://github.com/NanoComp/meep), and in particular the introduction and tutorial sections of the Meep manual.
+
+### Lecture 6: 28 September
+
+**Handout:** [notes on decomposition of functions into partner functions](notes/irrep-decompose.pdf)
+
+Discussed three key facts:
+
+• **Any function** (not just eigenfunctions) can be decomposed into a **sum of partner** functions of the irreps of *any* symmetry group whose operations are applicable.  (See handout.)
+* These partner-function components can be obtained by applying the **projection operator**, which is just a linear combination of the symmetry operators with coefficients taken from the character table and/or representation matrices.  (See representation-theory handout.)
+* Partner functions of different irreps are always **orthogonal** (under any inner product that is invariant under the symmetry group, i.e. for which the group operations are unitary).
+
+The projection operator (which we will soon see is a kind of "generalized Fourier transform") is useful for lots of things.   It can be used to check which irrep(s) an eigenfunction falls into, or whether degeneracies are accidental.  By projecting "random" functions, it allows you to *construct* partner functions using only the character table, to obtain basis matrices and to see that an irrep "looks like".   We will also use it to derive *conservation laws* soon.
+
+Used the projection operator to classify the modes of the square cavity, and in particular found that some of the modes are accidental degeneracies. In this way, we are able to find representatives of all five irreps. Conversely, by looking at the irreps, we can guess some of the types of eigenfunctions that should appear, inferring the sign pattern from the character table.
+
+Showed how we can apply the projection operator to "random" functions to find partners of different irreps, even without an eigenproblem, and to "sketch" the qualitative features that we expect to find in the eigenfunctions. And, once we have partner functions, we can obtain representation matrices for each irrep (useful for 2+ dimensional irreps). As an example, looked at ψ(x,y)=1, x, and x2; found in particular that the 2d irrep transforms like {x,y}, i.e. the ordinary 2d rotation matrices.
+
+Introduced the **min–max** (or "variational") **theorem**, which arises for any Hermitian eigenproblem. "Proved" the min–max theorem (with the simplifying assumption of a basis of eigenfunctions), and mentioned the derivation (in chapter 2 of the book) that all extrema of the Rayleigh quotient are eigenvalues.  This gives us some intuition about the lowest-ω eigenfunctions — they "want" to oscillate as little as possible and they "want" to concentrate in high-ε regions.  These two goals are often in conflict, so the eigenfunctions balance a tradeoff.
+
+**Further reading**: See Inui section 6.6 on projection operators.  See the *Photonic Crystals* book, chapter 2, on the variational principle.
