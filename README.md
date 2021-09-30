@@ -106,7 +106,8 @@ Began talking about computational electromagnetism (first few slides), then jump
 
 ### Lecture 6: 28 September
 
-**Handout:** [notes on decomposition of functions into partner functions](notes/irrep-decompose.pdf)
+* [notes on decomposition of functions into partner functions](notes/irrep-decompose.pdf)
+* [notes on orthogonality of partner functions](notes/irrep-orthog.pdf)
 
 Discussed three key facts:
 
@@ -123,3 +124,19 @@ Showed how we can apply the projection operator to "random" functions to find pa
 Introduced the **min–max** (or "variational") **theorem**, which arises for any Hermitian eigenproblem. "Proved" the min–max theorem (with the simplifying assumption of a basis of eigenfunctions), and mentioned the derivation (in chapter 2 of the book) that all extrema of the Rayleigh quotient are eigenvalues.  This gives us some intuition about the lowest-ω eigenfunctions — they "want" to oscillate as little as possible and they "want" to concentrate in high-ε regions.  These two goals are often in conflict, so the eigenfunctions balance a tradeoff.
 
 **Further reading**: See Inui section 6.6 on projection operators.  See the *Photonic Crystals* book, chapter 2, on the variational principle.
+
+### Lecture 7: 30 September
+
+Summarized orthogonality of partner functions (see notes from lecture 6).
+
+**Translational symmetry:** Showed that for continuous translational symmetry, the representations are exponential functions exp(ikx) for some real number k (for unitary representations).
+
+In a uniform (homogeneous) medium, this gives **planewave** solutions.  For scalar ε and μ, we obtain "transverse" waves (H ⟂ E ⟂ k) with a dispersion relation ω(k) = c|k|/n, where the refractive index n is given by n²=ɛμ.
+
+More generally, in any z-invariant medium (ε is a function of xy only), we obtain **separable** solutions H=Hₖ(x,y)eⁱᵏᶻ, reducing the problem to a 2d PDE in the xy plane for each k, yielding eigenvalues ω(k).   For example, this is a key step in understanding *waveguides* such as optical fibers.
+
+Discussed "**conservation of irrep**": a (current) source that is a partner of an irrep must produce solutions (fields) that are partners of the same irrep, and initial conditions that are partners produce solutions that are always partners.  Showed some examples from the [Meep square-cavity notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/meep-square-cavity.ipynb).
+
+Conservation of the exp(-ikx) irrep, which gives conservation of k, leads immediately to Snell's law at a flat interface.
+
+**Further reading:** Textbook, chapter 3 on continuous translational symmetry.
