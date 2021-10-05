@@ -399,7 +399,8 @@ Sketch possible
 
 \begin_layout Enumerate
 If there are any (non-accidental) degenerate modes, show how given one of
- the eigenfunction we can compute the other orthogonal eigenfunction(s).
+ the eigenfunction we can compute the other orthogonal eigenfunction(s),
+ chosen in any basis you like.
  (For example, in the square case we could get one from the 
 \begin_inset Formula $90^{\circ}$
 \end_inset
@@ -409,7 +410,8 @@ If there are any (non-accidental) degenerate modes, show how given one of
 \begin_inset Formula $90^{\circ}$
 \end_inset
 
- rotations.) Hint: use your representation matrices.
+ rotations.) Hint: use your representation matrices, and use a corresponding
+ basis of eigenfunctions.
 \end_layout
 
 \begin_layout Subsection*
@@ -600,8 +602,7 @@ Prove that, if
 \begin_inset Formula $\vec{J}$
 \end_inset
 
- transforms as some irreducible representation of the space group (which
- commutes with 
+ is a partner of an irrep of the symmetry group (which commutes with 
 \begin_inset Formula $\hat{A}$
 \end_inset
 
@@ -613,7 +614,7 @@ Prove that, if
 \emph on
 unique
 \emph default
- solution) does also.
+ solution) is also a partner of the same irrep.
  (This is the analogue of the conservation in 
 \emph on
 time
