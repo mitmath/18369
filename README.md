@@ -144,8 +144,8 @@ Conservation of the exp(-ikx) irrep, which gives conservation of k, leads immedi
 
 ### Lecture 8: 5 October
 
-* pset 2 solutions: to be posted
-* pset 3: to be posted
+* [pset 2 solutions](psets/pset2sol.pdf)
+* [pset 3](psets/pset3.pdf) (due October 21)
 * [notes on time evolution and conservation laws](notes/time-evolution.pdf)
 
 The irreducible representation is "conserved" over time in a linear system, because the projection operator commutes with the time-evolution operator.

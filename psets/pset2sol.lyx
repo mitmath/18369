@@ -1,0 +1,3783 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 2 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Projection operators (5+5+5+5=20 points)
+\end_layout
+
+\begin_layout Enumerate
+Consider the action of 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}$
+\end_inset
+
+ on a partner function 
+\begin_inset Formula $\phi_{j}^{(\alpha')}$
+\end_inset
+
+, as defined in the handout.
+ We obtain 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}\phi_{j}^{(\alpha')}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)^{*}\hat{g}\phi_{j}^{(\alpha')}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)^{*}[\sum_{i'}\phi_{i'}^{(\alpha')}D_{i'j}^{(\alpha')}(g)]$
+\end_inset
+
+.
+ If we perform the 
+\begin_inset Formula $\sum_{g}$
+\end_inset
+
+ first, then from the Great Orthogonality Theorem we get 
+\begin_inset Formula $\sum_{i'}\delta_{ii'}\delta_{ij}\delta_{\alpha\alpha'}\phi_{i'}^{(\alpha')}=\delta_{ij}\delta_{\alpha\alpha'}\phi_{i}^{(\alpha)}$
+\end_inset
+
+.
+ Thus, for a 
+\begin_inset Formula $\psi=\sum_{\alpha}\sum_{i}c_{i}^{(\alpha)}\phi_{i}^{(\alpha)}$
+\end_inset
+
+ decomposed into partner functions (as proved in the class notes), 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}\psi=c_{i}^{(\alpha)}\phi_{i}^{(\alpha)}$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=\sum_{g\in G}\left[\frac{1}{|G|}\sum_{\alpha}\chi^{(\alpha)*}(g)d_{\alpha}\right]\hat{g}$
+\end_inset
+
+, interchanging the 
+\begin_inset Formula $\sum_{\alpha}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\sum_{g}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $d_{\alpha}$
+\end_inset
+
+, the dimension of the representation, is exactly the character 
+\begin_inset Formula $\chi^{(\alpha)}(E)$
+\end_inset
+
+ , the character of the identity element 
+\begin_inset Formula $E$
+\end_inset
+
+, which is one column of the character table (
+\begin_inset Formula $E$
+\end_inset
+
+ is in a conjugacy class by itself).
+ So, the 
+\begin_inset Formula $[\cdots]$
+\end_inset
+
+ inner sum is 
+\begin_inset Formula $\frac{1}{|G|}\sum_{\alpha}\chi^{(\alpha)*}(g)\chi^{(\alpha)}(E)=\delta_{gE}$
+\end_inset
+
+ by the orthogonality of columns: it is zero unless 
+\begin_inset Formula $g=E$
+\end_inset
+
+ and one otherwise.
+ Hence, the outer sum 
+\begin_inset Formula $\sum_{g}$
+\end_inset
+
+ disappears except for the 
+\begin_inset Formula $E$
+\end_inset
+
+ term, and 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=\hat{O}_{E}=1$
+\end_inset
+
+.
+ Q.E.D.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Note that you can also prove 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=1$
+\end_inset
+
+ by combining the result from (a) with the fact that any function is a sum
+ of irrep partners, which immediately gives 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}\psi=\psi$
+\end_inset
+
+ for any 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+ But I wanted you to see how the same fact arises from the character-table
+ orthogonality.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)\dagger}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)\hat{g}^{\dagger}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)\widehat{g^{-1}}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g^{-1})\hat{g}$
+\end_inset
+
+, using unitarity 
+\begin_inset Formula $\hat{g}^{\dagger}=\hat{g}^{-1}=\widehat{g^{-1}}$
+\end_inset
+
+ and changing variables 
+\begin_inset Formula $g\to g^{-1}$
+\end_inset
+
+ in the summation.
+ Note that the 
+\begin_inset Formula $D_{ii}^{*}$
+\end_inset
+
+ term in 
+\begin_inset Formula $\hat{P}_{i}$
+\end_inset
+
+ is unconjugated in 
+\begin_inset Formula $\hat{P}_{i}^{\dagger}$
+\end_inset
+
+.
+ By definition of a representation, we must have 
+\begin_inset Formula $D^{(\alpha)}(g^{-1})=D^{(\alpha)}(g)^{-1}$
+\end_inset
+
+, and if 
+\begin_inset Formula $D$
+\end_inset
+
+ is unitary then we must have 
+\begin_inset Formula $D^{(\alpha)}(g)^{-1}=D^{(\alpha)}(g)^{\dagger}$
+\end_inset
+
+ (the conjugate-transpose).
+ Hence 
+\begin_inset Formula $D_{ii}^{(\alpha)}(g^{-1})=D_{ii}^{(\alpha)}(g)^{*}$
+\end_inset
+
+, and 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)\dagger}=\hat{P}_{i}^{(\alpha)}$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Enumerate
+Inserting 
+\begin_inset Formula $\sum_{k,\gamma}\hat{P}_{k}^{(\gamma)}=1$
+\end_inset
+
+, we obtain 
+\begin_inset Formula $\langle\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle=\langle\phi_{i}^{(\alpha)},\sum_{k,\gamma}\hat{P}_{k}^{(\gamma)}\psi_{j}^{(\beta)}\rangle=\langle\phi_{i}^{(\alpha)},\hat{P}_{j}^{(\beta)}\psi_{j}^{(\beta)}\rangle$
+\end_inset
+
+ by definition of a projection operator (only the 
+\begin_inset Formula $j,\beta$
+\end_inset
+
+ projection operator can give a nonzero result for 
+\begin_inset Formula $\psi_{j}^{(\beta)}$
+\end_inset
+
+).
+ Alternatively, 
+\begin_inset Formula $\hat{P}_{j}^{(\beta)}\psi_{j}^{(\beta)}=\psi_{j}^{(\beta)}$
+\end_inset
+
+ follows directly from the defining property of a projection operator, in
+\begin_inset space ~
+\end_inset
+
+(a).
+ Because 
+\begin_inset Formula $\hat{P}_{j}^{(\beta)}$
+\end_inset
+
+ is Hermitian (we always assume unitary irreps., which are guaranteed to
+ be possible for finite groups), we then have 
+\begin_inset Formula $\langle\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle=\langle\phi_{i}^{(\alpha)},\hat{P}_{j}^{(\beta)}\psi_{j}^{(\beta)}\rangle=\langle\hat{P}_{j}^{(\beta)}\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle$
+\end_inset
+
+, which is zero unless 
+\begin_inset Formula $i=j$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha=\beta$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: Symmetries of a field in a square metal box (5+15 points)
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $\vec{E}=E_{z}(x,y)\hat{\vec{z}}$
+\end_inset
+
+ in air (
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+), we get 
+\begin_inset Formula $\nabla\times\nabla\times\vec{E}=-\nabla^{2}E_{z}\hat{\vec{z}}=\frac{\omega^{2}}{c^{2}}E_{z}$
+\end_inset
+
+.
+ The solutions of this are sines and cosines, and to satisfy the 
+\begin_inset Formula $E_{z}=0$
+\end_inset
+
+ boundary conditions at 
+\begin_inset Formula $x=0,L$
+\end_inset
+
+ and 
+\begin_inset Formula $y=0,L$
+\end_inset
+
+ we must have: 
+\begin_inset Formula 
+\[
+E_{z}=A\sin\left(\frac{n\pi}{L}x\right)\sin\left(\frac{m\pi}{L}y\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are positive integers and 
+\begin_inset Formula $A$
+\end_inset
+
+ is an amplitude.
+ The corresponding frequency is 
+\begin_inset Formula $\omega=c\frac{\pi}{L}\sqrt{n^{2}+m^{2}}$
+\end_inset
+
+.
+ This solutions are plotted in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:box-ez"
+
+\end_inset
+
+ for the first few values of 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename box-ez.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:box-ez"
+
+\end_inset
+
+Electric fields (
+\begin_inset Formula $E_{z}$
+\end_inset
+
+) of eigenmodes inside a 2d metal box.
+ Blue/white/red indicate positive/zero/negative fields.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Since 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is a vector, we can treat 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ as an ordinary scalar field here (no funny 
+\begin_inset Formula $-1$
+\end_inset
+
+ factors under reflections).
+ Therefore, from the field plots we can see that 
+\begin_inset Formula $n=m=1$
+\end_inset
+
+ (and, in fact, any 
+\begin_inset Formula $n=m=\textrm{odd}$
+\end_inset
+
+) transforms as 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ (the trivial representation) and 
+\begin_inset Formula $n=m=2$
+\end_inset
+
+ (and any 
+\begin_inset Formula $n=m=\textrm{even}$
+\end_inset
+
+) transforms as 
+\begin_inset Formula $\Gamma_{4}$
+\end_inset
+
+ (even with diagonal mirror planes and odd with horizontal/vertical mirrors).
+ Any 
+\begin_inset Formula $n\neq m$
+\end_inset
+
+ state is (at least) doubly degenerate [with the 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+ state], such as the 
+\begin_inset Formula $(n,m)=(2,1)$
+\end_inset
+
+ and 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ states shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:box-ez"
+
+\end_inset
+
+.
+ There are three cases [which can be understood in a variety of ways, e.g.
+ by acting projection operators on the 
+\begin_inset Formula $(n,m)$
+\end_inset
+
+ solution]:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If 
+\begin_inset Formula $n$
+\end_inset
+
+ is even and 
+\begin_inset Formula $m$
+\end_inset
+
+ is odd or vice versa, e.g.
+ 
+\begin_inset Formula $(n,m)=(2,1)$
+\end_inset
+
+, then it is a partner of 
+\begin_inset Formula $\Gamma_{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+If both 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are odd, e.g.
+ 
+\begin_inset Formula $(n,m)=(3,1)$
+\end_inset
+
+, then it forms a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ 
+\emph on
+reducible
+\emph default
+ representation with 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+.
+ To decompose it into irreducible representations, we just take the sum
+ and difference of the two eigenmodes.
+ The 
+\begin_inset Formula $(n,m)+(m,n)$
+\end_inset
+
+ state is a partner of 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+, and 
+\begin_inset Formula $(n,m)-(m,n)$
+\end_inset
+
+ is a partner of 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+.
+ This is shown in the left two panels of Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:square-accidental"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename square-accidental.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:square-accidental"
+
+\end_inset
+
+Electric fields (
+\begin_inset Formula $E_{z}$
+\end_inset
+
+) of eigenmodes inside a 2d metal box for accidentally degenerate 
+\begin_inset Formula $(n,m)$
+\end_inset
+
+ states 
+\begin_inset Formula $n\neq m$
+\end_inset
+
+.
+ By forming linear combinations as shown, we can create eigenmodes which
+ transform as, from left to right: 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{4}$
+\end_inset
+
+, and 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+.
+ Blue/white/red indicate positive/zero/negative fields.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+If both 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are even, e.g.
+ 
+\begin_inset Formula $(n,m)=(4,2)$
+\end_inset
+
+, then it again forms a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ reducible representation with 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $(n,m)+(m,n)$
+\end_inset
+
+ state is a partner of 
+\begin_inset Formula $\Gamma_{4}$
+\end_inset
+
+, and 
+\begin_inset Formula $(n,m)-(m,n)$
+\end_inset
+
+ is a partner of 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+.
+ This is shown in the right two panels of Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:square-accidental"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Problem 3: Symmetries of a field in a triangular metal box (5+5+5+5+5pts)
+\end_layout
+
+\begin_layout Standard
+Now we consider the solutions in a 
+\emph on
+triangular
+\emph default
+ box with side 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The different symmetry operations in the space group of a triangle are shown
+ in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pset2-sym"
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pset2-sym.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pset2-sym"
+
+\end_inset
+
+Symmetries of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+ (triangle symmetries): three mirror planes 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, and rotation 
+\begin_inset Formula $C_{3}$
+\end_inset
+
+ by 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: three mirror planes 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, and counter-clockwise rotation 
+\begin_inset Formula $C_{3}$
+\end_inset
+
+ by 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ (and also 
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+, clockwise rotation), and of course the identity 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ There are three conjugacy classes: 
+\begin_inset Formula $\{E\}$
+\end_inset
+
+, 
+\begin_inset Formula $\{\sigma_{1},\sigma_{2},\sigma_{3}\}$
+\end_inset
+
+, and 
+\begin_inset Formula $\{C_{3},C_{3}^{-1}\}$
+\end_inset
+
+.
+ This is because 
+\begin_inset Formula $\sigma_{3}=C_{3}^{-1}\sigma_{1}C_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{2}=C_{3}\sigma_{1}C_{3}^{-1}$
+\end_inset
+
+, and 
+\begin_inset Formula $C_{3}^{-1}=\sigma_{1}C_{3}\sigma_{1}$
+\end_inset
+
+.
+ The multiplication table of the group is: 
+\begin_inset Newline newline
+\end_inset
+
+
+\size scriptsize
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\circ$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The character table of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+ must have only three representations since there are three classes, and
+ the sum of the squares of the dimensions must equal 6 (the number of elements
+ in the group).
+ From this, the only possibility is for the representations to have dimensions
+ 1, 1, and 2 (this gives the first column of the table).
+ The first row must be the trivial representation, and by applying the orthogona
+lity relations we get the other two rows: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $\Gamma_{1\cdots3}$
+\end_inset
+
+ are traditional names for these three representations.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+, the representations are one-dimensional and are therefor simply numbers
+ equal to the characters in the character table (
+\begin_inset Formula $\pm1$
+\end_inset
+
+, from above).
+ For 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, we must first construct partner functions.
+ Let's guess 
+\begin_inset Formula $f(\vec{x})=x$
+\end_inset
+
+.
+ If we then operate the different group elements on this, recalling the
+ coordinates rotated counter-clockwise by an angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+ are multiplied by the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix 
+\begin_inset Formula $\left(\begin{array}{cc}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{array}\right)$
+\end_inset
+
+, we get: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x+y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x-y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x-y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x+y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+and therefore if we operate the 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ projection operator 
+\begin_inset Formula $\hat{P}^{(3)}=\frac{2}{6}(2\hat{O}_{E}-\hat{O}_{C_{3}}-\hat{O}_{C_{3}^{-1}})$
+\end_inset
+
+ on 
+\begin_inset Formula $f(\vec{x})=x$
+\end_inset
+
+ we get simply 
+\begin_inset Formula $x$
+\end_inset
+
+—thus, the function 
+\begin_inset Formula $x$
+\end_inset
+
+ must itself be a partner function for 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ and no other representation.
+ Moreover, the operation of the space group on 
+\begin_inset Formula $x$
+\end_inset
+
+ is clearly spanned by the orthogonal functions 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+, and so we must have a unitary representation given simply by the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ rotation matrices that transform the functions 
+\begin_inset Formula $\{x,y\}$
+\end_inset
+
+: 
+\begin_inset Newline newline
+\end_inset
+
+
+\size scriptsize
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & \sqrt{3}\\
+-\sqrt{3} & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & -\sqrt{3}\\
+\sqrt{3} & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & \sqrt{3}\\
+\sqrt{3} & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & -\sqrt{3}\\
+-\sqrt{3} & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+where to get 
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+ we used 
+\begin_inset Formula $\sigma_{1}=\sigma_{3}C_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}=\sigma_{3}C_{3}^{-1}$
+\end_inset
+
+ from the multiplication table above.
+ The unitarity of these matrices follows immediately from the fact that
+ they come from the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ rotation matrices, and can be easily verified in any case.
+ Their traces clearly match those in the character table.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Note that the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ (in 2d) or 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ (in 3d) rotation matrices always form a representation, but in some groups
+ these matrices are reducible, and in other groups there are multiple 2d
+ irreps and the rotation matrices only give you one of these.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field patterns that transform as these representations are very crudely
+ sketched in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pset2-ezsketch"
+
+\end_inset
+
+,
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset2-ezsketch.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pset2-ezsketch"
+
+\end_inset
+
+Sketch of possible 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field patterns (for the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes of each symmetry) in the triangular cavity corresponding to the three
+ representations.
+ Note that a 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ mode must be doubly degenerate with two field patterns roughly as shown.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ where 
+\begin_inset Formula $+$
+\end_inset
+
+ and 
+\begin_inset Formula $-$
+\end_inset
+
+ denote maxima and minima of the field.
+ Note that because 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is a vector, the component 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ transforms as an ordinary scalar in the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane, and 
+\begin_inset Quotes eld
+\end_inset
+
+even
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+odd
+\begin_inset Quotes erd
+\end_inset
+
+ fields are what we expect; note also that the boundary conditions require
+ 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ to go to zero at the edges of the triangle, so all extrema must lie in
+ the interior.
+ The 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ mode must be doubly degenerate, of course, and can be chosen so that one
+ mode is even with respect to a 
+\emph on
+single
+\emph default
+ one of the mirror planes and the other mode is odd with respect to that
+ mirror plane, as shown.
+ (For example, in our 
+\begin_inset Formula $\{x,y\}$
+\end_inset
+
+ representation matrices above, this even/odd plane was 
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+, although of course the modes could be rotated to be even/odd around any
+ of the three 
+\begin_inset Formula $\sigma$
+\end_inset
+
+'s.) From the representation matrices, we can see that one degenerate partner
+ may be found by operating 
+\begin_inset Formula $(\hat{O}_{C_{3}}-\hat{O}_{C_{3}^{-1}})/\sqrt{3}$
+\end_inset
+
+ on the other—i.e., by the difference of its 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ and 
+\begin_inset Formula $-120^{\circ}$
+\end_inset
+
+ rotations (this will give an 
+\emph on
+orthogonal
+\emph default
+ mode because it will have opposite even-odd symmetry under one of the mirror
+ planes).
+ The lowest-order 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ mode should be 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ (fewest nodes 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ smallest 
+\begin_inset Formula $\nabla^{2}$
+\end_inset
+
+ term in eigenproblem).
+ A less crude sketch would be to show contours of the field as in class,
+ but in lieu of that I opted to show you an exact numerical calculation
+ of the first few eigenmodes of this cavity, in Figure\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tri-ez"
+
+\end_inset
+
+, which illustrates all three representations (note that the lowest 
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode of each representation looks much like our 
+\begin_inset Quotes eld
+\end_inset
+
+guess
+\begin_inset Quotes erd
+\end_inset
+
+).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset1cav-ez-w0.67.png
+	width 16col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.03.png
+	width 16col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.34.png
+	width 16col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.40.png
+	width 16col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.69.png
+	width 16col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.78.png
+	width 16col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tri-ez"
+
+\end_inset
+
+
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field plots of first few lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes in a triangular air cavity surrounded by metal (black) with side
+ 
+\begin_inset Formula $L$
+\end_inset
+
+, from a numerical calculation.
+ The corresponding frequencies 
+\begin_inset Formula $\omega L/2\pi c$
+\end_inset
+
+ (and representations) are, from left to right: 1.16 (
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+), 1.78 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), 2.32 (
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+), 2.60 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), 2.93 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), and 3.08 (
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+).
+ Note that the second, fourth, and fifth modes (from left) are doubly degenerate
+ (their degenerate partner is not shown, but can be found by subtracting
+ 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ and 
+\begin_inset Formula $-120^{\circ}$
+\end_inset
+
+ rotations of the field).
+ (Slight asymmetries in the 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+ state are due to the finite computational grid resolution.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The lowest frequency mode of 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ transforms like 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ because that has the fewest oscillations (only a single extremum).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ field sketches, in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pset2-hzsketch"
+
+\end_inset
+
+,
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset2-hzsketch.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pset2-hzsketch"
+
+\end_inset
+
+Sketch of possible 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ field patterns (for low-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes) in the triangular cavity corresponding to the three representations.
+ Note that a 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ mode must be doubly degenerate with two field patterns roughly as shown.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ are somewhat different, for two reasons.
+ First, 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ is a pseudovector, so 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ transforms as a pseudo-scalar and our normal conceptions of 
+\begin_inset Quotes eld
+\end_inset
+
+even
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+odd
+\begin_inset Quotes erd
+\end_inset
+
+ are reversed.
+ Second, because of the boundary conditions the extrema of 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ tend to occur on the boundaries of the triangle, at least for the low-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes.
+ So, for example, now the 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ mode looks 
+\emph on
+odd
+\emph default
+ with respect to all of the mirror planes, and will only appear for higher-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes.
+ The 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+ mode is the one that looks most symmetric, but because the extrema lie
+ on the boundaries there will tend to be a minima in the center of the triangle
+ for the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode.
+ The lowest-order 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ mode should be 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, since it has the fewest nodal planes.
+ The corresponding numerical calculations are shown in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tri-hz"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset1cav-hz-w0.38.png
+	width 33col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-hz-w0.66.png
+	width 33col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-hz-w1.74.png
+	width 33col%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tri-hz"
+
+\end_inset
+
+
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ field plots of the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode for each irreducible representation of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+ in a triangular air cavity surrounded by metal (black) with side 
+\begin_inset Formula $L$
+\end_inset
+
+, from a numerical calculation.
+ The corresponding frequencies 
+\begin_inset Formula $\omega L/2\pi c$
+\end_inset
+
+ (and representations) are, from left to right: 0.66 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), 1.14 (
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+), and 3.01 (
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+).
+ Note that the leftmost mode is doubly degenerate (its degenerate partner
+ is not shown, but can be found by subtracting 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ and 
+\begin_inset Formula $-120^{\circ}$
+\end_inset
+
+ rotations of the field).
+ (Slight asymmetries in the 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ state are due to the finite computational grid resolution.) There are 8
+ modes (not shown) with frequencies between 0.66 and 1.74.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Here, the least-oscillatory (lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+) mode corresponds to 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, with only two extrema.
+ Note that the numerical 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ mode is higher-order (each of our sketched extrema is split into two) than
+ our cartoon (I couldn't find any lower-order 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ modes, and I'm not quite sure why...).
+\end_layout
+
+\begin_layout Enumerate
+We want an operation on one partner function that gives us the other (with
+ some sign/coefficient), i.e.
+ which corresponds to a matrix of the form 
+\begin_inset Formula $\left(\begin{array}{cc}
+0 & \pm1\\
+\pm1 & 0
+\end{array}\right)$
+\end_inset
+
+.
+ By inspection of the 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ representation matrices from (c), there are several ways to get a matrix
+ of this form.
+ For example, 
+\begin_inset Formula $(E+{2C}_{3})/\sqrt{3}$
+\end_inset
+
+ or (more symmetrically) 
+\begin_inset Formula $(C_{3}-C_{3}^{-1})/\sqrt{3}$
+\end_inset
+
+, or 
+\begin_inset Formula $(\sigma_{1}-\sigma_{2})/\sqrt{3}=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)$
+\end_inset
+
+.
+ That means, if we have a solution 
+\begin_inset Formula $\psi$
+\end_inset
+
+ corresponding to one of the degenerate partner functions of 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, then, for example, 
+\begin_inset Formula $(\widehat{\sigma_{1}}-\widehat{\sigma_{2}})\psi/\sqrt{3}$
+\end_inset
+
+ gives us the other orthogonal partner function.
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: Cylindrical symmetry (5+10+5pts)
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $D$
+\end_inset
+
+ is a representation where 
+\begin_inset Formula $D(\phi)$
+\end_inset
+
+ is the matrix corresponding to rotation by an angle 
+\begin_inset Formula $\phi$
+\end_inset
+
+ around the 
+\begin_inset Formula $z$
+\end_inset
+
+ axis, then we must have 
+\begin_inset Formula $D(\phi+\Delta\phi)=D(\phi)D(\Delta\phi)$
+\end_inset
+
+ by definition of representations (rotating by 
+\begin_inset Formula $\Delta\phi$
+\end_inset
+
+ followed by 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is exactly the same as rotating by 
+\begin_inset Formula $\phi+\Delta\phi$
+\end_inset
+
+).
+ Therefore, as we derived in class for the translation group (which had
+ the same property), the representations must all be of the form 
+\begin_inset Formula $D^{(m)}(\phi)=e^{-im\phi}$
+\end_inset
+
+ where 
+\begin_inset Formula $m$
+\end_inset
+
+ is some number characterizing the representation (
+\begin_inset Formula $k$
+\end_inset
+
+ in class).
+ For the translation group, this number was a completely arbitrary real
+ number (it could even be complex, if we allowed divergent representations).
+ Here, however, we have a further constraint: rotation by 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ must be the same as doing nothing, and therefore we 
+\emph on
+must
+\emph default
+ have 
+\begin_inset Formula $D(2\pi)=1$
+\end_inset
+
+ for 
+\begin_inset Formula $D$
+\end_inset
+
+ to represent the group.
+ This implies that 
+\begin_inset Formula $m$
+\end_inset
+
+ is an 
+\emph on
+integer
+\emph default
+ (so that 
+\begin_inset Formula $e^{-i2\pi m}=1$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Note, by the way, that you might be tempted to form 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ representation matrices via the ordinary 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ rotation 
+\begin_inset Formula $R=\left(\begin{array}{cc}
+\cos\phi & \sin\phi\\
+-\sin\phi & \cos\phi
+\end{array}\right)$
+\end_inset
+
+, but this is reducible: 
+\begin_inset Formula $R=\exp\left(\begin{array}{cc}
+0 & i\phi\\
+-i\phi & 0
+\end{array}\right)$
+\end_inset
+
+, which can be diagonalized into 
+\begin_inset Formula $1\times1$
+\end_inset
+
+ representations 
+\begin_inset Formula $e^{\pm i\phi}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\psi(r,\phi,z)$
+\end_inset
+
+ transforms like 
+\begin_inset Formula $D^{(m)}$
+\end_inset
+
+, then rotating by 
+\begin_inset Formula $\theta$
+\end_inset
+
+ (sending 
+\begin_inset Formula $\psi(r,\phi,z)\rightarrow\psi(r,\phi-\theta,z)$
+\end_inset
+
+) must be just multiplication by 
+\begin_inset Formula $e^{-im\theta}$
+\end_inset
+
+.
+ This means that 
+\begin_inset Formula $\psi$
+\end_inset
+
+ must be of the form 
+\begin_inset Formula $\psi_{m}(r,z)e^{im\phi}$
+\end_inset
+
+.
+ Since we further have translational symmetry in 
+\begin_inset Formula $z$
+\end_inset
+
+, we must have 
+\begin_inset Formula $\psi=\psi_{mk}(r)e^{im\phi+ikz}$
+\end_inset
+
+.
+ That is, we now have a 
+\emph on
+one
+\emph default
+-dimensional function and should obtain a 
+\emph on
+one
+\emph default
+-dimensional Hermitian eigenproblem in 
+\begin_inset Formula $r$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+If we plug this 
+\begin_inset Formula $\psi$
+\end_inset
+
+ into 
+\begin_inset Formula $-\nabla^{2}\psi=\frac{\omega^{2}}{c^{2}}\psi$
+\end_inset
+
+, we can apply the form of 
+\begin_inset Formula $\nabla^{2}$
+\end_inset
+
+ in cylindrical coordinates and obtain: 
+\begin_inset Formula 
+\[
+-\psi_{km}''-\frac{1}{r}\psi_{km}'+(\frac{1}{r^{^{2}}}m^{2}+k^{2})\psi_{km}=\frac{\omega^{2}}{c^{2}}\psi_{km},
+\]
+
+\end_inset
+
+where primes denote differentiation by 
+\begin_inset Formula $r$
+\end_inset
+
+, which after a slight rearrangment becomes: 
+\begin_inset Formula 
+\[
+r^{2}\psi_{km}''+r\psi_{km}'+(k_{\perp}^{2}r^{2}-m^{2})\psi_{km}=0,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{\perp}^{2}=\frac{\omega^{2}}{c^{2}}-k^{2}$
+\end_inset
+
+.
+ Now, make a change of variables: 
+\begin_inset Formula $x=k_{\perp}r$
+\end_inset
+
+, 
+\begin_inset Formula $y(x)=\psi_{km}(x/k_{\perp})$
+\end_inset
+
+, and we find: 
+\begin_inset Formula 
+\[
+x^{2}y''+xy'+(x^{2}-m^{2})y=0,
+\]
+
+\end_inset
+
+which is precisely Bessel's equation of order 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ The solutions of this are 
+\begin_inset Formula $J_{m}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{m}(x)$
+\end_inset
+
+, the Bessel functions of the first and second kinds.
+ However, 
+\begin_inset Formula $Y_{m}(x)$
+\end_inset
+
+ diverges at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, which we can't allow (physical wave solutions can't blow up in empty space).
+ So, the eigensolution must by 
+\begin_inset Formula $y(x)=J_{m}(x)$
+\end_inset
+
+ (choosing an arbitrary amplitude of 1), and thus 
+\begin_inset Formula 
+\[
+\psi(r,\phi,z)=J_{m}(k_{\perp}r)e^{im\phi+ikz}.
+\]
+
+\end_inset
+
+ We're not done yet, because we haven't found 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+.
+ This is determined by the boundary condition 
+\begin_inset Formula $\psi|_{r=R}=0$
+\end_inset
+
+.
+ That means we must have 
+\begin_inset Formula $J_{m}(k_{\perp}R)=0$
+\end_inset
+
+, or 
+\begin_inset Formula $k_{\perp}^{(n)}=x_{m,n}/R$
+\end_inset
+
+ where the 
+\begin_inset Formula $x_{m,n}$
+\end_inset
+
+ are the zeros of 
+\begin_inset Formula $J_{m}$
+\end_inset
+
+.
+ Solving for 
+\begin_inset Formula $\omega$
+\end_inset
+
+ from 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+, we finally get a discrete sequence of bands: 
+\begin_inset Formula 
+\[
+\omega_{mk}^{(n)}(k)=c\sqrt{k^{2}+\left(\frac{x_{m,n}}{R}\right)^{2}}.
+\]
+
+\end_inset
+
+ Note, moreover, that 
+\begin_inset Formula $J_{-m}=J_{m}$
+\end_inset
+
+, and therefore the bands for 
+\begin_inset Formula $m\neq0$
+\end_inset
+
+ are 
+\emph on
+doubly degenerate
+\emph default
+ (this actually also follows from mirror symmetry).
+ To sketch the bands, we can choose dimensionless units (
+\begin_inset Formula $c=1$
+\end_inset
+
+, 
+\begin_inset Formula $R=1$
+\end_inset
+
+), and the result is shown in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:besselbands"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename besselbands.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:besselbands"
+
+\end_inset
+
+The first few bands of the scalar wave equation in a cylindrical waveguide.
+ Plotted are lowest four bands for 
+\begin_inset Formula $m=0$
+\end_inset
+
+ (blue), 
+\begin_inset Formula $m=\pm1$
+\end_inset
+
+ (thick red), and 
+\begin_inset Formula $m=\pm2$
+\end_inset
+
+ (dashed green).
+ Also, shown, for reference, is the light line 
+\begin_inset Formula $\omega=ck$
+\end_inset
+
+ of air (all modes lie above this and are therefore extended in the air
+ core).
+ In particualr, the shapes of the curves are hyperbolas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset Formula $\psi_{mk}(r)e^{im\phi+kz}$
+\end_inset
+
+ must be orthogonal (
+\begin_inset Formula $\int\psi_{1}^{*}\psi_{2}r\,dr\,d\phi\,dz=0$
+\end_inset
+
+ for eigenfunctions of different eigenvalues) since they are eigenfunctions
+ of a Hermitian operator.
+ For two different 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+ values, they are orthogonal since 
+\begin_inset Formula $\int e^{i(m_{1}-m_{2})\phi}d\phi=0$
+\end_inset
+
+ for 
+\begin_inset Formula $m_{1}\neq m_{2}$
+\end_inset
+
+ (which follows from group theory since they correspond to different representat
+ions).
+ For the 
+\emph on
+same
+\emph default
+ 
+\begin_inset Formula $m$
+\end_inset
+
+, we must have that the 
+\begin_inset Formula $r$
+\end_inset
+
+ integral is zero, and hence, changing variables to 
+\begin_inset Formula $u=r/R$
+\end_inset
+
+, we have: 
+\begin_inset Formula 
+\[
+\int_{0}^{1}J_{m}(x_{m,n}u)\cdot J_{m}(x_{m,n'}u)\,u\,du=0
+\]
+
+\end_inset
+
+ for different zeros 
+\begin_inset Formula $n\neq n'$
+\end_inset
+
+.
+ (This is a well-known identity that is used in Fourier-Bessel series expansions.
+)
+\end_layout
+
+\begin_layout Subsection*
+Problem 5: Conservation Laws (10+10+5pts)
+\end_layout
+
+\begin_layout Standard
+(Clarification: the problem statement was unclear about what level of generality
+ should be assumed about the materials.
+ Obviously, since the problem is talking about linear operators in the frequency
+ domain, you should assume linear time-invariant materials as we have throughout
+ the course so far.
+ In most of the course we have then used a susceptibility 
+\begin_inset Formula $\hat{\chi}=\left(\begin{array}{cc}
+\varepsilon-1\\
+ & \mu-1
+\end{array}\right),$
+\end_inset
+
+ and that is what I have done in the solutions.
+ If you assume a completely general 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ susceptibility, including bianistropic materials, the answers are similar
+ but it is more convenient to write them in terms of 
+\begin_inset Formula $\psi=\left(\begin{array}{c}
+\vec{E}\\
+\vec{H}
+\end{array}\right)$
+\end_inset
+
+ as in the course notes, rather than just 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+.
+ Either approach is acceptable.
+ It is also acceptable to set 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+ as we do for most of the course.) 
+\end_layout
+
+\begin_layout Enumerate
+A current 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ modifies Ampere's law: 
+\begin_inset Formula $\nabla\times\vec{H}=\vec{J}-i\omega\varepsilon_{0}\varepsilon\vec{E}$
+\end_inset
+
+ (where we have cancelled the 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+ time-dependence in every term).
+ Therefore, when we take Faraday's law 
+\begin_inset Formula $\mu^{-1}\nabla\times\vec{E}=i\omega\mu_{0}\vec{H}$
+\end_inset
+
+ and operate 
+\begin_inset Formula $\nabla\times$
+\end_inset
+
+ on both sides, we get 
+\begin_inset Formula 
+\[
+(\nabla\times\mu^{-1}\nabla\times-\frac{\omega^{2}}{c^{2}}\varepsilon)\vec{E}=i\omega\mu_{0}\vec{J}.
+\]
+
+\end_inset
+
+This is indeed of the form 
+\begin_inset Formula $\hat{A}\vec{E}=\vec{b}$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{A}=\nabla\times\mu^{-1}\nabla\times-\omega^{2}\varepsilon/c^{2}$
+\end_inset
+
+ is a linear operator and 
+\begin_inset Formula $\vec{b}=i\omega\mu_{0}\vec{J}$
+\end_inset
+
+ is a given right-hand side.
+\end_layout
+
+\begin_layout Enumerate
+Suppose that 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ solves 
+\begin_inset Formula $\hat{A}\vec{E}=\vec{b}$
+\end_inset
+
+, and that 
+\begin_inset Formula $\vec{b}$
+\end_inset
+
+ is a partner of some representation 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ of the space group.
+ Therefore, 
+\begin_inset Formula $\hat{P}^{(\alpha)}\vec{b}=\vec{b}$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{P}^{(\alpha)}=\frac{d_{\alpha}}{|G|}\sum_{g}\chi^{(\alpha)}(g)^{*}\hat{g}$
+\end_inset
+
+ is the projection operator for that representation.
+ Moreover, by definition of the space group we must have 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ commuting with 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ for any 
+\begin_inset Formula $g$
+\end_inset
+
+ in the space group (this also follows explicitly if 
+\begin_inset Formula $\hat{g}\varepsilon=\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{g}\mu=\mu$
+\end_inset
+
+, since 
+\begin_inset Formula $\nabla\times{}$
+\end_inset
+
+ is invariant under rotations and translations), and the definition of the
+ space group also requires that 
+\begin_inset Formula $g$
+\end_inset
+
+ leave the domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and the boundary conditions unchanged.
+ Since 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ is linear, and 
+\begin_inset Formula $\hat{P}^{(\alpha)}$
+\end_inset
+
+ is merely a linear combination of the 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+'s, then 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ also commutes with 
+\begin_inset Formula $\hat{P}^{(\alpha)}$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $\hat{A}\vec{E}=\vec{b}=\hat{P}^{(\alpha)}\vec{b}=\hat{P}^{(\alpha)}\hat{A}\vec{E}=\hat{A}\hat{P}^{(\alpha)}\vec{E}$
+\end_inset
+
+, and thus 
+\begin_inset Formula $\hat{A}(1-\hat{P}^{(\alpha)})\vec{E}=0$
+\end_inset
+
+.
+ Therefore, either 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is a partner of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ (
+\begin_inset Formula $\hat{P}^{(\alpha)}\vec{E}=\vec{E}$
+\end_inset
+
+), or the component of 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ that isn't a partner of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ lies in the null space of 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+—that is, 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ is singular and we didn't have a unique solution 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ in the first place.
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is one of the eigenfrequencies, then 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ is singular—
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ operating on an eigenfunction 
+\begin_inset Formula $\vec{E}_{0}$
+\end_inset
+
+ will give zero by definition (since 
+\begin_inset Formula $\nabla\times\mu^{-1}\nabla\times\vec{E}=\omega^{2}\varepsilon\vec{E}/c^{2}$
+\end_inset
+
+ is the generalized eigenproblem as you derived in problem set
+\begin_inset space ~
+\end_inset
+
+1).
+ There are two possibilities.
+ In a finite system (i.e.
+ compact domain), then physically you can get a divergent (non-harmonic,
+ linearly growing amplitude) solution, exactly like the case where you drive
+ a harmonic oscillator at the resonant frequency.
+ Alternatively, if 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is orthogonal to the eigenfunction(s) 
+\begin_inset Formula $\vec{E}_{0}$
+\end_inset
+
+ (for example, if they are partner functions of different representations),
+ then there will be a solution, but it won't be unique because you can add
+ any multiple of 
+\begin_inset Formula $\vec{E}_{0}$
+\end_inset
+
+ while satistfying the equation (although one could impose some additional
+ constraint to obtain a unique solution).
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Supplementary comment:
+\series default
+ In an infinite system, the question is more subtle because the (generalized)
+ eigenfunction in question (if it is an extended mode) can have infinitesimal
+ overlap with 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ (if 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is localized).
+ In this case, it turns out you can get a finite response, but to make it
+ unique you have to impose some additional boundary conditions.
+ The classic example of this is a localized antenna source (e.g.
+ a dipole) in vacuum—vacuum has (generalized) eigenfunctions (planewaves)
+ at 
+\emph on
+every
+\emph default
+ 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (
+\begin_inset Formula $\omega=c|\vec{k}|$
+\end_inset
+
+), but the resulting field is a finite-amplitude spherical wave(s) emanating
+ from the antenna, not a divergence (except at the antenna itself, if 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ itself diverges as for a point source).
+ To get a unique solution, we have to impose a 
+\begin_inset Quotes eld
+\end_inset
+
+radiation
+\begin_inset Quotes erd
+\end_inset
+
+ boundary condition that there are no incoming waves from infinity (which
+ would satisfy Maxwell's equations, but wouldn't be very physical).
+ Sometimes, people express such a restriction by replacing 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ with 
+\begin_inset Formula $\varepsilon+i0^{+}$
+\end_inset
+
+ (for 
+\begin_inset Formula $\omega>0$
+\end_inset
+
+) in the operator: taking the limit of a system with infinitesimal absorption
+ (imaginary 
+\begin_inset Formula $i0^{+}$
+\end_inset
+
+ part of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+) eliminates incoming waves from infinity, and corresponds to letting the
+ poles of 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ approach the real-
+\begin_inset Formula $\omega$
+\end_inset
+
+ axis from below; this approach to outgoing boundary conditions is sometimes
+ called the 
+\begin_inset Quotes eld
+\end_inset
+
+limiting absorption principle.
+\begin_inset Quotes erd
+\end_inset
+
+ We will talk more about this later in the course.
+\end_layout
+
+\end_body
+\end_document
