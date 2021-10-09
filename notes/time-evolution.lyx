@@ -358,15 +358,15 @@ i.e.
 \end_layout
 
 \begin_layout Subsection
-The polarizations and susceptibilities in linear media
+The polarizations and susceptibilities in linear time-invariant media
 \end_layout
 
 \begin_layout Standard
 In 
 \emph on
-linear
+linear time-invariant 
 \emph default
- medium, the polarizations 
+medium, the polarizations 
 \begin_inset Formula $\phi$
 \end_inset
 
@@ -1728,7 +1728,7 @@ passive convolution operator,
 \begin_inset Quotes erd
 \end_inset
 
- and it follows (from nontrivial math!) that 
+ and it follows (surprisingly!) that 
 \begin_inset Formula $\chi$
 \end_inset
 
@@ -1761,7 +1761,159 @@ literal "true"
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+An elegant proof that passivity implies causality is as follows
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after "appendix B"
+key "Nussenzveig12"
+literal "false"
+
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\psi_{+}(\vec{x},t)$
+\end_inset
+
+ be any function that 
+\begin_inset Formula $=0$
+\end_inset
+
+ for 
+\begin_inset Formula $t<0$
+\end_inset
+
+, and let 
+\begin_inset Formula $\phi_{+}=\chi*\psi_{+}$
+\end_inset
+
+ be the corresponding polarization.
+ Now, take any other function 
+\begin_inset Formula $\psi(\vec{x},t)$
+\end_inset
+
+ and the corresponding 
+\begin_inset Formula $\phi=\chi*\psi$
+\end_inset
+
+.
+ Because convolution is linear, 
+\begin_inset Formula $\psi+\lambda\psi_{+}$
+\end_inset
+
+ (which 
+\begin_inset Formula $=\psi$
+\end_inset
+
+ for 
+\begin_inset Formula $t<0$
+\end_inset
+
+), for any real
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\lambda$
+\end_inset
+
+, produces a polarization 
+\begin_inset Formula $\phi+\lambda\phi_{+}$
+\end_inset
+
+.
+ If we plug this into the passivity condition above for 
+\begin_inset Formula $t<0$
+\end_inset
+
+, we obtain 
+\begin_inset Formula 
+\[
+\int_{-\infty}^{t}\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle dt'+\lambda\int_{-\infty}^{t}\Re\langle\psi,\frac{\partial\phi_{+}}{\partial t}\rangle dt'\ge0\qquad(t<0).
+\]
+
+\end_inset
+
+Now, since this must be true for 
+\emph on
+any
+\emph default
+ value of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, even for 
+\begin_inset Formula $|\lambda|\to\infty$
+\end_inset
+
+, it follows that the second term must be zero.
+ Moreover, this must be true for any 
+\begin_inset Formula $\psi$
+\end_inset
+
+, so it follows that we must have 
+\begin_inset Formula $\frac{\partial\phi_{+}}{\partial t}=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $t<0$
+\end_inset
+
+.
+ If the system starts at rest, so that 
+\begin_inset Formula $\phi_{+}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $t\to-\infty$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $\phi_{+}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $t<0$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\phi_{+}(\vec{x},t)=\int_{0}^{\infty}\chi(t-t')\psi_{+}(\vec{x},t')dt'=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $t<0$
+\end_inset
+
+ and for all 
+\begin_inset Formula $\psi_{+}$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $\chi(t)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $t<0$
+\end_inset
+
+, i.e.
+ that the susceptibility
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\chi$
+\end_inset
+
+ is causal.
 \end_layout
 
 \begin_layout Standard
@@ -2181,6 +2333,7 @@ irrep is conserved.
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "teaching"
 options "ieeetr"
 
