@@ -1419,6 +1419,48 @@ The physical fields and polarizations are always real, so one might be tempted
 In linear systems, we often write sinusoidally oscillating quantities as
  the real parts of complex exponentials, simply because complex exponentials
  are much easier to work with than sines and cosines.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This is called a 
+\begin_inset Quotes eld
+\end_inset
+
+phasor
+\begin_inset Quotes erd
+\end_inset
+
+ representation in electrical engineering, where the 
+\begin_inset Formula $\frac{1}{2}\Re[A^{*}B]$
+\end_inset
+
+ identity is commonplace for computing time-averaged 
+\begin_inset Quotes eld
+\end_inset
+
+real
+\begin_inset Quotes erd
+\end_inset
+
+ power and similar quantities.
+ The imaginary part 
+\begin_inset Formula $\frac{1}{2}\Im[A^{*}B]$
+\end_inset
+
+ can also be useful, and leads to relations involving the so-called 
+\begin_inset Quotes eld
+\end_inset
+
+reactive
+\begin_inset Quotes erd
+\end_inset
+
+ power/energy.
+\end_layout
+
+\end_inset
+
  That is, we might work with complex quantities 
 \begin_inset Formula $a(t)=Ae^{-i\omega t}$
 \end_inset
