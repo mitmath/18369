@@ -1718,7 +1718,7 @@ instantaneous power
  a microscopic timescale:
 \begin_inset Formula 
 \[
-\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\Re\psi,\Re\psi\rangle\right]+\langle\Re\psi,\frac{\partial(\Re\phi)}{\partial t}\rangle+\langle\Re\psi,\Re\xi\rangle=-\oiint_{\partial\Omega}\left[(\Re\vec{E}^{*})\times(\Re\vec{H})\right]\cdot d\vec{A}.
+\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\Re\psi,\Re\psi\rangle\right]+\langle\Re\psi,\frac{\partial(\Re\phi)}{\partial t}\rangle+\langle\Re\psi,\Re\xi\rangle=-\oiint_{\partial\Omega}\left[(\Re\vec{E})\times(\Re\vec{H})\right]\cdot d\vec{A}.
 \]
 
 \end_inset
@@ -1961,7 +1961,7 @@ Hence, if
 \emph on
 extremely useful
 \emph default
-! (But remember, only for time-harmonic fields!) 
+! (But remember, only for time-harmonic fields!)
 \end_layout
 
 \begin_layout Section
