@@ -1633,7 +1633,8 @@ phasor
 \begin_inset Quotes erd
 \end_inset
 
- representation in electrical engineering, where the concepts of 
+ representation in electrical engineering, especially in circuit theory,
+ where the duality of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1649,7 +1650,7 @@ reactive
 \begin_inset Quotes erd
 \end_inset
 
- power are more commonplace than in full-Maxwell context.
+ power is more commonplace than in the full-Maxwell context.
 \end_layout
 
 \end_inset
