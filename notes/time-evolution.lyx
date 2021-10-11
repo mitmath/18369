@@ -2341,7 +2341,7 @@ resonance
 \end_inset
 
  term that appears in the energy density of a lossless, dispersionless medium,
- and which represents the energy that is temporarily stored in the medium,
+ and which represents the energy that is temporarily stored in the medium
  only to be re-extracted into the fields.
  
 \end_layout
@@ -2529,7 +2529,7 @@ negligible loss
 \begin_inset Formula $\Im\hat{\chi}\approx0$
 \end_inset
 
- from above), andd we consider the time-averaged ``real power'' as in Sec.
+ from above), and we consider the time-averaged ``real power'' as in Sec.
 \begin_inset space ~
 \end_inset
 
