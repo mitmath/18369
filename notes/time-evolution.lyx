@@ -1961,17 +1961,7 @@ Hence, if
 \emph on
 extremely useful
 \emph default
-! (But remember, only for time-harmonic fields!) At infrared and optical
- frequencies, the fields are oscillating at 
-\begin_inset Formula $>10^{14}$
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-Hz, so any physical detector will typically only measure these time-average
- quantities.
+! (But remember, only for time-harmonic fields!) 
 \end_layout
 
 \begin_layout Section
