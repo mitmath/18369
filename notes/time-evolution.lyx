@@ -851,6 +851,32 @@ Another way of expressing this is in terms of the
 \emph on
 time-evolution operator
 \emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The operator exponential 
+\begin_inset Formula $e^{\hat{A}}=1+\hat{A}+\hat{A}^{2}/2+\cdots$
+\end_inset
+
+ is defined by the Taylor series of 
+\begin_inset Formula $e^{x}$
+\end_inset
+
+, just as for matrix exponentials (discussed in any linear-algebra textbook),
+ and has the key property that 
+\begin_inset Formula $\frac{\partial}{\partial t}e^{\hat{A}t}=\hat{A}e^{\hat{A}t}$
+\end_inset
+
+.
+ It's useful as a conceptual tool in order to explicitly express time evolution
+ as a linear operator (and is discussed for the case of Schrödinger equation's
+ in any quantum-mechanics textbook).
+\end_layout
+
+\end_inset
+
  
 \begin_inset Formula 
 \[
@@ -1084,7 +1110,29 @@ If the currents
 \begin_inset Formula $(1+\hat{\chi})^{-1}\hat{C}$
 \end_inset
 
- and hence with the time-evolution operator 
+ and hence
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+If an operator 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+, then it also commutes with 
+\begin_inset Formula $e^{\hat{A}}=1+\hat{A}+\hat{A}^{2}/2+\cdots$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ with the time-evolution operator 
 \begin_inset Formula $\hat{U}_{t}.$
 \end_inset
 
