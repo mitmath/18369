@@ -1035,8 +1035,8 @@ ordinary
 \end_inset
 
 0.
- (Recall that the derivative of a discontinuous function is a delta function
- multiplied by the amplitude of the discontinuity.
+ (Recall that the derivative of a discontinuous function yields a delta
+ function multiplied by the amplitude of the discontinuity.
 \begin_inset Foot
 status collapsed
 
