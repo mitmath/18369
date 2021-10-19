@@ -790,6 +790,10 @@ Find the
 \begin_inset Formula $\omega_{n}(k)$
 \end_inset
 
+ for 
+\begin_inset Formula $n=1,2,\ldots$
+\end_inset
+
 .
  Plot it for the first few bands.
 \end_layout
@@ -833,12 +837,12 @@ ic solution that consists of right-traveling (
 \emph on
 in the basis of the eigenfunctions
 \emph default
-: 
+ (the solutions of the source-free Maxwell equations): 
 \begin_inset Formula 
 \[
 E_{z}=e^{-i\omega t}\begin{cases}
-\sum_{n=0}^{\infty}c_{n}E_{n}(y)e^{+ik_{n}x} & x>0\\
-\sum_{n=0}^{\infty}c_{n}E_{n}(y)e^{-ik_{n}x} & x<0
+\sum_{n=1}^{\infty}c_{n}E_{n}(y)e^{+ik_{n}x} & x\ge0\\
+\sum_{n=1}^{\infty}c_{n}E_{n}(y)e^{-ik_{n}x} & x<0
 \end{cases},
 \]
 
@@ -874,7 +878,102 @@ for mode
 \end_inset
 
  is the corresponding eigenfunction.
- Solve for the coefficients 
+ (Note that this 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ is continuous through 
+\begin_inset Formula $x=0$
+\end_inset
+
+.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+When you solve 
+\begin_inset Formula $\omega_{n}(k_{n})=\omega$
+\end_inset
+
+ for 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+, you should find that 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+ becomes 
+\emph on
+purely
+\emph default
+ imaginary for 
+\begin_inset Formula $\omega<\omega_{n}(0)$
+\end_inset
+
+ (the 
+\begin_inset Quotes eld
+\end_inset
+
+cutoff
+\begin_inset Quotes erd
+\end_inset
+
+ for mode 
+\begin_inset Formula $n$
+\end_inset
+
+), corresponding to exponentially decaying/growing 
+\begin_inset Quotes eld
+\end_inset
+
+evanescent
+\begin_inset Quotes erd
+\end_inset
+
+ solutions.
+ In an empty waveguide, we never include such solutions because they are
+ growing exponentially towards either 
+\begin_inset Formula $x\to+\infty$
+\end_inset
+
+ or 
+\begin_inset Formula $-\infty$
+\end_inset
+
+.
+ However, now that our current source has broken the translational symmetry,
+ you 
+\emph on
+must include
+\emph default
+ these evanescent solutions in your infinite series above: choose the signs
+ so the imaginary-
+\begin_inset Formula $k_{n}$
+\end_inset
+
+ solutions 
+\emph on
+decay
+\emph default
+ (not blow up!) as 
+\begin_inset Formula $|x|\to\infty$
+\end_inset
+
+.
+ (Without these solutions, you won't have the infinite series you need to
+ solve Maxwell's equations with the current source.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Solve for the coefficients 
 \begin_inset Formula $c_{n}$
 \end_inset
 
@@ -883,6 +982,7 @@ for mode
 \end_inset
 
  into Maxwell's equations with that current source.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -890,68 +990,115 @@ for mode
 \begin_inset Newline newline
 \end_inset
 
-Hint: To get 
-\begin_inset Formula $\delta(x)$
+Hint: By construction, 
+\begin_inset Formula $E_{z}$
 \end_inset
 
-, recall that the derivative of a discontinuous function is a delta function
- multiplied by the amplitude of the discontinuity.
- Maxwell's equations contain a 
-\begin_inset Formula $\nabla^{2}E_{z}$
-\end_inset
-
- term, so to match the 
-\begin_inset Formula $\delta$
-\end_inset
-
- function source term, you must have a discontinuity in the 
-\emph on
-slope 
-\emph default
-
-\begin_inset Formula $\partial E_{z}/\partial x$
+ is continuous with a discontinuous derivative 
+\begin_inset Formula $\frac{\partial}{\partial x}$
 \end_inset
 
  at 
 \begin_inset Formula $x=0$
 \end_inset
 
-, while 
-\begin_inset Formula $E_{z}$
+, and it follows that the 
+\emph on
+second
+\emph default
+ derivative 
+\begin_inset Formula $\frac{\partial^{2}E_{z}}{\partial x^{2}}$
 \end_inset
 
- itself must be continuous (otherwise you would get a discontinuity in the
- 
-\emph on
-first
-\emph default
- derivative and a 
+ yields a delta function 
+\begin_inset Formula $\delta(x)$
+\end_inset
+
+ multiplied by the discontinuity in 
+\begin_inset Formula $\frac{\partial E_{z}}{\partial x}$
+\end_inset
+
+, in addition to a 
+\begin_inset Formula $-k_{n}^{2}$
+\end_inset
+
+ term from the 
 \begin_inset Quotes eld
 \end_inset
 
-delta derivative
+ordinary
 \begin_inset Quotes erd
 \end_inset
 
- from 
-\begin_inset Formula $\partial^{2}E_{z}/\partial x^{2}$
+ second derivative for 
+\begin_inset Formula $x\ne$
 \end_inset
 
-).
- From this discontinuity, you will 
-\begin_inset Formula $\partial^{2}E_{z}/\partial x^{2}=\delta(x)\sum c_{n}\cdot(\text{some Fourier basis})$
+0.
+ (Recall that the derivative of a discontinuous function is a delta function
+ multiplied by the amplitude of the discontinuity.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://math.mit.edu/~stevenj/18.303/delta-notes.pdf
+\end_layout
+
+\end_inset
+
+ for some introductory notes on how to think 
+\begin_inset Quotes eld
+\end_inset
+
+properly
+\begin_inset Quotes erd
+\end_inset
+
+ about delta functions and derivatives.
+ For this problem set, however, whatever handwavy rule of thumb you were
+ taught about delta functions should suffice.
+\end_layout
+
+\end_inset
+
+) Maxwell's equations contain a 
+\begin_inset Formula $\nabla^{2}E_{z}$
+\end_inset
+
+ term, so this 
+\begin_inset Formula $\delta(x)$
+\end_inset
+
+ in 
+\begin_inset Formula $\frac{\partial^{2}E_{z}}{\partial x^{2}}$
+\end_inset
+
+ is exactly what you need to match the 
+\begin_inset Formula $\delta(x)$
+\end_inset
+
+ in the source-current term.
+ That is, you will get a term 
+\begin_inset Formula $\delta(x)\sum c_{n}\cdot(\text{some Fourier basis})$
 \end_inset
 
 , and then you can use the usual Fourier orthogonality relations to match
  this to 
-\begin_inset Formula $\delta(y-L/2)$
+\begin_inset Formula $\delta(x)\delta(y-L/2)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Enumerate
-Using your answer from the previous part, give a formula for the power 
+Using your answer from the previous part, give a formula for the time-average
+ power 
 \begin_inset Formula $P$
 \end_inset
 
@@ -960,7 +1107,7 @@ Using your answer from the previous part, give a formula for the power
 expended
 \emph default
  by the current source (
-\begin_inset Formula $P=-\Re\int\vec{J}^{*}\cdot\vec{E}dxdy$
+\begin_inset Formula $P=-\frac{1}{2}\Re\int\vec{J}^{*}\cdot\vec{E}dxdy$
 \end_inset
 
 , from class).
@@ -981,7 +1128,29 @@ local density of states
 \begin_inset Formula $\omega$
 \end_inset
 
-—notice anything strange?
+—notice anything interesting? (Something dramatic should happen near each
+ 
+\begin_inset Quotes eld
+\end_inset
+
+mode cutoff
+\begin_inset Quotes erd
+\end_inset
+
+ where 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+ changes from real to imaginary.
+ And what happens for 
+\begin_inset Formula $\omega<\omega_{1}(0)$
+\end_inset
+
+, where there are no real-
+\begin_inset Formula $k$
+\end_inset
+
+ eigenmodes at all?)
 \end_layout
 
 \begin_layout Enumerate
