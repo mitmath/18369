@@ -2409,26 +2409,13 @@ energy dissipation
 \end_inset
 
 .
- Suppose we consider time-harmonic fields 
-\begin_inset Formula $\psi=\hat{\psi}(\vec{x})e^{-i\omega t}$
+ Suppose we Fourier transform to the frequency domain, so that we are looking
+ at time-harmonic fields with amplitudes 
+\begin_inset Formula $\hat{\psi}(\omega)$
 \end_inset
 
  and polarizations 
-\begin_inset Formula $\phi=\hat{\phi}(\vec{x})e^{-i\omega t}=\hat{\chi}(\vec{x},\omega)\hat{\psi}(\vec{x})e^{-i\omega t}$
-\end_inset
-
- as in Sec.
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Complex-time-harmonic-fields"
-plural "false"
-caps "false"
-noprefix "false"
-
+\begin_inset Formula $\hat{\phi}(\omega)=\hat{\chi}(\omega)\hat{\psi}(\omega)$
 \end_inset
 
 .
@@ -2436,15 +2423,18 @@ noprefix "false"
 \begin_inset Formula $\partial\phi/\partial t$
 \end_inset
 
- is then 
-\begin_inset Formula $-i\omega\hat{\phi}(\omega)e^{-i\omega t}$
+ Fourier transforms to 
+\begin_inset Formula $-i\omega\hat{\phi}(\omega)$
 \end_inset
 
-, and so we get a time-average power dissipation rate (rate of work done
- on the material) of:
+, and so we get a time-average dissipation rate (at 
+\begin_inset Formula $\omega$
+\end_inset
+
+) of:
 \begin_inset Formula 
 \[
-\frac{1}{2}\Re\langle\psi,\frac{\partial\phi}{\partial t}\rangle=\frac{1}{2}\Re\langle\hat{\psi},-i\omega\hat{\chi}(\omega)\hat{\psi}(\omega)\rangle=\frac{1}{2}\int_{\Omega}\hat{\psi}^{*}\cdot\Re[-i\omega\hat{\chi}]\,\hat{\psi}=\frac{1}{2}\int_{\Omega}\hat{\psi}^{*}\cdot\Im[\omega\hat{\chi}]\,\hat{\psi},
+\Re\langle\hat{\psi},-i\omega\hat{\chi}(\omega)\hat{\psi}(\omega)\rangle=\int_{\Omega}\hat{\psi}^{*}\cdot\Re[-i\omega\hat{\chi}]\,\hat{\psi}=\int_{\Omega}\hat{\psi}^{*}\cdot\Im[\omega\hat{\chi}]\,\hat{\psi},
 \]
 
 \end_inset
@@ -2482,7 +2472,7 @@ As mentioned above, one of the consequences of passivity is that
 \begin_inset Formula $\Im\omega>0$
 \end_inset
 
-, and by taking the limit as 
+, by taking the limit as 
 \begin_inset Formula $\Im\omega\to0^{+}$
 \end_inset
 
