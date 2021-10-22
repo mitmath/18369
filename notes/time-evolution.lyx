@@ -913,7 +913,7 @@ literal "false"
 \end_inset
 
 , the key tool for describing the consequences of symmetry for linear systems
- is 
+ is that of 
 \emph on
 group representation theory, 
 \emph default
@@ -1271,7 +1271,7 @@ on
  Hence, we can interpret 
 \begin_inset Formula 
 \[
-\langle\psi,\xi\rangle
+\Re\langle\psi,\xi\rangle
 \]
 
 \end_inset
@@ -1288,7 +1288,7 @@ as the rate of change of mechanical energy, where the
  From above, we have 
 \begin_inset Formula 
 \[
-\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}\right]+\langle\psi,\xi\rangle=0,
+\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}\right]+\Re\langle\psi,\xi\rangle=0,
 \]
 
 \end_inset
@@ -1305,8 +1305,8 @@ electromagnetic energy
 \end_layout
 
 \begin_layout Standard
-Above, we assumed that the surface term from the integration-by-parts of
- 
+The above was if we assumed the surface term from the integration-by-parts
+ of 
 \begin_inset Formula $\hat{C}$
 \end_inset
 
@@ -1316,8 +1316,8 @@ Above, we assumed that the surface term from the integration-by-parts of
 \begin_inset Formula $\Omega$
 \end_inset
 
- is some arbitrary volume—not necessarily the entire domain of the PDE—and
- put back in the surface terms from the integration by parts, we obtain:
+ is some arbitrary volume—not necessarily the entire domain of the PDE—put
+ back in the surface terms from the integration by parts, we obtain:
 \begin_inset Formula 
 \begin{align*}
 \frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle_{\hat{\chi}}\right]+\langle\psi,\xi\rangle & =\frac{1}{2}\left[\langle\psi,\hat{C}\psi\rangle+\langle\hat{C}\psi,\psi\rangle\right]\\
