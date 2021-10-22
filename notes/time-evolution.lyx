@@ -1622,7 +1622,7 @@ In linear time-invariant systems, we often write sinusoidally oscillating
  simply because complex exponentials are much easier to work with than sines
  and cosines.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 This is called a 
@@ -1650,6 +1650,32 @@ reactive
 \end_inset
 
  power are more commonplace than in full-Maxwell context.
+ the 
+\begin_inset Formula $\frac{1}{2}\Re[A^{*}B]$
+\end_inset
+
+ identity is commonplace for computing time-averaged 
+\begin_inset Quotes eld
+\end_inset
+
+real
+\begin_inset Quotes erd
+\end_inset
+
+ power and similar quantities.
+ The imaginary part 
+\begin_inset Formula $\frac{1}{2}\Im[A^{*}B]$
+\end_inset
+
+ can also be useful, and leads to relations involving the so-called 
+\begin_inset Quotes eld
+\end_inset
+
+reactive
+\begin_inset Quotes erd
+\end_inset
+
+ power/energy.
 \end_layout
 
 \end_inset
