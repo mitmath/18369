@@ -66,9 +66,8 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 1.3in
-\topmargin 1.3in
-\rightmargin 1.3in
+\leftmargin 1.5in
+\rightmargin 1.5in
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -900,30 +899,7 @@ Conservation of irrep in lossless media
 \end_layout
 
 \begin_layout Standard
-As is reviewed by many authors
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Inui96"
-literal "false"
-
-\end_inset
-
-, the key tool for describing the consequences of symmetry for linear systems
- is that of 
-\emph on
-group representation theory, 
-\emph default
-and it turns out that this yields a kind of conservation law from irreducible
- representations (
-\emph on
-irreps
-\emph default
-) of the symmetry group.
- If we have a symmetry group 
+If we have a symmetry group 
 \begin_inset Formula $G$
 \end_inset
 
