@@ -229,7 +229,7 @@ We can use perturbation theory to quantitatively derive the magnitude of the gap
 ### Lecture 13: 21 October
 
 * [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf), starting on page 93
-* [pset 3 solutions](psets/pset3sol.pdf)
+* [pset 3 solutions](psets/pset3sol.pdf) and [computational notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset3sol-p2.ipynb)
 * pset 4: coming soon
 
 **Optimization and inverse design** in photonics.
