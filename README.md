@@ -240,3 +240,13 @@ Specific examples: non-obvious transformations. Photonic bandgap maximization: e
 
 **Further reading**:
 [Adjoint method notes](https://math.mit.edu/~stevenj/18.336/adjoint.pdf).  Review articles: [Topology optimization for nano‐photonics](https://doi.org/10.1002/lpor.201000014) (2011) and [Inverse design in nanophotonics](https://doi.org/10.1038/s41566-018-0246-9) (2018).
+
+### Lecture 14: 26 October
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf): part 1, band diagrams and dispersion relations
+* [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb); see also [the MPB home page](https://github.com/NanoComp/mpb) and documentation.  You can run this MPB notebook in the cloud: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mochen4/meepdocker/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fmitmath%252F18369%26urlpath%3Dtree%252F18369%252Fnotes%252FMPB-demo.ipynb%26branch%3Dmaster)
+* [video recording from spring 2020](https://mit.zoom.us/rec/share/tNJWHqz57npJWI3V13Hge6E5Aaqmaaa80SEaqPsEnhwyLmI4wIwzqJhVFRa8sRSC )
+
+Gave demo of MPB eigensolver software for 2d dielectric waveguide.  Went over some of the basics of how such numerical eigensolvers work.  (If you installed Meep via the Anaconda Python packages, then you also have MPB.  You can also run it in the cloud via mybinder.)
+
+**Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
