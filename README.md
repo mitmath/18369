@@ -225,3 +225,18 @@ Began new topic: **photonic crystals in one dimension**. Sketched the form of th
 We can use perturbation theory to quantitatively derive the magnitude of the gap and other features by starting with a homogeneous medium and then adding a little bit of periodic ε contrast.
 
 **Further reading:** Chapter 4 of the textbook.
+
+### Lecture 13: 21 October
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf), starting on page 93
+* [pset 3 solutions](psets/pset3sol.pdf)
+* pset 4: coming soon
+
+**Optimization and inverse design** in photonics.
+Large-scale optimization involving thousands to millions of degrees of freedom (beyond the capabilities of human intuition or genetic algorithms). Requires gradient information. For example, topology optimization to discover freeform permittivity profiles.
+Important considerations when formulating an optimization problem: global, local, convexity, constraints, differentiability, linear, quadratic, penalty functions, filters, etc.
+Derived adjoint method for computing gradients efficiently. Physical intuition: Born approximation (1st order perturbation theory) + reciprocity. Math: just a switch of brackets, adjoint equation, needs only one extra solve.
+Specific examples: non-obvious transformations. Photonic bandgap maximization: epigraph form of minimax problems. Resonance optimization: maximize power instead of eigenvalues.
+
+**Further reading**:
+[Adjoint method notes](https://math.mit.edu/~stevenj/18.336/adjoint.pdf).  Review articles: [Topology optimization for nano‐photonics](https://doi.org/10.1002/lpor.201000014) (2011) and [Inverse design in nanophotonics](https://doi.org/10.1038/s41566-018-0246-9) (2018).

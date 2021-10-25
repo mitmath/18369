@@ -782,7 +782,7 @@ Find the
 
 -polarized eigenfunctions.
  From symmetry, this should be of the form 
-\begin_inset Formula $\vec{E}=E_{k,n}(y)e^{ikx-i\omega_{n}t}$
+\begin_inset Formula $E_{z}=E_{k,n}(y)e^{ikx-i\omega_{n}t}$
 \end_inset
 
 .
@@ -811,7 +811,11 @@ point-dipole
 \begin_inset Formula $\vec{J}(x,y)=\delta(x)\delta(y-L/2)\hat{z}e^{-i\omega t}$
 \end_inset
 
- in the middle of the waveguide.
+ in the middle of the waveguide, for 
+\begin_inset Formula $\omega>0$
+\end_inset
+
+.
  This is mirror-symmetric (even), so you should be able to find a mirror-symmetr
 ic solution that consists of right-traveling (
 \begin_inset Formula $k>0$
