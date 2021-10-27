@@ -250,3 +250,7 @@ Specific examples: non-obvious transformations. Photonic bandgap maximization: e
 Gave demo of MPB eigensolver software for 2d dielectric waveguide.  Went over some of the basics of how such numerical eigensolvers work.  (If you installed Meep via the Anaconda Python packages, then you also have MPB.  You can also run it in the cloud via mybinder.)
 
 **Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
+
+### Lecture 15: 28 October
+
+* [pset 4](psets/pset4.pdf) and [sample notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset4.ipynb) (due Thursday Nov 4)
