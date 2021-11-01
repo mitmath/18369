@@ -254,3 +254,27 @@ Gave demo of MPB eigensolver software for 2d dielectric waveguide.  Went over so
 ### Lecture 15: 28 October
 
 * [pset 4](psets/pset4.pdf) and [sample notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset4.ipynb) (due Thursday Nov 4)
+
+A quantitative estimate of the size of the band gap in 1d, via perturbation theory. In particular, derived first-order perturbation theory for the eigenvalue of any Hermitian operator with some small change, by expanding the eigenvalue and eigenfunction as power series in the change and solving order-by-order. We then write down this perturbative expression for the Maxwell operator, and see that the fractional change in frequency is just the fractional change in index multiplied by the fraction of electric-field energy in the changed material.
+
+Discussed how perturbation theory can be used to derive the effect of absorption losses (to lowest order): adding a small imaginary part to ε yields a corresponding imaginary part in ω, giving loss or gain depending on the sign.
+
+To apply perturbation to the opening of the gap, there is a slight complication because the cos(πx/a) and sin(πx/a) modes of the unperturbed (homogeneous) system are degenerate. This creates an ambiguity: to which linear combination of these eigenfunctions (i.e., what 0-th order solution) do we apply our perturbation analysis to? For a general perturbation with L-fold degeneracy, there is a technique called _degenerate perturbation theory_ that solves this problem by reducing it to an L×L eigenproblem. Here, however, we can solve the problem by symmetry: since the perturbed problem still has mirror symmetry around x=0, we know that the perturbed eigenfunctions must still be even/odd, so we must start with the cos/sin solutions.
+
+Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in the gap. We have no propagating solutions in the crystal, so by conservation of energy we must have 100% reflection. However, showed by analytical continuation of the band edge that we expect exponentially decaying "evanescent" solutions in the crystal, with a complex wavevector k ≈ sqrt(Δω/α) + π/a, where Δω is how far we are into the gap and α is the band-edge curvature.
+
+**Further reading:** For the same derivation of perturbation theory, see "time-independent perturbation theory" in any quantum-mechanics text, e.g. Cohen-Tannoudji. See also the section on small perturbations in chapter 2 of the book. See chapter 4 of the book on the origin of the 1d gap, and on the special formulas for quarter-wave stacks in 1d (discussed in more detail in Yeh's _Optical Waves in Layered Media_). For evanescent waves and defect cavities, see chapter 4 of the textbook.
+
+### Take-home Midterm: November 9
+
+A take-home midterm exam will be posted on Nov. 9, **due 24 hours later**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
+
+Previous midterms include:
+[2006 midterm](https://math.mit.edu/~stevenj/18.369/fall05/midterm.pdf) (was way too long) and [solutions](https://math.mit.edu/~stevenj/18.325/pset5sol.pdf);
+[2007 midterm](https://math.mit.edu/~stevenj/18.369/spring07/midterm.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring07/midterm-sol.pdf);
+[2009 midterm](https://math.mit.edu/~stevenj/18.369/spring09/midterm09.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring09/midterm09-sol.pdf);
+[2010 midterm](https://math.mit.edu/~stevenj/18.369/spring10/midterm-spring10.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring10/midtermsol-spring10.pdf);
+[2012 midterm](https://math.mit.edu/~stevenj/18.369/spring12/midterm-spring12.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring12/midtermsol-spring12.pdf);
+[2014 midterm](https://math.mit.edu/~stevenj/18.369/spring14/midterm14.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring14/midterm14sol.pdf);
+[2016midterm](https://math.mit.edu/~stevenj/18.369/spring16/midterm16.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring16/midtermsol16.pdf) (also [problem 1 notebook](http://nbviewer.jupyter.org/url/math.mit.edu/~stevenj/18.369/midtermsol16.ipynb));
+[2018 midterm](https://github.com/mitmath/18369/blob/spring18/exams/midterm18.pdf) and [solutions](https://github.com/mitmath/18369/blob/spring18/exams/midterm18sol.pdf).
