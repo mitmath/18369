@@ -1,0 +1,1205 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\tr}{\operatorname{trace}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\date{}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.75in
+\topmargin 0.75in
+\rightmargin 0.75in
+\bottommargin 0.75in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+18.369 Midterm Exam Solutions (Spring 2018)
+\end_layout
+
+\begin_layout Section*
+Problem 1: Irreps
+\end_layout
+
+\begin_layout Enumerate
+Since 
+\begin_inset Formula $D(n)D(n')=D(n+n')$
+\end_inset
+
+, it follows as in class that 
+\begin_inset Formula $D(n)=e^{-isn}$
+\end_inset
+
+ for some 
+\begin_inset Formula $s$
+\end_inset
+
+.
+ (In particular, note that 
+\begin_inset Formula $D(n)=D(1)^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $D(1)\neq0$
+\end_inset
+
+.) Since 
+\begin_inset Formula $D(N)=1$
+\end_inset
+
+ (rotation by 
+\begin_inset Formula $C_{N}^{N}$
+\end_inset
+
+), it follows that 
+\begin_inset Formula $s=\frac{2\pi}{N}k$
+\end_inset
+
+ for some integer 
+\begin_inset Formula $k$
+\end_inset
+
+, i.e.
+ we have the 1d irreps
+\begin_inset Formula 
+\[
+D^{(k)}(n)=e^{-\frac{2\pi i}{N}kn}.
+\]
+
+\end_inset
+
+Furthermore, since we have 
+\begin_inset Formula $N$
+\end_inset
+
+ rotations in the 
+\begin_inset Formula $C_{N}$
+\end_inset
+
+ group, all in their own conjugacy class, it must be that we have exactly
+ 
+\begin_inset Formula $N$
+\end_inset
+
+ irreps.
+ This is true because 
+\begin_inset Formula 
+\[
+D^{(k+N)}(n)=e^{-\frac{2\pi i}{N}kn-2\pi ni}=D^{(k)}(n),
+\]
+
+\end_inset
+
+i.e.
+ only 
+\begin_inset Formula $k=0,1,\ldots,N-1$
+\end_inset
+
+ are distinct irreps.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Similar to class and in homework, a partner function of 
+\begin_inset Formula $D^{(k)}$
+\end_inset
+
+ is of the of the form 
+\begin_inset Formula 
+\[
+\phi_{\ell}=\phi_{0}e^{\frac{2\pi i}{N}k\ell}
+\]
+
+\end_inset
+
+for any constant 
+\begin_inset Formula $\phi_{0}$
+\end_inset
+
+, so that 
+\begin_inset Formula $\phi_{\ell-n}=D^{(k)}(n)\phi_{\ell}$
+\end_inset
+
+.
+ (Note that this is periodic: 
+\begin_inset Formula $\phi_{\ell+N}=\phi_{\ell}$
+\end_inset
+
+.) Since all of the eigenvectors can be chosen in the form of partner functions,
+ these are our eigenvectors.
+ We an just plug them in to 
+\begin_inset Formula $\hat{\Theta}\phi$
+\end_inset
+
+ to find the eigenvalues.
+ The 
+\begin_inset Formula $\ell$
+\end_inset
+
+-th of 
+\begin_inset Formula $\hat{\Theta}\phi$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+\frac{\kappa}{m}\left(2\phi_{\ell}-\phi_{\ell+1}-\phi_{\ell-1}\right)=\frac{\kappa}{m}\left(2-e^{\frac{2\pi i}{N}k}-e^{-\frac{2\pi i}{N}k}\right)\phi_{0}e^{\frac{2\pi i}{N}k\ell}=\frac{2\kappa}{m}\left(1-\cos(2\pi k/N)\right)\phi_{\ell},
+\]
+
+\end_inset
+
+confirming that 
+\begin_inset Formula $\phi_{\ell}$
+\end_inset
+
+ is an eigenvector with eigenvalue 
+\begin_inset Formula 
+\[
+\omega_{k}^{2}=\frac{2\kappa}{m}\left(1-\cos(2\pi k/N)\right)=\frac{2\kappa}{m}\sin^{2}\left(\frac{\pi k}{N}\right)=\omega_{k+N}^{2}=\omega_{-k}^{2}=\omega_{N-k}^{2}
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $k=0,1,\ldots,N-1$
+\end_inset
+
+.
+ (Note that we have exactly 
+\begin_inset Formula $N$
+\end_inset
+
+ linearly independent eigenvectors for our 
+\begin_inset Formula $N\times N$
+\end_inset
+
+ matrix.
+ Note also that the eigenvalues are real and nonnegative, which must be
+ true for a real-symmetric positive-semidefinite matrix.) Hence the eigenfrequenc
+ies are:
+\begin_inset Formula 
+\[
+\omega_{k}=\pm\sqrt{\frac{2\kappa}{m}}\sin\left(\frac{\pi k}{N}\right).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+For odd 
+\begin_inset Formula $N$
+\end_inset
+
+, we also have the mirror symmetries 
+\begin_inset Formula $\sigma$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+There are 
+\begin_inset Formula $N$
+\end_inset
+
+ mirror-symmetry planes, one through each vertex (bisecting the opposite
+ edge).
+ (Note that if 
+\begin_inset Formula $N$
+\end_inset
+
+ were even, we would have 
+\begin_inset Formula $N/2$
+\end_inset
+
+ mirror planes through vertices and 
+\begin_inset Formula $N/2$
+\end_inset
+
+ mirror planes through edges.)
+\end_layout
+
+\begin_layout Enumerate
+The rotation 
+\begin_inset Formula $C_{N}^{n}$
+\end_inset
+
+ is conjugate to 
+\begin_inset Formula $C_{N}^{-n}$
+\end_inset
+
+ under a mirror flip.
+ Ever mirror plane is conjugate to every other mirror plane under a rotation.
+ Hence there are the following conjugacy classes: 
+\begin_inset Formula $C_{N}^{0}=E$
+\end_inset
+
+, the 
+\begin_inset Formula $\frac{N-1}{2}$
+\end_inset
+
+ pairs 
+\begin_inset Formula $C_{N}^{\pm n}$
+\end_inset
+
+ for 
+\begin_inset Formula $n=1,\ldots\frac{N-1}{2}$
+\end_inset
+
+, and the 
+\begin_inset Formula $N\sigma$
+\end_inset
+
+ conjugacy class of mirror planes.
+ (Note that if 
+\begin_inset Formula $N$
+\end_inset
+
+ were even, the mirror planes through vertices and faces would be in different
+ conjugacy classes.)
+\end_layout
+
+\begin_layout Enumerate
+There are 
+\begin_inset Formula $1+\frac{N-1}{2}+1=\frac{N+3}{2}$
+\end_inset
+
+ conjugacy classes, and hence 
+\series bold
+there are 
+\begin_inset Formula $\frac{N+3}{2}$
+\end_inset
+
+ irreps
+\series default
+.
+ The sum of their 
+\begin_inset Formula $\text{dimensions}^{2}$
+\end_inset
+
+ must equal the number of elements in the group, 
+\begin_inset Formula $2N$
+\end_inset
+
+.
+ A further hint comes from the 2-fold degeneracies of the eigenvalues 
+\begin_inset Formula $\omega_{k}^{2}=\omega_{N-k}^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $k=1,2,\ldots$
+\end_inset
+
+, which lets us know to expect 2-dimensional irreps.
+ If you count how many 2d irreps you can half, it turns out that you must
+ have 
+\series bold
+2 1d irreps and 
+\begin_inset Formula $\frac{N-1}{2}$
+\end_inset
+
+ 2d irreps.
+
+\series default
+ This gives a sum of 
+\begin_inset Formula $\text{dimensions}^{2}$
+\end_inset
+
+ equal to 
+\begin_inset Formula $1+1+2^{2}\frac{N-1}{2}=2+2N-2=2N$
+\end_inset
+
+, which is the correct sum.
+ Indeed, the degenerate eigenvalues above for 
+\begin_inset Formula $k\ne0$
+\end_inset
+
+ correspond to partners of 2d irreps (while 
+\begin_inset Formula $k=0$
+\end_inset
+
+ is the trivial 1d irrep).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+In fact, this is precisely the 
+\begin_inset Formula $C_{N\text{v}}$
+\end_inset
+
+ group .
+ In pset
+\begin_inset space ~
+\end_inset
+
+2 you analyzed 
+\begin_inset Formula $C_{3\text{v}}$
+\end_inset
+
+ and you found that it had two 1d irreps and 
+\begin_inset Formula $1=\frac{3-1}{2}$
+\end_inset
+
+ 2d irreps, exactly consistent with the general result here.
+ (In the fall 2005 midterm there was an example of 
+\begin_inset Formula $C_{5\text{v}}$
+\end_inset
+
+, which had two 1d irreps and 
+\begin_inset Formula $2=\frac{5-1}{2}$
+\end_inset
+
+ 2d irreps, again consistent with our result here.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+One thing that you may find surprising is that there are 
+\emph on
+two
+\emph default
+ 1d irreps, but we only have 
+\emph on
+one
+\emph default
+ nondegenerate eigenvalue above at 
+\begin_inset Formula $\omega_{0}=0$
+\end_inset
+
+.
+ Why is this? The key thing is to understand what a mirror plane 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ through a vertex 
+\begin_inset Formula $\ell$
+\end_inset
+
+ does to 
+\begin_inset Formula $\phi_{\ell}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\phi_{\ell}$
+\end_inset
+
+ represents a displacement going 
+\emph on
+around
+\emph default
+ the circle tangentially, a mirror flip through 
+\begin_inset Formula $\ell$
+\end_inset
+
+ must send 
+\begin_inset Formula $\phi_{\ell}\to-\phi_{\ell}$
+\end_inset
+
+.
+ That means the zero-frequency eigenfunction 
+\begin_inset Formula $\phi_{\ell}=\phi_{0}$
+\end_inset
+
+ 
+\emph on
+cannot
+\emph default
+ transform as the trivial representation 
+\begin_inset Formula $D(g)=1$
+\end_inset
+
+.
+ Instead, it must transform as the 
+\emph on
+other
+\emph default
+ 1d irrep, in which 
+\begin_inset Formula $D(n)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $D(\sigma)=-1$
+\end_inset
+
+ .
+ To get the trivial irrep, we would actually have to consider a 
+\emph on
+different physical problem
+\emph default
+ with the same symmetry group, for example oscillations in the 
+\emph on
+radial
+\emph default
+ direction from a ring of masses.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Problem 2: Index guiding
+\end_layout
+
+\begin_layout Standard
+In class and in homework, you considered the problem of index-guiding: localizat
+ion in a higher-index region with translational symmetry.
+ In this problem, you should do the same thing but with a different wave
+ equation, the Schrödinger equation, whose eigenmode equation for time-harmonic
+ modes 
+\begin_inset Formula $\psi(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ is: 
+\begin_inset Formula 
+\[
+\hat{H}\psi=\underbrace{\left(-\nabla^{2}+V\right)}_{\hat{H}}\psi=\omega\psi
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $V(\vec{x})$
+\end_inset
+
+ is a 
+\begin_inset Quotes eld
+\end_inset
+
+potential
+\begin_inset Quotes erd
+\end_inset
+
+ function.
+ In particular, we consider an 
+\begin_inset Formula $x$
+\end_inset
+
+-independent potential 
+\begin_inset Formula $V(y)$
+\end_inset
+
+ in 2d, as depicted in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:potential"
+
+\end_inset
+
+, that 
+\begin_inset Formula $=0$
+\end_inset
+
+ for 
+\begin_inset Formula $|y|>h$
+\end_inset
+
+ and is otherwise negative 
+\begin_inset Quotes eld
+\end_inset
+
+on average,
+\begin_inset Quotes erd
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $\int_{-\infty}^{\infty}V(y)\,dy<0$
+\end_inset
+
+.
+ You are also given that 
+\begin_inset Formula $\int_{-\infty}^{\infty}|V|\,dy$
+\end_inset
+
+ is finite.
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is Hermitian under the usual inner product 
+\begin_inset Formula $\langle\phi,\psi\rangle=\int\phi^{*}\psi$
+\end_inset
+
+ for functions 
+\begin_inset Formula $\phi,\psi$
+\end_inset
+
+ that decay sufficiently rapidly, and 
+\begin_inset Formula $\langle\psi,\hat{H}\psi\rangle=\int(|\nabla\psi|^{2}+V|\psi|^{2})$
+\end_inset
+
+ via integration by parts.
+\end_layout
+
+\begin_layout Enumerate
+Solutions 
+\begin_inset Formula $\psi_{k}(y)e^{ikx}$
+\end_inset
+
+ satisfy the 
+\begin_inset Quotes eld
+\end_inset
+
+reduced
+\begin_inset Quotes erd
+\end_inset
+
+ eigenproblem 
+\begin_inset Formula $\hat{H}_{k}\psi_{k}=\omega(k)\psi_{k}$
+\end_inset
+
+ with 
+\begin_inset Formula $\hat{H}=-\frac{d^{2}}{dy^{2}}+k^{2}+V(y)$
+\end_inset
+
+.
+ Note that the 
+\begin_inset Formula $k$
+\end_inset
+
+ dependence is purely in the form of an additive constant 
+\begin_inset Formula $k^{2}$
+\end_inset
+
+, so it follows that 
+\begin_inset Formula $\omega(k)=\omega(0)+k^{2}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Furthermore, similar to the Maxwell case from class, we expect that the
+ eigenvalues will be divided into the 
+\begin_inset Quotes eld
+\end_inset
+
+light cone
+\begin_inset Quotes erd
+\end_inset
+
+ — a continuous range of 
+\begin_inset Formula $\omega$
+\end_inset
+
+ corresponding solutions in the infinite 
+\begin_inset Formula $V=0$
+\end_inset
+
+ regions — and one or more discrete guided modes pulled down below the light
+ cone by the 
+\begin_inset Formula $V<0$
+\end_inset
+
+ region.
+ The light cone, the solution for 
+\begin_inset Formula $V=0$
+\end_inset
+
+, is just planewaves 
+\begin_inset Formula $e^{i(kx+k_{y}y)}$
+\end_inset
+
+ for all real numbers 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+, with eigenvalues 
+\begin_inset Formula $\omega=k^{2}+k_{y}^{2}$
+\end_inset
+
+.
+ This gives the light cone as a continuous region 
+\begin_inset Formula $\omega\ge k^{2}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+As we will show explicitly in the next part, there is at least one guided
+ mode below the light cone.
+ There could be more than one if the 
+\begin_inset Formula $V<0$
+\end_inset
+
+ region is big/deep enough, but in any case there will be a finite number.
+ Unlike the Maxwell case, however, we will 
+\emph on
+not
+\emph default
+ get more more higher-order modes as we increase 
+\begin_inset Formula $k$
+\end_inset
+
+, because of the 
+\begin_inset Formula $\omega(k)=\omega(0)+k^{2}$
+\end_inset
+
+ property from above: whatever guided modes we have will maintain a fixed
+ separation from the light cone.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+A typical band diagram is shown in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schro-guided"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename schro-guided.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:schro-guided"
+
+\end_inset
+
+Schematic guided modes of a 
+\begin_inset Quotes eld
+\end_inset
+
+channel
+\begin_inset Quotes erd
+\end_inset
+
+ in the 2d Schrödinger equation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Similar to class and homework, we will use a trial function 
+\begin_inset Formula $\psi_{k}(y)=e^{-\alpha|y|}$
+\end_inset
+
+ in the limit of small 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+.
+ We need to show 
+\begin_inset Formula $\frac{\langle\psi,\hat{H}\psi\rangle}{\langle\psi,\psi\rangle}<k^{2}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula 
+\[
+\alpha+\frac{k^{2}}{\alpha}+\int_{-\infty}^{\infty}Ve^{-2\alpha|y|}dy=\int_{-\infty}^{\infty}\left(\alpha^{2}+k^{2}+V\right)e^{-2\alpha|y|}dy=\boxed{\langle\psi_{k},\hat{H}_{k}\psi_{k}\rangle<k^{2}\langle\psi_{k},\psi_{k}\rangle}=k^{2}\int_{-\infty}^{\infty}e^{-2\alpha|y|}dy=\frac{k^{2}}{\alpha}.
+\]
+
+\end_inset
+
+Cancelling the 
+\begin_inset Formula $k^{2}/\alpha$
+\end_inset
+
+ terms, we obtain the condition 
+\begin_inset Formula 
+\[
+\alpha+\int_{-\infty}^{\infty}Ve^{-2\alpha|y|}dy<0
+\]
+
+\end_inset
+
+for some 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+.
+ It suffices, therefore, to show that the left-hand side is negative for
+ 
+\begin_inset Formula $\lim_{\alpha\to0^{+}}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\left|Ve^{-2\alpha|y|}\right|\le|V|$
+\end_inset
+
+ and 
+\begin_inset Formula $\int|V|<\infty$
+\end_inset
+
+ by assumption, we can use the dominated convergence theorem to interchange
+ the limit and the integral.
+ The limit of the left-hand-side is therefore 
+\begin_inset Formula $0+\int V$
+\end_inset
+
+, which is 
+\begin_inset Formula $<0$
+\end_inset
+
+ by assumption.
+ It follows that we have at least one eigenvalue below the light cone, i.e.
+ a guided mode for all 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(The problem only asked you to prove it for 
+\begin_inset Formula $k\neq0$
+\end_inset
+
+, since in the Maxwell case you don't have guided modes at 
+\begin_inset Formula $k=0$
+\end_inset
+
+, but in the Schrödinger case we have a guided mode at all 
+\begin_inset Formula $k$
+\end_inset
+
+ as depicted in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schro-guided"
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Section*
+Problem 3: Projected band diagram
+\end_layout
+
+\begin_layout Enumerate
+The projection is done as follows:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The edge of the projected Brillouin zone is at 
+\begin_inset Formula $k_{d}=\frac{\pi}{a\sqrt{2}}$
+\end_inset
+
+ (
+\begin_inset Formula $\pi$
+\end_inset
+
+ divided by the period).Since 
+\begin_inset Formula $|M|=\frac{\pi}{a}\sqrt{2}$
+\end_inset
+
+, this means that the edge of the projected Brillouin zone is at 
+\begin_inset Formula $M/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The projected bands are shown as a shaded region in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sqbands-folded"
+
+\end_inset
+
+, with the points labeled above and below the gap.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sq-tm-bands2.pdf
+	width 50col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename sqbands-folded.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sqbands-folded"
+
+\end_inset
+
+Left: band diagram and Brillouin zone (inset) for a square lattice of dielectric
+ rods (period 
+\begin_inset Formula $a$
+\end_inset
+
+, radius 
+\begin_inset Formula $0.2a$
+\end_inset
+
+, 
+\begin_inset Formula $\varepsilon=8.9$
+\end_inset
+
+).
+ Right: projected TM band diagram (shaded) along the diagonal direction.
+ The inset shows a supercell, and black lines are the folded bands for this
+ finite supercell (with periodic boundary conditions in the lateral direction).
+ Red letters label the points indicated at left.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Also shown are the folded bands from a supercell calculation (inset)—this
+ is very helpful, because MPB will fold the bands for you without making
+ mistakes.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Note that the original 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+–M/2 curve becomes the bottom of the lower continuum, which then 
+\begin_inset Quotes eld
+\end_inset
+
+folds back
+\begin_inset Quotes erd
+\end_inset
+
+ so that 
+\begin_inset Formula $M$
+\end_inset
+
+ (point b) lies back at 
+\begin_inset Formula $k_{d}=0$
+\end_inset
+
+.
+ The X point (c and f) projects onto 
+\begin_inset Formula $k_{d}=\frac{\pi}{a\sqrt{2}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The (exact) projected band diagrams for 
+\begin_inset Formula $N=1$
+\end_inset
+
+, 
+\begin_inset Formula $N=7$
+\end_inset
+
+, and 
+\begin_inset Formula $N=25$
+\end_inset
+
+ are shown in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sqbands-defect"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sqbands-defect.pdf
+	width 110col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sqbands-defect"
+
+\end_inset
+
+Projected TM band diagram for linear defects of 
+\begin_inset Formula $N$
+\end_inset
+
+ rows of rods along the diagonal direction of a square lattice of rods,
+ for 
+\begin_inset Formula $N=1,7,25$
+\end_inset
+
+, with the geometry shown as insets.
+ The gray shaded region is the spectrum of the bulk crystal, the blue curves
+ are guided bands in the gap, and the red line is the light line 
+\begin_inset Formula $\omega=ck_{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+As 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+, we should get a continuum of guided bands filling up the intersectino
+ of the light cone 
+\begin_inset Formula $\omega\ge ck_{d}$
+\end_inset
+
+ (above red line) with the gap—if the air defect is infinitely wide, the
+ solutions are exactly the planewaves of air—and indeed we can see a good
+ approximation of that for 
+\begin_inset Formula $N=25$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $N$
+\end_inset
+
+ decreases, we will get fewer and fewer guided bands, eventually just one
+ for 
+\begin_inset Formula $N=1$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+A more subtle feature is clearly visible in the 
+\begin_inset Formula $N=25$
+\end_inset
+
+ diagram: where the light line hits the edge of the Brillouin zone and 
+\begin_inset Quotes eld
+\end_inset
+
+folds back,
+\begin_inset Quotes erd
+\end_inset
+
+ there is a line of avoided crossings.
+ This is essentially because the 
+\begin_inset Quotes eld
+\end_inset
+
+folded
+\begin_inset Quotes erd
+\end_inset
+
+ light line is an approximate solution (a planewave propagating along the
+ defect) for a wide defect, which for a finite width turns into avoided
+ crossings.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Another surprising feature is the fact that the 
+\begin_inset Formula $N=1$
+\end_inset
+
+ guided band is nearly (but not exactly) flat (about 2% bandwidth).
+ I don't have any simple (non-numerical) explanation for this, however,
+ and I don't expect you to have guessed it.
+\end_layout
+
+\end_body
+\end_document
