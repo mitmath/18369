@@ -260,14 +260,19 @@ A quantitative estimate of the size of the band gap in 1d, via perturbation theo
 Discussed how perturbation theory can be used to derive the effect of absorption losses (to lowest order): adding a small imaginary part to ε yields a corresponding imaginary part in ω, giving loss or gain depending on the sign.
 
 To apply perturbation to the opening of the gap, there is a slight complication because the cos(πx/a) and sin(πx/a) modes of the unperturbed (homogeneous) system are degenerate. This creates an ambiguity: to which linear combination of these eigenfunctions (i.e., what 0-th order solution) do we apply our perturbation analysis to? For a general perturbation with L-fold degeneracy, there is a technique called _degenerate perturbation theory_ that solves this problem by reducing it to an L×L eigenproblem. Here, however, we can solve the problem by symmetry: since the perturbed problem still has mirror symmetry around x=0, we know that the perturbed eigenfunctions must still be even/odd, so we must start with the cos/sin solutions.
+**Further reading:** For the same derivation of perturbation theory, see "time-independent perturbation theory" in any quantum-mechanics text, e.g. Cohen-Tannoudji. See also the section on small perturbations in chapter 2 of the book. See chapter 4 of the book on the origin of the 1d gap, and on the special formulas for quarter-wave stacks in 1d (discussed in more detail in Yeh's _Optical Waves in Layered Media_). For evanescent waves and defect cavities, see chapter 4 of the textbook.
+
+### Lecture 16: 2 November
+
+* [spring 2020 video recording](https://mit.zoom.us/rec/share/ye1wPr7C2UFLE52T7HnFa60mRo_Feaa8gSVI_PAFzE--_HdTOSKcdSKv_q8aTAjq)
 
 Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in the gap. We have no propagating solutions in the crystal, so by conservation of energy we must have 100% reflection. However, showed by analytical continuation of the band edge that we expect exponentially decaying "evanescent" solutions in the crystal, with a complex wavevector k ≈ sqrt(Δω/α) + π/a, where Δω is how far we are into the gap and α is the band-edge curvature.
 
-**Further reading:** For the same derivation of perturbation theory, see "time-independent perturbation theory" in any quantum-mechanics text, e.g. Cohen-Tannoudji. See also the section on small perturbations in chapter 2 of the book. See chapter 4 of the book on the origin of the 1d gap, and on the special formulas for quarter-wave stacks in 1d (discussed in more detail in Yeh's _Optical Waves in Layered Media_). For evanescent waves and defect cavities, see chapter 4 of the textbook.
+Fabry-Perot defect modes, and surface states. Omnidirectional reflection, off-axis propagation, projected band diagrams for multilayer films
 
 ### Take-home Midterm: November 9
 
-A take-home midterm exam will be posted on Nov. 9, **due 24 hours later**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
+A take-home midterm exam will be posted on Nov. 9, **due 24 hours later**, and will cover everything through **pset 4** and **Lecture 16**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
 
 Previous midterms include:
 [2006 midterm](https://math.mit.edu/~stevenj/18.369/fall05/midterm.pdf) (was way too long) and [solutions](https://math.mit.edu/~stevenj/18.325/pset5sol.pdf);
