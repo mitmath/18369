@@ -270,7 +270,7 @@ if
 \begin_inset Formula $\Im(\hat{A}^{-1})=\frac{\hat{A}^{-1}-\left(\hat{A}^{-1}\right)^{\dagger}}{2i}$
 \end_inset
 
- is similarly positive (or negative) definite.
+ is similarly negative (or positive) definite, respectively—note sign flip!
  (Note: 
 \begin_inset Formula $\Im(\hat{A}^{-1})\ne\left(\Im\hat{A}\right)^{-1}$
 \end_inset
