@@ -1,0 +1,772 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+\newcommand{\tr}{\operatorname{tr}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Take-Home Midterm Exam: Fall 2021
+\end_layout
+
+\begin_layout Standard
+Posted 3pm Tuesday November 9, due 
+\series bold
+3pm Wednesday November 10.
+\end_layout
+
+\begin_layout Subsection*
+Problem 0: Honor code
+\end_layout
+
+\begin_layout Standard
+Copy and sign the following in your solutions:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+I have not used any resources to complete this exam other than my own 18.369
+ notes, the course textbooks, and posted course materials.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 30pt
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 30col%
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0ex"
+width "60col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+your signature
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: (34 points)
+\end_layout
+
+\begin_layout Standard
+In problem set 2, you showed that Maxwell's equations for a time-harmonic
+ current 
+\begin_inset Formula $\hat{\vec{J}}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ yield the following linear equation for the time-harmonic fields 
+\begin_inset Formula $\hat{\vec{E}}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ (with 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+, 
+\begin_inset Formula $c=1$
+\end_inset
+
+): 
+\begin_inset Formula 
+\[
+\hat{A}\vec{E}=\left(\nabla\times\nabla\times{}-\omega^{2}\varepsilon\right)\hat{\vec{E}}=i\omega\hat{\vec{J}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The scalar function 
+\begin_inset Formula $\varepsilon(\omega,\vec{x})$
+\end_inset
+
+ may be complex, corresponding to (linear) gain or loss.
+ In a passive system, the current can do no net work on the field, hence
+ no time-average work for time-harmonic fields.
+ For 
+\begin_inset Formula $\omega>0$
+\end_inset
+
+, show that this leads to a constraint on the operator 
+\begin_inset Formula $\Im\hat{A}=\frac{\hat{A}-\hat{A}^{\dagger}}{2i}$
+\end_inset
+
+ (which is Hermitian) being positive or negative definite or semidefinite,
+ and hence leads to a constraint on 
+\begin_inset Formula $\omega\operatorname{Im}\varepsilon$
+\end_inset
+
+ identical to the one from class.
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\Im\hat{A}=\frac{\hat{A}-\hat{A}^{\dagger}}{2i}$
+\end_inset
+
+ is positive (or negative) definite for any invertible operator 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+, i.e.
+\begin_inset space ~
+\end_inset
+
+if 
+\begin_inset Formula $\langle\vec{F},(\Im\hat{A})\vec{F}\rangle>0$
+\end_inset
+
+ (or 
+\begin_inset Formula $<0$
+\end_inset
+
+, respectively) for any 
+\begin_inset Formula $\vec{F}\neq0$
+\end_inset
+
+, show that it follows that 
+\begin_inset Formula $\Im(\hat{A}^{-1})=\frac{\hat{A}^{-1}-\left(\hat{A}^{-1}\right)^{\dagger}}{2i}$
+\end_inset
+
+ is similarly positive (or negative) definite.
+ (Note: 
+\begin_inset Formula $\Im(\hat{A}^{-1})\ne\left(\Im\hat{A}\right)^{-1}$
+\end_inset
+
+!)
+\end_layout
+
+\begin_layout Enumerate
+Suppose that we have solved this equation for some 
+\begin_inset Formula $\varepsilon(\vec{x})$
+\end_inset
+
+, 
+\begin_inset Formula $\omega$
+\end_inset
+
+, and boundary conditions, and have found the resulting inverse operator
+ 
+\begin_inset Formula $\hat{A}^{-1}$
+\end_inset
+
+ (e.g.
+ an a matrix inverse on the computer for a discretized approximation) such
+ that the solution is given by 
+\begin_inset Formula 
+\[
+\hat{\vec{E}}(\vec{x})=\hat{A}^{-1}(i\omega\hat{\vec{J}})
+\]
+
+\end_inset
+
+for any 
+\begin_inset Formula $\hat{\vec{J}}(\vec{x})$
+\end_inset
+
+.
+ If we perturb the materials to 
+\begin_inset Formula $\varepsilon+\Delta\varepsilon$
+\end_inset
+
+, where 
+\begin_inset Formula $|\Delta\varepsilon(\vec{x})|$
+\end_inset
+
+ is 
+\begin_inset Formula $\ll1$
+\end_inset
+
+ everywhere, the solution (for the same 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+) changes to 
+\begin_inset Formula $\hat{\vec{E}}+\Delta\hat{\vec{E}}$
+\end_inset
+
+ for some 
+\begin_inset Formula $\Delta\hat{\vec{E}}$
+\end_inset
+
+.
+ Expand the change in the solution 
+\begin_inset Formula $\Delta\hat{\vec{E}}=\Delta\hat{\vec{E}}^{(1)}+\Delta\hat{\vec{E}}^{(2)}+\cdots$
+\end_inset
+
+ as a series of terms proportional to powers of 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+, collect terms order-by-order, and express the 
+\emph on
+first-order 
+\emph default
+correction 
+\begin_inset Formula $\Delta\hat{\vec{E}}^{(1)}$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\hat{\vec{E}}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{A}^{-1}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\vec{J}}$
+\end_inset
+
+, 
+\begin_inset Formula $\omega$
+\end_inset
+
+, 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, and/or 
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: (33 points)
+\end_layout
+
+\begin_layout Standard
+Recall from class the dispersion relation of a dielectric waveguide in 2d
+ (say a strip of 
+\begin_inset Formula $\varepsilon_{\text{hi}}>1$
+\end_inset
+
+ surrounded on either side by semi-infinite 
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+) for 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+-polarized light; see, for example, figure
+\begin_inset space ~
+\end_inset
+
+3 of chapter
+\begin_inset space ~
+\end_inset
+
+3 of the textbook.
+\end_layout
+
+\begin_layout Enumerate
+Sketch (qualitatively) the dispersion relation 
+\begin_inset Formula $\omega(k$
+\end_inset
+
+) for the fundamental (lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+) mode, along with the light cone.
+ On the same plot, sketch (in a different color) the dispersion relation
+ for the fundamental mode if you 
+\emph on
+increased
+\emph default
+ the 
+\emph on
+width
+\emph default
+ of the waveguide (the width of the 
+\begin_inset Formula $\varepsilon_{\text{hi}}$
+\end_inset
+
+ region) slightly.
+\end_layout
+
+\begin_layout Enumerate
+Now, suppose that you put the two waveguides side by side, but far enough
+ apart that they only slightly interact (are slightly perturbed) via the
+ evanescent tails of the guided modes, as shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-of-two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename midterm-p2.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic-of-two"
+
+\end_inset
+
+Schematic of two dielectric waveguides, one (above) slightly wider than
+ the other, far enough apart so that the guided modes only slightly 
+\begin_inset Quotes eld
+\end_inset
+
+see
+\begin_inset Quotes erd
+\end_inset
+
+ the other waveguide.
+ In the narrower waveguide, we add a slight (
+\begin_inset Formula $|\Delta\varepsilon|\ll1$
+\end_inset
+
+) periodic (period
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $a$
+\end_inset
+
+) modulation to help the two waveguides couple to one another.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Suppose you want to 
+\emph on
+input
+\emph default
+ light in the fundamental mode of the 
+\emph on
+first
+\emph default
+ (narrower) waveguide at some frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+, but you want power to couple/scatter into the fundamental mode of the
+ 
+\emph on
+second
+\emph default
+ waveguide propagating in the 
+\emph on
+same
+\emph default
+ direction.
+ To improve this coupling, you periodically (period 
+\begin_inset Formula $a$
+\end_inset
+
+) modulate the dielectric constant of the waveguide by a slight (
+\begin_inset Formula $|\Delta\varepsilon|\ll1$
+\end_inset
+
+) amount, as shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-of-two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+What period 
+\begin_inset Formula $a$
+\end_inset
+
+ should you choose for your grating in order to increase the power transfer
+ between these two modes? (In particular, indicate how you would calculate
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ from your dispersion relations above.)
+\end_layout
+
+\begin_layout Enumerate
+How does your answer from the previous part change if you want to couple
+ input from the first waveguide into light traveling in the 
+\emph on
+opposite
+\emph default
+ direction in the second waveguide?
+\end_layout
+
+\begin_layout Enumerate
+How does your answer change if there is 
+\emph on
+no 
+\emph default
+second waveguide, and you instead want to couple input from the first waveguide
+ into planewaves radiating away perpendicularly from the waveguide?
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: (33 points)
+\end_layout
+
+\begin_layout Standard
+Suppose that you have a 2d circular PEC cavity, where the interior of the
+ cavity is filled with 
+\begin_inset Formula $\varepsilon(\vec{x})>0$
+\end_inset
+
+ that has 
+\begin_inset Formula $N$
+\end_inset
+
+-fold rotational symmetry but 
+\emph on
+not
+\emph default
+ mirror symmetry.
+ This is called 
+\begin_inset Formula $C_{N}$
+\end_inset
+
+ symmetry, as depicted in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:C_N_schematic"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for 
+\begin_inset Formula $N=12$
+\end_inset
+
+.
+ That is, its symmetry group consists of 
+\begin_inset Formula $C_{N}^{n}$
+\end_inset
+
+ for 
+\begin_inset Formula $n=0,1,\ldots,N-1$
+\end_inset
+
+.
+ (Note that 
+\begin_inset Formula $C_{N}^{n+N}=C_{N}^{n}$
+\end_inset
+
+.)
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename midterm-pinwheel.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:C_N_schematic"
+
+\end_inset
+
+Schematic of a circular metallic cavity whose interior 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ has 
+\begin_inset Formula $N$
+\end_inset
+
+-fold rotational symmetry (
+\begin_inset Formula $C_{N}$
+\end_inset
+
+), but no mirror symmetry.
+ (In this illustration, 
+\begin_inset Formula $N=12$
+\end_inset
+
+.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+What are the irreps 
+\begin_inset Formula $D^{(k)}$
+\end_inset
+
+ of this symmetry group? For simplicity, denote by 
+\begin_inset Formula $D^{(k)}(n)$
+\end_inset
+
+ the representation matrix for 
+\begin_inset Formula $C_{N}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+What is the form of a partner function 
+\begin_inset Formula $\vec{H}(\vec{x})$
+\end_inset
+
+ of 
+\begin_inset Formula $D^{(k)}$
+\end_inset
+
+, and hence what do the eigenfunctions look like? (Hint: should be reminiscent
+ of a Bloch wave.)
+\end_layout
+
+\begin_layout Enumerate
+You should have found only 1d irreps, which means that we don't expect degenerac
+ies 
+\emph on
+from geometric symmetry alone
+\emph default
+.
+ However, show that if you 
+\emph on
+also
+\emph default
+ apply 
+\begin_inset Quotes eld
+\end_inset
+
+time-reversal symmetry
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ (complex-conjugate the eigen-equation), you 
+\emph on
+do
+\emph default
+ predict 2-fold degeneracies.
+\end_layout
+
+\end_body
+\end_document

@@ -289,9 +289,29 @@ Discussed group-velocity dispersion: when the group velocity depends on frequenc
 
 **Further reading:** See chapter 3 of the book, section on phase and group velocity. See the footnotes in that section, e.g. Jackson, _Classical Electrodynamics_, for a derivation of group velocity from the Fourier perspective; see also my [notes on wave velocity and Fourier transforms](https://github.com/mitmath/18303/blob/fall16/fourier-dispersion.pdf) from [18.303](https://github.com/mitmath/18303/tree/fall16). A much more complete review of velocity in lossy and dispersive media can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf).  For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
 
+### Lecture 18: November 9
+
+* [spring 2020 video recording](https://mit.zoom.us/rec/share/98BZJKrBr3FOeJ3j2FrWZpwgIIbOT6a82idM8qcMy0Y7WVbLjoqMoLP3o0-j5AvB?startTime=1587049051000)
+
+New topic: **2d periodicity**
+
+Reviewed Bloch's theorem, the primitive lattice vectors, the [Bravais lattice](http://en.wikipedia.org/wiki/Bravais_lattice), the primitive reciprocal lattice vectors, and the reciprocal lattice, for 2d periodicity. Reviewed the periodicity in k-space (reciprocal space), the Brillouin zone, and the irreducible Brillouin zone.
+
+Gave the example of the square lattice, its Brillouin zone, and its irreducible Brillouin zone for structures with the same (C₄ᵥ) symmetry as the lattice.
+
+Considered the TM band diagram of the square lattice of rods (figure 1 of the handout). Furthermore, from the symmetry of the points between Γ and M or Γ and X, explained why we have degeneracies at Γ and M, zero group velocity at the Γ and X and M points except at degeneracies, and why the band extrema *usually* lie along the I.B.Z. boundaries.  Showed that Γ and M have the full symmetry of the lattice, whereas X has a reduced symmetry group, which is why we have non-accidental degeneracies at those points.
+
+Considered the TM band diagram of the square lattice of rods (figure 2 in chapter 5). Discussed the origin of the gap from the variational theorem (explaining the band-edge field patterns in figure 2), and the reason for a minimum index contrast to get a gap (the differing periodicities and hence differing gaps in different directions).
+
+Influence of boundary conditions on TE vs TM gaps, and why TE gaps prefer "hole" (connected) structures to "rod" (disconnected) structures.
+
+**Further reading:** beginning of chapter 5 of the book (2d photonic crystals), and appendix B on the reciprocal lattice and Brillouin zone. See [this paper](http://arxiv.org/abs/math-ph/0702035) for some counterexamples and further discussion regarding the occurrence of band extrema at the edges of the I.B.Z.
+
 ### Take-home Midterm: November 9, 3pm
 
-A take-home midterm exam will be posted **at 3pm** on Nov. 9, **due 24 hours later**, and will cover everything through **pset 4** and **Lecture 16**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
+A take-home midterm exam will be posted **at 3pm** on Nov. 9, **due 3pm Nov 10**, and will cover everything through **pset 4** and **Lecture 16**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
+
+* [Midterm exam](psets/midterm.pdf).
 
 Previous midterms include:
 [2006 midterm](https://math.mit.edu/~stevenj/18.369/fall05/midterm.pdf) (was way too long) and [solutions](https://math.mit.edu/~stevenj/18.325/pset5sol.pdf);
