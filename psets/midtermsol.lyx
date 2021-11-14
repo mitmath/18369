@@ -330,32 +330,6 @@ Problem 2: (12+7+7+7 points)
 \end_layout
 
 \begin_layout Enumerate
-Sketch (qualitatively) the dispersion relation 
-\begin_inset Formula $\omega(k$
-\end_inset
-
-) for the fundamental (lowest-
-\begin_inset Formula $\omega$
-\end_inset
-
-) mode, along with the light cone.
- On the same plot, sketch (in a different color) the dispersion relation
- for the fundamental mode if you 
-\emph on
-increased
-\emph default
- the 
-\emph on
-width
-\emph default
- of the waveguide (the width of the 
-\begin_inset Formula $\varepsilon_{\text{hi}}$
-\end_inset
-
- region) slightly.
-\end_layout
-
-\begin_layout Enumerate
 The sketch is shown in Fig.
 \begin_inset space ~
 \end_inset
