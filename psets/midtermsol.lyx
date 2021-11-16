@@ -100,7 +100,8 @@ Problem 1: ((6+6)+11+11 points)
 \series bold
 Note
 \series default
-: in the problem as originally posted, the passivity condition was mis-stated.
+: in the problem as originally posted, the passivity condition was mis-stated
+ (or at least, stated very confusingly).
  In a passive system, the 
 \emph on
 bound 
@@ -118,7 +119,16 @@ currents
 \emph on
 supply
 \emph default
- (expend) non-negative energy, and not receive energy.
+ (expend) non-negative energy, and not receive energy (in a closed system,
+ the rate of work done 
+\emph on
+by
+\emph default
+ the free currents equals the rate of work done 
+\emph on
+on
+\emph default
+ the bound currents, by Poynting's theorem).
  This is the opposite of the sign as originally stated, so with the problem
  as states you should have gotten the opposite of the definite-ness conditions
  below.
@@ -232,6 +242,28 @@ which implies exactly the passivity condition
 \end_inset
 
  from class.
+ (More explicitly, the operator 
+\begin_inset Formula $-\omega\operatorname{Im}(\varepsilon)$
+\end_inset
+
+ is negative semidefinite, i.e.
+ 
+\begin_inset Formula $-\langle\vec{E},\omega\operatorname{Im}(\varepsilon)\vec{E}\rangle\le0$
+\end_inset
+
+ for 
+\emph on
+all
+\emph default
+ 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+, which implies 
+\begin_inset Formula $\omega\operatorname{Im}(\varepsilon)\ge0$
+\end_inset
+
+ almost everywhere in space.)
 \end_layout
 
 \begin_layout Enumerate
