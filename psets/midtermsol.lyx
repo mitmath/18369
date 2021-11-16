@@ -939,7 +939,7 @@ also
 \end_inset
 
 , which is a partner of 
-\begin_inset Formula $D^{(-k)}$
+\begin_inset Formula $D^{(-k)}=D^{(N-k)}$
 \end_inset
 
 , since 
