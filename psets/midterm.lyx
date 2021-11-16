@@ -227,8 +227,8 @@ The scalar function
 \begin_inset Formula $\vec{J}$
 \end_inset
 
- must supply energy (do nonnegative work), and not receive energy (have
- work done on it).
+ must supply energy (do nonnegative time-averaged work), and not receive
+ energy (have work done on it).
  For 
 \begin_inset Formula $\omega>0$
 \end_inset
