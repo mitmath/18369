@@ -223,8 +223,12 @@ The scalar function
 \end_inset
 
  may be complex, corresponding to (linear) gain or loss.
- In a passive system, the current can do no net work on the field, hence
- no time-average work for time-harmonic fields.
+ In a passive system, the external current 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ must supply energy (do nonnegative work), and not receive energy (have
+ work done on it).
  For 
 \begin_inset Formula $\omega>0$
 \end_inset

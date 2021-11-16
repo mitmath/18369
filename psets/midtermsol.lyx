@@ -95,17 +95,46 @@
 Problem 1: ((6+6)+11+11 points)
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Note
+\series default
+: in the problem as originally posted, the passivity condition was mis-stated.
+ In a passive system, the 
+\emph on
+bound 
+\emph default
+currents 
+\begin_inset Formula $\partial\vec{P}/\partial t$
+\end_inset
+
+ in the material must do no net work.
+ However, the external (``free'') current 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ must 
+\emph on
+supply
+\emph default
+ (expend) non-negative energy, and not receive energy.
+ This is the opposite of the sign as originally stated, so with the problem
+ as states you should have gotten the opposite of the definite-ness conditions
+ below.
+\end_layout
+
 \begin_layout Enumerate
 To have no time-average work done 
 \emph on
-by
+on
 \emph default
  the current, we need non-negative time-average work done 
 \emph on
-on
+by
 \emph default
  the current, i.e.:
-\begin_inset Formula $\frac{1}{2}\operatorname{Re}\langle\vec{E},\vec{J}\rangle\ge0,$
+\begin_inset Formula $\boxed{\frac{1}{2}\operatorname{Re}\langle\vec{E},\vec{J}\rangle\le0},$
 \end_inset
 
 for the usual inner product 
@@ -127,7 +156,7 @@ for the usual inner product
 \end_inset
 
 Since this must be 
-\begin_inset Formula $\ge0$
+\begin_inset Formula $\le0$
 \end_inset
 
  for any possible 
@@ -144,7 +173,7 @@ Since this must be
 
  must be 
 \series bold
-positive semidefinite.
+negative semidefinite.
 \series default
 
 \begin_inset Newline newline
@@ -193,12 +222,16 @@ any
  is then simply the imaginary part: 
 \begin_inset Formula 
 \[
-\frac{\Im\hat{A}}{\omega}=\frac{\operatorname{Im}(\omega^{2}\varepsilon)}{\omega}=\omega\operatorname{Im}(\varepsilon)\ge0,
+\frac{\Im\hat{A}}{\omega}=\frac{\operatorname{Im}(-\omega^{2}\varepsilon)}{\omega}=-\omega\operatorname{Im}(\varepsilon)\le0,
 \]
 
 \end_inset
 
-which is exactly the passivity condition from class.
+which implies exactly the passivity condition 
+\begin_inset Formula $\boxed{\omega\operatorname{Im}(\varepsilon)\ge0}$
+\end_inset
+
+ from class.
 \end_layout
 
 \begin_layout Enumerate
@@ -235,6 +268,23 @@ where we got a sign flip because we had
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(As shown above, 
+\begin_inset Formula $\Im\hat{A}$
+\end_inset
+
+ for the Maxwell case is actually negative semidefinite, in which case we
+ obtain that 
+\begin_inset Formula $\Im(\hat{A}^{-1})$
+\end_inset
+
+, related to the Green's function of the problem, is positive semidefinite.)
 \begin_inset Newline newline
 \end_inset
 
