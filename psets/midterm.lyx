@@ -243,6 +243,24 @@ The scalar function
 \end_inset
 
  identical to the one from class.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Note: 
+\series default
+the original posted version of this problem stated the wrong sign for the
+ work done on 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+; students received full marks if they applied this condition literally
+ and flipped the sign of the resulting definiteness.
 \end_layout
 
 \begin_layout Enumerate
