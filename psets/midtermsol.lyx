@@ -1001,12 +1001,19 @@ also
 \end_inset
 
  is a distinct irrep, which is true for 
-\begin_inset Formula $0<k<N$
+\begin_inset Formula $k\ne0$
 \end_inset
 
- (i.e.
- 
-\begin_inset Formula $k\ne0\mod N$
+ and, if 
+\begin_inset Formula $N$
+\end_inset
+
+ is even, 
+\begin_inset Formula $k\ne N/2$
+\end_inset
+
+ (since 
+\begin_inset Formula $N/2=N-N/2$
 \end_inset
 
 ).
@@ -1016,15 +1023,66 @@ So any
 \begin_inset Formula $k\ne0$
 \end_inset
 
- (
-\begin_inset Formula $\mod N$
+ 
+\series default
+or 
+\begin_inset Formula $N/2$
 \end_inset
 
-) eigenfunction 
+ (for even 
+\begin_inset Formula $N$
+\end_inset
+
+) 
+\series bold
+eigenfunction 
 \emph on
 must
 \emph default
  be doubly degenerate!
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+Note that, for even 
+\begin_inset Formula $N$
+\end_inset
+
+, 
+\begin_inset Formula $D^{(N/2)}=e^{-\pi in}=(-1)^{n}$
+\end_inset
+
+.
+ In consequence, for both 
+\begin_inset Formula $k=0$
+\end_inset
+
+ and 
+\begin_inset Formula $k=N/2$
+\end_inset
+
+ (for even 
+\begin_inset Formula $N$
+\end_inset
+
+), the 
+\begin_inset Quotes eld
+\end_inset
+
+Bloch wave
+\begin_inset Quotes erd
+\end_inset
+
+ eigenfunction 
+\begin_inset Formula $\vec{H}(\vec{x})$
+\end_inset
+
+ can be chosen purely real.
 \end_layout
 
 \end_body
