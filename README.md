@@ -338,3 +338,11 @@ Point-defect states in the square lattice of rods. Either decreasing the radius 
 Discussed waveguides and projected band diagrams formed by line defects and surfaces in 2d photonic crystals and gaps.
 
 **Further reading:** Chapter 5 of the textbook.   A more precise analysis of defect "pushing up" or "pulling down" solutions in the gap can be obtained by the min–max theorem, similar to what we did for dielectric waveguides but with a shifted and squared operator, as discussed by [Parzygnat et al. (2010)](http://doi.org/10.1103/PhysRevB.81.155324).
+
+### Lecture 20: November 18
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+
+Discussed PML absorbing layers, began discussing principal of equivalence.
+
+**Further reading** [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book. [Notes on coordinate transforms in electromagnetism](notes/coordinate-transform.pdf); see also [slides on transformation optics](notes/transformation-slides.pdf).   See also the [Meep PML](https://meep.readthedocs.io/en/latest/Perfectly_Matched_Layer/) manual for some examples, caveats, and rules of thumb.   See the review article [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366), section 4.2, on equivalent currents.
