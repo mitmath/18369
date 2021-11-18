@@ -1,0 +1,265 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 5
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Group Velocity and Material Dispersion
+\end_layout
+
+\begin_layout Standard
+In class, we showed (following the book) that the group velocity 
+\begin_inset Formula $d(\omega^{2})/dk=\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle/\langle H_{k},H_{k}\rangle$
+\end_inset
+
+ was equal to Poynting flux divided by energy density (both averaged over
+ the unit cell).
+\end_layout
+
+\begin_layout Standard
+Now, go through a similar Hellman–Feynman derivation, but in this case assume
+ that we have a lossless 
+\emph on
+dispersive
+\emph default
+ material with a real 
+\begin_inset Formula $\varepsilon(\vec{x},\omega)$
+\end_inset
+
+.
+ In this case, when you take the 
+\begin_inset Formula $k$
+\end_inset
+
+ derivative, apply the chain rule to obtain a term with 
+\begin_inset Formula $\frac{\partial\varepsilon}{\partial\omega}\frac{d\omega}{dk}$
+\end_inset
+
+ on the right-hand side.
+ Solve for 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+ and show that it is Poynting flux divided by energy density, but the energy
+ density is now the 
+\begin_inset Quotes eld
+\end_inset
+
+Brillouin
+\begin_inset Quotes erd
+\end_inset
+
+ energy density of a lossless dispersive medium, which we gave in the notes
+ on time evolution and energy conservation: 
+\begin_inset Formula 
+\[
+\frac{1}{4}\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+|\vec{H}|^{2}\right]
+\]
+
+\end_inset
+
+(for 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+, where we have an additional 
+\begin_inset Formula $1/2$
+\end_inset
+
+ factor from the time average).
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: Transmission spectra
+\end_layout
+
+\begin_layout Standard
+Based on the sample code in the Jupyter notebook, compute the TM transmission
+ spectrum for planewaves incident upon 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+ layers of the square lattice of rods
+\end_layout
+
+\begin_layout Enumerate
+Compute the transmission spectrum for frequencies from 
+\begin_inset Formula $0.2c/a$
+\end_inset
+
+ to 
+\begin_inset Formula $0.8c/a$
+\end_inset
+
+ as a function of 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+, for 
+\begin_inset Formula $N_{x}=1,2,3,5,6$
+\end_inset
+
+, and plot them (on a single plot).
+ The transmission spectrum should be normalized by dividing by the transmission
+ for 
+\begin_inset Formula $N_{x}=0$
+\end_inset
+
+ (no holes).
+ Relate the features of this transmission spectrum to the band diagram in
+ the sample code.
+\end_layout
+
+\begin_layout Enumerate
+Predict analytically at what frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ you should start to see additional diffracted orders in the reflected wave
+ (i.e.
+ reflected waves at angles in 
+\emph on
+addition
+\emph default
+ to the normal 
+\begin_inset Formula $0^{\circ}$
+\end_inset
+
+ reflection).
+ Now, modify the simulation to use a TM 
+\emph on
+continuous-wave
+\emph default
+ (CW) source and output 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ at the end and show that there is a qualitative change in the reflected
+ field pattern if you put in a frequency 
+\emph on
+just
+\emph default
+ below 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ versus a frequency 
+\emph on
+just
+\emph default
+ above 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+.
+ If you look 
+\emph on
+just
+\emph default
+ below 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+, then you will have to increase the 
+\begin_inset Quotes eld
+\end_inset
+
+pad
+\begin_inset Quotes erd
+\end_inset
+
+ parameter in order to see an undisturbed 
+\begin_inset Formula $0^{\circ}$
+\end_inset
+
+ reflection pattern far from the crystal—why?
+\end_layout
+
+\end_body
+\end_document

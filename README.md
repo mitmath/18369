@@ -325,7 +325,7 @@ Previous midterms include:
 
 ### Lecture 19: November 16
 
-* pset 5: coming soon
+* [pset 5](psets/pset5.pdf) and [sample notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset5.ipynb) (due Tuesday Nov 23)
 * [slides on 2d gaps](notes/2d-gaps.pdf)
 * [spring 2020 video recording](https://mit.zoom.us/rec/share/78BxF6_oqXFJBYntskDmBKo6RLrpX6a80CEZ-fRZmErqSCwaxeRcB3BA9RtW_dcP?startTime=1587481134000)
 
