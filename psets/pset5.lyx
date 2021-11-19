@@ -95,10 +95,14 @@ Problem 1: Group Velocity and Material Dispersion
 
 \begin_layout Standard
 In class, we showed (following the book) that the group velocity 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+, computed via 
 \begin_inset Formula $d(\omega^{2})/dk=\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle/\langle H_{k},H_{k}\rangle$
 \end_inset
 
- was equal to Poynting flux divided by energy density (both averaged over
+, was equal to Poynting flux divided by energy density (both averaged over
  the unit cell).
 \end_layout
 
