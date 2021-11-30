@@ -346,3 +346,28 @@ Discussed waveguides and projected band diagrams formed by line defects and surf
 Discussed PML absorbing layers, began discussing principal of equivalence.
 
 **Further reading** [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book. [Notes on coordinate transforms in electromagnetism](notes/coordinate-transform.pdf); see also [slides on transformation optics](notes/transformation-slides.pdf).   See also the [Meep PML](https://meep.readthedocs.io/en/latest/Perfectly_Matched_Layer/) manual for some examples, caveats, and rules of thumb.   See the review article [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366), section 4.2, on equivalent currents.
+
+### Lecture 21: November 23
+
+* [spring 2020 video recording](https://mit.zoom.us/rec/share/-vdedLjfrXlJU6_08EbiBv8wLKTJX6a82idM-6EIxU3-XZef5VsEVM6EANjvs1RE)
+
+Went over the Principle and Equivalence, mode sources, and integral-equation methods; see slides from lecture 19.
+
+**Further reading:** See the review article[Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366).  See also [SCUFF-EM](https://github.com/HomerReid/scuff-em), Homer Reid's free BEM code for electromagnetic scattering problems. See also this [SCUFF video tutorial](https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a7449e51-2fe1-4d95-a53a-a9050106c542) (June 2018).
+
+### Lecture 22: November 30
+
+An approach that lets us talk about the "local" spectrum of finite periodic structures, open resonators, and other lossy cases, is the **local density of states**. Showed that the LDOS is also proportional to the power radiated by a dipole source at a given position and frequency: this latter definition has the advantage of being much easier to generalize, and easier to connect to other physical processes like spontaneous emission or antennas.
+
+Discussed the "principle of limiting absorption:" the "right" way to define a "lossless" system is to add a little bit of loss everywhere and take the limit as this loss goes to zero from above (Im ωε = 0+). This allows us to rigorously deal with poles on the real-ω axis, and also automatically gives us outgoing ("radiation" or "Sommerfield") boundary conditions. It also allows us to correctly derive the LDOS connection to the power.
+
+* [TCMT slides](notes/TCMT.pdf)
+* [spring 2020 video recording](https://mit.zoom.us/rec/share/5uV2CpPex3JIQ9Lc1kPlAJIrJ7S9eaa81HRM-_Zbn0vht5F5FK82-e418c7mTh5y?startTime=1588690733000)
+
+New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical device, a waveguide-cavity-waveguide filter, and began to derive how the universal behavior of device in this class can be derived from very general principles such as conservation of energy, parameterized only by the (geometry-dependent) frequency and lifetime of the cavity mode. Began with a high-level overview (see slides), with derivations to come next time.
+
+Furthermore defined the **quality factor** Q of the cavity, which is simply a dimensionless lifetime Q=ω₀τ/2.
+
+Followed chapter 10 in the book to derive TCMT in a couple of simple cases, and then summarized results in other cases, including nonlinear bistability.
+
+**Further reading:**  See section 4.4 (LDOS) of [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366) and references therein for more information on DOS and LDOS. For the limiting absorption principle, see e.g. [Schulenberger and Wilcox (1971).](http://texas.math.ttu.edu/~gilliam/jrschul_home/schul_3.pdf).  See the slides for references on the specific optimization algorithms described therein.
