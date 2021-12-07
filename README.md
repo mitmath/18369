@@ -349,6 +349,7 @@ Discussed PML absorbing layers, began discussing principal of equivalence.
 
 ### Lecture 21: November 23
 
+* [pset 5 solutions](psets/pset5sol.pdf) and [computational notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/psets/pset5sol.ipynb)
 * [spring 2020 video recording](https://mit.zoom.us/rec/share/-vdedLjfrXlJU6_08EbiBv8wLKTJX6a82idM-6EIxU3-XZef5VsEVM6EANjvs1RE)
 
 Went over the Principle and Equivalence, mode sources, and integral-equation methods; see slides from lecture 19.
@@ -381,6 +382,6 @@ New topic **periodic dielectric waveguides** and **photonic-crystal slabs** (cha
 
 Partial confinement of light by defects, and intrinsic radiation losses due to coupling to light-line mode. Tradeoff between localization and loss (due to Fourier components inside the light cone). Discussed two mechanisms for large radiation Q despite the incomplete gap: delocalization and cancellation.
 
-New topic: photonic-crystal fibers. Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals). Emphasized the importance of the band gap lying above the light line of air.
+New topic: photonic-crystal fibers. Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals).
 
-**Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.  A nice way to understand holey fibers is the β⟶0 limit, which turns out to give a *scalar* wave equation as described in chapter 9 of the book. For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).
+**Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.  A nice way to understand holey fibers is the β⟶0 limit, which turns out to give a *scalar* wave equation as described in chapter 9 of the book. For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).   I also mentioned "transformation optics", by which Maxwell's equations in arbitrary curvilinear coordinates can be written as "Cartesian" Maxwell equations with transformed materials: see [these notes](https://math.mit.edu/~stevenj/18.369/coordinate-transform.pdf).
