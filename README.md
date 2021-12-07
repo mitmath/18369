@@ -368,6 +368,19 @@ New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical dev
 
 Furthermore defined the **quality factor** Q of the cavity, which is simply a dimensionless lifetime Q=ω₀τ/2.
 
-Followed chapter 10 in the book to derive TCMT in a couple of simple cases, and then summarized results in other cases, including nonlinear bistability.
+Followed chapter 10 in the book to derive TCMT in a couple of simple cases.
 
 **Further reading:**  See section 4.4 (LDOS) of [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366) and references therein for more information on DOS and LDOS. For the limiting absorption principle, see e.g. [Schulenberger and Wilcox (1971).](http://texas.math.ttu.edu/~gilliam/jrschul_home/schul_3.pdf).  See the slides for references on the specific optimization algorithms described therein.
+
+### Lecture 23: December 7
+
+* [tutorial slides](https://www.dropbox.com/s/69jmybp912xcshs/spie-course-latest.pptx?dl=0)
+* [spring 2020 video recording](https://mit.zoom.us/rec/share/5MwlP-_zz19JGInjuXD-WZw-BbXoeaa8hCUe8_ULyBvUJOexq5Z3LsvXAynNns4H?startTime=1588863488000)
+
+New topic **periodic dielectric waveguides** and **photonic-crystal slabs** (chapters 7-8).  Starting on page 142 of the tutorial slides.
+
+Partial confinement of light by defects, and intrinsic radiation losses due to coupling to light-line mode. Tradeoff between localization and loss (due to Fourier components inside the light cone). Discussed two mechanisms for large radiation Q despite the incomplete gap: delocalization and cancellation.
+
+New topic: photonic-crystal fibers. Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals). Emphasized the importance of the band gap lying above the light line of air.
+
+**Further reading:** Shapters 7–9 of the book, tutorial slides starting on page 142.  A nice way to understand holey fibers is the β⟶0 limit, which turns out to give a *scalar* wave equation as described in chapter 9 of the book. For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).
