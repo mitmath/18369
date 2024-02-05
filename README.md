@@ -24,7 +24,7 @@ posted online.   You can also refer to older [handwritten notes from spring 2020
 
 * Psets will be submitted electronically on [the 18.369 Canvas page](https://canvas.mit.edu/courses/24364).  Submit a good-quality PDF *scan* of any handwritten solutions (and/or a PDF printout of computer output).
 
-**Collaboration policy**: Talk to anyone you want to and read anything you want to, with three exceptions: First, you **may not refer to homework solutions from the previous terms** in which I taught 18.369. Second, make a solid effort to solve a problem on your own before discussing it with classmates or googling. Third, no matter whom you talk to or what you read, write up the solution on your own, without having their answer in front of you.
+**Collaboration policy**: Talk to anyone you want to and read anything you want to, with three exceptions: First, you **may not refer to homework solutions from the previous terms** in which I taught 18.369. Second, make a solid effort to solve a problem on your own before discussing it with classmates or googling. Third, no matter whom you talk to or what you read, write up the solution on your own, without having their answer in front of you.  (You can use [psetpartners.mit.edu](https://psetpartners.mit.edu) to find problem-set partners.)
 
 **Piazza forum**: you are encouraged to use the [online Piazza forum](https://piazza.com/mit/spring2024/183698315) to ask questions about the material and assignments.
 
