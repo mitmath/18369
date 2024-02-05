@@ -45,6 +45,7 @@ Lecture Summaries and Handouts
 
 * syllabus (this web page)
 * [introductory slides](notes/18.369-intro.pdf)
+* [handwritten notes](https://www.dropbox.com/scl/fi/gd7m09iut5wldwkw3aznh/Maxwell-Linear-Algebra.pdf?rlkey=23v5luxtwjexn59md5h52mug6&dl=0)
 * pset 1 (coming soon)
 
 Motivation and introduction: this class is about electromagnetism where the wavelength is neither very large (quasi-static) nor very small (ray optics), and the analytical and computational methods we can use to understand phenomena in materials that are structured on the wavelength scale. In that situation, there are very few cases that can be solved analytically, but lots of interesting phenomena that we can derive from the _structure_ of the equations.
