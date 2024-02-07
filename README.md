@@ -13,7 +13,7 @@ Syllabus
 >
 > For beginning graduate students and advanced undergraduates.
 
-**Lectures**: Mon/Wed/Fri 2pm (2-131). **Office Hours:** TBA. TA/grader: TBA.
+**Lectures**: Mon/Wed/Fri 2pm (2-131). **Office Hours:** Tuesdays 4-5pm [via Zoom (MIT only)](https://mit.zoom.us/j/92619576744?pwd=SjVuMHVSVjBtdDc5RW9HL1pKNHVQZz09). TA/grader: TBA.
 
 **Handwritten notes:** Handwritten notes from each lecture will be
 posted online.   You can also refer to older [handwritten notes from spring 2020](https://www.dropbox.com/s/1c3l54mf3rh8qw3/18.369%20spring%202020.pdf?dl=0) and the [notes from fall 2021](https://www.dropbox.com/s/rar1m39caqext1d/18.369%20Fall%202021.pdf?dl=0).
