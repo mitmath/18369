@@ -1,0 +1,749 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 1
+\end_layout
+
+\begin_layout Standard
+Due Wednesday, 14 February 2024.
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Adjoints and operators
+\end_layout
+
+\begin_layout Enumerate
+We defined the adjoint 
+\begin_inset Formula $\dagger$
+\end_inset
+
+ of operators 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ by: 
+\begin_inset Formula $\langle H_{1},\hat{O}H_{2}\rangle=\langle\hat{O}^{\dagger}H_{1},H_{2}\rangle$
+\end_inset
+
+ for all 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{2}$
+\end_inset
+
+ in the vector space.
+ Show that for a 
+\emph on
+finite-dimensional
+\emph default
+ Hilbert space, where 
+\begin_inset Formula $H$
+\end_inset
+
+ is a column vector 
+\begin_inset Formula $h_{n}$
+\end_inset
+
+ (
+\begin_inset Formula $n=1,\cdots,d$
+\end_inset
+
+), 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ is a square 
+\begin_inset Formula $d\times d$
+\end_inset
+
+ matrix, and 
+\begin_inset Formula $\langle H^{(1)},H^{(2)}\rangle$
+\end_inset
+
+ is the ordinary conjugated dot product 
+\begin_inset Formula $\sum_{n}h_{n}^{(1)*}h_{n}^{(2)}$
+\end_inset
+
+, the above adjoint definition corresponds to the conjugate-transpose for
+ matrices.
+ (Thus, as claimed in class, 
+\begin_inset Quotes eld
+\end_inset
+
+swapping rows and columns
+\begin_inset Quotes erd
+\end_inset
+
+ is the 
+\emph on
+consequence
+\emph default
+ of the 
+\begin_inset Quotes eld
+\end_inset
+
+real
+\begin_inset Quotes erd
+\end_inset
+
+ definition of transposition/adjoints, not the source.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Note: 
+\series default
+In the 
+\series bold
+subsequent
+\series default
+ parts of this problem, you may 
+\emph on
+not
+\emph default
+ assume that 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ is finite-dimensional (nor may you assume any specific formula for the
+ inner product).
+ Use only the abstract definitions of adjoint and linear operators on Hilbert
+ spaces, along with the key properties of inner products: 
+\begin_inset Formula $\langle u,v\rangle=\langle v,u\rangle^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $\langle u,\alpha v+\beta w\rangle=\alpha\langle u,v\rangle+\beta\langle u,w\rangle$
+\end_inset
+
+ (for arbitrary complex scalars 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+), and 
+\begin_inset Formula $\Vert u\Vert^{2}=\langle u,u\rangle\geq0$
+\end_inset
+
+ (
+\begin_inset Formula $=0$
+\end_inset
+
+ if and only if
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Technically, we mean 
+\begin_inset Formula $u=0$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+almost everywhere
+\begin_inset Quotes erd
+\end_inset
+
+ (e.g.
+ excluding isolated points).
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $u=0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+If a linear operator 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $\hat{O}^{\dagger}=\hat{O}^{-1}$
+\end_inset
+
+, then the operator is called 
+\series bold
+unitary
+\series default
+.
+ Show that a unitary operator preserves inner products (that is, if we apply
+ 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ to every element of a Hilbert space, then their inner products with one
+ another are unchanged).
+ Show that the eigenvalues 
+\begin_inset Formula $u$
+\end_inset
+
+ of a unitary operator have unit magnitude (
+\begin_inset Formula $|u|=1$
+\end_inset
+
+) and that its eigenvectors can be chosen to be orthogonal to one another.
+\end_layout
+
+\begin_layout Enumerate
+For a non-singular operator 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $\hat{O}^{-1}$
+\end_inset
+
+ exists), show that 
+\begin_inset Formula $(\hat{O}^{-1})^{\dagger}=(\hat{O}^{\dagger})^{-1}$
+\end_inset
+
+.
+ (Thus, if 
+\begin_inset Formula $\hat{O}$
+\end_inset
+
+ is Hermitian then 
+\begin_inset Formula $\hat{O}^{-1}$
+\end_inset
+
+ is also Hermitian.) 
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Newpage newpage
+\end_inset
+
+Problem 2: Maxwell eigenproblems
+\end_layout
+
+\begin_layout Enumerate
+As in class, assume 
+\begin_inset Formula $\varepsilon(\vec{x})$
+\end_inset
+
+ real and positive (and that all function spaces are chosen so that the
+ integrals you need exist etc.).
+ In class, we eliminated 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ from Maxwell's equations to get an eigenproblem in 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ alone, of the form 
+\begin_inset Formula $\hat{\Theta}\vec{H}(\vec{x})=\frac{\omega^{2}}{c^{2}}\vec{H}(\vec{x})$
+\end_inset
+
+.
+ Show that if you instead eliminate 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+, you 
+\emph on
+cannot
+\emph default
+ get a Hermitian eigenproblem in 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ for the usual inner product 
+\begin_inset Formula $\langle\vec{E}_{1},\vec{E}_{2}\rangle=\int\vec{E}_{1}^{*}\cdot\vec{E}_{2}$
+\end_inset
+
+ except for the trivial case 
+\begin_inset Formula $\varepsilon=\textrm{constant}$
+\end_inset
+
+.
+ Instead, show that you get a 
+\emph on
+generalized Hermitian eigenproblem
+\emph default
+: an equation of the form 
+\begin_inset Formula $\hat{A}\vec{E}(\vec{x})=\frac{\omega^{2}}{c^{2}}\hat{B}\vec{E}(\vec{x})$
+\end_inset
+
+, where 
+\emph on
+both
+\emph default
+ 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ are Hermitian operators.
+ 
+\end_layout
+
+\begin_layout Enumerate
+For 
+\emph on
+any
+\emph default
+ generalized Hermitian eigenproblem where 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ is positive definite (i.e.
+ 
+\begin_inset Formula $\langle\vec{E},\hat{B}\vec{E}\rangle>0$
+\end_inset
+
+ for all 
+\begin_inset Formula $\vec{E}(\vec{x})\neq0$
+\end_inset
+
+), show that the eigenvalues (i.e., the solutions of 
+\begin_inset Formula $\hat{A}\vec{E}=\lambda\hat{B}\vec{E}$
+\end_inset
+
+) are real and that different eigenfunctions 
+\begin_inset Formula $\vec{E}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{E}_{2}$
+\end_inset
+
+ satisfy a modified kind of orthogonality.
+ Show that 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ for the 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ eigenproblem above was indeed positive definite.
+\end_layout
+
+\begin_layout Enumerate
+Alternatively, show that 
+\begin_inset Formula $\hat{B}^{-1}\hat{A}$
+\end_inset
+
+ is Hermitian under a modified inner product 
+\begin_inset Formula $\langle\vec{E},\vec{E}'\rangle_{B}=\langle\vec{E},\hat{B}\vec{E}'\rangle$
+\end_inset
+
+ for Hermitian 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ and positive-definite 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ with respect to the original 
+\begin_inset Formula $\langle\vec{E},\vec{E}'\rangle$
+\end_inset
+
+ inner product; the results from the previous part then follow.
+\end_layout
+
+\begin_layout Enumerate
+Show that 
+\emph on
+both
+\emph default
+ the 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ formulations lead to generalized Hermitian eigenproblems (or.
+ equivalently, Hermitian with a modified inner product) with real 
+\begin_inset Formula $\omega$
+\end_inset
+
+ if we allow magnetic materials 
+\begin_inset Formula $\mu(\vec{x})\neq1$
+\end_inset
+
+ (but require 
+\begin_inset Formula $\mu$
+\end_inset
+
+ real, positive, and independent of 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ or 
+\begin_inset Formula $\omega$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ are only ordinary numbers for 
+\emph on
+isotropic
+\emph default
+ media.
+ More generally, they are 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrices (technically, rank 2 tensors)—thus, in an 
+\emph on
+anisotropic medium,
+\emph default
+ by putting an applied field in one direction, you can get dipole moment
+ in different direction in the material.
+ What conditions on these 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrices still give a generalized Hermitian eigenproblem in 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ (or 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+) with real eigen-frequencies 
+\begin_inset Formula $\omega$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: Linear responses and symmetry
+\end_layout
+
+\begin_layout Standard
+Suppose that we introduce a nonzero current 
+\begin_inset Formula $\vec{J}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ into Maxwell's equations at a given frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ for linear time-invariant materials described (at that 
+\begin_inset Formula $\omega$
+\end_inset
+
+) by some scalar 
+\begin_inset Formula $\varepsilon(\vec{x)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu(\vec{x})=1$
+\end_inset
+
+ , and we want to find the resulting time-harmonic electric field 
+\begin_inset Formula $\vec{E}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Show that this results in a linear equation of the form 
+\begin_inset Formula $\hat{A}\vec{E}=\vec{b}(\vec{x})$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ is some linear operator and 
+\begin_inset Formula $\vec{b}$
+\end_inset
+
+ is some known right-hand side proportional to the current density 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Suppose that we have a symmetry 
+\begin_inset Formula $g$
+\end_inset
+
+ of the problem (e.g.
+ a mirror flip), so that 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ (the corresponding operation on 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+, and preserves the boundary conditions (i.e.
+\begin_inset space ~
+\end_inset
+
+if 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ satisfies the boundary conditions, then 
+\begin_inset Formula $\hat{g}\vec{E}$
+\end_inset
+
+ does too).
+ Show that if 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is an eigenfunction of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ with some eigenvalue 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, then the solution 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is also an eigenfunction of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ with the same eigenvalue.
+ (e.g.
+ if 
+\begin_inset Formula $g$
+\end_inset
+
+ is a mirror symmetry, then an anti-symmetric current 
+\begin_inset Formula $\hat{g}\vec{J}=-\vec{J}$
+\end_inset
+
+ produces an anti-symmetric field).
+\end_layout
+
+\begin_layout Enumerate
+Look up a picture online of the magnetic field 
+\begin_inset Formula $\vec{B}=\vec{H}$
+\end_inset
+
+ (for 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+) of a current loop, e.g.
+ 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://en.m.wikipedia.org/wiki/File:Magnetic_field_due_to_current.svg
+\end_layout
+
+\end_inset
+
+ is a nice image on Wikipedia.
+ (Technically, this image is probably for a magneto-static current loop
+ 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+, but you'll get a very similar image for a sufficiently small 
+\begin_inset Formula $\omega$
+\end_inset
+
+, so that the wavelength 
+\begin_inset Formula $2\pi c/\omega$
+\end_inset
+
+ is much larger than the diameter of the current loop.) If the current loop
+ lies in the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane, then this has mirror symmetry in 
+\begin_inset Formula $z$
+\end_inset
+
+, i.e.
+ if 
+\begin_inset Formula $g=\sigma_{z}$
+\end_inset
+
+ is the 
+\begin_inset Formula $z\to-z$
+\end_inset
+
+ mirror-flip operator, then 
+\begin_inset Formula $\hat{\sigma_{z}}\vec{J}=\vec{J}$
+\end_inset
+
+.
+ But from the picture, it may not look like the magnetic field has mirror
+ symmetry.
+ Does this contradict your result in the previous part? Explain.
+ (Hint: how are 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ related?)
+\end_layout
+
+\begin_layout Enumerate
+Formally, 
+\begin_inset Formula $\vec{E}=\hat{A}^{-1}\vec{b}$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{A}^{-1}$
+\end_inset
+
+ is related to the 
+\emph on
+Green's function
+\emph default
+ of the system.
+ What happens if 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is one of the eigenfrequencies of our 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ operator? (No rigorous solution required, just a few words about what you
+ expect to happen physically in such a case; you can suppose for simplicity
+ that you have a problem in a finite domain with impenetrable walls, e.g.
+ PEC boundary conditions.)
+\end_layout
+
+\end_body
+\end_document
