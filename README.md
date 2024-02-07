@@ -54,3 +54,15 @@ We start by setting up the source-free Maxwell equations as a linear eigenproble
 
 **Further reading:** See chapter 2 of the _Photonic Crystals_ textbook for Maxwell's equations as an eigenproblem etc. For a more sophisticated treatment of Hilbert spaces, adjoints, and other topics in functional analysis, a good text is _Basic Classes of Linear Operators_ by Gohberg et al. The basics of electromagnetism in macroscopic media (ε and μ) are covered in any non-freshman electromagnetism textbook, e.g. _Classical Electrodynamics_ by Jackson or _Introduction to Electromagnetism_ by Griffiths.   See also
 these [notes on function spaces and Hermitian operators](http://web.mit.edu/18.06/www/Fall07/operators.pdf) from 18.06 (Johnson).
+
+### Lecture 2: 7 Feb 2024
+
+* handwritten notes - link from lecture 1
+
+Discussed the meaning of adjoints $\hat{O}^\dagger$ of linear operators $\hat{O}$ — given vector spaces with inner products ⟨u,v⟩, then the adjoint is whatever makes $\langle u, \hat{O}v\rangle = \langle \hat{O}^\dagger u, v\rangle$.  A Hermitian operator is one for which $\hat{O} = \hat{O}^\dagger$.  Reviewed the proof that Hermitian operators have real eigenvalues and orthogonal eigenvectors.
+
+Gave the example of functions u(x) on [0,L] with u(0)=u(L)=0, and the operator $\hat{O} = \frac{d^2}{dx^2}$.  Showed that this operator is Hermitian.  (In fact, it is also negative definite.)  In this case we can explicitly write down the eigenfunctions $u\_n(x) = \sin(n\pi x/L)$ for n=1,2,… and we see that they are orthogonal (Fourier sine series basis functions) with eigenvalues $\lambda_n = -(n\pi/L)^2$ that are real (and negative).
+
+Showed that the Maxwell eigen-operator ∇×ε⁻¹∇× is Hermitian for real ε (by showing that ∇× is Hermitian). The Maxwell operator is also positive semidefinite for ε>0, and it follows that the eigenfrequencies are real.
+
+**Further reading:** Same as lecture 1.
