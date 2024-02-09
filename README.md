@@ -66,3 +66,31 @@ Gave the example of functions u(x) on [0,L] with u(0)=u(L)=0, and the operator $
 Showed that the Maxwell eigen-operator ∇×ε⁻¹∇× is Hermitian for real ε (by showing that ∇× is Hermitian). The Maxwell operator is also positive semidefinite for ε>0, and it follows that the eigenfrequencies are real.
 
 **Further reading:** Same as lecture 1.
+
+### Lecture 3: 9 Feb 2024
+
+* handwritten notes - link from lecture 1
+* handwritten notes - [symmetry](https://www.dropbox.com/scl/fi/e46tis1z50oicb1p4w7ot/Maxwell-and-Symmetry.pdf?rlkey=b3hug426lqdxyoua3mlhbmgrp&dl=0)
+
+Constructed simple one-dimensional example of fields in metallic cavity, and showed that consequences match predictions from linear algebra.
+
+Began discussing the effect of symmetry on the solutions.  In particular, symmetry operations g that describe rotations/reflections and/or translations of
+the coordinates, and the corresponding operation $\hat{g}$ on our space(s) of functions/fields.  (Later on, g will be an element of a *symmetry group G* of a problem.)   If a physical system is described by a linear operator
+$\hat{O}$ (maybe combined with some boundary conditions), then we say that this problem/operator "has" a symmetry g if $\hat{g}$ **commutes** with $\hat{O}$ (and preserves any boundary conditions).  This
+begins to turn symmetry into a problem of *algebra* so that we can analyze its consequences on the physical solutions.
+
+Ultimately, the tool that we will use to describe the effect of symmetry is *group representation theory*, and we will find lots of consequences, from
+conservation laws to selection rules.  For now, however, we will begin more simply, with eigenproblems, and showed the simplest possible consequence:
+if g is a symmetry of the eigenproblem, then we can find **simultaneous eigenfunctions** of both $\hat{O}$ and $\hat{g}$.
+
+Started with the simplest example of a mirror symmetry, conventionally denoted by g=σ.  In this case, the eigenfunctions of $\hat{\sigma}$ correspond to
+[even and odd functions](https://en.wikipedia.org/wiki/Even_and_odd_functions) — the eigenfunctions of our symmetric $\hat{O}$ can be chosen to be
+symmetric or anti-symmetric!
+
+Next, considered *continuous translational symmetry*.  In this case, we have *many* symmetry operations corresponding to translation by any d ∈ ℝ in some direction,
+but all of these symmetry operations *commute*.  In fact, $\widehat{d_1} \widehat{d_2} = \widehat{d_1+d_2} = \widehat{d_2 + d_1}$.   Showed that the corresponding
+eigenvalues of $\hat{d}$ are *exponentials* $\exp(-ikd}$ for some number k (which must be real if we want to exclude exponentially growing/decaying solutions).
+Corresponding eigenfunctions u(x,y,z) are of the form $u(x,y,z) = u_k(x,y) e^{ikz}$, if we are talking about translational symmetry in z.   This has far-reaching
+consequences for wave propagation (and for mathematics — the relationship to symmetry is why Fourier transforms are so important).
+
+**Further reading:** Chapter 3 of the textbook.   See the Wikipedia article on [characterizations of the exponential function](https://en.wikipedia.org/wiki/Characterizations_of_the_exponential_function), property 5, for why the property α(x+y)=α(x)α(y) can only be satisfied by exp(κx) for nonzero, anywhere-continuous functions.  Proving the existence of an everywhere-discontinuous counterexample [requires the axiom of choice](https://math.mit.edu/~stevenj/exponential.pdf) and is not constructive.
