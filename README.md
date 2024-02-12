@@ -94,3 +94,23 @@ Corresponding eigenfunctions u(x,y,z) are of the form $u(x,y,z) = u_k(x,y) e^{ik
 consequences for wave propagation (and for mathematics — the relationship to symmetry is why Fourier transforms are so important).
 
 **Further reading:** Chapter 3 of the textbook.   See the Wikipedia article on [characterizations of the exponential function](https://en.wikipedia.org/wiki/Characterizations_of_the_exponential_function), property 5, for why the property α(x+y)=α(x)α(y) can only be satisfied by exp(κx) for nonzero, anywhere-continuous functions.  Proving the existence of an everywhere-discontinuous counterexample [requires the axiom of choice](https://math.mit.edu/~stevenj/exponential.pdf) and is not constructive.
+
+### Lecture 4: 12 Feb 2024
+
+* [handwritten notes](https://www.dropbox.com/scl/fi/cy8p9l10e6n73rpjmchd8/Maxwell-Translational-Symmetry.pdf?rlkey=ted0itfztk5amz3vo4t4ggo74&dl=0)
+
+Briefly reviewed material from last time — why translational symmetry in z means that we can find eigenfunctions of a translation-symmetric operator $\hat{O}$ of the form $u(x,y,z) = u_k(x,y) e^{ikz}$.
+
+In a homogeneous medium (constant ε), symmetry implies **planewave** solutions $H_k e^{ik\cdot x -i\omega t}$, and plugging this into Maxwell's equations shows that where $H_k$ is a constant vector ⟂ k ("transverse waves"), and $\omega = \pm c|k|/\sqrt{\varepsilon}$.
+
+Another important application of translational symmetry that we will spend a lot of time on are **waveguides**, which have translational symmetry in some direction z, but have an inhomogeneous structure in xy that *localizes (some) waves* in these transverse directions.
+
+Introduced the "reduced" eigen-operator Θ̂ₖ=exp(-ikx)Θ̂exp(ikx) for the eigen-solutions with a particular wavevector **k**. This is also Hermitian positive semi-definite, its solutions ω(k) yield the dispersion relation (or _band structure_) of the problem.
+
+By conjugating the eigenequation, for **real ε**, showed that ω(**k**)=ω(−**k**) in general, even for structures without mirror symmetry.  This is sometimes described as an effect of "reciprocity" or "time-reversal symmetry". Alternatively, briefly mentioned magneto-optic materials (complex-Hermitian ε, neglecting absorption) and why a static magnetic field can (locally) break time-reversal symmetry, and of use for Faraday isolators.
+
+The simplest example of a waveguide is a hollow metallic tube, with the walls (approximated by PEC) forming "impenetrable" mirrors for light.   Explicitly solved this for the "2d" problem of waves confined between two PEC planes, which we previously solved as a "1d" problem.  Again looking for Hz-polarized solutions, we found it satisfies exactly the same eigenproblem as in our 1d case, but with ω² replaced by ω²–k², leading to dispersion relations ω(k) that are *hyperbolas*.  All of the solutions except for the 0-th one, morever, only begin at some ω>0 *cutoff* frequency.  We will explore the consequences of these features in later lectures.
+
+A more complicated example to analyze, but which is extremely practically important (e.g. for optical fibers), are **dielectric waveguides** (in particular, via "total internal reflection" or "**index guiding**"): essentially, a high-ε region surrounded by a low-ε region, invariant along some direction.  We will begin with a simplified 2d example of a high-ε region surrounded by a low-ε region, invariant in the x direction.
+
+**Further reading**: See the book, chapter 2 on translational symmetry and the reduced eigenproblem, and chapter 3 on index guiding. (See e.g. Jackson's _Classical Electrodynamics_ for a more traditional viewpoint on waveguides, focused on the few cases that can be solved analytically, and Marcuse's _Theory of Dielectric Optical Waveguides_ for an expanded version of this. See e.g. Ramaswami and Sivarajan, _Optical Networks_ for a nice practical overview of optical fiber technology in modern telecommunications.)
