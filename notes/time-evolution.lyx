@@ -897,12 +897,280 @@ Unitary time-evolution is equivalent to conservation of norm (energy):
 .
 \end_layout
 
+\begin_layout Standard
+More generally, in the presence of sources 
+\begin_inset Formula $\xi\ne0$
+\end_inset
+
+, we can still express the solutions at time 
+\begin_inset Formula $t$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\psi(0)$
+\end_inset
+
+, the currents, and the time-evolution operator 
+\begin_inset Formula $\hat{U}_{t}$
+\end_inset
+
+ by: 
+\begin_inset Formula 
+\[
+\psi(t)=\hat{U}_{t}\psi(0)-\int_{0}^{t}\hat{U}_{t-t'}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt',
+\]
+
+\end_inset
+
+as can be verified by plugging this expression into the 
+\begin_inset Formula $\frac{\partial\psi}{\partial t}$
+\end_inset
+
+ equation above and applying the Leibniz rule of calculus: 
+\begin_inset Formula $\frac{\partial}{\partial t}\left[\int_{0}^{t}\hat{U}_{t-t'}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt\right]=\cancelto{1}{\hat{U}_{0}}\left(1+\hat{\chi}\right)^{-1}\xi(t)+\int_{0}^{t}\frac{\partial\hat{U}_{t-t'}}{\partial t}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt$
+\end_inset
+
+, where the second term gives us our 
+\begin_inset Formula $(1+\hat{\chi})^{-1}\hat{C}$
+\end_inset
+
+ factor and the first term gives us the 
+\begin_inset Formula $-\xi$
+\end_inset
+
+ term in the 
+\begin_inset Formula $\frac{\partial\psi}{\partial t}$
+\end_inset
+
+ equation.
+\end_layout
+
 \begin_layout Subsection
-Conservation of irrep
+Symmetry and conservation laws
 \end_layout
 
 \begin_layout Standard
-If we have a symmetry group 
+The simplest case of a symmetry is an operation 
+\begin_inset Formula $g$
+\end_inset
+
+ (a rotation/reflection and/or a translation) along with its corresponding
+ operation 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ on 
+\begin_inset Formula $\psi$
+\end_inset
+
+ that 
+\series bold
+commutes
+\series default
+ with the linear operator(s) describing our system (and preserves the boundary
+ condition).
+ Any rotation/reflection/translation commutes with the curl operator 
+\begin_inset Formula $\nabla\times$
+\end_inset
+
+ and hence with 
+\begin_inset Formula $\hat{C}$
+\end_inset
+
+, so the symmetries in Maxwell's equations are determined by the distribution
+ of materials.
+ 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ is a symmetry if it commutes with 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+ (i.e., if the materials are 
+\series bold
+invariant
+\series default
+ under that rotation/reflection/translation).
+ Hence, a symmetry 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $(1+\hat{\chi})^{-1}\hat{C}$
+\end_inset
+
+ and time evolution 
+\begin_inset Formula $\hat{U}_{t}=e^{(1+\hat{\chi})^{-1}\hat{C}t}$
+\end_inset
+
+.
+ It turns out that this implies a conservation law: eigenvalues of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ are conserved.
+\end_layout
+
+\begin_layout Standard
+In particular, suppose that at time 
+\begin_inset Formula $t=0$
+\end_inset
+
+ we have fields 
+\begin_inset Formula $\psi(0)$
+\end_inset
+
+ that are eigenfunctions of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ with an eigenvalue 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\hat{g}\psi(0)=\lambda\psi(0)$
+\end_inset
+
+.
+ It then follows by commutation that 
+\begin_inset Formula $\hat{g}\psi(t)=\hat{g}\hat{U}_{t}\psi(0)=\hat{U}_{t}\hat{g}\psi(0)=\lambda\hat{U}_{t}\psi(0)=\lambda\psi(t)$
+\end_inset
+
+: the fields 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ are 
+\emph on
+still
+\emph default
+ eigenfunctions of the symmetry operation 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ with the 
+\emph on
+same
+\emph default
+ eigenvalue 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ 
+\emph on
+at all times
+\emph default
+.
+ More generally, if 
+\begin_inset Formula $\xi\ne0$
+\end_inset
+
+, we can see from the general 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ formula above that we need 
+\emph on
+both
+\emph default
+ 
+\begin_inset Formula $\psi(0)$
+\end_inset
+
+ and 
+\begin_inset Formula $\xi(t')$
+\end_inset
+
+ (for all 
+\begin_inset Formula $0\le t'\le t$
+\end_inset
+
+) to be eigenfunctions of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ with the 
+\emph on
+same
+\emph default
+ eigenvalue 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ in order for 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ to be as well.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, suppose 
+\begin_inset Formula $g$
+\end_inset
+
+ is a mirror symmetry, which has eigenvalues 
+\begin_inset Formula $\pm1$
+\end_inset
+
+ since 
+\begin_inset Formula $\hat{g}^{2}=1$
+\end_inset
+
+: the eigenfunctions are even/odd (symmetric/anti-symmetric) functions.
+ If you have mirror-symmetric materials 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+, and you start out with (e.g.) an 
+\emph on
+odd 
+\begin_inset Formula $\psi(0)$
+\end_inset
+
+ 
+\emph default
+at 
+\begin_inset Formula $t=0$
+\end_inset
+
+ (and any currents 
+\begin_inset Formula $\xi$
+\end_inset
+
+ are also odd), then the solutions at 
+\emph on
+all
+\emph default
+ times are odd—the 
+\begin_inset Quotes eld
+\end_inset
+
+even/oddness is conserved.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+General case: Conservation of 
+\begin_inset Quotes eld
+\end_inset
+
+irrep
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a more general symmetry group 
 \begin_inset Formula $G$
 \end_inset
 
@@ -910,7 +1178,12 @@ If we have a symmetry group
 \begin_inset Formula $g\in G$
 \end_inset
 
-), recall that we can define the projection operator 
+), understanding the full impact is best done from the perspective of 
+\series bold
+group representation theory
+\series default
+.
+ Using this tool, we can define a projection operator 
 \begin_inset Formula $\hat{P}^{(\alpha)}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}\chi^{(\alpha)}(g)^{*}\hat{g}$
 \end_inset
 
@@ -1100,20 +1373,16 @@ If the currents
 \begin_inset Formula $\hat{U}_{t}$
 \end_inset
 
- as: 
-\begin_inset Formula 
-\[
-\psi(t)=\hat{U}_{t}\psi(0)-\int_{0}^{t}\hat{U}_{t-t'}\left(1+\hat{\chi}\right)^{-1}\xi(t')dt'.
-\]
-
+ and 
+\begin_inset Formula $\xi$
 \end_inset
 
- (It is easily verified that this satisfies our PDE: just plug it in.) Therefore,
- since 
+ as explained above.
+ Then, since 
 \begin_inset Formula $\hat{P}^{(\alpha)}$
 \end_inset
 
- commutes with 
+ again commutes with 
 \begin_inset Formula $\hat{U}_{t}$
 \end_inset
 
@@ -1137,7 +1406,8 @@ If the currents
 \end_layout
 
 \begin_layout Standard
-The simplest example is that of a problem with a mirror symmetry 
+Again, the simplest example is that of a problem with a mirror symmetry
+ 
 \begin_inset Formula $\sigma$
 \end_inset
 
@@ -2318,7 +2588,7 @@ additionally
 \end_layout
 
 \begin_layout Subsection
-Conservation of irrep
+Conservation and symmetry
 \end_layout
 
 \begin_layout Standard
@@ -2328,8 +2598,12 @@ The time-evolution operator
 
  is more complicated to write down explicitly in a general dispersive medium,
  so I omit it here.
- However, it is still the case that it commutes with a projection operator
+ However, it is still the case that it commutes with symmetry operations
  
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ and projection operators 
 \begin_inset Formula $\hat{P}^{(\alpha)}$
 \end_inset
 
@@ -2341,7 +2615,12 @@ The time-evolution operator
  (again, this is essentially the definition of the symmetry group of the
  problem).
  Hence it will still be the case (proof as in the lossless case) that if
- your currents are partners of irrep 
+ your currents and initial conditions are eigenfunctions of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+, then the solutions at later times are as well with the same eigenvalue.
+ Or, more generally if your currents are partners of irrep 
 \begin_inset Formula $\alpha$
 \end_inset
 
