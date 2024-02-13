@@ -1,0 +1,973 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 2
+\end_layout
+
+\begin_layout Standard
+Due Wednesday, 28 February 2024.
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Cylindrical symmetry
+\end_layout
+
+\begin_layout Standard
+Suppose that we have a 
+\emph on
+cylindrical
+\emph default
+ metallic waveguide—that is, a perfect metallic tube with radius 
+\begin_inset Formula $R$
+\end_inset
+
+, which is uniform in the 
+\begin_inset Formula $z$
+\end_inset
+
+ direction.
+ The interior of the tube is simply air (
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+This structure has continuous rotational symmetry around the 
+\begin_inset Formula $z$
+\end_inset
+
+ axis, correspond to commuting with rotations 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+ by any angle 
+\begin_inset Formula $\phi$
+\end_inset
+
+ (which is sometimes called the 
+\begin_inset Formula $C_{\infty}$
+\end_inset
+
+ symmetry group
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It also has an infinite set of mirror planes containing the 
+\begin_inset Formula $z$
+\end_inset
+
+ axis, but let's ignore these for now.
+ If they are included, the group is called 
+\begin_inset Formula $C_{\infty\textrm{v}}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+).
+ If 
+\begin_inset Formula $f(\phi)$
+\end_inset
+
+ is an eigenfunction of 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+ for all 
+\begin_inset Formula $\phi\in\mathbb{R}$
+\end_inset
+
+, we know from class that 
+\begin_inset Formula $f(\phi)$
+\end_inset
+
+ must
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Assuming it is anywhere continuous, to exclude crazy non-measurable non-construc
+tive counterexamples.
+\end_layout
+
+\end_inset
+
+ be an exponential function 
+\begin_inset Formula $e^{\kappa\phi}$
+\end_inset
+
+ (or a multiple thereof) for some 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ since 
+\begin_inset Formula $\hat{\phi_{1}}\hat{\phi_{2}}=\widehat{\phi_{1}+\phi_{2}}$
+\end_inset
+
+.
+ What are the possible values of 
+\begin_inset Formula $\kappa$
+\end_inset
+
+, and why?
+\end_layout
+
+\begin_layout Enumerate
+For simplicity, consider the (Hermitian) 
+\emph on
+scalar
+\emph default
+ wave equation 
+\begin_inset Formula $-\nabla^{2}\psi=\frac{\omega^{2}}{c^{2}}\psi$
+\end_inset
+
+ with 
+\begin_inset Formula $\psi|_{r=R}=0$
+\end_inset
+
+.
+ Show that, when we look for solutions 
+\begin_inset Formula $\psi$
+\end_inset
+
+ that are eigenfunctions of all 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+ from above, and have 
+\begin_inset Formula $z$
+\end_inset
+
+ dependence 
+\begin_inset Formula $e^{ikz}$
+\end_inset
+
+ (from the translational symmetry), then we obtain a Bessel equation (Google
+ it if you've forgotten Mr.
+ Bessel, or never learned).
+ Write the solutions in terms of Bessel functions, assuming that you are
+ given their zeros 
+\begin_inset Formula $x_{m,n}$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $J_{m}(x_{m,n})=0$
+\end_inset
+
+ for 
+\begin_inset Formula $n=1,2,\ldots$
+\end_inset
+
+, where 
+\begin_inset Formula $J_{m}$
+\end_inset
+
+ is the Bessel function of the first kind...if you Google for 
+\begin_inset Quotes eld
+\end_inset
+
+Bessel function zeros
+\begin_inset Quotes erd
+\end_inset
+
+ you can find them tabulated).
+ Sketch the dispersion relation 
+\begin_inset Formula $\omega(k)$
+\end_inset
+
+ for a few bands.
+\end_layout
+
+\begin_layout Enumerate
+From the general orthogonality property of Hermitian-operator eigenfunctions,
+ derive/prove an orthogonality integral for the Bessel functions.
+ (No, just looking one up on Wikipedia doesn't count.)
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: 2d Waveguide Modes
+\end_layout
+
+\begin_layout Standard
+Consider the two-dimensional dielectric waveguide of thickness 
+\begin_inset Formula $h$
+\end_inset
+
+ that we first introduced in class: 
+\begin_inset Formula 
+\[
+\varepsilon(y)=\left\{ \begin{array}{c}
+\varepsilon_{hi}\quad|y|<h/2\\
+\varepsilon_{lo}\quad|y|\geq h/2
+\end{array}\right.,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\varepsilon_{hi}>\varepsilon_{lo}$
+\end_inset
+
+.
+ Look for solutions with the 
+\begin_inset Quotes eld
+\end_inset
+
+TM
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $E_{z}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ polarization 
+\begin_inset Formula $\vec{E}=E_{z}(x,y)\hat{\vec{z}}e^{-i\omega t}$
+\end_inset
+
+.
+ The boundary conditions are that 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ is continuous and 
+\begin_inset Formula $\partial E_{z}/\partial y$
+\end_inset
+
+ (
+\begin_inset Formula $\sim H_{x}$
+\end_inset
+
+) is continuous, and that we require the fields to be finite at 
+\begin_inset Formula $x,y\rightarrow\pm\infty$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Enumerate
+Prove that we can set 
+\begin_inset Formula $\varepsilon_{lo}=1$
+\end_inset
+
+ without loss of generality, by a change of variables in Maxwell's equations.
+ In the subsequent sections, therefore, set 
+\begin_inset Formula $\varepsilon_{lo}=1$
+\end_inset
+
+ for simplicity.
+\end_layout
+
+\begin_layout Enumerate
+Find the guided-mode solutions 
+\begin_inset Formula $E_{z}(x,y)=e^{ikx}E_{k}(y)$
+\end_inset
+
+, where the corresponding eigenvalue 
+\begin_inset Formula $\omega(k)<ck$
+\end_inset
+
+ is below the light line.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Show for the 
+\begin_inset Formula $|y|<h/2$
+\end_inset
+
+ region the solutions are of sine or cosine form, and that for 
+\begin_inset Formula $|y|>h/2$
+\end_inset
+
+ they are decaying exponentials.
+ (At this point, you can't easily prove that the arguments of the sines/cosines
+ are real, but that's okay—you will be able to rule out the possibility
+ of imaginary arguments below.)
+\end_layout
+
+\begin_layout Enumerate
+Match boundary conditions (
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{x}$
+\end_inset
+
+ are continuous) at 
+\begin_inset Formula $y=\pm h/2$
+\end_inset
+
+ to obtain an equation relating 
+\begin_inset Formula $\omega$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ You should get a transcendental equation that you cannot solve explicitly.
+ However, you can 
+\begin_inset Quotes eld
+\end_inset
+
+solve
+\begin_inset Quotes erd
+\end_inset
+
+ it graphically and learn a lot about the solutions—in particular, you might
+ try plotting the left and right hand sides of your equation (suitably arranged)
+ as a function of 
+\begin_inset Formula $k_{\perp}=\sqrt{\frac{\omega}{c^{2}}^{2}\varepsilon_{hi}-k^{2}}$
+\end_inset
+
+, so that you have two curves and the solutions are the intersections (your
+ curves will be parameterized by 
+\begin_inset Formula $k$
+\end_inset
+
+, but try plotting them for one or two typical 
+\begin_inset Formula $k$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+From the graphical picture, derive an exact expression for the number of
+ guided modes as a function of 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ Show that there is exactly one guided mode, with even symmetry, as 
+\begin_inset Formula $k\rightarrow0$
+\end_inset
+
+, as we argued in class.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Problem 3: Poynting's theorem
+\end_layout
+
+\begin_layout Standard
+In Jackson's 
+\emph on
+Classical Electrodynamics
+\emph default
+ textbook (or in many similar books), the electric field of a radiating
+ dipole 
+\begin_inset Formula $\vec{J}(\vec{x},t)=-i\omega\vec{p}\delta(x)\delta(y)\delta(z)e^{-i\omega t}$
+\end_inset
+
+ at the origin in vacuum is given in spherical coordinates (radius 
+\begin_inset Formula $r$
+\end_inset
+
+, radial direction 
+\begin_inset Formula $\vec{n}$
+\end_inset
+
+), with 
+\begin_inset Formula $k=\omega/c$
+\end_inset
+
+, as
+\begin_inset Formula 
+\begin{multline*}
+\vec{E}=\frac{1}{4\pi\epsilon_{0}}\left\{ k^{2}(\vec{n}\times\vec{p})\times\vec{n}\frac{1}{r}\right.\\
+\left.+\left[3\vec{n}(\vec{n}\cdot\vec{p})-\vec{p}\right]\left(\frac{1}{r^{3}}-\frac{ik}{r^{2}}\right)\right\} e^{i(kr-\omega t)}\,.
+\end{multline*}
+
+\end_inset
+
+Note the divergence as 
+\begin_inset Formula $r\to0$
+\end_inset
+
+.
+ The total power radiated by this dipole is computed by Jackson from the
+ Poynting flux through an enclosing sphere to be 
+\begin_inset Formula $P=\frac{c^{2}Z_{0}k^{4}}{12\pi}|\vec{p}|^{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $Z_{0}=\sqrt{\mu_{0}/\varepsilon_{0}}$
+\end_inset
+
+.
+ Show that you obtain the 
+\emph on
+same
+\emph default
+ 
+\begin_inset Formula $P$
+\end_inset
+
+ by taking the 
+\begin_inset Formula $r\to0$
+\end_inset
+
+ limit of of the work 
+\begin_inset Formula $-\frac{1}{2}\Re[\vec{E}^{*}\vec{J}]$
+\end_inset
+
+ expended by 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ (regardless of the direction 
+\begin_inset Formula $\vec{n}$
+\end_inset
+
+ from which you approach the origin).
+ (Taylor expanding 
+\begin_inset Formula $e^{ikr}$
+\end_inset
+
+ may be helpful.)
+\end_layout
+
+\begin_layout Subsection*
+Problem 4: Scattering and energy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !b
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../psets-old/inc-scat.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:inc-scat"
+
+\end_inset
+
+Schematic of an incident wave 
+\begin_inset Formula $\text{\ensuremath{\psi_{\text{inc}}}}$
+\end_inset
+
+ created by sources 
+\begin_inset Formula $\xi$
+\end_inset
+
+ that are only 
+\begin_inset Formula $\ne0$
+\end_inset
+
+ 
+\emph on
+outside
+\emph default
+ some volume 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, interacting with materials 
+\begin_inset Formula $\chi\ne0$
+\end_inset
+
+ that lie 
+\emph on
+inside
+\emph default
+ 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ to produce an outgoing scattered wave 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As in the course notes, we can write Maxwell's equations for the 6-component
+ fields 
+\begin_inset Formula $\psi$
+\end_inset
+
+ as 
+\begin_inset Formula $\frac{\partial\psi}{\partial t}=\hat{C}\psi-\frac{\partial\phi}{\partial t}-\xi$
+\end_inset
+
+, where the 6-component polarizations 
+\begin_inset Formula $\phi=\chi\ast\psi$
+\end_inset
+
+ are a convolution in time with a (passive and causal) linear susceptibility
+ 
+\begin_inset Formula $\chi(\vec{x},t)$
+\end_inset
+
+ at each point 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ in space.
+ Now, suppose we have the situation depicted in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:inc-scat"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: sources (
+\begin_inset Formula $\xi\ne0)$
+\end_inset
+
+ lying 
+\emph on
+outside
+\emph default
+ some bounded volume 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ produce an incident wave 
+\begin_inset Formula $\psi_{\text{inc}}$
+\end_inset
+
+ that scatters off materials (
+\begin_inset Formula $\chi\neq0$
+\end_inset
+
+) 
+\emph on
+inside
+\emph default
+ of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ to produce a scattered wave 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+.
+ Outside of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ there are no materials (
+\begin_inset Formula $\chi=0$
+\end_inset
+
+), while inside of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ there are no sources (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write the total fields as 
+\begin_inset Formula $\psi=\psi_{\text{inc}}+\psi_{\text{scat}}$
+\end_inset
+
+, where 
+\begin_inset Formula $\psi_{\text{inc}}=\left(\begin{array}{c}
+\vec{E}_{\text{inc}}\\
+\vec{H}_{\text{inc}}
+\end{array}\right)$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $\frac{\partial\psi_{\text{inc}}}{\partial t}=\hat{C}\psi_{\text{inc}}-\xi$
+\end_inset
+
+ (Maxwell's equations with the same currents but no materials), and the
+ initial conditions at 
+\begin_inset Formula $t=-\infty$
+\end_inset
+
+ are 
+\begin_inset Formula $\psi=\psi_{\text{inc}}=\psi_{\text{scat}}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+What differential
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Technically, if you include a convolution 
+\begin_inset Formula $\chi\ast{}$
+\end_inset
+
+ then you have a 
+\begin_inset Quotes eld
+\end_inset
+
+pseudodifferential
+\begin_inset Quotes erd
+\end_inset
+
+ operator.
+\end_layout
+
+\end_inset
+
+ equation must 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+ satisfy?
+\end_layout
+
+\begin_layout Enumerate
+Fourier transform in time to find equations for 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}(x,\omega)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ (in terms of 
+\begin_inset Formula $\hat{\xi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\chi}$
+\end_inset
+
+); equivalently, look for time-harmonic solutions 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}e^{-i\omega t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}e^{-i\omega t}$
+\end_inset
+
+ from a time-harmonic source 
+\begin_inset Formula $\hat{\xi}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Applying Poynting's theorem and passivity to your time-harmonic fields,
+ show that 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{\text{abs}}=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}^{*}\times\hat{\vec{H}}]\cdot d\vec{A}\ge0$
+\end_inset
+
+ (the absorbed power = inward total flux).
+ (Note that here, 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a subset of the whole domain!)
+\end_layout
+
+\begin_layout Enumerate
+In order to ensure 
+\begin_inset Formula $P_{\text{scat}}=\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}\ge0$
+\end_inset
+
+ (the scattered power = outward scattered flux), we need something more:
+ an 
+\emph on
+outgoing boundary condition
+\emph default
+ (or 
+\begin_inset Quotes eld
+\end_inset
+
+radiation
+\begin_inset Quotes erd
+\end_inset
+
+ boundary condition): if we consider 
+\emph on
+any point
+\emph default
+ on sphere of radius 
+\begin_inset Formula $R$
+\end_inset
+
+ (around any point in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+), then 
+\emph on
+in the limit
+\emph default
+ as 
+\begin_inset Formula $R\to\infty$
+\end_inset
+
+ we require that 
+\begin_inset Formula $R^{2}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]$
+\end_inset
+
+ must point 
+\emph on
+radially outward
+\emph default
+.
+ Use Poynting's theorem to show that such a radiation boundary condition
+ implies 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}\ge0$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We also will also need some boundary condition to uniquely determine 
+\begin_inset Formula $\psi_{\text{inc}}$
+\end_inset
+
+.
+ Not necessarily an outgoing boundary condition, however—often it is convenient
+ to have an incident wave coming in 
+\begin_inset Quotes eld
+\end_inset
+
+from infinity
+\begin_inset Quotes erd
+\end_inset
+
+, such as an incident planewave, perhaps with no explicit sources (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+) and just appropriate boundary conditions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Show that the 
+\begin_inset Quotes eld
+\end_inset
+
+extinguished power
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $P_{\text{ext}}=P_{\text{abs}}+P_{\text{scat}}$
+\end_inset
+
+ can be written in terms of an integral over 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ involving 
+\begin_inset Formula $\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{scat}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{inc}}$
+\end_inset
+
+ 
+\emph on
+only.
+
+\emph default
+ This is a version of a famous result known as the 
+\series bold
+optical theorem
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+Derive an alternative form of the optical theorem: show that 
+\begin_inset Formula $P_{\text{ext}}$
+\end_inset
+
+ can be written as an integral over 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ involving 
+\emph on
+only
+\emph default
+ 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}^{*}\hat{\phi}$
+\end_inset
+
+.
+ (Hint: use Poynting's theorem to relate 
+\begin_inset Formula $P_{\text{abs}}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{\text{scat}}$
+\end_inset
+
+ to work on polarization currents, and write 
+\begin_inset Formula $\psi_{\text{scat}}=\psi-\psi_{\text{inc}}$
+\end_inset
+
+.)
+\end_layout
+
+\end_body
+\end_document
