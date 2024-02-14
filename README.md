@@ -114,3 +114,9 @@ The simplest example of a waveguide is a hollow metallic tube, with the walls (a
 A more complicated example to analyze, but which is extremely practically important (e.g. for optical fibers), are **dielectric waveguides** (in particular, via "total internal reflection" or "**index guiding**"): essentially, a high-ε region surrounded by a low-ε region, invariant along some direction.  We will begin with a simplified 2d example of a high-ε region surrounded by a low-ε region, invariant in the x direction.
 
 **Further reading**: See the book, chapter 2 on translational symmetry and the reduced eigenproblem, and chapter 3 on index guiding. (See e.g. Jackson's _Classical Electrodynamics_ for a more traditional viewpoint on waveguides, focused on the few cases that can be solved analytically, and Marcuse's _Theory of Dielectric Optical Waveguides_ for an expanded version of this. See e.g. Ramaswami and Sivarajan, _Optical Networks_ for a nice practical overview of optical fiber technology in modern telecommunications.)
+
+### Lecture 5: 14 Feb 2024
+
+* handwritten notes: coming soon
+* pset 1 solutions: coming soon
+* [pset 2](psets/pset2.pdf): due Wednesday, 28 February 2024.

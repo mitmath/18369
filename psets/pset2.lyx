@@ -456,7 +456,290 @@ From the graphical picture, derive an exact expression for the number of
 
 \end_deeper
 \begin_layout Subsection*
-Problem 3: Poynting's theorem
+Problem 3: Evanescent modes in waveguides
+\end_layout
+
+\begin_layout Standard
+In class, we looked at 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+-polarized solutions in a 2d metallic waveguide, formed by an 
+\begin_inset Formula $\varepsilon=\mu=1$
+\end_inset
+
+ region between two PEC walls at 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x=L$
+\end_inset
+
+, and found that (in the absence of sources) it satisfied the eigen-equation
+ 
+\begin_inset Formula $-\nabla^{2}H_{z}=\omega^{2}H_{z}$
+\end_inset
+
+ (for 
+\begin_inset Formula $\varepsilon_{0}=\mu_{0}=1$
+\end_inset
+
+ units) with ``Neumann'' boundary conditions 
+\begin_inset Formula $H_{z}'(0)=H_{z}'(L)=0$
+\end_inset
+
+.
+ Exploiting translational symmetry in 
+\begin_inset Formula $y$
+\end_inset
+
+, we looked for solutions 
+\begin_inset Formula $H_{z}(x,y)=u_{k}(x)e^{iky}$
+\end_inset
+
+ with a given propagation constant (
+\begin_inset Quotes eld
+\end_inset
+
+wavevector
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\begin_inset Formula $k\in\mathbb{R}$
+\end_inset
+
+, and found 
+\begin_inset Formula 
+\[
+u_{k,n}=\sin\left(\frac{n\pi x}{L}\right)\qquad\text{for }n=0,1,\ldots
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\omega_{n}(k)=\pm\sqrt{\left(\frac{n\pi}{L}\right)^{2}+k^{2}},
+\]
+
+\end_inset
+
+so that the dispersion relation is a set of hyperbolas (except for the 
+\begin_inset Formula $n=0$
+\end_inset
+
+ solution 
+\begin_inset Formula $\omega_{0}=\pm|k|$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+We can alternatively fix 
+\begin_inset Formula $\omega$
+\end_inset
+
+ and solve for the propagation constant 
+\begin_inset Formula $k_{n}(\omega)$
+\end_inset
+
+ and the corresponding 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ solutions.
+ Let 
+\begin_inset Formula $\omega=1.5\pi/L$
+\end_inset
+
+.
+ What do the possible solutions 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ look like for 
+\begin_inset Formula $n=0,1,2,3,\ldots$
+\end_inset
+
+? The solutions that are exponentially growing/decaying are called ``evanescent'
+' modes.
+\end_layout
+
+\begin_layout Enumerate
+Suppose we introduce an electric current source 
+\begin_inset Formula $\vec{J}=f(x)\delta(y)e^{-i\omega t}\hat{x}$
+\end_inset
+
+ into Maxwell's equations: here, a delta function in 
+\begin_inset Formula $y$
+\end_inset
+
+ and some function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ as the 
+\begin_inset Formula $x$
+\end_inset
+
+ dependence, with a frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+, oriented in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction (a ``current sheet'').
+ Show that Maxwell's equations in this case take the form 
+\begin_inset Formula $(-\nabla^{2}-\omega^{2})H_{z}=Cf(x)\delta'(y)$
+\end_inset
+
+ for some constant 
+\begin_inset Formula $C$
+\end_inset
+
+, where 
+\begin_inset Formula $\delta'(y)$
+\end_inset
+
+ is the derivative of a delta function (recall that 
+\begin_inset Formula $\int\delta'(y)g(y)=-g'(0)$
+\end_inset
+
+, or equivalently 
+\begin_inset Formula $\delta'(y)$
+\end_inset
+
+ is the second derivative of a unit step function).
+ Any solution
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ must have some kind of discontinuity or 
+\begin_inset Quotes eld
+\end_inset
+
+kink
+\begin_inset Quotes erd
+\end_inset
+
+ at 
+\begin_inset Formula $y=0$
+\end_inset
+
+ — what is it?
+\end_layout
+
+\begin_layout Enumerate
+In the presence of this current source 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, write the resulting magnetic field 
+\begin_inset Formula $H_{z}(x,y)$
+\end_inset
+
+ everywhere in 
+\begin_inset Formula $x\in[0,L]$
+\end_inset
+
+ as an infinite series 
+\begin_inset Formula $\sum_{n}$
+\end_inset
+
+ of solutions from your 
+\begin_inset Formula $k_{n}(\omega)$
+\end_inset
+
+ modes above, with a different series for 
+\begin_inset Formula $y>0$
+\end_inset
+
+ and 
+\begin_inset Formula $y<0$
+\end_inset
+
+.
+ (Hint: you should find that by imposing the correct ``kink'' condition
+ on 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ across 
+\begin_inset Formula $y=0$
+\end_inset
+
+ from above, you get an equation in terms of a Fourier series for 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ that allows you determine the coefficients of the series.) You should assume
+ boundary conditions of 
+\emph on
+outgoing and/or decaying waves
+\emph default
+ as 
+\begin_inset Formula $y\to\pm\infty$
+\end_inset
+
+: that is, for 
+\begin_inset Formula $y>0$
+\end_inset
+
+, the solutions should be a superposition of terms that look like 
+\begin_inset Formula $e^{iky}$
+\end_inset
+
+ for either real 
+\begin_inset Formula $k>0$
+\end_inset
+
+ (propagating upwards) or imaginary 
+\begin_inset Formula $k=i\kappa$
+\end_inset
+
+ with 
+\begin_inset Formula $\kappa>0$
+\end_inset
+
+ (decaying upwards), and similarly (with opposite signs: propagating/decaying
+ downwards) for 
+\begin_inset Formula $y<0$
+\end_inset
+
+.
+ You 
+\emph on
+must
+\emph default
+ include the evanescent modes, as otherwise you will be unable to find a
+ solution for an arbitrary
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Technically, we must restrict ourselves to functions 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ that have a Fourier series; this includes all remotely realistic possibilities.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Problem 4: Poynting's theorem
 \end_layout
 
 \begin_layout Standard
@@ -538,7 +821,7 @@ same
 \end_layout
 
 \begin_layout Subsection*
-Problem 4: Scattering and energy
+Problem 5: Scattering and energy
 \end_layout
 
 \begin_layout Standard
@@ -873,7 +1156,7 @@ radially outward
 status collapsed
 
 \begin_layout Plain Layout
-We also will also need some boundary condition to uniquely determine 
+One will also choose some such boundary condition when constructing 
 \begin_inset Formula $\psi_{\text{inc}}$
 \end_inset
 
