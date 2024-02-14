@@ -117,6 +117,20 @@ A more complicated example to analyze, but which is extremely practically import
 
 ### Lecture 5: 14 Feb 2024
 
-* handwritten notes: coming soon
+* continued [handwritten notes](https://www.dropbox.com/scl/fi/cy8p9l10e6n73rpjmchd8/Maxwell-Translational-Symmetry.pdf?rlkey=ted0itfztk5amz3vo4t4ggo74&dl=0) from lecture 4
 * pset 1 solutions: coming soon
 * [pset 2](psets/pset2.pdf): due Wednesday, 28 February 2024.
+
+**Conservation of symmetry**: you saw in homework that sources which are eigenfunctions of ĝ produce fields that are also eigenfunctions of ĝ with the same eigenvalue: the symmetry eigenvalue is "conserved".   Next week, we will see a similar result for time evolution: if the initial fields
+at t=0 are eigenfunctions of ĝ (along with any currents), then the fields at *all times* are eigenfunctions of ĝ with the same eigenvalue.  For example, in a system with a mirror symmetry, if you have an odd initial condition then the solutions at all later times are odd.
+For translational symmetry, showed that conservation of the exp(-ikx) eigenvalue, which gives conservation of k, leads immediately to [Snell's law](https://en.wikipedia.org/wiki/Snell%27s_law) at a flat interface, as well as the "law of reflection" (reflected waves are the same angle as the incident wave).
+
+Continued discussing **dielectric waveguides**, via the simple 2d example of a high-ε region surrounded by a low-ε region, invariant in the x direction. Explained that the solutions far from the waveguide lead to a continuous region, the _light cone_, and argued (proof to come later) that the higher-ε region pulls down localized guided modes below the light cone. Since they are localized, they form discrete bands in order to stay orthogonal.
+
+Introduced the **min–max or "variational" theorem**, which arises for any Hermitian eigenproblem. Proved the variational theorem (with the simplifying assumption of a basis of eigenfunctions), and mentioned the derivation (in chapter 2 of the book) that all extrema of the Rayleigh quotient are eigenvalues. We will use this theorem to derive general conditions under which guided modes are guaranteed to arise in dielectric waveguides.
+
+Began discussing how the min–max theorem can be used to prove the existence of index-guided modes (in two dimensions, for the TE/Hz polarization), for any translation-invariant structure where ε is increased "on average" in a localized region, for an appropriate definition of "on average."
+
+**Further reading**: See the book, chapter 2, on the variational principle. See [these notes](https://github.com/mitmath/18303/blob/fall16/slow-waveguides.pdf) on localization in a different scalar-wave equation via the same variational method. [Bamberget and Bonnet (1990)](http://epubs.siam.org/doi/abs/10.1137/0521082) is a classic paper on the theory of dielectric waveguiding. [Lee (2008)](https://www.osapublishing.org/oe/abstract.cfm?uri=oe-16-13-9261) is an extension of the variational proof to Maxwell's equations in much more complex periodic waveguides and photonic-crystal fibers.
+
+A point source (delta-function current) in a dielectric waveguide will generally excite _both_ guided (below the light line) and radiating (above the light line) solutions, and you might be interested in [this animation](https://github.com/mitmath/18303/raw/fall16/waveguide-movies/index-0.5.mp4) of a point source in a dielectric waveguide (ε=4 surrounded by air) (see also the [larger version of the same animation](https://github.com/mitmath/18303/raw/fall16/waveguide-movies/index-0.5-long.mp4)).
