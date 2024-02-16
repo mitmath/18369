@@ -89,7 +89,7 @@ symmetric or anti-symmetric!
 
 Next, considered *continuous translational symmetry*.  In this case, we have *many* symmetry operations corresponding to translation by any d ∈ ℝ in some direction,
 but all of these symmetry operations *commute*.  In fact, $\widehat{d_1} \widehat{d_2} = \widehat{d_1+d_2} = \widehat{d_2 + d_1}$.   Showed that the corresponding
-eigenvalues of $\hat{d}$ are *exponentials* $\exp(-ikd}$ for some number k (which must be real if we want to exclude exponentially growing/decaying solutions).
+eigenvalues of $\hat{d}$ are *exponentials* $\exp(-ikd)$ for some number k (which must be real if we want to exclude exponentially growing/decaying solutions).
 Corresponding eigenfunctions u(x,y,z) are of the form $u(x,y,z) = u_k(x,y) e^{ikz}$, if we are talking about translational symmetry in z.   This has far-reaching
 consequences for wave propagation (and for mathematics — the relationship to symmetry is why Fourier transforms are so important).
 
