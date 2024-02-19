@@ -118,7 +118,7 @@ A more complicated example to analyze, but which is extremely practically import
 ### Lecture 5: 14 Feb 2024
 
 * continued [handwritten notes](https://www.dropbox.com/scl/fi/cy8p9l10e6n73rpjmchd8/Maxwell-Translational-Symmetry.pdf?rlkey=ted0itfztk5amz3vo4t4ggo74&dl=0) from lecture 4
-* pset 1 solutions: coming soon
+* [pset 1 solutions](psets/pset1sol.pdf)
 * [pset 2](psets/pset2.pdf): due Wednesday, 28 February 2024.
 
 **Conservation of symmetry**: you saw in homework that sources which are eigenfunctions of ĝ produce fields that are also eigenfunctions of ĝ with the same eigenvalue: the symmetry eigenvalue is "conserved".   Next week, we will see a similar result for time evolution: if the initial fields
