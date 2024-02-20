@@ -1196,6 +1196,14 @@ assuming the boundary conditions are preserved by scaling
 \begin_inset Formula $\alpha$
 \end_inset
 
+ — i.e.
+\begin_inset space ~
+\end_inset
+
+that the boundary conditions as well as the PDE are 
+\series bold
+linear
+\series default
 ), we must have 
 \begin_inset Formula $\hat{g}\vec{E}/\alpha=\vec{E}\implies\hat{g}\vec{E}=\alpha\vec{E}$
 \end_inset
@@ -1221,7 +1229,12 @@ Supplementary comment:
 \emph on
 not
 \emph default
- preserved by scaling.
+ preserved by scaling — in this case, the equations are no longer linear,
+ e.g.
+\begin_inset space ~
+\end_inset
+
+doubling the current does not produce double the fields.
  For example, suppose that we have a square 
 \begin_inset Formula $L\times L$
 \end_inset
@@ -1278,7 +1291,8 @@ odd
 \end_inset
 
  won't have any mirror symmetry at all.
- Good for you if you noticed this implicit assumption in the problem!
+ Good for you if you noticed this implicit assumption of linearlity in the
+ problem!
 \end_layout
 
 \begin_layout Enumerate
