@@ -156,3 +156,11 @@ Defined the time-evolution operator explicitly via an exponentiated operator on 
 ### Lecture 8: 21 Feb 2024
 
 Continuing from lecture 7: dispersive media, passivity, and dissipation.
+
+### Lecture 9: 23 Feb 2024
+
+* [slides](https://docs.google.com/presentation/d/1U2ujGOLvJAAsbJoknLs9GKJKuc8T47vx2_RdTHBTlMw/edit?usp=sharing)
+
+Guest lecture by [Dr. Pengning Chao](https://math.mit.edu/directory/profile.html?pid=2576) on upper bounds on light–matter interactions from conservation laws.
+
+**Further reading**: For reviews of these topics, see e.g. Dr. Chao's PhD thesis, ["Probing fundamental performance limits in photonics design"](http://arks.princeton.edu/ark:/88435/dsp01pr76f6729) (2023), the review article ["Physical limits in electromagnetism" (Chao et al., 2022)](https://www.nature.com/articles/s42254-022-00468-w), and the review article ["Fundamental limits to the near-field optical response" (Miller, 2023)](https://arxiv.org/abs/2304.07253).
