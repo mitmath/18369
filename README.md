@@ -164,3 +164,9 @@ Continuing from lecture 7: dispersive media, passivity, and dissipation.
 Guest lecture by [Dr. Pengning Chao](https://math.mit.edu/directory/profile.html?pid=2576) on upper bounds on light–matter interactions from conservation laws.
 
 **Further reading**: For reviews of these topics, see e.g. Dr. Chao's PhD thesis, ["Probing fundamental performance limits in photonics design"](http://arks.princeton.edu/ark:/88435/dsp01pr76f6729) (2023), the review article ["Physical limits in electromagnetism" (Chao et al., 2022)](https://www.nature.com/articles/s42254-022-00468-w), and the review article ["Fundamental limits to the near-field optical response" (Miller, 2023)](https://arxiv.org/abs/2304.07253).
+
+### Lecture 10: 28 Feb 2024, [via Zoom (MIT only)](https://mit.zoom.us/j/92619576744?pwd=SjVuMHVSVjBtdDc5RW9HL1pKNHVQZz09)
+
+* notes: coming soon
+* pset 2 solutions: coming soon
+* pset 3: coming soon
