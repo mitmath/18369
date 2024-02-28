@@ -167,6 +167,24 @@ Guest lecture by [Dr. Pengning Chao](https://math.mit.edu/directory/profile.html
 
 ### Lecture 10: 28 Feb 2024, [via Zoom (MIT only)](https://mit.zoom.us/j/92619576744?pwd=SjVuMHVSVjBtdDc5RW9HL1pKNHVQZz09)
 
-* notes: coming soon
+* [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
 * pset 2 solutions: coming soon
 * pset 3: coming soon
+
+**Discrete translational symmetry:**
+
+Started by considering a periodic "waveguide" in two dimensions: a sequence of dielectric rods in air. By analogy with ray-optics and total-internal reflection, it seems that this could not support guided modes. However, it does (chapter 7 of the book), and to understand this we need to understand discrete translational symmetry.
+
+Showed that the representations of the discrete translation group are again exponentials, and thereby proved **Bloch's theorem**: the eigenfunctions can be chosen in the form of a planewave multipled by a periodic function.
+
+As a corollary, the Bloch wavevector **k** is conserved, and mentioned how this relates to a famous mystery from the 19th century: electrons in a pure conductor act almost like a dilute gas, because they scatter only from impurities/imperfections that break the periodicity.
+
+Qualitative description of the resulting band diagrams in 1d-periodic systems.
+
+Derived the periodicity of the Bloch wavevector **k** in one dimension. Adding 2π/a does not change the irrep, and is only a relabeling of the eigensolution. This means that we only need to look at the "unit cell" in k-space to get the band diagram. Talked about a few different ways to think about this: 2π/a gives the same irrep, it gives the same PDE for the Bloch modes, and the Bloch modes can be expanded as a Fourier series with components at k+2πm/a for all integers m.
+
+Derived the periodicity of the Bloch wavevector **k** in one dimension. Adding 2π/a does not change the irrep, and is only a relabeling of the eigensolution. This means that we only need to look at the "unit cell" in k-space to get the band diagram. Talked about a few different ways to think about this: 2π/a gives the same irrep, it gives the same PDE for the Bloch modes, and the Bloch modes can be expanded as a Fourier series with components at k+2πm/a for all integers m.
+
+Discussed the band diagram, light cone, and guided modes of a periodic dielectric waveguide.
+
+**Further reading**: Chapter 3 and appendix B of the textbook on 1d periodicity. Chapter 7 on periodic dielectric waveguides.
