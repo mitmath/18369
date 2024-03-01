@@ -170,7 +170,7 @@ Guest lecture by [Dr. Pengning Chao](https://math.mit.edu/directory/profile.html
 * [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
 * [video recording (MIT only)](https://mit.zoom.us/rec/share/L5dHd2Lykg1JeGqJRL2Iy6Id12vX5MIZiG4nRibakFRut5B3cnwrIY_j_ccDfFOg.LmyQP8FP6Sie30je?startTime=1709147095000)
 * pset 2 solutions: coming soon
-* pset 3: coming soon
+* [pset 3](psets/pset3.pdf): due Wed Mar 6
 
 **Discrete translational symmetry:**
 

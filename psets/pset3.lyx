@@ -1,0 +1,368 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 3
+\end_layout
+
+\begin_layout Standard
+Due Wednesday, March 6.
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Bloch-periodic eigenproblems
+\end_layout
+
+\begin_layout Standard
+Suppose that we have a periodic system with period 
+\begin_inset Formula $a$
+\end_inset
+
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction, and we look for Bloch-periodic eigenfunctions 
+\begin_inset Formula $\vec{H}(x+a,y,z)=e^{ika}\vec{H}(x,y,z)$
+\end_inset
+
+ of the 
+\begin_inset Formula $\hat{\Theta}=\nabla\times\varepsilon^{-1}\nabla\times{}$
+\end_inset
+
+ operator with these boundary conditions in 
+\begin_inset Formula $x$
+\end_inset
+
+, acting on a unit cell 
+\begin_inset Formula $x\in[0,a]$
+\end_inset
+
+ (with some other boundary conditions in 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+).
+ (That is, we 
+\emph on
+don't
+\emph default
+ rewrite in terms of the periodic Bloch envelope and use 
+\begin_inset Formula $\hat{\Theta}_{k}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Explain why 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ is still Hermitian with these boundary conditions: when we integrated by
+ parts, we had some boundary terms that we needed to vanish, and explain
+ why the boundary terms from 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x=a$
+\end_inset
+
+ still vanish with Bloch-periodic boundary conditions.
+ (You can assume that the 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ boundary conditions were chosen so that those boundaries vanished.)
+\end_layout
+
+\begin_layout Enumerate
+Why do 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $k+\frac{2\pi}{a}$
+\end_inset
+
+ give the same solutions to this Bloch-periodic eigenproblem? (Yes, we already
+ discussed the periodicity of 
+\begin_inset Formula $k$
+\end_inset
+
+ from other perspectives in class, but you should be able to see it directly
+ here without reference to any of our previous arguments.)
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: Periodic waveguide guidance proof
+\end_layout
+
+\begin_layout Standard
+In class, we showed by a variational proof that any 
+\begin_inset Formula $\varepsilon(y)$
+\end_inset
+
+, in two dimensions, gives rise to at least one guided mode whenever 
+\begin_inset Formula $\varepsilon(y)^{-1}=\varepsilon_{\textrm{lo}}^{-1}-\Delta(y)$
+\end_inset
+
+ for 
+\begin_inset Formula $\int\Delta>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\int|\Delta|<\infty$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As in class, the latter condition on 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ will allow you to swap limits and integrals for any integrand whose magnitude
+ is bounded above by some constant times 
+\begin_inset Formula $|\Delta|$
+\end_inset
+
+ (by Lebesgue's dominated convergence theorem).
+\end_layout
+
+\end_inset
+
+ At least, we showed it for the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ polarization (
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ in the 
+\begin_inset Formula $\hat{\vec{z}}$
+\end_inset
+
+ direction).
+ Now, you will show the same thing much more generally, but using the same
+ basic technique.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\varepsilon(x,y)^{-1}=1-\Delta(x,y)$
+\end_inset
+
+ be a periodic function 
+\begin_inset Formula $\Delta(x,y)=\Delta(x+a,y)$
+\end_inset
+
+, with 
+\begin_inset Formula $\int|\Delta|<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\int_{0}^{a}\int_{-\infty}^{\infty}\Delta(x,y)dxdy>0$
+\end_inset
+
+.
+ Prove that at least one 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+-polarized guided mode exists, by choosing an appropriate (simple!) trial
+ function of the form 
+\begin_inset Formula $\vec{H}(x,y)=u(x,y)e^{ikx}\hat{\vec{z}}$
+\end_inset
+
+ .
+ That is, show by the variational theorem that 
+\begin_inset Formula $\omega^{2}<c^{2}k^{2}$
+\end_inset
+
+ for the lowest-frequency eigenmode.
+ (It is sufficient to show it for 
+\begin_inset Formula $|k|\leq\pi/a$
+\end_inset
+
+, by periodicity in 
+\begin_inset Formula $k$
+\end_inset
+
+-space; for 
+\begin_inset Formula $|k|>\pi/a$
+\end_inset
+
+, the light line is not 
+\begin_inset Formula $\omega=c|k|$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Prove the same thing as in (a), but for the 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ polarization (
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ in the 
+\begin_inset Formula $\hat{\vec{z}}$
+\end_inset
+
+ direction).
+ Hint: you will need to pick a trial function of the form 
+\begin_inset Formula $\vec{H}(x,y)=[u(x,y)\hat{\vec{x}}+v(x,y)\hat{\vec{y}}]e^{ikx}$
+\end_inset
+
+ where 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are some (simple!) functions such that 
+\begin_inset Formula $\nabla\cdot\vec{H}=0$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+You might be tempted, for the TM polarization, to use the 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ form of the variational theorem that you derived in problem
+\begin_inset space ~
+\end_inset
+
+1, since the proof in that case will be somewhat simpler: you can just choose
+ 
+\begin_inset Formula $\vec{E}(x,y)=u(x,y)e^{ikx}\hat{\vec{z}}$
+\end_inset
+
+ and you will have 
+\begin_inset Formula $\nabla\cdot\varepsilon\vec{E}=0$
+\end_inset
+
+ automatically.
+ However, this will lead to an inequivalent condition 
+\begin_inset Formula $\int(\varepsilon-1)>0$
+\end_inset
+
+ instead of 
+\begin_inset Formula $\int\Delta=\int\frac{\varepsilon-1}{\varepsilon}>0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
