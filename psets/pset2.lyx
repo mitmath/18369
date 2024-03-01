@@ -513,7 +513,7 @@ wavevector
 , and found 
 \begin_inset Formula 
 \[
-u_{k,n}=\sin\left(\frac{n\pi x}{L}\right)\qquad\text{for }n=0,1,\ldots
+u_{k,n}=\cos\left(\frac{n\pi x}{L}\right)\qquad\text{for }n=0,1,\ldots
 \]
 
 \end_inset
