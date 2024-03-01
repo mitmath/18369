@@ -157,7 +157,7 @@ Defined the time-evolution operator explicitly via an exponentiated operator on 
 
 Continuing from lecture 7: dispersive media, passivity, and dissipation.
 
-### Lecture 9: 23 Feb 2024
+### Lecture 9: 23 Feb 2024 (via Zoom)
 
 * [slides](https://docs.google.com/presentation/d/1U2ujGOLvJAAsbJoknLs9GKJKuc8T47vx2_RdTHBTlMw/edit?usp=sharing)
 
@@ -168,6 +168,7 @@ Guest lecture by [Dr. Pengning Chao](https://math.mit.edu/directory/profile.html
 ### Lecture 10: 28 Feb 2024, [via Zoom (MIT only)](https://mit.zoom.us/j/92619576744?pwd=SjVuMHVSVjBtdDc5RW9HL1pKNHVQZz09)
 
 * [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
+* [video recording (MIT only)](https://mit.zoom.us/rec/share/L5dHd2Lykg1JeGqJRL2Iy6Id12vX5MIZiG4nRibakFRut5B3cnwrIY_j_ccDfFOg.LmyQP8FP6Sie30je?startTime=1709147095000)
 * pset 2 solutions: coming soon
 * pset 3: coming soon
 
@@ -188,3 +189,5 @@ Derived the periodicity of the Bloch wavevector **k** in one dimension. Adding 2
 Discussed the band diagram, light cone, and guided modes of a periodic dielectric waveguide.
 
 **Further reading**: Chapter 3 and appendix B of the textbook on 1d periodicity. Chapter 7 on periodic dielectric waveguides.
+
+### Lecture 11: 1 Mar 2024, [via Zoom (MIT only)](https://mit.zoom.us/j/92619576744?pwd=SjVuMHVSVjBtdDc5RW9HL1pKNHVQZz09)
