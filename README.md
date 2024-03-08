@@ -193,7 +193,7 @@ Discussed the band diagram, light cone, and guided modes of a periodic dielectri
 ### Lecture 11: 1 Mar 2024 (via Zoom)
 
 * [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
-* video recording (MIT only): coming soon
+* [video recording (MIT only)](https://mit.zoom.us/rec/share/zHuBNta87GWcHBPpgFS-WsoO3kBqg1eXtW7iqaHr0kf_9bvrzZwdkCsC6VCY2yWn.tgm72a5ws8mpmKTu?startTime=1709320076000)
 
 As an application of conservation of k (up to addition of reciprocal lattice vectors) in periodic systems, discussed reflection (specular and diffractive) from a periodic surface, and minimum-frequency/maximum-wavelength cutoffs for various diffracted orders.
 
