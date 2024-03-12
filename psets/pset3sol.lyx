@@ -1,0 +1,536 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 3 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Bloch-periodic eigenproblems (10+5 points)
+\end_layout
+
+\begin_layout Standard
+Suppose that we have a periodic system with period 
+\begin_inset Formula $a$
+\end_inset
+
+ in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction, and we look for Bloch-periodic eigenfunctions 
+\begin_inset Formula $\vec{H}(x+a,y,z)=e^{ika}\vec{H}(x,y,z)$
+\end_inset
+
+ of the 
+\begin_inset Formula $\hat{\Theta}=\nabla\times\varepsilon^{-1}\nabla\times{}$
+\end_inset
+
+ operator with these boundary conditions in 
+\begin_inset Formula $x$
+\end_inset
+
+, acting on a unit cell 
+\begin_inset Formula $x\in[0,a]$
+\end_inset
+
+ (with some other boundary conditions in 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+).
+ (That is, we 
+\emph on
+don't
+\emph default
+ rewrite in terms of the periodic Bloch envelope and use 
+\begin_inset Formula $\hat{\Theta}_{k}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+From class, integrating by parts with 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ over a domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ yielded: 
+\begin_inset Formula 
+\[
+\langle\vec{H},\hat{\Theta}\vec{H}'\rangle=\langle\hat{\Theta}\vec{H},\vec{H}'\rangle+\oiint_{\partial\Omega}\left[\vec{E}'\times\vec{H}^{*}+\vec{E}^{*}\times\vec{H}'\right]\cdot d\vec{A}
+\]
+
+\end_inset
+
+for any fields 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}'$
+\end_inset
+
+ (with corresponding electric fields 
+\begin_inset Formula $\vec{E}=\frac{i}{\omega\varepsilon}\nabla\times\vec{H}$
+\end_inset
+
+) in our Hilbert space (i.e., satisfying our boundary conditions).
+ Now, if we have a period-
+\begin_inset Formula $a$
+\end_inset
+
+ unit cell 
+\begin_inset Formula $x\in[0,a]$
+\end_inset
+
+, two of these boundary terms are at 
+\begin_inset Formula $x=0$
+\end_inset
+
+ (with 
+\begin_inset Formula $d\vec{A}=-\hat{x}dydz$
+\end_inset
+
+) and at 
+\begin_inset Formula $x=a$
+\end_inset
+
+ (with 
+\begin_inset Formula $d\vec{A}=+\hat{x}dydz$
+\end_inset
+
+).
+ The 
+\begin_inset Formula $[\cdots]$
+\end_inset
+
+ integrand terms are 
+\begin_inset Formula $E_{y}'H_{z}^{*}-E_{z}'H_{y}^{*}+E_{y}^{*}H_{z}'-E_{z}^{*}H_{y}'$
+\end_inset
+
+ .
+ However, this integrand is 
+\emph on
+exactly the same 
+\emph default
+at 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x=a$
+\end_inset
+
+, because 
+\emph on
+both 
+\emph default
+the 
+\begin_inset Formula $E$
+\end_inset
+
+ and 
+\begin_inset Formula $H$
+\end_inset
+
+ terms differ by 
+\begin_inset Formula $e^{ika}$
+\end_inset
+
+ at 
+\begin_inset Formula $x=a$
+\end_inset
+
+ (compared to 
+\begin_inset Formula $x=0$
+\end_inset
+
+) for Bloch-periodic boundary conditions, but the complex conjugations cause
+ these phase factors to 
+\emph on
+cancel
+\emph default
+.
+ Due to the sign flip in 
+\begin_inset Formula $d\vec{A}=\pm\hat{x}dydz$
+\end_inset
+
+ at the two boundaries, that means that the 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x=a$
+\end_inset
+
+ boundary integrals 
+\emph on
+sum to zero
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Therefore, 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ is still Hermitian with Bloch-periodic boundaries in 
+\begin_inset Formula $x$
+\end_inset
+
+, assuming that the 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ boundary terms also vanish (e.g.
+ they are periodic too, or PEC, or …).
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $k+\frac{2\pi}{a}$
+\end_inset
+
+ give the same solutions, because they are 
+\emph on
+the same boundary conditions
+\emph default
+ 
+\begin_inset Formula $\vec{H}(x+a,y,z)=e^{ika}\vec{H}(x,y,z)$
+\end_inset
+
+: 
+\begin_inset Formula $e^{ika}$
+\end_inset
+
+ is the same if you shift 
+\begin_inset Formula $k$
+\end_inset
+
+ by 
+\begin_inset Formula $2\pi/a$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: Periodic waveguide guidance proof (10+15 points)
+\end_layout
+
+\begin_layout Standard
+In both parts of this problem, similar to class, we need to prove that the
+ Rayleigh quotient satisfies 
+\begin_inset Formula $\langle H,\hat{\Theta}_{\vec{k}}H\rangle/\langle H,H\rangle<k^{2}$
+\end_inset
+
+ for some trial function 
+\begin_inset Formula $H$
+\end_inset
+
+, or equivalently that
+\begin_inset Formula 
+\[
+\int_{0}^{a}\int_{-\infty}^{\infty}(1-\Delta)\left|(\nabla+i\vec{k})\times\vec{H}_{\vec{k}}\right|^{2}dx\,dy-k^{2}\int_{0}^{a}\int_{-\infty}^{\infty}\left|\vec{H}_{\vec{k}}\right|^{2}dx\,dy<0
+\]
+
+\end_inset
+
+ for the trial Bloch envelope 
+\begin_inset Formula $\vec{H}_{\vec{k}}=\vec{H}e^{-ikx}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{k}=k\hat{\vec{x}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\varepsilon^{-1}=1-\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+We will choose 
+\begin_inset Formula $u(x,y)=e^{-|y|/L}$
+\end_inset
+
+ for some 
+\begin_inset Formula $L>0$
+\end_inset
+
+, exactly as in class—that is, it is the simplest conceivable periodic function
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+, a constant.
+ Thus, 
+\begin_inset Formula $\int|u|^{2}=2a\int_{0}^{\infty}e^{-2y/L}dy=aL$
+\end_inset
+
+ over the unit cell.
+ In this case, the variational criterion above becomes, exactly as in class
+ except for the factor of 
+\begin_inset Formula $a$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\int_{0}^{a}\int_{-\infty}^{\infty}(1-\Delta)\left(k^{2}+L^{-2}\right)e^{-2|y|/L}dxdy-k^{2}aL & < & 0\\
+ & = & \frac{a}{L}-\int_{0}^{a}\int_{-\infty}^{\infty}\Delta\cdot\left(k^{2}+L^{-2}\right)e^{-2|y|/L}dx\,dy,
+\end{eqnarray*}
+
+\end_inset
+
+which becomes negative in the limit 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+ thanks to our assumption that 
+\begin_inset Formula $\int_{0}^{a}\int_{-\infty}^{\infty}\Delta(x,y)\,dx\,dy>0$
+\end_inset
+
+.
+ Note that the fact that 
+\begin_inset Formula $\int|\Delta|<\infty$
+\end_inset
+
+ ensures that we can interchange the limits and integration, via the dominated
+ convergence theorem discussed in class.
+\end_layout
+
+\begin_layout Enumerate
+Let us guess that we can choose 
+\begin_inset Formula $u(y)$
+\end_inset
+
+ and 
+\begin_inset Formula $v(y)$
+\end_inset
+
+ to be functions of 
+\begin_inset Formula $y$
+\end_inset
+
+ only (i.e., again the trivial constant-function periodicity in 
+\begin_inset Formula $x$
+\end_inset
+
+).
+ The fact that 
+\begin_inset Formula $\nabla\cdot\vec{H}=0$
+\end_inset
+
+ implies that 
+\begin_inset Formula $(\nabla+i\vec{k})\cdot[u(y)\hat{\vec{x}}+v(y)\hat{\vec{y}}]=0=iku+v'$
+\end_inset
+
+, and therefore 
+\begin_inset Formula $u=iv'/k$
+\end_inset
+
+.
+ Therefore, it is convenient to choose 
+\begin_inset Formula $v(y)$
+\end_inset
+
+ to be a smooth function so that 
+\begin_inset Formula $u$
+\end_inset
+
+ is differentiable.
+ Let us choose 
+\begin_inset Formula 
+\[
+v(y)=e^{-y^{2}/2L^{2}}
+\]
+
+\end_inset
+
+in which case 
+\begin_inset Formula $u(y)=-\frac{iy}{kL^{2}}e^{-y^{2}/2L^{2}}$
+\end_inset
+
+.
+ Recall the Gaussian integrals 
+\begin_inset Formula $\int_{-\infty}^{\infty}e^{-y^{2}/L^{2}}dy=L\sqrt{\pi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\int_{-\infty}^{\infty}y^{2}e^{-y^{2}/L^{2}}dy=L^{3}\sqrt{\pi}/2$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\int|\vec{H}|^{2}=a\int|u|^{2}+|v|^{2}=aL\sqrt{\pi}[1+\frac{1}{k^{2}L^{2}}]$
+\end_inset
+
+.
+ Also, 
+\begin_inset Formula $(\nabla+i\vec{k})\times[u(y)\hat{\vec{x}}+v(y)\hat{\vec{y}}]=(ikv-u')\hat{\vec{z}}$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula 
+\[
+|\nabla\times\vec{H}|^{2}=\left|(\nabla+i\vec{k})\times\vec{H}_{\vec{k}}\right|^{2}=|u'|^{2}+k^{2}|v|^{2}=k^{2}\left[1+\frac{1}{k^{4}L^{4}}\left(1-\frac{y^{2}}{L^{2}}\right)\right]e^{-y^{2}/L^{2}}.
+\]
+
+\end_inset
+
+Then, if we look at our variational criterion, we have two terms: 
+\begin_inset Formula $\int|\nabla\times\vec{H}|^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $-\int\Delta\cdot|\nabla\times\vec{H}|^{2}$
+\end_inset
+
+.
+ Again, we can swap limits with integration in the latter by the dominated
+ convergence theorem.
+ Combining the former with the 
+\begin_inset Formula $-k^{2}\int|\vec{H}|^{2}$
+\end_inset
+
+ term in the variational criterion, we get: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\int|\nabla\times\vec{H}|^{2}-k^{2}\int|\vec{H}|^{2} & = & a\int_{-\infty}^{\infty}k^{2}\left[1+\frac{1}{k^{4}L^{4}}\left(1-\frac{y^{2}}{L^{2}}\right)\right]e^{-y^{2}/L^{2}}dy-k^{2}aL\sqrt{\pi}\left[1+\frac{1}{k^{2}L^{2}}\right]\\
+ & = & a\int_{-\infty}^{\infty}\frac{k^{2}}{k^{4}L^{4}}\left(1-\frac{y^{2}}{L^{2}}\right)e^{-y^{2}/L^{2}}dy-\frac{k^{2}aL\sqrt{\pi}}{k^{2}L^{2}}\\
+ & = & \frac{a}{k^{2}L^{4}}L\sqrt{\pi}\left(1-\frac{L^{2}}{2L^{2}}\right)-\frac{a\sqrt{\pi}}{L},
+\end{eqnarray*}
+
+\end_inset
+
+which goes to zero as 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+.
+ Thus: 
+\begin_inset Formula 
+\[
+\int(1-\Delta)\left|(\nabla+i\vec{k})\times\vec{H}_{\vec{k}}\right|^{2}-k^{2}\int\left|\vec{H}_{\vec{k}}\right|^{2}\rightarrow-k^{2}\int_{0}^{a}\int_{-\infty}^{\infty}\Delta(x,y)\,dx\,dy<0.
+\]
+
+\end_inset
+
+as 
+\begin_inset Formula $L\rightarrow\infty$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\end_body
+\end_document

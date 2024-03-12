@@ -169,7 +169,7 @@ Guest lecture by [Dr. Pengning Chao](https://math.mit.edu/directory/profile.html
 
 * [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
 * [video recording (MIT only)](https://mit.zoom.us/rec/share/L5dHd2Lykg1JeGqJRL2Iy6Id12vX5MIZiG4nRibakFRut5B3cnwrIY_j_ccDfFOg.LmyQP8FP6Sie30je?startTime=1709147095000)
-* pset 2 solutions: coming soon
+* [pset 2 solutions](psets/pset2sol.pdf)
 * [pset 3](psets/pset3.pdf): due Wed Mar 6
 
 **Discrete translational symmetry:**
@@ -229,7 +229,7 @@ Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in
 ### Lecture 13: 6 Mar 2024
 
 * [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
-* pset 3 solutions: coming soon
+* [pset 3 solutions](psets/pset3sol.pdf)
 * pset 4: coming soon
 
 Off-axis propagation, projected band diagrams for multilayer films, Fabry-Perot defect modes, and surface states. Omnidirectional reflection.

@@ -1,0 +1,2346 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 2 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: Cylindrical symmetry (5+10+5pts)
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $f(\phi)$
+\end_inset
+
+ is an eigenfunction of 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+ for all 
+\begin_inset Formula $\phi\in\mathbb{R}$
+\end_inset
+
+, we know from class that 
+\begin_inset Formula $f(\phi)$
+\end_inset
+
+ must be an exponential function 
+\begin_inset Formula $e^{\kappa\phi}$
+\end_inset
+
+ (or a multiple thereof) for some 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ For the translation group, this number 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ was a completely arbitrary imaginary number (disallowing diverging solutions).
+ Here, however, we have a further constraint: rotation by 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ must be the same as doing nothing, and therefore we 
+\emph on
+must
+\emph default
+ have 
+\begin_inset Formula $f(2\pi)=f(0)=1$
+\end_inset
+
+.
+ This implies 
+\begin_inset Formula $2\pi\kappa=i2\pi m$
+\end_inset
+
+ where 
+\begin_inset Formula $m$
+\end_inset
+
+ is an 
+\emph on
+integer
+\emph default
+ (so that 
+\begin_inset Formula $e^{-i2\pi m}=1$
+\end_inset
+
+), i.e.
+ 
+\begin_inset Formula $\kappa=im$
+\end_inset
+
+ for 
+\begin_inset Formula $m\in\mathbb{Z}$
+\end_inset
+
+.
+ (You could, of course, choose the opposite sign convention.)
+\end_layout
+
+\begin_layout Enumerate
+Combining the previous part with translation-invariance in 
+\begin_inset Formula $z$
+\end_inset
+
+ means that 
+\begin_inset Formula $\psi$
+\end_inset
+
+ must be of the form 
+\begin_inset Formula $\psi=\psi_{mk}(r)e^{im\phi+ikz}$
+\end_inset
+
+.
+ That is, we now have a 
+\emph on
+one
+\emph default
+-dimensional function and should obtain a 
+\emph on
+one
+\emph default
+-dimensional Hermitian eigenproblem in 
+\begin_inset Formula $r$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+If we plug this 
+\begin_inset Formula $\psi$
+\end_inset
+
+ into 
+\begin_inset Formula $-\nabla^{2}\psi=\frac{\omega^{2}}{c^{2}}\psi$
+\end_inset
+
+, we can apply the form of 
+\begin_inset Formula $\nabla^{2}$
+\end_inset
+
+ in cylindrical coordinates and obtain: 
+\begin_inset Formula 
+\[
+-\psi_{km}''-\frac{1}{r}\psi_{km}'+(\frac{1}{r^{^{2}}}m^{2}+k^{2})\psi_{km}=\frac{\omega^{2}}{c^{2}}\psi_{km},
+\]
+
+\end_inset
+
+where primes denote differentiation by 
+\begin_inset Formula $r$
+\end_inset
+
+, which after a slight rearrangment becomes: 
+\begin_inset Formula 
+\[
+r^{2}\psi_{km}''+r\psi_{km}'+(k_{\perp}^{2}r^{2}-m^{2})\psi_{km}=0,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{\perp}^{2}=\frac{\omega^{2}}{c^{2}}-k^{2}$
+\end_inset
+
+.
+ Now, make a change of variables: 
+\begin_inset Formula $x=k_{\perp}r$
+\end_inset
+
+, 
+\begin_inset Formula $y(x)=\psi_{km}(x/k_{\perp})$
+\end_inset
+
+, and we find: 
+\begin_inset Formula 
+\[
+x^{2}y''+xy'+(x^{2}-m^{2})y=0,
+\]
+
+\end_inset
+
+which is precisely Bessel's equation of order 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ The solutions of this are 
+\begin_inset Formula $J_{m}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{m}(x)$
+\end_inset
+
+, the Bessel functions of the first and second kinds.
+ However, 
+\begin_inset Formula $Y_{m}(x)$
+\end_inset
+
+ diverges at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, which we can't allow (physical wave solutions can't blow up in empty space).
+ So, the eigensolution must by 
+\begin_inset Formula $y(x)=J_{m}(x)$
+\end_inset
+
+ (choosing an arbitrary amplitude of 1), and thus 
+\begin_inset Formula 
+\[
+\psi(r,\phi,z)=J_{m}(k_{\perp}r)e^{im\phi+ikz}.
+\]
+
+\end_inset
+
+ We're not done yet, because we haven't found 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+.
+ This is determined by the boundary condition 
+\begin_inset Formula $\psi|_{r=R}=0$
+\end_inset
+
+.
+ That means we must have 
+\begin_inset Formula $J_{m}(k_{\perp}R)=0$
+\end_inset
+
+, or 
+\begin_inset Formula $k_{\perp}^{(n)}=x_{m,n}/R$
+\end_inset
+
+ where the 
+\begin_inset Formula $x_{m,n}$
+\end_inset
+
+ are the zeros of 
+\begin_inset Formula $J_{m}$
+\end_inset
+
+.
+ Solving for 
+\begin_inset Formula $\omega$
+\end_inset
+
+ from 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+, we finally get a discrete sequence of bands: 
+\begin_inset Formula 
+\[
+\omega_{mk}^{(n)}(k)=c\sqrt{k^{2}+\left(\frac{x_{m,n}}{R}\right)^{2}}.
+\]
+
+\end_inset
+
+ Note, moreover, that 
+\begin_inset Formula $J_{-m}=J_{m}$
+\end_inset
+
+, and therefore the bands for 
+\begin_inset Formula $m\neq0$
+\end_inset
+
+ are 
+\emph on
+doubly degenerate
+\emph default
+ (this actually also follows from mirror symmetry).
+ To sketch the bands, we can choose dimensionless units (
+\begin_inset Formula $c=1$
+\end_inset
+
+, 
+\begin_inset Formula $R=1$
+\end_inset
+
+), and the result is shown in figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:besselbands"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename besselbands.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:besselbands"
+
+\end_inset
+
+The first few bands of the scalar wave equation in a cylindrical waveguide.
+ Plotted are lowest four bands for 
+\begin_inset Formula $m=0$
+\end_inset
+
+ (blue), 
+\begin_inset Formula $m=\pm1$
+\end_inset
+
+ (thick red), and 
+\begin_inset Formula $m=\pm2$
+\end_inset
+
+ (dashed green).
+ Also, shown, for reference, is the light line 
+\begin_inset Formula $\omega=ck$
+\end_inset
+
+ of air (all modes lie above this and are therefore extended in the air
+ core).
+ In particualr, the shapes of the curves are hyperbolas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset Formula $\psi_{mk}(r)e^{im\phi+kz}$
+\end_inset
+
+ must be orthogonal (
+\begin_inset Formula $\int\psi_{1}^{*}\psi_{2}r\,dr\,d\phi\,dz=0$
+\end_inset
+
+ for eigenfunctions of different eigenvalues) since they are eigenfunctions
+ of a Hermitian operator.
+ For two different 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+ values, they are orthogonal since 
+\begin_inset Formula $\int e^{i(m_{1}-m_{2})\phi}d\phi=0$
+\end_inset
+
+ for 
+\begin_inset Formula $m_{1}\neq m_{2}$
+\end_inset
+
+ (which follows from group theory since they correspond to different representat
+ions).
+ For the 
+\emph on
+same
+\emph default
+ 
+\begin_inset Formula $m$
+\end_inset
+
+, we must have that the 
+\begin_inset Formula $r$
+\end_inset
+
+ integral is zero, and hence, changing variables to 
+\begin_inset Formula $u=r/R$
+\end_inset
+
+, we have: 
+\begin_inset Formula 
+\[
+\int_{0}^{1}J_{m}(x_{m,n}u)\cdot J_{m}(x_{m,n'}u)\,u\,du=0
+\]
+
+\end_inset
+
+ for different zeros 
+\begin_inset Formula $n\neq n'$
+\end_inset
+
+.
+ (This is a well-known identity that is used in Fourier-Bessel series expansions.
+)
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: 2d Waveguide Modes (5+15 points)
+\end_layout
+
+\begin_layout Enumerate
+Maxwell's equations are (in terms of 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+) given by the eigen-equation 
+\begin_inset Formula $\nabla\times\frac{1}{\varepsilon}\nabla\times\vec{H}=\frac{\omega^{2}}{c^{2}}\vec{H}$
+\end_inset
+
+.
+ Suppose that we replace 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ by 
+\begin_inset Formula $\alpha\varepsilon$
+\end_inset
+
+ where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is some constant.
+ By inspection, one obtains the 
+\emph on
+same
+\emph default
+ eigensolution 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ with 
+\begin_inset Formula $\omega$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $\omega/\sqrt{\alpha}$
+\end_inset
+
+ (we just divided both sides by 
+\begin_inset Formula $\alpha$
+\end_inset
+
+).
+ Thus, scaling epsilon everywhere by a constant just trivially scales the
+ eigenvalues.
+ [We could have alternatively rescaled the geometry and fields: 
+\begin_inset Formula $\varepsilon(\vec{x})\to\varepsilon(\vec{x}\sqrt{\alpha})$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}(\vec{x})\rightarrow\vec{H}(\vec{x}\sqrt{\alpha})$
+\end_inset
+
+.] Therefore, we can set 
+\begin_inset Formula $\varepsilon_{lo}=1$
+\end_inset
+
+ (that is, 
+\begin_inset Formula $\alpha=1/\varepsilon_{lo}$
+\end_inset
+
+), without loss of generality.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Since we are looking for 
+\begin_inset Quotes eld
+\end_inset
+
+TM
+\begin_inset Quotes erd
+\end_inset
+
+ solutions 
+\begin_inset Formula $E_{z}(x,y)=e^{ikx}E_{k}(y)$
+\end_inset
+
+, i.e.
+ with 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ in the 
+\begin_inset Formula $z$
+\end_inset
+
+ direction, then similar to class the eigen-equation simplifies to 
+\begin_inset Formula $-\nabla^{2}E_{z}=\frac{\omega^{2}}{c^{2}}\varepsilon E_{z}$
+\end_inset
+
+, and when we plug in the 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ form we get: 
+\begin_inset Formula 
+\[
+-\frac{d^{2}}{dy^{2}}E_{y}=(\omega^{2}\varepsilon-k^{2})E_{y}
+\]
+
+\end_inset
+
+ (where I have chosen 
+\begin_inset Formula $c=1$
+\end_inset
+
+ units for simplicity).
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In any region where 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ is constant, the above equation is solved simply by sines and cosines if
+ 
+\begin_inset Formula $\omega^{2}\varepsilon-k^{2}>0$
+\end_inset
+
+ and by exponentials otherwise.
+ Since we have a 
+\begin_inset Formula $y=0$
+\end_inset
+
+ mirror plane, the solutions can be chosen either even or odd, and therefore
+ in the 
+\begin_inset Formula $|y|<h/2$
+\end_inset
+
+ region we have solutions 
+\begin_inset Formula $E_{k}=A\cos(k_{\perp}y)$
+\end_inset
+
+ or 
+\begin_inset Formula $A\sin(k_{\perp}y)$
+\end_inset
+
+, where 
+\begin_inset Formula 
+\[
+k_{\perp}=\sqrt{\omega^{2}\varepsilon_{hi}-k^{2}}.
+\]
+
+\end_inset
+
+If 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ is imaginary, these become 
+\begin_inset Formula $\cosh$
+\end_inset
+
+ and 
+\begin_inset Formula $\sinh$
+\end_inset
+
+ solutions, but we will see below that this won't happen.
+ In the 
+\begin_inset Formula $|y|>h/2$
+\end_inset
+
+ region, since we are looking for solutions below the light line (
+\begin_inset Formula $\omega^{2}\varepsilon_{lo}<k^{2}$
+\end_inset
+
+), we must have exponentials...and requiring the solutions to be finite at
+ infinity we must have 
+\begin_inset Formula $E_{k}=Be^{-\kappa y}$
+\end_inset
+
+ for 
+\begin_inset Formula $y>h/2$
+\end_inset
+
+ and 
+\begin_inset Formula $\pm Be^{\kappa y}$
+\end_inset
+
+ for 
+\begin_inset Formula $y<-h/2$
+\end_inset
+
+ (with 
+\begin_inset Formula $\pm$
+\end_inset
+
+ depending on whether the state is even or odd, where:
+\begin_inset Formula 
+\[
+\kappa=\sqrt{k^{2}-\omega^{2}\varepsilon_{lo}}=\sqrt{k^{2}(1-f)-k_{\perp}^{2}f},
+\]
+
+\end_inset
+
+where we define 
+\begin_inset Formula $f=\varepsilon_{lo}/\varepsilon_{hi}<1$
+\end_inset
+
+ (the dielectric contrast), and we have used the definition of 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ from above.
+\end_layout
+
+\begin_layout Enumerate
+Let's consider first the 
+\emph on
+even
+\emph default
+ solutions (cosine).
+ Continuity of 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $A\cos(k_{\perp}h/2)=Be^{-\kappa h/2}$
+\end_inset
+
+, and continuity of 
+\begin_inset Formula $E_{k}'\sim H_{x}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $-k_{\perp}A\sin(k_{\perp}h/2)=-\kappa Be^{-\kappa h/2}$
+\end_inset
+
+.
+ Dividing these two equations, we find: 
+\begin_inset Formula 
+\[
+\tan(k_{\perp}h/2)=\frac{\kappa}{k_{\perp}}=\frac{\sqrt{k^{2}(1-f)-k_{\perp}^{2}f}}{k_{\perp}}.
+\]
+
+\end_inset
+
+Similarly, for the 
+\emph on
+odd
+\emph default
+ solutions (sine), we obtain: 
+\begin_inset Formula 
+\[
+\cot(k_{\perp}h/2)=-\frac{\sqrt{k^{2}(1-f)-k_{\perp}^{2}f}}{k_{\perp}}.
+\]
+
+\end_inset
+
+ These are transcendental equations for 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+.
+ We plot the left and right hand sides of these two equations in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transcend"
+
+\end_inset
+
+, where the intersections of the curves give the guided-mode solutions.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename wvg-transcend.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:transcend"
+
+\end_inset
+
+Plot of the two transcendental equations for even modes (left plot) and
+ odd modes (right plot) as a function of 
+\begin_inset Formula $k_{\perp}h/2$
+\end_inset
+
+.
+ The thick lines show the right hand sides, while the thin lines show the
+ left hand sides (
+\begin_inset Formula $\tan$
+\end_inset
+
+ or 
+\begin_inset Formula $\cot$
+\end_inset
+
+) of the equations, and the intersections correspond to guided-mode solutions.
+ This plot is for the particular case of 
+\begin_inset Formula $f=0.1$
+\end_inset
+
+ and 
+\begin_inset Formula $kh/2=2$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+What about imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ solutions? In this case, the left hand side (
+\begin_inset Formula $\tan$
+\end_inset
+
+ or 
+\begin_inset Formula $\cot$
+\end_inset
+
+) would be purely imaginary, while the right hand side would also be purely
+ imaginary, so it seems like there might be some such solutions.
+ Consider the even mode (
+\begin_inset Formula $\tan$
+\end_inset
+
+) equation.
+ The tangent of an imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ is always imaginary with the 
+\emph on
+same
+\emph default
+ sign as the imaginary part of 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+, whereas the right hand side will be imaginary with the 
+\emph on
+opposite
+\emph default
+ sign (
+\begin_inset Formula $1/i=-i$
+\end_inset
+
+)—because of that, the two curves will 
+\emph on
+never
+\emph default
+ intersect for imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ and there will be no solution.
+ Conversely for the odd-mode case.
+ So, there are no imaginary 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ solutions, as promised—this means that the guided modes must always be
+ 
+\emph on
+above
+\emph default
+ the light line for 
+\begin_inset Formula $\varepsilon_{hi}$
+\end_inset
+
+, which makes physical sense (they must correspond to 
+\emph on
+propagating
+\emph default
+ modes in the 
+\begin_inset Formula $\varepsilon_{hi}$
+\end_inset
+
+ region and 
+\emph on
+evanescent
+\emph default
+ modes in the 
+\begin_inset Formula $\varepsilon_{lo}$
+\end_inset
+
+ regions).
+\end_layout
+
+\begin_layout Enumerate
+We can see immediately that the right-hand side of the transcendental equations
+ is a real number only when 
+\begin_inset Formula $k_{\perp}\leq|k|\sqrt{\frac{1}{f}-1}=k_{\perp}^{max}$
+\end_inset
+
+.
+ Furthermore, we will clearly have an intersection for 
+\emph on
+every
+\emph default
+ branch of the tangent/cotangent curve that passes through zero 
+\emph on
+before
+\emph default
+ 
+\begin_inset Formula $k_{\perp}^{max}$
+\end_inset
+
+.
+ The tangent curves pass through zero whenever 
+\begin_inset Formula $k_{\perp}h/2$
+\end_inset
+
+ is an integer multiple of 
+\begin_inset Formula $\pi$
+\end_inset
+
+, and the cotangent curves pass through zero when 
+\begin_inset Formula $k_{\perp}h/2+\pi/2$
+\end_inset
+
+ is an integer multiple of 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+ Therefore, the number of even modes is simply the number of zero crossings
+ before 
+\begin_inset Formula $k_{\perp}^{max}$
+\end_inset
+
+, namely:
+\begin_inset Formula 
+\[
+\textrm{\# even modes}=\left\lfloor \frac{|k|h\sqrt{\frac{1}{f}-1}}{2\pi}\right\rfloor +1,
+\]
+
+\end_inset
+
+ where the 
+\begin_inset Formula $+1$
+\end_inset
+
+ is for the first branch of the tangent (which has a zero crossing at 
+\begin_inset Formula $k_{\perp}=0$
+\end_inset
+
+ and therefore 
+\emph on
+always
+\emph default
+ intersects the right-hand-side at least once).
+ Here, by 
+\begin_inset Formula $\left\lfloor x\right\rfloor $
+\end_inset
+
+ we mean the greatest
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+There is some ambiguity about whether to define the mode as guided when
+ the argument of 
+\begin_inset Formula $\left\lfloor x\right\rfloor $
+\end_inset
+
+ here is exactly an integer, because that corresponds to the case where
+ the mode is exactly on the light line and hence has 
+\begin_inset Formula $\kappa=0$
+\end_inset
+
+.
+ If we don't call that a guided mode, then we have to modify our formula
+ by one in that case, but since this situation has measure zero in the parameter
+ space, the question has no practical significance.
+\end_layout
+
+\end_inset
+
+ integer 
+\begin_inset Formula $\leq x$
+\end_inset
+
+.
+ Similarly, the number of odd modes is also given by the number of zero
+ crossings: 
+\begin_inset Formula 
+\[
+\textrm{\# odd modes}=\left\lfloor \frac{|k|h\sqrt{\frac{1}{f}-1}+\pi}{2\pi}\right\rfloor ,
+\]
+
+\end_inset
+
+ where in this case we see that we will not have 
+\emph on
+any
+\emph default
+ odd guided modes for 
+\begin_inset Formula $|k|h\sqrt{\frac{1}{f}-1}<\pi$
+\end_inset
+
+.
+ Therefore, as 
+\begin_inset Formula $k\rightarrow0$
+\end_inset
+
+ we get exactly one (even) guided mode.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Just for fun, let's look at the TE polarization (
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ in the 
+\begin_inset Formula $\hat{\vec{z}}$
+\end_inset
+
+ direction).
+ For the 
+\begin_inset Formula $H_{z}=H_{k}e^{ikx}$
+\end_inset
+
+ polarization, we have very similar equations except that the boundary condition
+s are that 
+\begin_inset Formula $H_{k}$
+\end_inset
+
+ is continuous and 
+\begin_inset Formula $H_{k}'/\varepsilon$
+\end_inset
+
+ is continuous (since 
+\begin_inset Formula $H_{k}'\sim D_{x}=D_{\Vert}$
+\end_inset
+
+).
+ Thus, for example for the 
+\begin_inset Formula $\cos(k_{\perp}y)$
+\end_inset
+
+ mode (the 
+\emph on
+odd
+\emph default
+ mode, since 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ is a pseudovector), we have 
+\begin_inset Formula $-k_{\perp}A\sin(k_{\perp}h/2)/\varepsilon_{hi}=-\kappa Be^{-\kappa h/2}/\varepsilon_{lo}$
+\end_inset
+
+.
+ Therefore, both the 
+\begin_inset Formula $\tan$
+\end_inset
+
+ and 
+\begin_inset Formula $\cot$
+\end_inset
+
+ in the transcendental equations get multipled by 
+\begin_inset Formula $f=\varepsilon_{lo}/\varepsilon_{hi}$
+\end_inset
+
+.
+ What effect does this have on the solutions? Multiplying by 
+\begin_inset Formula $f<1$
+\end_inset
+
+ 
+\emph on
+decreases
+\emph default
+ the tangent curves, but does 
+\emph on
+not
+\emph default
+ change the locations of their zeros.
+ Therefore, the 
+\emph on
+number
+\emph default
+ of modes at a given 
+\begin_inset Formula $k$
+\end_inset
+
+ is 
+\emph on
+unaffected
+\emph default
+.
+ However, the intersection point is clearly pulled towards 
+\emph on
+larger
+\emph default
+ values of 
+\begin_inset Formula $k_{\perp}$
+\end_inset
+
+ when the tan/cot is shrunk, which corresponds to 
+\emph on
+smaller
+\emph default
+ values of 
+\begin_inset Formula $\kappa$
+\end_inset
+
+, the decay rate.
+ Therefore, the modes are 
+\emph on
+less
+\emph default
+ strongly confined for the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ (TE) polarization.
+ (Later in the class, we will see how this generally follows from the boundary
+ conditions and the variational theorem.)
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: Evanescent modes in waveguides (5+10+10 points)
+\end_layout
+
+\begin_layout Standard
+In class, we looked at 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+-polarized solutions in a 2d metallic waveguide, formed by an 
+\begin_inset Formula $\varepsilon=\mu=1$
+\end_inset
+
+ region between two PEC walls at 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x=L$
+\end_inset
+
+, and found that (in the absence of sources) it satisfied the eigen-equation
+ 
+\begin_inset Formula $-\nabla^{2}H_{z}=\omega^{2}H_{z}$
+\end_inset
+
+ (for 
+\begin_inset Formula $\varepsilon_{0}=\mu_{0}=1$
+\end_inset
+
+ units) with ``Neumann'' boundary conditions 
+\begin_inset Formula $H_{z}'(0)=H_{z}'(L)=0$
+\end_inset
+
+.
+ Exploiting translational symmetry in 
+\begin_inset Formula $y$
+\end_inset
+
+, we looked for solutions 
+\begin_inset Formula $H_{z}(x,y)=u_{k}(x)e^{iky}$
+\end_inset
+
+ with a given propagation constant (
+\begin_inset Quotes eld
+\end_inset
+
+wavevector
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\begin_inset Formula $k\in\mathbb{R}$
+\end_inset
+
+, and found 
+\begin_inset Formula 
+\[
+u_{k,n}=\cos\left(\frac{n\pi x}{L}\right)\qquad\text{for }n=0,1,\ldots
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\omega_{n}(k)=\pm\sqrt{\left(\frac{n\pi}{L}\right)^{2}+k^{2}},
+\]
+
+\end_inset
+
+so that the dispersion relation is a set of hyperbolas (except for the 
+\begin_inset Formula $n=0$
+\end_inset
+
+ solution 
+\begin_inset Formula $\omega_{0}=\pm|k|$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Fixing 
+\begin_inset Formula $\omega$
+\end_inset
+
+ and solving for 
+\begin_inset Formula $\omega_{n}(k_{n})=\omega$
+\end_inset
+
+, we find solutions 
+\begin_inset Formula $\pm k_{n}$
+\end_inset
+
+ for 
+\begin_inset Formula $k_{n}=\sqrt{\omega^{2}-\left(\frac{n\pi}{L}\right)^{2}}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $\omega=1.5\pi/L$
+\end_inset
+
+, this means that 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+ is 
+\emph on
+purely imaginary 
+\emph default
+for 
+\begin_inset Formula $n>1$
+\end_inset
+
+: we have real 
+\series bold
+propagating 
+\series default
+solutions 
+\begin_inset Formula $\pm|\omega|$
+\end_inset
+
+ for 
+\begin_inset Formula $n=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\pm\frac{\pi}{L}\sqrt{{(1.5)}^{2}-1}$
+\end_inset
+
+ for 
+\begin_inset Formula $n=1$
+\end_inset
+
+, with the 
+\begin_inset Formula $\pm$
+\end_inset
+
+ signs corresponding to modes propagating in the 
+\begin_inset Formula $\pm y$
+\end_inset
+
+ directions, along with an infinite number of 
+\series bold
+evanescent
+\series default
+ solutions 
+\begin_inset Formula $k_{n}=i\kappa_{n}$
+\end_inset
+
+ where 
+\begin_inset Formula $\kappa_{n}=\frac{\pi}{L}\sqrt{n^{2}-{(1.5)}^{2}}$
+\end_inset
+
+ for 
+\begin_inset Formula $n>1$
+\end_inset
+
+, with the 
+\begin_inset Formula $\pm i\kappa_{n}$
+\end_inset
+
+ signs corresponding to solutions that are exponentially decaying in the
+ 
+\begin_inset Formula $\pm y$
+\end_inset
+
+ directions, respectively.
+\end_layout
+
+\begin_layout Enumerate
+Ampere's law 
+\begin_inset Formula $\nabla\times\vec{H}=-i\omega\vec{E}+\vec{J}$
+\end_inset
+
+ combined with Faraday's law 
+\begin_inset Formula $\nabla\times\vec{E}=+i\omega\vec{H}$
+\end_inset
+
+ gives us 
+\begin_inset Formula $\nabla\times\nabla\times\vec{H}=\omega^{2}\vec{H}+\nabla\times J$
+\end_inset
+
+.
+ Taking the 
+\begin_inset Formula $z$
+\end_inset
+
+ components of both sides gives 
+\begin_inset Formula $-\nabla^{2}H_{z}=\omega^{2}H_{z}+\frac{\partial J_{y}}{\partial z}-\frac{\partial J_{x}}{\partial y}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $\vec{J}=f(x)\delta(y)\hat{x}$
+\end_inset
+
+, this gives: 
+\begin_inset Formula 
+\[
+(-\nabla^{2}-\omega^{2})H_{z}=-f(x)\delta'(y),
+\]
+
+\end_inset
+
+where the right-hand side is indeed of the form 
+\begin_inset Formula $Cf(x)\delta'(y)$
+\end_inset
+
+ for 
+\begin_inset Formula $\boxed{C=-1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+To get a 
+\begin_inset Formula $\delta'(y)$
+\end_inset
+
+ on the right-hand side can only come from the 
+\begin_inset Formula $-\frac{\partial^{2}}{\partial^{2}y}H_{z}$
+\end_inset
+
+ terms on the left-hand side, so we must have a delta function in the 
+\emph on
+first
+\emph default
+ derivative:
+\begin_inset Formula 
+\[
+\frac{\partial H_{z}}{\partial y}=f(x)\delta(y)+\cdots.
+\]
+
+\end_inset
+
+(One can also see this directly from the 
+\begin_inset Formula $x$
+\end_inset
+
+ component of Ampere's law 
+\begin_inset Formula $\nabla\times\vec{H}=-i\omega\vec{E}+\vec{J}$
+\end_inset
+
+.) This corresponds to a 
+\series bold
+discontinuity
+\series default
+ of 
+\begin_inset Formula 
+\[
+\boxed{H_{z}(x,0^{+})-H_{z}(x,0^{-})=f(x)}
+\]
+
+\end_inset
+
+ in 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ across 
+\begin_inset Formula $y=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Above, the 
+\begin_inset Formula $\cdots$
+\end_inset
+
+ terms correspond to the other terms in 
+\begin_inset Formula $\partial H_{z}/\partial y$
+\end_inset
+
+ that do 
+\emph on
+not
+\emph default
+ come from the discontinuity: the ordinary piecewise derivative.
+ These terms must 
+\emph on
+not
+\emph default
+ have a discontinuity, as otherwise 
+\begin_inset Formula $\frac{\partial^{2}}{\partial^{2}y}H_{z}$
+\end_inset
+
+ would have an additional 
+\begin_inset Formula $\delta(y)$
+\end_inset
+
+ term.
+ This means that the piecewise slopes must match:
+\begin_inset Formula 
+\[
+\boxed{\left.\frac{\partial H_{z}}{\partial y}\right|_{y=0^{+}}=\left.\frac{\partial H_{z}}{\partial y}\right|_{y=0^{-}}}.
+\]
+
+\end_inset
+
+So, we have 
+\emph on
+two
+\emph default
+ continuity conditions at 
+\begin_inset Formula $y=0$
+\end_inset
+
+.
+ This will be important below.
+\end_layout
+
+\begin_layout Enumerate
+We now write 
+\begin_inset Formula 
+\[
+H_{z}(x,y)=\sum_{n=0}^{\infty}\cos\left(\frac{n\pi x}{L}\right)\begin{cases}
+a_{n}^{+}e^{+ik_{n}z} & z>0\\
+a_{n}^{-}e^{-ik_{n}z} & z<0
+\end{cases},
+\]
+
+\end_inset
+
+where we have chosen the signs 
+\begin_inset Formula $\pm$
+\end_inset
+
+ in the exponent for 
+\begin_inset Formula $z>0$
+\end_inset
+
+ and 
+\begin_inset Formula $z<0$
+\end_inset
+
+, respectively, to obtain 
+\emph on
+outgoing
+\emph default
+ waves (for 
+\begin_inset Formula $n=0,1$
+\end_inset
+
+) and 
+\emph on
+decaying
+\emph default
+ waves (for 
+\begin_inset Formula $n>1$
+\end_inset
+
+) as suggested.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now, applying our two continuity conditions above, we have: 
+\begin_inset Formula 
+\begin{align*}
+\sum_{n=0}^{\infty}\cos\left(\frac{n\pi x}{L}\right)(a_{n}^{+}-a_{n}^{-}) & =f(x)\\
+\sum_{n=0}^{\infty}\cos\left(\frac{n\pi x}{L}\right)k_{n}(a_{n}^{+}+a_{n}^{-}) & =0.
+\end{align*}
+
+\end_inset
+
+A little algebra shows that these two equations are satisfied if 
+\begin_inset Formula $a_{n}^{-}=-a_{n}^{+}=a_{n}$
+\end_inset
+
+ (the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ fields ``look antisymmetric,'' which actually means that the 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ field is 
+\emph on
+symmetric
+\emph default
+ since it is a pseudovector, consistent with the current source being symmetric)
+, and 
+\begin_inset Formula 
+\[
+\boxed{\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)=f(x)/2},
+\]
+
+\end_inset
+
+which is a Fourier cosine series and one can solve for 
+\begin_inset Formula $a_{n}=\frac{1}{L}\int_{0}^{L}f(x)\cos\left(\frac{n\pi x}{L}\right)dx$
+\end_inset
+
+, divided by 
+\begin_inset Formula $2$
+\end_inset
+
+ for 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+, by the usual cosine-series orthogonality formula.
+ Hence, the final solution looks like 
+\begin_inset Formula 
+\[
+H_{z}(x,y)=\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|z|},
+\]
+
+\end_inset
+
+which is a superposition of two propagating terms (
+\begin_inset Formula $n=0$
+\end_inset
+
+ and 
+\begin_inset Formula $n=1$
+\end_inset
+
+) and infinitely many evanescent terms.
+\end_layout
+
+\begin_layout Subsection*
+Problem 4: Poynting's theorem (15 points)
+\end_layout
+
+\begin_layout Standard
+We want to compute the total radiated power 
+\begin_inset Formula $P$
+\end_inset
+
+, which by Poynting's theorem should be equal to 
+\begin_inset Formula $-\frac{1}{2}\int\Re[\vec{E}^{*}\vec{J}]$
+\end_inset
+
+, the total work done 
+\emph on
+by
+\emph default
+ the current 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ (note the integral over space).
+ For 
+\begin_inset Formula $\vec{J}(\vec{x},t)=-i\omega\vec{p}\delta(\vec{x})e^{-i\omega t}$
+\end_inset
+
+, this gives 
+\begin_inset Formula $P=\frac{\omega}{2}\Im[\vec{p}\cdot\vec{E}(\vec{0})]$
+\end_inset
+
+ (evaluating at 
+\begin_inset Formula $t=0$
+\end_inset
+
+ since the 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+ factors cancel).
+ However, 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ blows up at 
+\begin_inset Formula $r=0$
+\end_inset
+
+, so we will evaluate 
+\begin_inset Formula $\vec{p}\cdot\vec{E}$
+\end_inset
+
+ at 
+\begin_inset Formula $r\neq0$
+\end_inset
+
+ and take the 
+\begin_inset Formula $r\to0$
+\end_inset
+
+ limit (and the result had better be independent of the diretion 
+\begin_inset Formula $\vec{n}$
+\end_inset
+
+ in which we go to the origin).
+ The identity 
+\begin_inset Formula $(\vec{n}\times\vec{p})\times\vec{n}=\vec{p}-\vec{n}(\vec{n}\cdot\vec{p})$
+\end_inset
+
+ will be useful, as will the Taylor expansion 
+\begin_inset Formula $e^{ikr}\approx1+ikr-\frac{k^{2}r^{2}}{2}-i\frac{k^{^{3}}r^{3}}{6}+O(r^{4})$
+\end_inset
+
+.
+ Plugging this in, collecting terms by powers of 
+\begin_inset Formula $r$
+\end_inset
+
+ (omitting terms that immediately vanish when we take the imaginary part),
+ and letting 
+\begin_inset Formula $\vec{v}=3\vec{n}(\vec{n}\cdot p)-\vec{p}$
+\end_inset
+
+, we find: 
+\begin_inset Formula 
+\begin{align*}
+\Im\left[4\pi\epsilon_{0}\vec{E}(r\vec{n},0)\right] & =\Im\left(\left\{ k^{2}\left[\vec{p}-\vec{n}(\vec{n}\cdot\vec{p})\right]\frac{1}{r}+\left[3\vec{n}(\vec{n}\cdot\vec{p})-\vec{p}\right]\left(\frac{1}{r^{3}}-\frac{ik}{r^{2}}\right)\right\} \left[1+ikr-\frac{k^{2}r^{2}}{2}-i\frac{k^{^{3}}r^{3}}{6}+\cdots\right]\right)\\
+ & =k^{3}\left[\vec{p}-\vec{n}(\vec{n}\cdot\vec{p})-\frac{\vec{v}}{6}+\frac{\vec{v}}{2}\right]+\frac{k}{r^{2}}(\vec{v}-\vec{v})+O(r)=k^{3}\left[\vec{p}-\vec{n}(\vec{n}\cdot\vec{p})+\frac{\vec{v}}{3}\right]+O(r)\\
+ & =\frac{2}{3}k^{3}\vec{p}+O(r),
+\end{align*}
+
+\end_inset
+
+and hence the 
+\begin_inset Formula $r\to0$
+\end_inset
+
+ limit of 
+\begin_inset Formula $\Im\vec{E}$
+\end_inset
+
+ is well defined (independent of 
+\begin_inset Formula $\vec{n}$
+\end_inset
+
+).
+ We therefore obtain (using 
+\begin_inset Formula $\omega=ck$
+\end_inset
+
+ and 
+\begin_inset Formula $c=1/\sqrt{\epsilon_{0}\mu_{0}}$
+\end_inset
+
+): 
+\begin_inset Formula 
+\[
+P=\frac{\omega}{2}\cdot\frac{2k^{3}p^{2}}{12\pi\epsilon_{0}}=\frac{ck^{4}p^{2}}{12\pi\epsilon_{0}}=\frac{c^{2}k^{4}p^{2}}{12\pi\epsilon_{0}}\sqrt{\epsilon_{0}\mu_{0}}=\frac{c^{2}Z_{0}k^{4}p^{2}}{12\pi}
+\]
+
+\end_inset
+
+ as desired (which matches the power computed in Jackson by integrating
+ the outgoing Poynting flux).
+\end_layout
+
+\begin_layout Subsection*
+Problem 5: Scattering and energy (6+6+5+5+5 points)
+\end_layout
+
+\begin_layout Enumerate
+Solutions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+From 
+\begin_inset Formula $\frac{\partial\psi}{\partial t}=\hat{C}\psi-\frac{\partial\phi}{\partial t}-\xi$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial\psi_{\text{inc}}}{\partial t}=\hat{C}\psi_{\text{inc}}-\xi$
+\end_inset
+
+, and 
+\begin_inset Formula $\psi=\psi_{\text{inc}}+\psi_{\text{scat}}$
+\end_inset
+
+, it follows that 
+\begin_inset Formula 
+\[
+\frac{\partial\psi_{\text{scat}}}{\partial t}=\hat{C}\psi_{\text{scat}}-\frac{\partial\phi}{\partial t}
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\phi=\chi\ast\psi=\chi\ast\left(\psi_{\text{inc}}+\psi_{\text{scat}}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Because of the dependence on 
+\begin_inset Formula $\phi$
+\end_inset
+
+, we can't solve the 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+ equation without first solving the 
+\begin_inset Formula $\psi_{\text{inc}}$
+\end_inset
+
+ equation.
+ Dividing the solutions into 
+\begin_inset Formula $\psi=\psi_{\text{inc}}+\psi_{\text{scat}}$
+\end_inset
+
+ doesn't make Maxwell's equations easier to solve, but it does give us a
+ new perspective on the solutions (and leads to some numerical approaches
+ such as integral-equation formulations).
+\end_layout
+
+\begin_layout Enumerate
+The Fourier transform merely changes 
+\begin_inset Formula $\frac{\partial}{\partial t}\to-i\omega$
+\end_inset
+
+, giving 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\hat{\psi}_{\text{inc}}}{\partial t} & =\hat{C}\hat{\psi}_{\text{inc}}-\hat{\xi}\\
+\frac{\partial\hat{\psi}_{\text{scat}}}{\partial t} & =\hat{C}\hat{\psi}_{\text{scat}}-\hat{\phi},
+\end{align*}
+
+\end_inset
+
+where the convolution 
+\begin_inset Formula $\phi=\chi\ast\psi$
+\end_inset
+
+ becomes a multiplication 
+\begin_inset Formula $\hat{\phi}=\hat{\chi}\hat{\psi}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Note: when we apply Poynting's theorem (from section
+\begin_inset space ~
+\end_inset
+
+3 of the notes) to a time-harmonic field 
+\begin_inset Formula $\psi(\vec{x},t)=\hat{\psi}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+, then the 
+\begin_inset Formula $\frac{\partial}{\partial t}\left[\frac{1}{2}\langle\psi,\psi\rangle\right]$
+\end_inset
+
+ term is zero.
+ In general, the 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+ terms cancel from all of the products thanks to the complex conjugations.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+If we apply the remaining of Poynting's theorem 
+\emph on
+for the volume 
+\emph default
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+ to the 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+ equation, there is no 
+\begin_inset Formula $\phi$
+\end_inset
+
+ term in the equation and 
+\begin_inset Formula $\xi=0$
+\end_inset
+
+ inside 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ so the 
+\begin_inset Formula $\langle\psi_{\text{inc}},\xi\rangle$
+\end_inset
+
+ integral vanishes as well! So the only remaining term is 
+\begin_inset Formula $-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}$
+\end_inset
+
+ on the right-hand side, with the left-hand-side equal to zero, so 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}=0$
+\end_inset
+
+ as desired.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Applying Poynting's theorem to the 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+ equation in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, the 
+\begin_inset Formula $\langle\psi,\xi\rangle$
+\end_inset
+
+ term is still 
+\begin_inset Formula $=0$
+\end_inset
+
+ for an integral over 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ because 
+\begin_inset Formula $\xi=0$
+\end_inset
+
+ there, but we 
+\emph on
+do 
+\emph default
+have a 
+\begin_inset Formula $\phi$
+\end_inset
+
+ term.
+ As shown in section
+\begin_inset space ~
+\end_inset
+
+3.2 of the notes, the 
+\begin_inset Formula $\phi$
+\end_inset
+
+ term in the frequency domain simplifies to 
+\begin_inset Formula $\langle\hat{\psi},\Im[\omega\hat{\chi}]\hat{\psi}\rangle$
+\end_inset
+
+, and as we explained in the notes one always has 
+\begin_inset Formula $\Im[\omega\hat{\chi}]\ge0$
+\end_inset
+
+ (positive semidefinite) for a passive material.
+ Hence 
+\begin_inset Formula $\langle\hat{\psi},\Im[\omega\hat{\chi}]\hat{\psi}\rangle\ge0$
+\end_inset
+
+, and it follows from Poynting's theorem that 
+\begin_inset Formula 
+\[
+\langle\hat{\psi},\Im[\omega\hat{\chi}]\hat{\psi}\rangle=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}^{*}\times\hat{\vec{H}}]\cdot d\vec{A}=P_{\text{abs}}\ge0
+\]
+
+\end_inset
+
+as desired.
+\end_layout
+
+\begin_layout Enumerate
+Consider a ball 
+\begin_inset Formula $B$
+\end_inset
+
+ of radius 
+\begin_inset Formula $R$
+\end_inset
+
+ (the interior of the sphere 
+\begin_inset Formula $\partial B$
+\end_inset
+
+ of radius 
+\begin_inset Formula $R$
+\end_inset
+
+) centered on some point in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, for any 
+\begin_inset Formula $R$
+\end_inset
+
+ large enough so that 
+\begin_inset Formula $B$
+\end_inset
+
+ encloses 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $\Omega\subseteq B$
+\end_inset
+
+), and apply Poynting's theorem to the volume 
+\begin_inset Formula $B\backslash\Omega$
+\end_inset
+
+ that lies 
+\emph on
+between
+\emph default
+ 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial B$
+\end_inset
+
+.
+ Poynting's theorem immediately implies that 
+\begin_inset Formula 
+\[
+0=-\oiint_{\partial(B\backslash\Omega)}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}=\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}-\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Longrightarrow P_{\text{scat}}=\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}=\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $d\vec{A}$
+\end_inset
+
+ pointing 
+\emph on
+out
+\emph default
+ of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ for 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial B$
+\end_inset
+
+, respectively.
+ More generally, by a similar argument one can show that 
+\begin_inset Formula $P_{\text{scat}}$
+\end_inset
+
+ is equal to the Poynting flux through 
+\emph on
+any
+\emph default
+ surface enclosing 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Since outgoing boundary conditions require 
+\begin_inset Formula $R^{2}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]$
+\end_inset
+
+ to point radially outward for large 
+\begin_inset Formula $R$
+\end_inset
+
+, it follows that the 
+\emph on
+integrand
+\emph default
+ 
+\begin_inset Formula $\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot\vec{n}$
+\end_inset
+
+ of the 
+\begin_inset Formula $\oiint_{\partial B}$
+\end_inset
+
+ integral must be 
+\begin_inset Formula $\ge0$
+\end_inset
+
+ for a sufficiently large 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ If the integrand is nonnegative, then the integral 
+\begin_inset Formula $\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}$
+\end_inset
+
+ must also be 
+\begin_inset Formula $\ge0$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $P_{\text{scat}}=\oiint_{\partial B}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}$
+\end_inset
+
+ for 
+\emph on
+all
+\emph default
+ radii 
+\begin_inset Formula $R$
+\end_inset
+
+ that enclose 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $P_{\text{scat}}\ge0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+We just plug in the definitions in terms of Poynting-flux integrals:
+\begin_inset Formula 
+\[
+P_{\text{ext}}=\underbrace{-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}^{*}\times\hat{\vec{H}}]\cdot d\vec{A}}_{P_{\text{abs}}}+\underbrace{\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}}_{P_{\text{scat}}}.
+\]
+
+\end_inset
+
+Then, we substitute the identities 
+\begin_inset Formula $\vec{E}=\vec{E}_{\text{inc}}+\vec{E}_{\text{scat}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{H}=\vec{H}_{\text{inc}}+\vec{H}_{\text{scat}}$
+\end_inset
+
+, and note that the minus sign in the 
+\begin_inset Formula $P_{\text{abs}}$
+\end_inset
+
+ term leads to several cancellations.
+ Another term vanishes due to the 
+\begin_inset Formula $\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{inc}}]\cdot d\vec{A}=0$
+\end_inset
+
+ property that we showed above.
+ The only remaining terms are the scat–inc cross terms:
+\begin_inset Formula 
+\[
+\boxed{P_{\text{ext}}=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{inc}}+\hat{\vec{E}}_{\text{inc}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+From the first part above (or section 3.2 of the notes), we have 
+\begin_inset Formula $P_{\text{abs}}=\Re\langle\hat{\psi},-i\omega\hat{\phi}\rangle=\Im\langle\hat{\psi},\omega\hat{\phi}\rangle$
+\end_inset
+
+.
+ (The absorbed power is the work done 
+\series bold
+on
+\series default
+ the polarization currents 
+\begin_inset Formula $-i\omega\hat{\phi}$
+\end_inset
+
+ 
+\series bold
+by
+\series default
+ the total field 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+.) In the same way, applying Poynting's theorem to 
+\begin_inset Formula $\psi_{\text{scat}}$
+\end_inset
+
+ yields
+\begin_inset Formula 
+\[
+\Re\langle\hat{\psi}_{\text{scat}},-i\omega\hat{\phi}\rangle=-\oiint_{\partial\Omega}\Re[\hat{\vec{E}}_{\text{scat}}^{*}\times\hat{\vec{H}}_{\text{scat}}]\cdot d\vec{A}=-P_{\text{scat}}.
+\]
+
+\end_inset
+
+(The scattered power is the work done 
+\series bold
+by
+\series default
+ the polarization currents 
+\begin_inset Formula $-i\omega\hat{\phi}$
+\end_inset
+
+ 
+\series bold
+on
+\series default
+ the scattered field 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+.) Combining these two, we obtain 
+\begin_inset Formula 
+\[
+P_{\text{ext}}=\underbrace{\Re\langle\hat{\psi},-i\omega\hat{\phi}\rangle}_{P_{\text{abs}}}\underbrace{-\Re\langle\hat{\psi}_{\text{scat}},-i\omega\hat{\phi}\rangle}_{P_{\text{abs}}}=\boxed{\Re\langle\hat{\psi}_{\text{inc}},-i\omega\hat{\phi}\rangle}.
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Comment: 
+\series default
+The optical theorem is often phrased in terms of a 
+\begin_inset Quotes eld
+\end_inset
+
+forward-scattering amplitude.
+\begin_inset Quotes erd
+\end_inset
+
+ Recall that 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ is produced by the polarization currents 
+\begin_inset Formula $\frac{\partial\phi}{\partial t}=-i\omega\hat{\phi}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+ is a planewave 
+\begin_inset Formula $\sim e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+, then 
+\begin_inset Formula $\langle\hat{\psi}_{\text{inc}},-i\omega\hat{\phi}\rangle$
+\end_inset
+
+ is a Fourier transform: the 
+\begin_inset Formula $e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+ 
+\emph on
+Fourier component
+\emph default
+ of the polarization current.
+ From class, a current 
+\begin_inset Formula $\sim e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+ in vacuum (like the 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ equations given 
+\begin_inset Formula $\hat{\phi}$
+\end_inset
+
+) generates fields 
+\begin_inset Formula $\sim e^{i\vec{k}\cdot\vec{x}}$
+\end_inset
+
+, which are the 
+\begin_inset Quotes eld
+\end_inset
+
+forward-scattered
+\begin_inset Quotes erd
+\end_inset
+
+ fields.
+ So 
+\begin_inset Formula $\langle\hat{\psi}_{\text{inc}},-i\omega\hat{\phi}\rangle$
+\end_inset
+
+ is proportional to the amplitude of the forward-scattered fields.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Comment: 
+\series default
+It is also worth commenting on the physical intuition behind the optical
+ theorem.
+ The basic idea is that any scattered or absorbed light leaves a shadow,
+ so one can determine 
+\begin_inset Formula $P_{\text{ext}}$
+\end_inset
+
+ by looking at the darkness of the shadow.
+ The shadow, a region on the 
+\begin_inset Quotes eld
+\end_inset
+
+forward
+\begin_inset Quotes erd
+\end_inset
+
+ side where 
+\begin_inset Formula $\hat{\psi}$
+\end_inset
+
+ is small, corresponds to a forward-scattered 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ that partially 
+\emph on
+cancels
+\emph default
+ 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+.
+ Hence, 
+\begin_inset Formula $P_{\text{ext}}$
+\end_inset
+
+ is determined by the 
+\begin_inset Formula $\hat{\psi}_{\text{scat}}$
+\end_inset
+
+ that is generated in the forward direction (the same direction as 
+\begin_inset Formula $\hat{\psi}_{\text{inc}}$
+\end_inset
+
+), i.e.
+ the forward-scattering amplitude.
+\end_layout
+
+\end_body
+\end_document
