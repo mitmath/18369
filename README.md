@@ -248,6 +248,40 @@ Applied the Hellmann-Feynman theorem to our Θₖ eigenproblem to show that the 
 
 From the energy velocity expression, proved that this group velocity is always ≤c for ε≥1. (At a deeper level, it turns out that you can prove this for any passive media.) Also gave a simple proof that the "front velocity" (the rate at which the wave "front" of nonzero fields can move) is bounded by the upper bound of the energy velocity.
 
+**Further reading:** See chapter 3 of the book, section on phase and group velocity. See the footnotes in that section, e.g. Jackson, _Classical Electrodynamics_, for a derivation of group velocity from the Fourier perspective; see also my [notes on wave velocity and Fourier transforms](https://github.com/mitmath/18303/blob/fall16/fourier-dispersion.pdf) from [18.303](https://github.com/mitmath/18303/tree/fall16). A much more complete review of velocity in lossy and dispersive media can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf).  For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
+
+### Lecture 15: 11 Mar 2024
+
+* [handwritten notes: 2d periodicity](https://www.dropbox.com/scl/fi/6ajalyt9wr4tlp4hz3yll/2D-Periodic-Maxwell.pdf?rlkey=9014uzcxfsltxsy9dt6c2bval&dl=0)
+* [handwritten notes: symmetry](https://www.dropbox.com/scl/fi/je8czfdtr1uq3w66wrgab/Symmetry-and-Representation-Theory.pdf?rlkey=oe8zil4vn52nrc4wvs48c8264&dl=0)
+
 Discussed group-velocity dispersion: when the group velocity depends on frequency (true for any non-scale-invariant system), wave packets spread out as they propagate.  This can be quantified (to lowest order) in terms of the "dispersion parameter" D.
 
-**Further reading:** See chapter 3 of the book, section on phase and group velocity. See the footnotes in that section, e.g. Jackson, _Classical Electrodynamics_, for a derivation of group velocity from the Fourier perspective; see also my [notes on wave velocity and Fourier transforms](https://github.com/mitmath/18303/blob/fall16/fourier-dispersion.pdf) from [18.303](https://github.com/mitmath/18303/tree/fall16). A much more complete review of velocity in lossy and dispersive media can be found in our 2014 paper [Speed-of-light limitations in passive linear media](http://math.mit.edu/~stevenj/papers/Welters14.pdf).  For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
+New topic: **2d periodicity**
+
+Reviewed Bloch's theorem, the primitive lattice vectors, the [Bravais lattice](http://en.wikipedia.org/wiki/Bravais_lattice), the primitive reciprocal lattice vectors, and the reciprocal lattice, for 2d periodicity. Reviewed the periodicity in k-space (reciprocal space), the Brillouin zone, and the irreducible Brillouin zone.
+
+Gave the example of the square lattice, its Brillouin zone, and its irreducible Brillouin zone for structures with the same (C₄ᵥ) symmetry as the lattice.
+
+Considered the TM band diagram of the square lattice of rods.  Pointed out that there are lots of interesting features — not only gaps, but the fact that the band extrema all occur at "high symmetry" k points, and the existence of 2-fold degeneracies only at the high-symmetry Γ and M points.  To understand this, we need to return to the general subject of symmetry in physics and give it a more comprehensive treatment.
+
+New topic: **Symmetry, redux**.  Began by reviewing what we learned previously of symmetry, but more carefully looked at how symmetry operations apply to electromagnetic fields.  Previously, we had showed that mirror symmetry implies even/odd solutions. Now, however, discuss subtleties of mirror symmetries (and other improper rotations) for electromagnetism: although the E and H fields seem to have opposite symmetry, they don't, because H is a [pseudovector](https://en.wikipedia.org/wiki/Pseudovector). Defined general rotation operators _R̂_ for vector and pseudovector fields.
+
+**Further reading:**  For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
+
+### Lecture 15: 13 Mar 2024
+
+* [handwritten notes: symmetry](https://www.dropbox.com/scl/fi/je8czfdtr1uq3w66wrgab/Symmetry-and-Representation-Theory.pdf?rlkey=oe8zil4vn52nrc4wvs48c8264&dl=0)
+* [representation theory summary](notes/representation-theory.pdf)
+
+Gave a simple 2d example of fields in a 2d metal box, and showed that the symmetries are more complicated, and may include degeneracies. In order to understand this, we need to understand the relationship of different symmetry operations to one another — this relationship is expressed more precisely by the _group_ of symmetry operators.
+
+Defined groups, and group representations, irreducibility, and partner functions, conjugacy classes and most of the other things on the handout, with some examples (the square symmetry group and the mirror symmetry group). (Briefly covered everything on the handout _except_ Great Orthogonality Theorem, character tables, projection operators, and product representations.)
+
+Proved that all eigenfunctions can be chosen to transform as partner functions of an irreducible representation of the symmetry group (also called a "basis" of the representation), with the dimension of the representation given by the degree of degeneracy of the eigenvalue. Proved that all representations derived from a given eigenvalue are equivalent. Noted that orthonormal eigenfunctions give a unitary representation (outlined proof but did not work it through).
+
+If the representation is irreducible, then the degeneracy comes from the symmetry of the system. If the representation is reducible, then we call it an **accidental degeneracy** (not coming from symmetry). Accidental degeneracies rarely happen by accident—usually the degeneracy has somehow been forced—so generically we only expect degeneracies if there are >1 dimensional irreps.
+
+Build the simple character table for the {E,σ} mirror-symmetry group, reprising the previous result that in mirror-symmetric systems we expect even/odd eigenfunctions, and we don't expect (non-accidental) degeneracies (unless there are additional symmetries).
+
+**Further reading:** Chapter 3 of the text, but this doesn't get into representation theory. See e.g. _Group Theory and Its Applications in Physics_ by Inui et al. (especially sections 4.1, 6.1, and 6.2) or _Group Theory and Quantum Mechanics_ by Michael Tinkham (especially sections 3-1 and 3-6), or any book with a similar title.  Character tables for all of the common symmetry groups are tabulated in both textbooks and online, e.g. see this [page on the C4v group](http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=404&option=4). See Inui section 6.6 on projection operators.
