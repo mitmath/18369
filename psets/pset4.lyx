@@ -1,0 +1,387 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 4
+\end_layout
+
+\begin_layout Standard
+Due Wed, 20 March 2024.
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Projection operators
+\end_layout
+
+\begin_layout Standard
+(You can use the Great Orthogonality Theorem [GOT] and/or the various orthogonal
+ity results for the rows/columns of the character table.)
+\end_layout
+
+\begin_layout Enumerate
+The representation-theory handout gives a formula for the projection operator
+ from a function onto its component that transforms as a particular representati
+on.
+ Using the GOT, pove the correctness of this formula: in particular, for
+ any function 
+\begin_inset Formula $\psi$
+\end_inset
+
+, show that 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}\psi$
+\end_inset
+
+ transforms as the 
+\begin_inset Formula $i$
+\end_inset
+
+-th partner function representation 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ (You can use the fact, from class, that we showed that any function can
+ be decomposed into a sum of partner functions of irreducible representations.
+ Consider what 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}$
+\end_inset
+
+ does to one of thes partner functions.)
+\end_layout
+
+\begin_layout Enumerate
+Prove that the sum of the projection operators 
+\begin_inset Formula $\hat{P}^{(\alpha)}$
+\end_inset
+
+ over all the irreducible representations 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ gives 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=\sum_{\alpha,i}\hat{P}_{i}^{(\alpha)}=1$
+\end_inset
+
+ (the identity operator), by using the column-orthogonality property of
+ the character table.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Prove that the projection operators 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}$
+\end_inset
+
+ are Hermitian for any unitary representation 
+\begin_inset Formula $D^{(\alpha)}$
+\end_inset
+
+, assuming that 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ is unitary for all 
+\begin_inset Formula $g\in G$
+\end_inset
+
+ (unitarity of 
+\begin_inset Formula $\hat{g}$
+\end_inset
+
+ is trivial to prove for symmetry groups where 
+\begin_inset Formula $g$
+\end_inset
+
+ is a rotation and/or translation).
+\end_layout
+
+\begin_layout Enumerate
+Using the previous parts, prove that 
+\begin_inset Formula $\langle\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle=0$
+\end_inset
+
+ if 
+\begin_inset Formula $\phi_{i}^{(\alpha)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{j}^{(\beta)}$
+\end_inset
+
+ are partner functions of different irreducible representations 
+\begin_inset Formula $\alpha\neq\beta$
+\end_inset
+
+, or if they correspond to different components 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ of the same (unitary) representation 
+\begin_inset Formula $\alpha=\beta$
+\end_inset
+
+.
+ (Hint: insert 
+\emph on
+1
+\emph default
+ into the inner product.)
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: A square metal box
+\end_layout
+
+\begin_layout Standard
+In class, we considered a two-dimensional (
+\begin_inset Formula $xy$
+\end_inset
+
+) problem of light in an 
+\begin_inset Formula $L\times L$
+\end_inset
+
+ square of air (
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+) surrounded by perfectly conducting walls (in which 
+\begin_inset Formula $\vec{E}=0$
+\end_inset
+
+).
+ We solved the case of 
+\begin_inset Formula $\vec{H}=H_{z}(x,y)\hat{\vec{z}}$
+\end_inset
+
+ and saw solutions corresponding to five different representations of the
+ symmetry group (
+\begin_inset Formula $C_{4\textrm{v}}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Solve for the eigenfunctions of the other polarization: 
+\begin_inset Formula $\vec{E}=E_{z}(x,y)\hat{\vec{z}}$
+\end_inset
+
+ (you will need the 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ eigenproblem from problem set
+\begin_inset space ~
+\end_inset
+
+1), with the boundary condition that 
+\begin_inset Formula $E_{z}=0$
+\end_inset
+
+ at the metal walls.
+ (These are separable, i.e.
+ 
+\begin_inset Formula $X(x)Y(y)$
+\end_inset
+
+ for some functions 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Sketch (or plot on a computer) and classify these solutions according to
+ the representations 
+\begin_inset Formula $\Gamma_{1\ldots5}$
+\end_inset
+
+ of 
+\begin_inset Formula $C_{4\textrm{v}}$
+\end_inset
+
+ enumerated in class.
+ (Like in class, you will get some reducible accidental degeneracies.) Look
+ at enough solutions to find 
+\emph on
+all
+\emph default
+ 
+\emph on
+five
+\emph default
+ irreps, and to illustrate the general pattern (you should find that the
+ irreps appear in repeating patterns).
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: Group Velocity and Material Dispersion
+\end_layout
+
+\begin_layout Standard
+In class, we showed (following the book) that the group velocity 
+\begin_inset Formula $d\omega/dk=\langle H_{k},\frac{\partial\hat{\Theta}_{k}}{\partial k}H_{k}\rangle/\langle H_{k},H_{k}\rangle$
+\end_inset
+
+ was equal to Poynting flux divided by energy density (both averaged over
+ the unit cell).
+\end_layout
+
+\begin_layout Standard
+Now, go through the same derivation, but in this case assume that we have
+ a lossless 
+\emph on
+dispersive
+\emph default
+ material with a real 
+\begin_inset Formula $\varepsilon(\vec{x},\omega)$
+\end_inset
+
+, still assuming 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+ for simplicity.
+ In this case, when you take the 
+\begin_inset Formula $k$
+\end_inset
+
+ derivative (assuming 
+\begin_inset Formula $\vec{k}=k\hat{x}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $k=k_{x}$
+\end_inset
+
+), apply the chain rule to obtain a term with 
+\begin_inset Formula $\frac{\partial\varepsilon}{\partial\omega}\frac{d\omega}{dk}$
+\end_inset
+
+ on the right-hand side.
+ Solve for 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+ and show that it is Poynting flux divided by energy density, but the energy
+ density is now the 
+\begin_inset Quotes eld
+\end_inset
+
+Brillouin
+\begin_inset Quotes erd
+\end_inset
+
+ energy density of a lossless dispersive medium, which we gave in the notes
+ for Lecture 6: 
+\begin_inset Formula 
+\[
+\frac{1}{4}\left[\frac{\partial(\omega\varepsilon)}{\partial\omega}|\vec{E}|^{2}+|\vec{H}|^{2}\right]
+\]
+
+\end_inset
+
+(for 
+\begin_inset Formula $\mu=1$
+\end_inset
+
+, where we have an additional 
+\begin_inset Formula $1/2$
+\end_inset
+
+ factor from the time-average).
+ 
+\end_layout
+
+\end_body
+\end_document

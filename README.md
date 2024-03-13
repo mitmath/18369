@@ -230,7 +230,6 @@ Discussed reflection of light from a semi-infinite 1d crystal, at a frequency in
 
 * [handwritten notes](https://www.dropbox.com/scl/fi/rijnupibe6n0w4i9mmro4/Periodic-Maxwell.pdf?rlkey=3xy22sjziy98l47lttnehxibh&dl=0)
 * [pset 3 solutions](psets/pset3sol.pdf)
-* pset 4: coming soon
 
 Off-axis propagation, projected band diagrams for multilayer films, Fabry-Perot defect modes, and surface states. Omnidirectional reflection.
 
@@ -273,6 +272,7 @@ New topic: **Symmetry, redux**.  Began by reviewing what we learned previously o
 
 * [handwritten notes: symmetry](https://www.dropbox.com/scl/fi/je8czfdtr1uq3w66wrgab/Symmetry-and-Representation-Theory.pdf?rlkey=oe8zil4vn52nrc4wvs48c8264&dl=0)
 * [representation theory summary](notes/representation-theory.pdf)
+* [pset 4](psets/pset4.pdf)
 
 Gave a simple 2d example of fields in a 2d metal box, and showed that the symmetries are more complicated, and may include degeneracies. In order to understand this, we need to understand the relationship of different symmetry operations to one another — this relationship is expressed more precisely by the _group_ of symmetry operators.
 
