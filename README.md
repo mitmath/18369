@@ -302,3 +302,17 @@ Used the projection operator to classify the modes of the square cavity, and in 
 Showed how we can apply the projection operator to "random" functions to find partners of different irreps, even without an eigenproblem, and to "sketch" the qualitative features that we expect to find in the eigenfunctions. And, once we have partner functions, we can obtain representation matrices for each irrep (useful for 2+ dimensional irreps). As an example, looked at ψ(x,y)=1, x, and x2; found in particular that the 2d irrep transforms like {x,y}, i.e. the ordinary 2d rotation matrices.
 
 **Further reading:**  Character tables for all of the common symmetry groups are tabulated in both textbooks and online, e.g. see this [page on the C4v group](http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=404&option=4). See Inui section 6.6 on projection operators.
+
+
+### Lecture 17: 18 Mar 2024
+
+* notes from lecture 15.
+
+Used the projection operator to classify the modes of the square cavity, and in particular found that some of the modes are accidental degeneracies. In this way, we are able to find representatives of all five irreps. Conversely, by looking at the irreps, we can guess some of the types of eigenfunctions that should appear, inferring the sign pattern from the character table.
+
+Discuss how rotational symmetries affect the dispersion relation: if R is a rotational symmetry, then ω(Rk)=ω(k).     For example, in band diagrams of 1d-periodic systems, this implies ω(k)=ω(-k)=ω(k+2π/a), and consequently ω(π/a-k)=ω(π/a+k) (i.e., ω is symmetric around both k=0 and k=π/a), and (except at crossings) we expect the bands to have zero slope at k=0 and k=π/a.
+
+Considered the TM band diagram of the square lattice of rods. From the symmetry of the points between Γ and M or Γ and X, explained why we have degeneracies at Γ and M, zero group velocity at the Γ and X and M points except at degeneracies, and why the band extrema *usually* lie along the I.B.Z. boundaries.  Showed that Γ and M have the full symmetry of the lattice, whereas X has a reduced symmetry group, which is why we have non-accidental degeneracies at those points.
+
+
+**Further reading:** beginning of chapter 5 of the book (2d photonic crystals), and appendix B on the reciprocal lattice and Brillouin zone. See [this paper](http://arxiv.org/abs/math-ph/0702035) for some counterexamples and further discussion regarding the occurrence of band extrema at the edges of the I.B.Z.
