@@ -268,7 +268,7 @@ New topic: **Symmetry, redux**.  Began by reviewing what we learned previously o
 
 **Further reading:**  For a discussion of dispersion (and dispersion compensation) as it applies in optical fibers, see e.g. R. Ramaswami and K. N. Sivarajan, _Optical Networks: A Practical Perspective_.
 
-### Lecture 15: 13 Mar 2024
+### Lecture 16: 13 Mar 2024
 
 * [handwritten notes: symmetry](https://www.dropbox.com/scl/fi/je8czfdtr1uq3w66wrgab/Symmetry-and-Representation-Theory.pdf?rlkey=oe8zil4vn52nrc4wvs48c8264&dl=0)
 * [representation theory summary](notes/representation-theory.pdf)
@@ -285,7 +285,7 @@ If the representation is irreducible, then the degeneracy comes from the symmetr
 **Further reading:** Chapter 3 of the text, but this doesn't get into representation theory. See e.g. _Group Theory and Its Applications in Physics_ by Inui et al. (especially sections 4.1, 6.1, and 6.2) or _Group Theory and Quantum Mechanics_ by Michael Tinkham (especially sections 3-1 and 3-6), or any book with a similar title.
 
 
-### Lecture 16: 15 Mar 2024
+### Lecture 17: 15 Mar 2024
 
 * notes from lecture 15.
 
@@ -304,9 +304,9 @@ Showed how we can apply the projection operator to "random" functions to find pa
 **Further reading:**  Character tables for all of the common symmetry groups are tabulated in both textbooks and online, e.g. see this [page on the C4v group](http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=404&option=4). See Inui section 6.6 on projection operators.
 
 
-### Lecture 17: 18 Mar 2024
+### Lecture 18: 18 Mar 2024
 
-* notes from lecture 15.
+* notes from lectures 14-15.
 
 Used the projection operator to classify the modes of the square cavity, and in particular found that some of the modes are accidental degeneracies. In this way, we are able to find representatives of all five irreps. Conversely, by looking at the irreps, we can guess some of the types of eigenfunctions that should appear, inferring the sign pattern from the character table.
 
@@ -315,3 +315,16 @@ Discuss how rotational symmetries affect the dispersion relation: if R is a rota
 Considered the TM band diagram of the square lattice of rods. From the symmetry of the points between Γ and M or Γ and X, explained why we have degeneracies at Γ and M, zero group velocity at the Γ and X and M points except at degeneracies, and why the band extrema *usually* lie along the I.B.Z. boundaries.  Showed that Γ and M have the full symmetry of the lattice, whereas X has a reduced symmetry group, which is why we have non-accidental degeneracies at those points.
 
 **Further reading:** Beginning of chapter 5 of the book (2d photonic crystals), and appendix B on the reciprocal lattice and Brillouin zone. See [this paper](http://arxiv.org/abs/math-ph/0702035) for some counterexamples and further discussion regarding the occurrence of band extrema at the edges of the I.B.Z.
+
+### Lecture 19: 20 Mar 2024
+
+* [handwritten notes from lecture 14: 2d periodicity](https://www.dropbox.com/scl/fi/6ajalyt9wr4tlp4hz3yll/2D-Periodic-Maxwell.pdf?rlkey=9014uzcxfsltxsy9dt6c2bval&dl=0)
+* [slides on 2d gaps](notes/2d-gaps.pdf)
+
+Influence of boundary conditions on TE vs TM gaps, and why TE gaps prefer "hole" (connected) structures to "rod" (disconnected) structures. Mentioned TE+TM gap in hexagonal lattice of rodes.
+
+Discussed the more general definition of a Brillouin zone as a Wigner–Seitz/Voronoi cell in the reciprocal lattice.  As an example, considered the Brillouin zone and irreducible Brillouin zone of a hexagonal lattice.
+
+Higher symmetry (Brillouin zones closer to circles/spheres) typically makes it easier to get a gap. (In 3d, the closest B.Z. to a sphere is from an fcc lattice, and most 3d gaps are in fcc-like structures.)
+
+**Further reading:** Chapter 5 of the textbook.
