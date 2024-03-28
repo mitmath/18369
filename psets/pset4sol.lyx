@@ -1,0 +1,916 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 4 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: Projection operators (5+5+5+5=20 points)
+\end_layout
+
+\begin_layout Enumerate
+Consider the action of 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}$
+\end_inset
+
+ on a partner function 
+\begin_inset Formula $\phi_{j}^{(\alpha')}$
+\end_inset
+
+, as defined in the handout.
+ We obtain 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}\phi_{j}^{(\alpha')}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)^{*}\hat{g}\phi_{j}^{(\alpha')}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)^{*}[\sum_{i'}\phi_{i'}^{(\alpha')}D_{i'j}^{(\alpha')}(g)]$
+\end_inset
+
+.
+ If we perform the 
+\begin_inset Formula $\sum_{g}$
+\end_inset
+
+ first, then from the Great Orthogonality Theorem we get 
+\begin_inset Formula $\sum_{i'}\delta_{ii'}\delta_{ij}\delta_{\alpha\alpha'}\phi_{i'}^{(\alpha')}=\delta_{ij}\delta_{\alpha\alpha'}\phi_{i}^{(\alpha)}$
+\end_inset
+
+.
+ Thus, for a 
+\begin_inset Formula $\psi=\sum_{\alpha}\sum_{i}c_{i}^{(\alpha)}\phi_{i}^{(\alpha)}$
+\end_inset
+
+ decomposed into partner functions (as proved in the class notes), 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)}\psi=c_{i}^{(\alpha)}\phi_{i}^{(\alpha)}$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=\sum_{g\in G}\left[\frac{1}{|G|}\sum_{\alpha}\chi^{(\alpha)*}(g)d_{\alpha}\right]\hat{g}$
+\end_inset
+
+, interchanging the 
+\begin_inset Formula $\sum_{\alpha}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\sum_{g}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $d_{\alpha}$
+\end_inset
+
+, the dimension of the representation, is exactly the character 
+\begin_inset Formula $\chi^{(\alpha)}(E)$
+\end_inset
+
+ , the character of the identity element 
+\begin_inset Formula $E$
+\end_inset
+
+, which is one column of the character table (
+\begin_inset Formula $E$
+\end_inset
+
+ is in a conjugacy class by itself).
+ So, the 
+\begin_inset Formula $[\cdots]$
+\end_inset
+
+ inner sum is 
+\begin_inset Formula $\frac{1}{|G|}\sum_{\alpha}\chi^{(\alpha)*}(g)\chi^{(\alpha)}(E)=\delta_{gE}$
+\end_inset
+
+ by the orthogonality of columns: it is zero unless 
+\begin_inset Formula $g=E$
+\end_inset
+
+ and one otherwise.
+ Hence, the outer sum 
+\begin_inset Formula $\sum_{g}$
+\end_inset
+
+ disappears except for the 
+\begin_inset Formula $E$
+\end_inset
+
+ term, and 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=\hat{O}_{E}=1$
+\end_inset
+
+.
+ Q.E.D.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Note that you can also prove 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}=1$
+\end_inset
+
+ by combining the result from (a) with the fact that any function is a sum
+ of irrep partners, which immediately gives 
+\begin_inset Formula $\sum_{\alpha}\hat{P}^{(\alpha)}\psi=\psi$
+\end_inset
+
+ for any 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+ But I wanted you to see how the same fact arises from the character-table
+ orthogonality.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)\dagger}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)\hat{g}^{\dagger}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g)\widehat{g^{-1}}=\frac{d_{\alpha}}{|G|}\sum_{g\in G}D_{ii}^{(\alpha)}(g^{-1})\hat{g}$
+\end_inset
+
+, using unitarity 
+\begin_inset Formula $\hat{g}^{\dagger}=\hat{g}^{-1}=\widehat{g^{-1}}$
+\end_inset
+
+ and changing variables 
+\begin_inset Formula $g\to g^{-1}$
+\end_inset
+
+ in the summation.
+ Note that the 
+\begin_inset Formula $D_{ii}^{*}$
+\end_inset
+
+ term in 
+\begin_inset Formula $\hat{P}_{i}$
+\end_inset
+
+ is unconjugated in 
+\begin_inset Formula $\hat{P}_{i}^{\dagger}$
+\end_inset
+
+.
+ By definition of a representation, we must have 
+\begin_inset Formula $D^{(\alpha)}(g^{-1})=D^{(\alpha)}(g)^{-1}$
+\end_inset
+
+, and if 
+\begin_inset Formula $D$
+\end_inset
+
+ is unitary then we must have 
+\begin_inset Formula $D^{(\alpha)}(g)^{-1}=D^{(\alpha)}(g)^{\dagger}$
+\end_inset
+
+ (the conjugate-transpose).
+ Hence 
+\begin_inset Formula $D_{ii}^{(\alpha)}(g^{-1})=D_{ii}^{(\alpha)}(g)^{*}$
+\end_inset
+
+, and 
+\begin_inset Formula $\hat{P}_{i}^{(\alpha)\dagger}=\hat{P}_{i}^{(\alpha)}$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Enumerate
+Inserting 
+\begin_inset Formula $\sum_{k,\gamma}\hat{P}_{k}^{(\gamma)}=1$
+\end_inset
+
+, we obtain 
+\begin_inset Formula $\langle\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle=\langle\phi_{i}^{(\alpha)},\sum_{k,\gamma}\hat{P}_{k}^{(\gamma)}\psi_{j}^{(\beta)}\rangle=\langle\phi_{i}^{(\alpha)},\hat{P}_{j}^{(\beta)}\psi_{j}^{(\beta)}\rangle$
+\end_inset
+
+ by definition of a projection operator (only the 
+\begin_inset Formula $j,\beta$
+\end_inset
+
+ projection operator can give a nonzero result for 
+\begin_inset Formula $\psi_{j}^{(\beta)}$
+\end_inset
+
+).
+ Alternatively, 
+\begin_inset Formula $\hat{P}_{j}^{(\beta)}\psi_{j}^{(\beta)}=\psi_{j}^{(\beta)}$
+\end_inset
+
+ follows directly from the defining property of a projection operator, in
+\begin_inset space ~
+\end_inset
+
+(a).
+ Because 
+\begin_inset Formula $\hat{P}_{j}^{(\beta)}$
+\end_inset
+
+ is Hermitian (we always assume unitary irreps., which are guaranteed to
+ be possible for finite groups), we then have 
+\begin_inset Formula $\langle\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle=\langle\phi_{i}^{(\alpha)},\hat{P}_{j}^{(\beta)}\psi_{j}^{(\beta)}\rangle=\langle\hat{P}_{j}^{(\beta)}\phi_{i}^{(\alpha)},\psi_{j}^{(\beta)}\rangle$
+\end_inset
+
+, which is zero unless 
+\begin_inset Formula $i=j$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha=\beta$
+\end_inset
+
+.
+ Q.E.D.
+\end_layout
+
+\begin_layout Subsection*
+Problem 2: A square metal box(5+15 points)
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $\vec{E}=E_{z}(x,y)\hat{\vec{z}}$
+\end_inset
+
+ in air (
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+), we get 
+\begin_inset Formula $\nabla\times\nabla\times\vec{E}=-\nabla^{2}E_{z}\hat{\vec{z}}=\frac{\omega^{2}}{c^{2}}E_{z}$
+\end_inset
+
+.
+ The solutions of this are sines and cosines, and to satisfy the 
+\begin_inset Formula $E_{z}=0$
+\end_inset
+
+ boundary conditions at 
+\begin_inset Formula $x=0,L$
+\end_inset
+
+ and 
+\begin_inset Formula $y=0,L$
+\end_inset
+
+ we must have: 
+\begin_inset Formula 
+\[
+E_{z}=A\sin\left(\frac{n\pi}{L}x\right)\sin\left(\frac{m\pi}{L}y\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are positive integers and 
+\begin_inset Formula $A$
+\end_inset
+
+ is an amplitude.
+ The corresponding frequency is 
+\begin_inset Formula $\omega=c\frac{\pi}{L}\sqrt{n^{2}+m^{2}}$
+\end_inset
+
+.
+ This solutions are plotted in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:box-ez"
+
+\end_inset
+
+ for the first few values of 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../psets-old/box-ez.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:box-ez"
+
+\end_inset
+
+Electric fields (
+\begin_inset Formula $E_{z}$
+\end_inset
+
+) of eigenmodes inside a 2d metal box.
+ Blue/white/red indicate positive/zero/negative fields.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Since 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is a vector, we can treat 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ as an ordinary scalar field here (no funny 
+\begin_inset Formula $-1$
+\end_inset
+
+ factors under reflections).
+ Therefore, from the field plots we can see that 
+\begin_inset Formula $n=m=1$
+\end_inset
+
+ (and, in fact, any 
+\begin_inset Formula $n=m=\textrm{odd}$
+\end_inset
+
+) transforms as 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ (the trivial representation) and 
+\begin_inset Formula $n=m=2$
+\end_inset
+
+ (and any 
+\begin_inset Formula $n=m=\textrm{even}$
+\end_inset
+
+) transforms as 
+\begin_inset Formula $\Gamma_{4}$
+\end_inset
+
+ (even with diagonal mirror planes and odd with horizontal/vertical mirrors).
+ Any 
+\begin_inset Formula $n\neq m$
+\end_inset
+
+ state is (at least) doubly degenerate [with the 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+ state], such as the 
+\begin_inset Formula $(n,m)=(2,1)$
+\end_inset
+
+ and 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ states shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:box-ez"
+
+\end_inset
+
+.
+ There are three cases [which can be understood in a variety of ways, e.g.
+ by acting projection operators on the 
+\begin_inset Formula $(n,m)$
+\end_inset
+
+ solution]:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If 
+\begin_inset Formula $n$
+\end_inset
+
+ is even and 
+\begin_inset Formula $m$
+\end_inset
+
+ is odd or vice versa, e.g.
+ 
+\begin_inset Formula $(n,m)=(2,1)$
+\end_inset
+
+, then it transforms as 
+\begin_inset Formula $\Gamma_{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+If both 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are odd, e.g.
+ 
+\begin_inset Formula $(n,m)=(3,1)$
+\end_inset
+
+, then it forms a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ 
+\emph on
+reducible
+\emph default
+ representation with 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+.
+ To decompose it into irreducible representations, we just take the sum
+ and difference of the two eigenmodes.
+ The 
+\begin_inset Formula $(n,m)+(m,n)$
+\end_inset
+
+ state transforms as 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+, and 
+\begin_inset Formula $(n,m)-(m,n)$
+\end_inset
+
+ transforms as 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+.
+ This is shown in the left two panels of Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:square-accidental"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../psets-old/square-accidental.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:square-accidental"
+
+\end_inset
+
+Electric fields (
+\begin_inset Formula $E_{z}$
+\end_inset
+
+) of eigenmodes inside a 2d metal box for accidentally degenerate 
+\begin_inset Formula $(n,m)$
+\end_inset
+
+ states 
+\begin_inset Formula $n\neq m$
+\end_inset
+
+.
+ By forming linear combinations as shown, we can create eigenmodes which
+ transform as, from left to right: 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{4}$
+\end_inset
+
+, and 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+.
+ Blue/white/red indicate positive/zero/negative fields.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+If both 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are even, e.g.
+ 
+\begin_inset Formula $(n,m)=(4,2)$
+\end_inset
+
+, then it again forms a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ reducible representation with 
+\begin_inset Formula $(m,n)$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $(n,m)+(m,n)$
+\end_inset
+
+ state transforms as 
+\begin_inset Formula $\Gamma_{4}$
+\end_inset
+
+, and 
+\begin_inset Formula $(n,m)-(m,n)$
+\end_inset
+
+ transforms as 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+.
+ This is shown in the right two panels of Fig\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:square-accidental"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Problem 3: Group Velocity and Material Dispersion (20 points)
+\end_layout
+
+\begin_layout Standard
+First, little bit of background info (you were 
+\emph on
+not
+\emph default
+ required to show this):
+\end_layout
+
+\begin_layout Itemize
+We now technically have a 
+\begin_inset Quotes eld
+\end_inset
+
+nonlinear eigenproblem
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\hat{\Theta}_{k}(\omega)\vec{H}_{k}=\omega^{2}\vec{H}_{k}$
+\end_inset
+
+, in which the eigen-operator 
+\begin_inset Formula $\hat{\Theta}_{k}$
+\end_inset
+
+ depends on the eigenvalue 
+\begin_inset Formula $\omega^{2}$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $\varepsilon(\omega)$
+\end_inset
+
+ is still real, 
+\begin_inset Formula $\hat{\Theta}_{k}$
+\end_inset
+
+ is still Hermitian.
+ Our proof of real eigenvalues and positive-definiteness still work, so
+ 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is still real.
+ (But our proof of orthogonality of eigenfunctions no longer works, since
+ eigenfunctions at distinct eigenvalues now have different operators 
+\begin_inset Formula $\hat{\Theta}_{k}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Itemize
+The derivation of first-order perturbation theory (from which we got 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+) carries through exactly as before, except that you now need to include
+ an additional perturbation 
+\begin_inset Formula $\frac{\partial\hat{\Theta}}{\partial\omega}\Delta\omega$
+\end_inset
+
+ in the operator due to the change in the eigenvalue.
+ This is what gives us the 
+\begin_inset Quotes eld
+\end_inset
+
+chain rule
+\begin_inset Quotes erd
+\end_inset
+
+ term you were asked to include in 
+\begin_inset Formula $d\omega/dk$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With that in mind, let's go ahead and solve the problem.
+ As in class, we'll just set 
+\begin_inset Formula $c=\varepsilon_{0}=\mu_{0}=1$
+\end_inset
+
+ so that we don't have to deal with all of those annoying SI constant factors.
+ (The book does it in SI units if you are curious.)
+\end_layout
+
+\begin_layout Standard
+The derivation of group velocity is the same as in class, except that there
+ is now an extra term in the numerator of the Hellman-Feynman theorem.
+ In class, we dealt with the 
+\begin_inset Formula $\frac{\partial\hat{\Theta}_{\vec{k}}}{\partial\vec{k}}$
+\end_inset
+
+ term and showed that it gave 
+\begin_inset Formula $2\omega$
+\end_inset
+
+ multipled by the flux (the integral of the time-averaged Poynting vector
+ 
+\begin_inset Formula $\vec{S}=\frac{1}{2}\Re[\vec{E}^{*}\times\vec{H}]$
+\end_inset
+
+).
+ Now we have an additional term 
+\begin_inset Formula $\frac{\partial\hat{\Theta}}{\partial\varepsilon}\cdot\frac{d\varepsilon}{d\omega}\cdot\vec{v}_{g}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $\frac{\partial\hat{\Theta}}{\partial\varepsilon}$
+\end_inset
+
+, however is precisely what we would get for a 
+\begin_inset Formula $\Delta\varepsilon=\frac{d\varepsilon}{d\omega}\cdot\vec{v}_{g}$
+\end_inset
+
+ perturbation like when we first derived perturbation theory (we get 
+\begin_inset Formula $-\frac{\Delta\varepsilon}{\varepsilon^{2}}|\nabla\times\vec{H}|^{2}=-\omega^{2}\Delta\varepsilon|\vec{E}|^{2}$
+\end_inset
+
+).
+ Therefore, this term of the numerator becomes 
+\begin_inset Formula $-\frac{\omega^{2}}{c^{2}}\langle\vec{E},(\frac{d\varepsilon}{d\omega}\cdot\vec{v}_{g})\vec{E}\rangle$
+\end_inset
+
+.
+ In short, we have exactly the expression from class with the addition of
+ this new term: 
+\begin_inset Formula 
+\[
+\vec{v}_{g}=\frac{1}{2\omega}\cdot\frac{4\omega\int\vec{S}-\omega^{2}\vec{v}_{g}\int|\vec{E}|^{2}\frac{d\varepsilon}{d\omega}}{\frac{1}{2}\int(|\vec{H}|^{2}+\varepsilon|\vec{E}|^{2})}=\frac{2\int\vec{S}-\frac{\omega}{2}\vec{v}_{g}\int|\vec{E}|^{2}\frac{d\varepsilon}{d\omega}}{\frac{1}{2}\int(|\vec{H}|^{2}+\varepsilon|\vec{E}|^{2})}.
+\]
+
+\end_inset
+
+(Note that, in the denominator, we have used (as in class) the fact that
+ 
+\begin_inset Formula $\int|\vec{H}|^{2}=\int\varepsilon|\vec{E}|^{2}$
+\end_inset
+
+, which is still true for dispersive media—our derivation from class only
+ relied on 
+\begin_inset Formula $\nabla\times\vec{E}=i\frac{\omega}{c}\vec{H}$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\times\vec{H}=-i\frac{\omega}{c}\varepsilon\vec{E}$
+\end_inset
+
+.) Now, however, we have 
+\begin_inset Formula $\vec{v}_{g}$
+\end_inset
+
+ on both sides of the equation, so we must solve for it, and obtain: 
+\begin_inset Formula 
+\[
+\vec{v}_{g}=\frac{\int\vec{S}}{\frac{1}{4}\int(|\vec{H}|^{2}+\varepsilon|\vec{E}|^{2}+\omega\frac{d\varepsilon}{d\omega}|\vec{E}|^{2})}=\frac{\int\vec{S}}{\frac{1}{4}\int\left[|\vec{H}|^{2}+\frac{d(\omega\varepsilon)}{d\omega}|\vec{E}|^{2}\right]}
+\]
+
+\end_inset
+
+as desired: the Poynting flux divided by the Brillouin energy density of
+ a lossless dispersive medium, both time-averaged and averaged over the
+ unit cell.
+\end_layout
+
+\begin_layout Standard
+A more complete derivation of this can be found in Appendix
+\begin_inset space ~
+\end_inset
+
+A of Welters 
+\emph on
+et al.
+\emph default
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Speed-of-light limitations in passive linear media,
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+Physical Review A
+\emph default
+, vol.
+ 90, p.
+ 023847 (2014).
+\end_layout
+
+\end_body
+\end_document

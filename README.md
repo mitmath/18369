@@ -331,7 +331,7 @@ Higher symmetry (Brillouin zones closer to circles/spheres) typically makes it e
 
 ### Lecture 20: 22 Mar 2024
 
-* pset 4 solutions: coming soon
+* [pset 4 solutions](psets/pset4sol.pdf)
 * [psets/pset5.pdf](pset 5): due Wed April 3
 
 Point-defect states in the square lattice of rods. Either decreasing the radius of a rod to push up a "monopole" state, or increasing the radius of a rod to pull down a "dipole" state. Showed how we can easily predict the qualitative field patterns and symmetries from the corresponding bands of the bulk crystal. Related the defect modes to the 5 irreps of the C4v symmetry group, and showed how we can easily guess the field patterns and degeneracies that we will get.
