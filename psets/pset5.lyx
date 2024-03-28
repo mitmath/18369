@@ -1,0 +1,205 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 5
+\end_layout
+
+\begin_layout Standard
+Due Wednesday, 3 April 2024.
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: A triangular metal box
+\end_layout
+
+\begin_layout Standard
+Consider the two-dimensional solutions in a 
+\emph on
+triangular
+\emph default
+ perfect-metal box with side 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Don't try to solve this analytically; instead, you will use symmetry to
+ sketch out what the possible solutions will look like for both 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ polarizations.
+\end_layout
+
+\begin_layout Enumerate
+List the symmetry operations in the space group (choose the origin at the
+ center of the triangle so that the space group is symmorphic), and break
+ them into conjugacy classes.
+ (This group is traditionally called 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+).
+ Verify that the group is closed under composition (i.e.
+ that the composition of two operations always gives another operation in
+ the group) by giving the 
+\begin_inset Quotes eld
+\end_inset
+
+multiplication table
+\begin_inset Quotes erd
+\end_inset
+
+ of the group (whose rows and columns are group members and whose entries
+ give their composition).
+\end_layout
+
+\begin_layout Enumerate
+Find the character table of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+, using the rules from the representation-theory handout.
+\end_layout
+
+\begin_layout Enumerate
+Give unitary representation matrices 
+\begin_inset Formula $D$
+\end_inset
+
+ for each irreducible representation of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Sketch possible 
+\begin_inset Formula $\omega\neq0$
+\end_inset
+
+ 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ solutions that would transform as these representations.
+ What representation should the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode (excluding 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+) of each polarization correspond to?
+\end_layout
+
+\begin_layout Enumerate
+If there are any (non-accidental) degenerate modes, show how given one of
+ the eigenfunction we can compute the other orthogonal eigenfunction(s).
+ (For example, in the square case we could get one from the 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+ rotation of the other for a degenerate pair, but the triangular structure
+ is not symmetric under 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+ rotations.) Hint: use your representation matrices.
+\end_layout
+
+\end_body
+\end_document
