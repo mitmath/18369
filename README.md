@@ -339,3 +339,20 @@ Point-defect states in the square lattice of rods. Either decreasing the radius 
 Discussed waveguides and projected band diagrams formed by line defects and surfaces in 2d photonic crystals and gaps.
 
 **Further reading:** Chapter 5 of the textbook.   A more precise analysis of defect "pushing up" or "pulling down" solutions in the gap can be obtained by the min–max theorem, similar to what we did for dielectric waveguides but with a shifted and squared operator, as discussed by [Parzygnat et al. (2010)](http://doi.org/10.1103/PhysRevB.81.155324).
+
+### Lecture 21: 24 Mar 2024
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+
+Began talking about computational electromagnetism: part 1, band diagrams and dispersion relations.
+
+**Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
+
+
+### Lecture 22: 3 Apr 2024
+
+* [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb); see also [the MPB home page](https://github.com/NanoComp/mpb) and documentation.  You can run this MPB notebook in the cloud: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mochen4/meepdocker/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fmitmath%252F18369%26urlpath%3Dtree%252F18369%252Fnotes%252FMPB-demo.ipynb%26branch%3Dmaster)
+
+Gave demo of MPB eigensolver software for 2d dielectric waveguide.  (If you installed Meep via the Anaconda Python packages, then you also have MPB.  You can also run it in the cloud via mybinder.)
+
+**Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
