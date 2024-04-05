@@ -352,7 +352,16 @@ Began talking about computational electromagnetism: part 1, band diagrams and di
 ### Lecture 22: 3 Apr 2024
 
 * [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb); see also [the MPB home page](https://github.com/NanoComp/mpb) and documentation.  You can run this MPB notebook in the cloud: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mochen4/meepdocker/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fmitmath%252F18369%26urlpath%3Dtree%252F18369%252Fnotes%252FMPB-demo.ipynb%26branch%3Dmaster)
+* pset 5 solutions: coming soon
 
 Gave demo of MPB eigensolver software for 2d dielectric waveguide.  (If you installed Meep via the Anaconda Python packages, then you also have MPB.  You can also run it in the cloud via mybinder.)
 
 **Further reading:** The [MPB manual page](http://mpb.readthedocs.io/en/latest/), and Appendix D of the textbook (on numerical methods).
+
+### Lecture 23: 5 Apr 2024
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf), continued.
+
+Discussion of resonant modes, FDTD time-domain methods, and PML absorbing layers.
+
+**Further reading** Textbook, appendix D. For FDTD in general, see e.g. Allen Taflove and Susan C. Hagness, _Computational Electrodynamics: The Finite-Difference Time-Domain Method_ (Artech, 2005). For the CFL condition in general, see e.g. this [book chapter by Trefethen](http://people.maths.ox.ac.uk/trefethen/4all.pdf). See also our [free FDTD software: Meep](https://github.com/NanoComp/meep), and in particular the introduction and tutorial sections of the Meep manual. [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book.
