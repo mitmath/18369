@@ -1,0 +1,2330 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Problem Set 5 Solutions
+\end_layout
+
+\begin_layout Subsection*
+Problem 3: A triangular metal box (5+5+5+5+5pts)
+\end_layout
+
+\begin_layout Standard
+Consider the two-dimensional solutions in a 
+\emph on
+triangular
+\emph default
+ perfect-metal box with side 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The different symmetry operations in the space group of a triangle are shown
+ in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pset1-sym"
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pset1-sym.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pset1-sym"
+
+\end_inset
+
+Symmetries of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+ (triangle symmetries): three mirror planes 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, and rotation 
+\begin_inset Formula $C_{3}$
+\end_inset
+
+ by 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: three mirror planes 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, and counter-clockwise rotation 
+\begin_inset Formula $C_{3}$
+\end_inset
+
+ by 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ (and also 
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+, clockwise rotation), and of course the identity 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ There are three conjugacy classes: 
+\begin_inset Formula $\{E\}$
+\end_inset
+
+, 
+\begin_inset Formula $\{\sigma_{1},\sigma_{2},\sigma_{3}\}$
+\end_inset
+
+, and 
+\begin_inset Formula $\{C_{3},C_{3}^{-1}\}$
+\end_inset
+
+.
+ This is because 
+\begin_inset Formula $\sigma_{3}=C_{3}^{-1}\sigma_{1}C_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{2}=C_{3}\sigma_{1}C_{3}^{-1}$
+\end_inset
+
+, and 
+\begin_inset Formula $C_{3}^{-1}=\sigma_{1}C_{3}\sigma_{1}$
+\end_inset
+
+.
+ The multiplication table of the group is: 
+\begin_inset Newline newline
+\end_inset
+
+
+\size scriptsize
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\circ$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The character table of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+ must have only three representations since there are three classes, and
+ the sum of the squares of the dimensions must equal 6 (the number of elements
+ in the group).
+ From this, the only possibility is for the representations to have dimensions
+ 1, 1, and 2 (this gives the first column of the table).
+ The first row must be the trivial representation, and by applying the orthogona
+lity relations we get the other two rows: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $\Gamma_{1\cdots3}$
+\end_inset
+
+ are traditional names for these three representations.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+, the representations are one-dimensional and are therefor simply numbers
+ equal to the characters in the character table (
+\begin_inset Formula $\pm1$
+\end_inset
+
+, from above).
+ For 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, we must first construct partner functions.
+ Let's guess 
+\begin_inset Formula $f(\vec{x})=x$
+\end_inset
+
+.
+ If we then operate the different group elements on this, recalling the
+ coordinates rotated counter-clockwise by an angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+ are multiplied by the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix 
+\begin_inset Formula $\left(\begin{array}{cc}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{array}\right)$
+\end_inset
+
+, we get: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x+y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x-y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x-y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(-x+y\sqrt{3})/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+and therefore if we operate the 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ projection operator 
+\begin_inset Formula $\hat{P}^{(3)}=\frac{2}{6}(2\hat{O}_{E}-\hat{O}_{C_{3}}-\hat{O}_{C_{3}^{-1}})$
+\end_inset
+
+ on 
+\begin_inset Formula $f(\vec{x})=x$
+\end_inset
+
+ we get simply 
+\begin_inset Formula $x$
+\end_inset
+
+—thus, the function 
+\begin_inset Formula $x$
+\end_inset
+
+ must itself be a partner function for 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ and no other representation.
+ Moreover, the operation of the space group on 
+\begin_inset Formula $x$
+\end_inset
+
+ is clearly spanned by the orthogonal functions 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+, and so we must have a unitary representation given simply by the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ rotation matrices that transform the functions 
+\begin_inset Formula $\{x,y\}$
+\end_inset
+
+: 
+\begin_inset Newline newline
+\end_inset
+
+
+\size scriptsize
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{3}^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & \sqrt{3}\\
+-\sqrt{3} & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & -\sqrt{3}\\
+\sqrt{3} & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & \sqrt{3}\\
+\sqrt{3} & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\frac{1}{2}\left(\begin{array}{cc}
+-1 & -\sqrt{3}\\
+-\sqrt{3} & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+where to get 
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+ we used 
+\begin_inset Formula $\sigma_{1}=\sigma_{3}C_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}=\sigma_{3}C_{3}^{-1}$
+\end_inset
+
+ from the multiplication table above.
+ The unitarity of these matrices follows immediately from the fact that
+ they come from the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ rotation matrices, and can be easily verified in any case.
+ Their traces clearly match those in the character table.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Note that the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ (in 2d) or 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ (in 3d) rotation matrices always form a representation, but in some groups
+ these matrices are reducible, and in other groups there are multiple 2d
+ irreps and the rotation matrices only give you one of these.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field patterns that transform as these representations are very crudely
+ sketched in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pset1-ezsketch"
+
+\end_inset
+
+,
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset1-ezsketch.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pset1-ezsketch"
+
+\end_inset
+
+Sketch of possible 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field patterns (for the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes of each symmetry) in the triangular cavity corresponding to the three
+ representations.
+ Note that a 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ mode must be doubly degenerate with two field patterns roughly as shown.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ where 
+\begin_inset Formula $+$
+\end_inset
+
+ and 
+\begin_inset Formula $-$
+\end_inset
+
+ denote maxima and minima of the field.
+ Note that because 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ is a vector, the component 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ transforms as an ordinary scalar in the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane, and 
+\begin_inset Quotes eld
+\end_inset
+
+even
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+odd
+\begin_inset Quotes erd
+\end_inset
+
+ fields are what we expect; note also that the boundary conditions require
+ 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ to go to zero at the edges of the triangle, so all extrema must lie in
+ the interior.
+ The 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ mode must be doubly degenerate, of course, and can be chosen so that one
+ mode is even with respect to a 
+\emph on
+single
+\emph default
+ one of the mirror planes and the other mode is odd with respect to that
+ mirror plane, as shown.
+ (For example, in our 
+\begin_inset Formula $\{x,y\}$
+\end_inset
+
+ representation matrices above, this even/odd plane was 
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+, although of course the modes could be rotated to be even/odd around any
+ of the three 
+\begin_inset Formula $\sigma$
+\end_inset
+
+'s.) From the representation matrices, we can see that one degenerate partner
+ may be found by operating 
+\begin_inset Formula $(\hat{O}_{C_{3}}-\hat{O}_{C_{3}^{-1}})/\sqrt{3}$
+\end_inset
+
+ on the other—i.e., by the difference of its 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ and 
+\begin_inset Formula $-120^{\circ}$
+\end_inset
+
+ rotations (this will give an 
+\emph on
+orthogonal
+\emph default
+ mode because it will have opposite even-odd symmetry under one of the mirror
+ planes).
+ The lowest-order 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ mode should be 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ (fewest nodes 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ smallest 
+\begin_inset Formula $\nabla^{2}$
+\end_inset
+
+ term in eigenproblem).
+ A less crude sketch would be to show contours of the field as in class,
+ but in lieu of that I opted to show you an exact numerical calculation
+ of the first few eigenmodes of this cavity, in Figure\SpecialChar endofsentence
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tri-ez"
+
+\end_inset
+
+, which illustrates all three representations (note that the lowest 
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode of each representation looks much like our 
+\begin_inset Quotes eld
+\end_inset
+
+guess
+\begin_inset Quotes erd
+\end_inset
+
+).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset1cav-ez-w0.67.png
+	width 16col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.03.png
+	width 16col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.34.png
+	width 16col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.40.png
+	width 16col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.69.png
+	width 16col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-ez-w1.78.png
+	width 16col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tri-ez"
+
+\end_inset
+
+
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ field plots of first few lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes in a triangular air cavity surrounded by metal (black) with side
+ 
+\begin_inset Formula $L$
+\end_inset
+
+, from a numerical calculation.
+ The corresponding frequencies 
+\begin_inset Formula $\omega L/2\pi c$
+\end_inset
+
+ (and representations) are, from left to right: 1.16 (
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+), 1.78 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), 2.32 (
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+), 2.60 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), 2.93 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), and 3.08 (
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+).
+ Note that the second, fourth, and fifth modes (from left) are doubly degenerate
+ (their degenerate partner is not shown, but can be found by subtracting
+ 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ and 
+\begin_inset Formula $-120^{\circ}$
+\end_inset
+
+ rotations of the field).
+ (Slight asymmetries in the 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+ state are due to the finite computational grid resolution.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The lowest frequency mode of 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ transforms like 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ because that has the fewest oscillations (only a single extremum).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ field sketches, in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pset1-hzsketch"
+
+\end_inset
+
+,
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset1-hzsketch.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pset1-hzsketch"
+
+\end_inset
+
+Sketch of possible 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ field patterns (for low-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes) in the triangular cavity corresponding to the three representations.
+ Note that a 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ mode must be doubly degenerate with two field patterns roughly as shown.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ are somewhat different, for two reasons.
+ First, 
+\begin_inset Formula $\vec{H}$
+\end_inset
+
+ is a pseudovector, so 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ transforms as a pseudo-scalar and our normal conceptions of 
+\begin_inset Quotes eld
+\end_inset
+
+even
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+odd
+\begin_inset Quotes erd
+\end_inset
+
+ are reversed.
+ Second, because of the boundary conditions the extrema of 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ tend to occur on the boundaries of the triangle, at least for the low-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes.
+ So, for example, now the 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ mode looks 
+\emph on
+odd
+\emph default
+ with respect to all of the mirror planes, and will only appear for higher-
+\begin_inset Formula $\omega$
+\end_inset
+
+ modes.
+ The 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+ mode is the one that looks most symmetric, but because the extrema lie
+ on the boundaries there will tend to be a minima in the center of the triangle
+ for the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode.
+ The lowest-order 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ mode should be 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, since it has the fewest nodal planes.
+ The corresponding numerical calculations are shown in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tri-hz"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pset1cav-hz-w0.38.png
+	width 33col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-hz-w0.66.png
+	width 33col%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pset1cav-hz-w1.74.png
+	width 33col%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tri-hz"
+
+\end_inset
+
+
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ field plots of the lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+ mode for each irreducible representation of 
+\begin_inset Formula $C_{3\textrm{v}}$
+\end_inset
+
+ in a triangular air cavity surrounded by metal (black) with side 
+\begin_inset Formula $L$
+\end_inset
+
+, from a numerical calculation.
+ The corresponding frequencies 
+\begin_inset Formula $\omega L/2\pi c$
+\end_inset
+
+ (and representations) are, from left to right: 0.66 (
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+), 1.14 (
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+), and 3.01 (
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+).
+ Note that the leftmost mode is doubly degenerate (its degenerate partner
+ is not shown, but can be found by subtracting 
+\begin_inset Formula $120^{\circ}$
+\end_inset
+
+ and 
+\begin_inset Formula $-120^{\circ}$
+\end_inset
+
+ rotations of the field).
+ (Slight asymmetries in the 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ state are due to the finite computational grid resolution.) There are 8
+ modes (not shown) with frequencies between 0.66 and 1.74.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Here, the least-oscillatory (lowest-
+\begin_inset Formula $\omega$
+\end_inset
+
+) mode corresponds to 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, with only two extrema.
+ Note that the numerical 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ mode is higher-order (each of our sketched extrema is split into two) than
+ our cartoon (I couldn't find any lower-order 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ modes, and I'm not quite sure why...).
+\end_layout
+
+\begin_layout Enumerate
+We want an operation on one partner function that gives us the other (with
+ some sign/coefficient), i.e.
+ which corresponds to a matrix of the form 
+\begin_inset Formula $\left(\begin{array}{cc}
+0 & \pm1\\
+\pm1 & 0
+\end{array}\right)$
+\end_inset
+
+.
+ By inspection of the 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+ representation matrices from (c), there are several ways to get a matrix
+ of this form.
+ For example, 
+\begin_inset Formula $(E+{2C}_{3})/\sqrt{3}$
+\end_inset
+
+ or (more symmetrically) 
+\begin_inset Formula $(C_{3}-C_{3}^{-1})/\sqrt{3}$
+\end_inset
+
+, or 
+\begin_inset Formula $(\sigma_{1}-\sigma_{2})/\sqrt{3}=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)$
+\end_inset
+
+.
+ That means, if we have a solution 
+\begin_inset Formula $\psi$
+\end_inset
+
+ corresponding to one of the degenerate partner functions of 
+\begin_inset Formula $\Gamma_{3}$
+\end_inset
+
+, then, for example, 
+\begin_inset Formula $(\widehat{\sigma_{1}}-\widehat{\sigma_{2}})\psi/\sqrt{3}$
+\end_inset
+
+ gives us the other orthogonal partner function.
+\end_layout
+
+\end_body
+\end_document

@@ -352,7 +352,7 @@ Began talking about computational electromagnetism: part 1, band diagrams and di
 ### Lecture 22: 3 Apr 2024
 
 * [Jupyter notebook](https://nbviewer.jupyter.org/github/mitmath/18369/blob/master/notes/MPB-demo.ipynb); see also [the MPB home page](https://github.com/NanoComp/mpb) and documentation.  You can run this MPB notebook in the cloud: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mochen4/meepdocker/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fmitmath%252F18369%26urlpath%3Dtree%252F18369%252Fnotes%252FMPB-demo.ipynb%26branch%3Dmaster)
-* pset 5 solutions: coming soon
+* [pset 5 solutions](psets/pset5sol.pdf)
 
 Gave demo of MPB eigensolver software for 2d dielectric waveguide.  (If you installed Meep via the Anaconda Python packages, then you also have MPB.  You can also run it in the cloud via mybinder.)
 
