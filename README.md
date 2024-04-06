@@ -365,3 +365,19 @@ Gave demo of MPB eigensolver software for 2d dielectric waveguide.  (If you inst
 Discussion of resonant modes, FDTD time-domain methods, and PML absorbing layers.
 
 **Further reading** Textbook, appendix D. For FDTD in general, see e.g. Allen Taflove and Susan C. Hagness, _Computational Electrodynamics: The Finite-Difference Time-Domain Method_ (Artech, 2005). For the CFL condition in general, see e.g. this [book chapter by Trefethen](http://people.maths.ox.ac.uk/trefethen/4all.pdf). See also our [free FDTD software: Meep](https://github.com/NanoComp/meep), and in particular the introduction and tutorial sections of the Meep manual. [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book.
+
+### Take-home Midterm: April 9, 3pm
+
+A take-home midterm exam will be posted **at 3pm** on Apr. 9, **due 3pm Apr. 10**, and will cover everything through **pset 5** and **Lecture 20**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
+
+* [Midterm exam](psets/midterm.pdf) and [solutions](psets/midtermsol.pdf).
+
+Previous midterms include:
+[2006 midterm](https://math.mit.edu/~stevenj/18.369/fall05/midterm.pdf) (was way too long) and [solutions](https://math.mit.edu/~stevenj/18.325/pset5sol.pdf);
+[2007 midterm](https://math.mit.edu/~stevenj/18.369/spring07/midterm.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring07/midterm-sol.pdf);
+[2009 midterm](https://math.mit.edu/~stevenj/18.369/spring09/midterm09.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring09/midterm09-sol.pdf);
+[2010 midterm](https://math.mit.edu/~stevenj/18.369/spring10/midterm-spring10.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring10/midtermsol-spring10.pdf);
+[2012 midterm](https://math.mit.edu/~stevenj/18.369/spring12/midterm-spring12.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring12/midtermsol-spring12.pdf);
+[2014 midterm](https://math.mit.edu/~stevenj/18.369/spring14/midterm14.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring14/midterm14sol.pdf);
+[2016midterm](https://math.mit.edu/~stevenj/18.369/spring16/midterm16.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring16/midtermsol16.pdf) (also [problem 1 notebook](http://nbviewer.jupyter.org/url/math.mit.edu/~stevenj/18.369/midtermsol16.ipynb));
+[2018 midterm](https://github.com/mitmath/18369/blob/spring18/exams/midterm18.pdf) and [solutions](https://github.com/mitmath/18369/blob/spring18/exams/midterm18sol.pdf)
