@@ -389,3 +389,12 @@ Previous midterms include:
 [2014 midterm](https://math.mit.edu/~stevenj/18.369/spring14/midterm14.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring14/midterm14sol.pdf);
 [2016midterm](https://math.mit.edu/~stevenj/18.369/spring16/midterm16.pdf) and [solutions](https://math.mit.edu/~stevenj/18.369/spring16/midtermsol16.pdf) (also [problem 1 notebook](http://nbviewer.jupyter.org/url/math.mit.edu/~stevenj/18.369/midtermsol16.ipynb));
 [2018 midterm](https://github.com/mitmath/18369/blob/spring18/exams/midterm18.pdf) and [solutions](https://github.com/mitmath/18369/blob/spring18/exams/midterm18sol.pdf)
+
+### Lecture 25: 10 Apr 2024 (Dr. [Nick Rivera](https://scholar.harvard.edu/nrivera))
+
+* [notes on radiation](notes/radiation.pdf)
+* [slides on scintillation](notes/slides.pdf)
+
+Radiation of electromagnetic waves by current sources. Green's functions and their eigenmode representation, and application to radiation by time-harmonic dipoles, moving charges, and fluctuating current sources. Purcell effect and Q/V enhancement, Cherenkov and Smith-Purcell radiation by free electrons, and fluctuational electrodynamics effects such as blackbody radiation. Discussed an example of radiation by fluctuating sources in the context of scintillators (slides), and the use of electromagnetic reciprocity to relate light emission to light in-coupling from the far field.
+
+**Further reading**: See the review article ["Free-electron–light interactions in nanophotonics" (2023)](Free-electron–light interactions in nanophotonics).  The review [Electromagnetic wave source conditions (2013)](https://arxiv.org/abs/1301.5366) also discusses Purcell enhancement.
