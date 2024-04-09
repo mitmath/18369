@@ -1566,7 +1566,7 @@ which is a Fourier cosine series and one can solve for
  Hence, the final solution looks like 
 \begin_inset Formula 
 \[
-H_{z}(x,y)=\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|y|},
+H_{z}(x,y)=\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|y|}\operatorname{sign}(y),
 \]
 
 \end_inset
@@ -1579,7 +1579,15 @@ which is a superposition of two propagating terms (
 \begin_inset Formula $n=1$
 \end_inset
 
-) and infinitely many evanescent terms.
+) and infinitely many evanescent terms, with the 
+\begin_inset Formula $\operatorname{sign}(y)=y/|y|=\pm1$
+\end_inset
+
+ factor flipping the sign for 
+\begin_inset Formula $\pm y$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*
