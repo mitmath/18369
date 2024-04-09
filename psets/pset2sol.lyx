@@ -1325,7 +1325,7 @@ Ampere's law
 \end_inset
 
  gives us 
-\begin_inset Formula $\nabla\times\nabla\times\vec{H}=\omega^{2}\vec{H}+\nabla\times J$
+\begin_inset Formula $\nabla\times\nabla\times\vec{H}=\omega^{2}\vec{H}+\nabla\times\vec{J}$
 \end_inset
 
 .
@@ -1473,8 +1473,8 @@ We now write
 \begin_inset Formula 
 \[
 H_{z}(x,y)=\sum_{n=0}^{\infty}\cos\left(\frac{n\pi x}{L}\right)\begin{cases}
-a_{n}^{+}e^{+ik_{n}z} & z>0\\
-a_{n}^{-}e^{-ik_{n}z} & z<0
+a_{n}^{+}e^{+ik_{n}y} & y>0\\
+a_{n}^{-}e^{-ik_{n}y} & y<0
 \end{cases},
 \]
 
@@ -1485,11 +1485,11 @@ where we have chosen the signs
 \end_inset
 
  in the exponent for 
-\begin_inset Formula $z>0$
+\begin_inset Formula $y>0$
 \end_inset
 
  and 
-\begin_inset Formula $z<0$
+\begin_inset Formula $y<0$
 \end_inset
 
 , respectively, to obtain 
@@ -1566,7 +1566,7 @@ which is a Fourier cosine series and one can solve for
  Hence, the final solution looks like 
 \begin_inset Formula 
 \[
-H_{z}(x,y)=\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|z|},
+H_{z}(x,y)=\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|y|},
 \]
 
 \end_inset
