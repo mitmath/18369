@@ -393,7 +393,7 @@ Previous midterms include:
 ### Lecture 25: 10 Apr 2024 (Dr. [Nick Rivera](https://scholar.harvard.edu/nrivera))
 
 * [notes on radiation](notes/radiation.pdf)
-* [slides on scintillation](notes/slides.pdf)
+* [slides on scintillation](notes/scintillation.pdf)
 
 Radiation of electromagnetic waves by current sources. Green's functions and their eigenmode representation, and application to radiation by time-harmonic dipoles, moving charges, and fluctuating current sources. Purcell effect and Q/V enhancement, Cherenkov and Smith-Purcell radiation by free electrons, and fluctuational electrodynamics effects such as blackbody radiation. Discussed an example of radiation by fluctuating sources in the context of scintillators (slides), and the use of electromagnetic reciprocity to relate light emission to light in-coupling from the far field.
 
