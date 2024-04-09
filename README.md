@@ -366,6 +366,14 @@ Discussion of resonant modes, FDTD time-domain methods, and PML absorbing layers
 
 **Further reading** Textbook, appendix D. For FDTD in general, see e.g. Allen Taflove and Susan C. Hagness, _Computational Electrodynamics: The Finite-Difference Time-Domain Method_ (Artech, 2005). For the CFL condition in general, see e.g. this [book chapter by Trefethen](http://people.maths.ox.ac.uk/trefethen/4all.pdf). See also our [free FDTD software: Meep](https://github.com/NanoComp/meep), and in particular the introduction and tutorial sections of the Meep manual. [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book.
 
+### Lecture 24: 8 Apr 2024
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+
+Discussed PML absorbing layers, began discussing principal of equivalence.
+
+**Further reading** [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book. [Notes on coordinate transforms in electromagnetism](notes/coordinate-transform.pdf); see also [slides on transformation optics](notes/transformation-slides.pdf).   See also the [Meep PML](https://meep.readthedocs.io/en/latest/Perfectly_Matched_Layer/) manual for some examples, caveats, and rules of thumb.   See the review article [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366), section 4.2, on equivalent currents.
+
 ### Take-home Midterm: April 9, 3pm
 
 A take-home midterm exam will be posted **at 3pm** on Apr. 9, **due 3pm Apr. 10**, and will cover everything through **pset 5** and **Lecture 20**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
