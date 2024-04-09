@@ -1,0 +1,604 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+\newcommand{\tr}{\operatorname{tr}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Take-Home Midterm Exam: Spring 2024
+\end_layout
+
+\begin_layout Standard
+Posted 3pm Tuesday April 9, due 
+\series bold
+3pm Wednesday April 10.
+\end_layout
+
+\begin_layout Subsection*
+Problem 0: Honor code
+\end_layout
+
+\begin_layout Standard
+Copy and sign the following in your solutions:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+I have not used any resources to complete this exam other than my own 18.369
+ notes, the textbook, and posted 18.369 course materials.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 30pt
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 30col%
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0ex"
+width "60col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+your signature
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: (5+5+5 points)
+\end_layout
+
+\begin_layout Standard
+Recall from class that if we have an 
+\begin_inset Formula $x$
+\end_inset
+
+-periodic problem with period 
+\begin_inset Formula $a$
+\end_inset
+
+, i.e.
+\begin_inset space ~
+\end_inset
+
+its symmetry group consists of translations 
+\begin_inset Formula $\hat{n}f(x)=f(x-na)$
+\end_inset
+
+ for all integers 
+\begin_inset Formula $n$
+\end_inset
+
+, then the eigenfunctions of 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+ are Bloch-periodic functions 
+\begin_inset Formula $f_{k}(x)e^{ikx}$
+\end_inset
+
+ where 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ is periodic, corresponding to eigenvalues 
+\begin_inset Formula $D^{(k)}(n)=e^{-ikna}$
+\end_inset
+
+ for arbitrary real 
+\begin_inset Formula $k$
+\end_inset
+
+ (but 
+\begin_inset Formula $D^{(k)}=D^{(k+\frac{2\pi}{a})}$
+\end_inset
+
+).
+ Equivalently, these are the partner functions of the 1d irreps 
+\begin_inset Formula $D^{(k)}$
+\end_inset
+
+ (which are, in fact, the only possible unitary irreps).
+\end_layout
+
+\begin_layout Enumerate
+Suppose that space is looped around in a torus/circle with period 
+\begin_inset Formula $Na$
+\end_inset
+
+, so that translation 
+\begin_inset Formula $\hat{N}$
+\end_inset
+
+ is equivalent to translation 
+\begin_inset Formula $\hat{0}$
+\end_inset
+
+ (= identity).
+ In this case, what are the irreps?
+\end_layout
+
+\begin_layout Enumerate
+For this finite 
+\begin_inset Formula $N$
+\end_inset
+
+-period torus, what are the projection operators for your irreps, applied
+ to some arbitrary function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+? The projection operator involves a sum, and (as you saw in pset
+\begin_inset space ~
+\end_inset
+
+4) the sum of the projection operators over all irreps is the identity —
+ show that in the limit 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ (infinite periodic systems), at least one of these two sums becomes an
+ integral (you may need to rearrange a normalization factor).
+\end_layout
+
+\begin_layout Enumerate
+Suppose that we have Maxwell's equations in an 
+\begin_inset Formula $x$
+\end_inset
+
+-periodic system 
+\begin_inset Formula $\varepsilon(x,y,z)=\varepsilon(x+a,y,z)$
+\end_inset
+
+.
+ You saw in pset
+\begin_inset space ~
+\end_inset
+
+1 that the response to a time-harmonic current source is given by the solution
+ to 
+\begin_inset Formula $(\nabla\times\nabla\times{}-\omega^{2}\varepsilon)\vec{E}=i\omega\vec{J}$
+\end_inset
+
+ (
+\begin_inset Formula $\varepsilon_{0}=\mu_{0}=c=1$
+\end_inset
+
+ units); here, the operator on the left commutes with 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+.
+ Now, however, suppose that 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is 
+\emph on
+not 
+\emph default
+periodic or Bloch-periodic, and just is some arbitrary current distribution
+ (e.g.
+ maybe it is localized in a finite region of space).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Explain how we could still solve for 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ by solving a 
+\emph on
+set
+\emph default
+ of problems with Bloch-periodic boundaries and summing or integrating the
+ results.
+ (Hint: apply your projection operator.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(This is a very practical computational tool for modeling periodic systems
+ with non-periodic sources!)
+\end_layout
+
+\begin_layout Subsection*
+Problem 2 (15 points)
+\end_layout
+
+\begin_layout Standard
+Refer to the solutions for problem
+\begin_inset space ~
+\end_inset
+
+3 of pset
+\begin_inset space ~
+\end_inset
+
+2 (recently updated to fix a couple of typos), in which we put a time-harmonic
+ current source 
+\begin_inset Formula $\vec{J}=f(x)\delta(y)e^{-i\omega t}\hat{x}$
+\end_inset
+
+ into a PEC waveguide (waves traveling along the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction) and found the (
+\begin_inset Formula $H_{z}$
+\end_inset
+
+-polarized) solutions as an infinite cosine series of propagating + evanescent
+ modes.
+\end_layout
+
+\begin_layout Standard
+Suppose that the cosine-series coefficients of 
+\begin_inset Formula $f(x)/2$
+\end_inset
+
+ are 
+\begin_inset Formula $a_{n}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $n$
+\end_inset
+
+ even and 
+\begin_inset Formula $a_{n}=\frac{1}{n^{2}}$
+\end_inset
+
+ for 
+\begin_inset Formula $n$
+\end_inset
+
+ odd (corresponding to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ proportional to 
+\begin_inset Formula $x-L/2$
+\end_inset
+
+, but you need not go through the integrals).
+ Compute the rate of power 
+\begin_inset Formula $P(\omega)$
+\end_inset
+
+ expended by the current source (e.g.
+\begin_inset space ~
+\end_inset
+
+with the help of Poynting's theorem), and sketch a plot of 
+\begin_inset Formula $P(\omega)$
+\end_inset
+
+ a function of frequency 
+\begin_inset Formula $\omega\ge0$
+\end_inset
+
+ (capturing the main qualitative features).
+\end_layout
+
+\begin_layout Subsection*
+Problem 3 (5+5+5 points)
+\end_layout
+
+\begin_layout Standard
+In class, we have mostly considered the simplified case where the electric
+ polarization density 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ responds 
+\emph on
+instantaneously
+\emph default
+ and linearly to the electric field at the same point in space: 
+\begin_inset Formula $\vec{P}(\vec{x})=\chi_{\text{e}}\vec{E}(\vec{x})$
+\end_inset
+
+ for some constant ``susceptibility'' 
+\begin_inset Formula $\chi_{\text{e}}=\varepsilon-1$
+\end_inset
+
+.
+ More generally, however, changing 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ involves physically moving electric charges, and so it cannot happen instantane
+ously.
+ 
+\end_layout
+
+\begin_layout Standard
+Imagine a simple model in which the charges are attached to immobile atoms
+ with linear springs, so that they can bounce back and forth with some frequency
+ 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ in the absence of external forces.
+ (This actually turns out to be a reasonable semiclassical model of an atom
+ with an 
+\begin_inset Quotes eld
+\end_inset
+
+electric dipole transition
+\begin_inset Quotes erd
+\end_inset
+
+ energy difference 
+\begin_inset Formula $\hslash\omega_{0}$
+\end_inset
+
+ between a ground state and an excited state.) Of course, there also needs
+ to be some 
+\begin_inset Quotes eld
+\end_inset
+
+friction
+\begin_inset Quotes erd
+\end_inset
+
+ so that the atom slowly settles down (to its ground state) when it is left
+ alone.
+ A simple model for this is to describe 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ by a damped harmonic oscillator at each point in space: 
+\begin_inset Formula 
+\[
+\ddot{\vec{P}}=-\omega_{0}^{2}\vec{P}-\gamma_{0}\dot{\vec{\vec{P}}}+\sigma_{0}\vec{E}
+\]
+
+\end_inset
+
+for a frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+, a damping rate 
+\begin_inset Formula $\gamma_{0}>0$
+\end_inset
+
+ , and a coupling coefficient 
+\begin_inset Formula $\sigma_{0}>0$
+\end_inset
+
+ to the electric field at that point in space.
+\end_layout
+
+\begin_layout Enumerate
+Assuming time-harmonic fields 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ proportional to 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+, show that you obtain the same Maxwell equations as in class but with a
+ 
+\emph on
+frequency-dependent
+\emph default
+ permittivity 
+\begin_inset Formula $\varepsilon(\omega,\vec{x})$
+\end_inset
+
+ (where the 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ dependence arises if your coefficients above vary with 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Sketch a plot of 
+\begin_inset Formula $\Re\varepsilon-1=\Re\chi_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Im\varepsilon=\Im\chi_{e}$
+\end_inset
+
+ versus 
+\begin_inset Formula $\omega/\omega_{0}$
+\end_inset
+
+, in the regime where the friction term is fairly small (but not zero!)
+ compared the 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ term (i.e.
+\begin_inset space ~
+\end_inset
+
+where the loss rate is small, say
+\begin_inset space ~
+\end_inset
+
+5%, compared to 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+).
+ 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+ should have a peak—what parameters determine the width, amplitude, and
+ location of this peak?
+\end_layout
+
+\begin_layout Enumerate
+Show that your equations are consistent with the passivity condition 
+\begin_inset Formula $\omega\Im[\varepsilon]\ge0$
+\end_inset
+
+ from class.
+\end_layout
+
+\end_body
+\end_document
