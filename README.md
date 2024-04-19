@@ -398,3 +398,19 @@ Previous midterms include:
 Radiation of electromagnetic waves by current sources. Green's functions and their eigenmode representation, and application to radiation by time-harmonic dipoles, moving charges, and fluctuating current sources. Purcell effect and Q/V enhancement, Cherenkov and Smith-Purcell radiation by free electrons, and fluctuational electrodynamics effects such as blackbody radiation. Discussed an example of radiation by fluctuating sources in the context of scintillators (slides), and the use of electromagnetic reciprocity to relate light emission to light in-coupling from the far field.
 
 **Further reading**: See the review article ["Free-electron–light interactions in nanophotonics" (2023)](Free-electron–light interactions in nanophotonics).  The review [Electromagnetic wave source conditions (2013)](https://arxiv.org/abs/1301.5366) also discusses Purcell enhancement.
+
+### Lecture 26: 12 Apr 2024
+
+* [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
+
+Went over the Principle and Equivalence, mode sources, and integral-equation methods; see slides.
+
+**Further reading:** See the review article[Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366).  See also [SCUFF-EM](https://github.com/HomerReid/scuff-em), Homer Reid's free BEM code for electromagnetic scattering problems. See also this [SCUFF video tutorial](https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a7449e51-2fe1-4d95-a53a-a9050106c542) (June 2018).     The Stanford [Spins code](https://nqp.stanford.edu/inverse-design-photonics) is software for topology optimization in photonics, and the [Meep adjoint solver](https://meep.readthedocs.io/en/latest/Python_Tutorials/AdjointSolver/) can also be used for topology optimization.
+
+### Lecture 27: 17 Apr 2024
+
+Discussed optimization problems in photonics from the computation slides — general overview of optimization problems/algorithms, topology optimization, and discussion of "adjoint" methods for computing gradients.
+
+**Further reading:** There are many textbooks on [nonlinear optimization](http://www.athenasc.com/nonlinbook.html) algorithms of various sorts, including specialized books on [convex optimization](http://web.stanford.edu/~boyd/cvxbook/), [derivative-free optimization](http://bookstore.siam.org/mp08/), etcetera.  A useful review of inverse design in photonics is [Molesky et al. (2018)](https://www.nature.com/articles/s41566-018-0246-90), and of topology-optimization in particular by [Jensen and Sigmund (2010)](https://onlinelibrary.wiley.com/doi/10.1002/lpor.201000014) or [Christiansen and Sigmund (2020)](https://arxiv.org/abs/2008.11816).  Free software for inverse design includes the Stanford [SPINS-B code](https://github.com/stanfordnqp/spins-b), the [Meep adjoint solver](https://meep.readthedocs.io/en/latest/Python_Tutorials/AdjointSolver/) described in [Hammond et al. (2022)](http://doi.org/10.1364/OE.442074), the [FMMAX](https://github.com/facebookresearch/fmmax) and [grcwa](https://github.com/weiliangjinca/grcwa) differentiable scattering-matrix codes, and a growing list of other packages.
+
+### Lecture 28: 19 Apr 2024
