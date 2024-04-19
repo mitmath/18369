@@ -414,3 +414,13 @@ Discussed optimization problems in photonics from the computation slides — gen
 **Further reading:** There are many textbooks on [nonlinear optimization](http://www.athenasc.com/nonlinbook.html) algorithms of various sorts, including specialized books on [convex optimization](http://web.stanford.edu/~boyd/cvxbook/), [derivative-free optimization](http://bookstore.siam.org/mp08/), etcetera.  A useful review of inverse design in photonics is [Molesky et al. (2018)](https://www.nature.com/articles/s41566-018-0246-90), and of topology-optimization in particular by [Jensen and Sigmund (2010)](https://onlinelibrary.wiley.com/doi/10.1002/lpor.201000014) or [Christiansen and Sigmund (2020)](https://arxiv.org/abs/2008.11816).  Free software for inverse design includes the Stanford [SPINS-B code](https://github.com/stanfordnqp/spins-b), the [Meep adjoint solver](https://meep.readthedocs.io/en/latest/Python_Tutorials/AdjointSolver/) described in [Hammond et al. (2022)](http://doi.org/10.1364/OE.442074), the [FMMAX](https://github.com/facebookresearch/fmmax) and [grcwa](https://github.com/weiliangjinca/grcwa) differentiable scattering-matrix codes, and a growing list of other packages.
 
 ### Lecture 28: 19 Apr 2024
+
+* [TCMT slides](notes/TCMT.pdf)
+
+New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical device, a waveguide-cavity-waveguide filter, and began to derive how the universal behavior of device in this class can be derived from very general principles such as conservation of energy, parameterized only by the (geometry-dependent) frequency and lifetime of the cavity mode.
+
+(Recall that we had previously defined the **quality factor** Q of the cavity, which is simply a dimensionless lifetime Q=ω₀τ/2.)
+
+Followed chapter 10 in the book to derive TCMT in the simple 2-port (port–cavity–port) case.
+
+**Further reading:** Chapter 10 of the book and references therein.
