@@ -378,7 +378,7 @@ Discussed PML absorbing layers, began discussing principal of equivalence.
 
 A take-home midterm exam will be posted **at 3pm** on Apr. 9, **due 3pm Apr. 10**, and will cover everything through **pset 5** and **Lecture 20**.  It will be designed to be do-able in 2 hours, but you can take as much time as you like.  The exam will be **open notes** but "closed internet" — you can **only use course materials** (the course textbooks, posted notes, pset solutions, and your own notes).
 
-* [Midterm exam](psets/midterm.pdf); solutions to be posted.
+* [Midterm exam](psets/midterm.pdf) and [solutions](psets/midtermsol.pdf).
 
 Previous midterms include:
 [2006 midterm](https://math.mit.edu/~stevenj/18.369/fall05/midterm.pdf) (was way too long) and [solutions](https://math.mit.edu/~stevenj/18.325/pset5sol.pdf);

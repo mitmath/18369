@@ -1,0 +1,1869 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+\newcommand{\tr}{\operatorname{tr}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+18.369 Take-Home Midterm Exam SOLUTIONS: Spring 2024
+\end_layout
+
+\begin_layout Subsection*
+Problem 1: (5+5+5 points)
+\end_layout
+
+\begin_layout Standard
+Recall from class that if we have an 
+\begin_inset Formula $x$
+\end_inset
+
+-periodic problem with period 
+\begin_inset Formula $a$
+\end_inset
+
+, i.e.
+\begin_inset space ~
+\end_inset
+
+its symmetry group consists of translations 
+\begin_inset Formula $\hat{n}f(x)=f(x-na)$
+\end_inset
+
+ for all integers 
+\begin_inset Formula $n$
+\end_inset
+
+, then the eigenfunctions of 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+ are Bloch-periodic functions 
+\begin_inset Formula $f_{k}(x)e^{ikx}$
+\end_inset
+
+ where 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ is periodic, corresponding to eigenvalues 
+\begin_inset Formula $D^{(k)}(n)=e^{-ikna}$
+\end_inset
+
+ for arbitrary real 
+\begin_inset Formula $k$
+\end_inset
+
+ (but 
+\begin_inset Formula $D^{(k)}=D^{(k+\frac{2\pi}{a})}$
+\end_inset
+
+).
+ Equivalently, these are the partner functions of the 1d irreps 
+\begin_inset Formula $D^{(k)}$
+\end_inset
+
+ (which are, in fact, the only possible unitary irreps).
+\end_layout
+
+\begin_layout Enumerate
+Suppose that space is looped around in a torus/circle with period 
+\begin_inset Formula $Na$
+\end_inset
+
+, so that translation 
+\begin_inset Formula $\hat{N}$
+\end_inset
+
+ is equivalent to translation 
+\begin_inset Formula $\hat{0}$
+\end_inset
+
+ (= identity).
+ In this case, what are the irreps?
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Solution:
+\series default
+ If 
+\begin_inset Formula $\hat{N}=\hat{0}$
+\end_inset
+
+, then we must have the same property of the irreps: 
+\begin_inset Formula $D^{(k)}(N)=e^{-ikNa}=D^{(k)}(0)=1$
+\end_inset
+
+, which implies that 
+\begin_inset Formula $kNa=2\pi m$
+\end_inset
+
+ for some integer 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ That is 
+\begin_inset Formula $k=\frac{2\pi m}{Na}$
+\end_inset
+
+.
+ However, not all integers 
+\begin_inset Formula $m$
+\end_inset
+
+ lead to distinct irreps, because we also know that 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $k+\frac{2\pi}{a}=\frac{2\pi}{Na}(m+N)$
+\end_inset
+
+ are equivalent, so that 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $m+N$
+\end_inset
+
+ are equivalent.
+ Hence, the distinct irreps correspon to 
+\begin_inset Formula 
+\[
+\boxed{k_{m}=\frac{2\pi m}{Na}\text{ for }m=0,\ldots,N-1}
+\]
+
+\end_inset
+
+(or equivalent, e.g.
+ 
+\begin_inset Formula $m=1\ldots N$
+\end_inset
+
+ or 
+\begin_inset Formula $m=-\left\lfloor N/2\right\rfloor \ldots\left\lceil N/2\right\rceil -1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+For this finite 
+\begin_inset Formula $N$
+\end_inset
+
+-period torus, what are the projection operators for your irreps, applied
+ to some arbitrary function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+? The projection operator involves a sum, and (as you saw in pset
+\begin_inset space ~
+\end_inset
+
+4) the sum of the projection operators over all irreps is the identity —
+ show that in the limit 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ (infinite periodic systems), at least one of these two sums becomes an
+ integral (you may need to rearrange a normalization factor).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Solution:
+\series default
+ The dimension 
+\begin_inset Formula $d$
+\end_inset
+
+ of these representations is 
+\begin_inset Formula $1$
+\end_inset
+
+, and the size of the group is 
+\begin_inset Formula $N$
+\end_inset
+
+, so applying our general formula for projection operators, we have 
+\begin_inset Formula 
+\[
+\boxed{f_{k_{m}}(x)=\hat{P}^{(m)}f=\frac{1}{N}\sum_{n=0}^{N-1}D^{(k_{m})}(n)^{*}\hat{n}f=\frac{1}{N}\sum_{n=0}^{N-1}e^{+i\frac{2\pi}{N}mn}f(x-na),}
+\]
+
+\end_inset
+
+which is in the form of a discrete Fourier transform (DFT) for each 
+\begin_inset Formula $x$
+\end_inset
+
+, and 
+\begin_inset Formula $f(x)=\sum_{m=0}^{N-1}f_{k_{m}}(x)$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $f_{k_{m}}(a)$
+\end_inset
+
+ is 
+\emph on
+not
+\emph default
+ periodic, it is Bloch-periodic: by construction, 
+\begin_inset Formula $f_{k_{m}}(x-a)=e^{-i\frac{2\pi}{N}m}f_{k_{m}}(x)$
+\end_inset
+
+ via the change of variables 
+\begin_inset Formula $n'=n+1$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+To take the 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ limit, we will want to shift the 
+\begin_inset Formula $1/N$
+\end_inset
+
+ normalization factor to the 
+\begin_inset Formula $\sum_{m}$
+\end_inset
+
+, so we will define 
+\begin_inset Formula $F_{k_{m}}(x)=Nf(x)$
+\end_inset
+
+.
+ It is also useful to rewrite the sums starting at zero to something like
+\begin_inset Formula 
+\[
+\sum_{n=0}^{N-1}=\sum_{n=-\left\lfloor N/2\right\rfloor }^{\left\lceil N/2\right\rceil -1}
+\]
+
+\end_inset
+
+ so that we remove anything special about the origin 
+\begin_inset Formula $0\leftrightarrow N$
+\end_inset
+
+ from the sum (since it is weird to have 
+\begin_inset Formula $n=0$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+wrap to infinity
+\begin_inset Quotes erd
+\end_inset
+
+ in the 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ limit).
+ Then, we have 
+\begin_inset Formula 
+\[
+F_{k_{m}}(x)=Nf_{k_{m}}(x)\longrightarrow\boxed{F_{k}(x)=\sum_{n=-\infty}^{\infty}e^{+ikna}f(x-na)\text{ for }k\in[0,\frac{2\pi}{a})}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+f(x)=\frac{1}{N}\sum_{m=0}^{N-1}F_{k_{m}}(x)=\frac{a}{2\pi}\sum_{m}F_{k_{m}}(x)\underbrace{\frac{2\pi}{Na}}_{\Delta k}\longrightarrow\boxed{f(x)=\frac{a}{2\pi}\int_{0}^{2\pi/a}F_{k}(x)dk}\:,
+\]
+
+\end_inset
+
+corresponding exactly to a 
+\series bold
+Fourier series 
+\series default
+(or DTFT) and its inverse.
+ The latter may not 
+\emph on
+look
+\emph default
+ like the inverse of a Fourier series, but remember that 
+\begin_inset Formula $F_{k}(x)$
+\end_inset
+
+ is Bloch-periodic — if we change variables to a periodic coefficient 
+\begin_inset Formula $u_{k}(x)=e^{-ikx}F_{k}(x)=u(x+a)$
+\end_inset
+
+, then we get something that looks more conventional: 
+\begin_inset Formula 
+\[
+u_{k}(x)=\sum_{n}e^{-ik(x-na)}f(x-na)\Longleftrightarrow f(x)=\frac{a}{2\pi}\int_{0}^{2\pi/a}e^{+ikx}u_{k}(x)dk\:.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Suppose that we have Maxwell's equations in an 
+\begin_inset Formula $x$
+\end_inset
+
+-periodic system 
+\begin_inset Formula $\varepsilon(x,y,z)=\varepsilon(x+a,y,z)$
+\end_inset
+
+.
+ You saw in pset
+\begin_inset space ~
+\end_inset
+
+1 that the response to a time-harmonic current source is given by the solution
+ to 
+\begin_inset Formula $(\nabla\times\nabla\times{}-\omega^{2}\varepsilon)\vec{E}=i\omega\vec{J}$
+\end_inset
+
+ (
+\begin_inset Formula $\varepsilon_{0}=\mu_{0}=c=1$
+\end_inset
+
+ units); here, the operator on the left commutes with 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+.
+ Now, however, suppose that 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ is 
+\emph on
+not 
+\emph default
+periodic or Bloch-periodic, and just is some arbitrary current distribution
+ (e.g.
+ maybe it is localized in a finite region of space).
+ Explain how we could still solve for 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ by solving a 
+\emph on
+set
+\emph default
+ of problems with Bloch-periodic boundaries and summing or integrating the
+ results.
+ (Hint: apply your projection operator.) (This is a very practical computational
+ tool for modeling periodic systems with non-periodic sources!)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Solution:
+\series default
+ From above, 
+\begin_inset Formula $\vec{J}(x,y,z)=\frac{a}{2\pi}\int_{0}^{2\pi/a}\vec{J}_{k}(x,y,z)dk$
+\end_inset
+
+ can be written as a superposition of Bloch-periodic sources by a projection
+ operation:
+\begin_inset Formula 
+\[
+\vec{J}_{k}(x,y,z)=\sum_{n=-\infty}^{\infty}e^{+ikna}\vec{J}(x-na,y,z)=e^{ika}\vec{J}_{k}(x-a,y,z)\:.
+\]
+
+\end_inset
+
+So, we can solve for 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ by:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Approximate the integral 
+\begin_inset Formula $\vec{J}(x,y,z)=\frac{a}{2\pi}\int_{0}^{2\pi/a}\vec{J}_{k}(x,y,z)dk$
+\end_inset
+
+ by a sum (a ``quadrature rule'') over a finite set 
+\begin_inset Formula $\{k_{m}\}$
+\end_inset
+
+ of 
+\begin_inset Formula $k$
+\end_inset
+
+ values.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Comment: 
+\emph default
+Since the integrand is periodic in 
+\begin_inset Formula $k$
+\end_inset
+
+, a good choice is simply equally spaced points 
+\begin_inset Formula $k_{m}=\frac{2\pi m}{Na}$
+\end_inset
+
+ for 
+\begin_inset Formula $m=0,\ldots,N$
+\end_inset
+
+ for a sufficiently large 
+\begin_inset Formula $N$
+\end_inset
+
+ as we did in the previous part, i.e.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\vec{J}(x,y,z)\approx\frac{1}{N}\sum_{m=0}^{N-1}\vec{J}_{k_{m}}(x,y,z)$
+\end_inset
+
+, exactly the reverse of the limit of the previous section (corresponding
+ to approximating the infinite periodic system by a ``supercell'' of 
+\begin_inset Formula $N$
+\end_inset
+
+ unit cells).
+\end_layout
+
+\begin_layout Enumerate
+For each ``quadrature point'' 
+\begin_inset Formula $k_{m}$
+\end_inset
+
+, compute 
+\begin_inset Formula $\vec{J}_{k_{m}}$
+\end_inset
+
+ by the projection operation above, for all 
+\begin_inset Formula $x$
+\end_inset
+
+ in the unit cell 
+\begin_inset Formula $x\in[0,a)$
+\end_inset
+
+.
+ If the current is localized in a finite region as suggested, then the sum
+ can be truncated to 
+\begin_inset Formula $n$
+\end_inset
+
+'s for which 
+\begin_inset Formula $x-na$
+\end_inset
+
+ lies within the support of 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+.
+ (More generally, assume that the sum is converging so that we can compute
+ it easily to any desired accuracy.)
+\end_layout
+
+\begin_layout Enumerate
+For each Bloch-periodic current 
+\begin_inset Formula $\vec{J}_{k_{m}}$
+\end_inset
+
+, solve Maxwell's equations in the unit cell 
+\begin_inset Formula $x\in[0,a)$
+\end_inset
+
+ with Bloch-periodic boundary conditions for the corresponding electric
+ field 
+\begin_inset Formula $\vec{E}_{k_{m}}(x,y,z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Compute 
+\begin_inset Formula $\vec{E}(x,y,z)=\frac{a}{2\pi}\int_{0}^{2\pi/a}\vec{E}_{k}(x,y,z)dk$
+\end_inset
+
+ (for any desired 
+\begin_inset Formula $x$
+\end_inset
+
+), where again the 
+\begin_inset Formula $\int dk$
+\end_inset
+
+ is approximated by our sum over 
+\begin_inset Formula $k_{m}$
+\end_inset
+
+ (our quadrature rule).
+ This is the desired solution! 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Problem 2 (15 points)
+\end_layout
+
+\begin_layout Standard
+Refer to the solutions for problem
+\begin_inset space ~
+\end_inset
+
+3 of pset
+\begin_inset space ~
+\end_inset
+
+2 (recently updated to fix a couple of typos), in which we put a time-harmonic
+ current source 
+\begin_inset Formula $\vec{J}=f(x)\delta(y)e^{-i\omega t}\hat{x}$
+\end_inset
+
+ into a PEC waveguide (waves traveling along the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction) and found the (
+\begin_inset Formula $H_{z}$
+\end_inset
+
+-polarized) solutions as an infinite cosine series of propagating + evanescent
+ modes.
+\end_layout
+
+\begin_layout Standard
+Suppose that the cosine-series coefficients of 
+\begin_inset Formula $f(x)/2$
+\end_inset
+
+ are 
+\begin_inset Formula $a_{n}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $n$
+\end_inset
+
+ even and 
+\begin_inset Formula $a_{n}=\frac{1}{n^{2}}$
+\end_inset
+
+ for 
+\begin_inset Formula $n$
+\end_inset
+
+ odd (corresponding to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ proportional to 
+\begin_inset Formula $x-L/2$
+\end_inset
+
+, but you need not go through the integrals).
+ Compute the rate of power 
+\begin_inset Formula $P(\omega)$
+\end_inset
+
+ expended by the current source (e.g.
+\begin_inset space ~
+\end_inset
+
+with the help of Poynting's theorem), and sketch a plot of 
+\begin_inset Formula $P(\omega)$
+\end_inset
+
+ a function of frequency 
+\begin_inset Formula $\omega\ge0$
+\end_inset
+
+ (capturing the main qualitative features).
+\end_layout
+
+\begin_layout Subsubsection*
+Solution:
+\end_layout
+
+\begin_layout Standard
+Recall from pset
+\begin_inset space ~
+\end_inset
+
+2 that the solution for the magnetic field looked like: 
+\begin_inset Formula 
+\[
+H_{z}(x,y)=\sum_{n=0}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|y|-i\omega t}\operatorname{sign}(y),
+\]
+
+\end_inset
+
+for propagating/evanescent modes 
+\begin_inset Formula $k_{n}=+\sqrt{\omega^{2}-\left(\frac{n\pi}{L}\right)^{2}}$
+\end_inset
+
+ (for 
+\begin_inset Formula $c=1$
+\end_inset
+
+ units and 
+\begin_inset Formula $\omega>0$
+\end_inset
+
+) with Fourier cosine-series coefficients 
+\begin_inset Formula 
+\[
+a_{n}=\frac{1}{L}\int_{0}^{L}f(x)\cos\left(\frac{n\pi x}{L}\right)dx\:.
+\]
+
+\end_inset
+
+By Poynting's theorem, we can compute the (time-average) power 
+\begin_inset Formula $P(\omega)$
+\end_inset
+
+ expended by the current source either by computing the Poynting flux or
+ by computing the (time-average) work
+\series bold
+ expended
+\series default
+ by the current source on the field (note the sign): 
+\begin_inset Formula 
+\[
+P(\omega)=-\frac{1}{2}\Re\left[\int\vec{J}^{*}\cdot\vec{E}\right].
+\]
+
+\end_inset
+
+Here, I will use the latter approach.
+ Either way, we first need to compute 
+\begin_inset Formula $E_{x}$
+\end_inset
+
+, which is given from Ampere's law 
+\begin_inset Formula $\nabla\times\vec{H}=-i\omega\varepsilon\vec{E}+\vec{J}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $y\ne0$
+\end_inset
+
+, where we have 
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+, this gives 
+\begin_inset Formula 
+\[
+E_{x}=-\frac{1}{i\omega}\frac{\partial H_{z}}{\partial y}=-\sum_{n=0}^{\infty}a_{n}\frac{k_{n}}{\omega}\cos\left(\frac{n\pi x}{L}\right)e^{ik_{n}|y|-i\omega t}\:,
+\]
+
+\end_inset
+
+(where the 
+\begin_inset Formula $\pm$
+\end_inset
+
+ and 
+\begin_inset Formula $i$
+\end_inset
+
+ factors helpfully cancel out).
+ Notice that the limits 
+\begin_inset Formula $y\to0^{\pm}$
+\end_inset
+
+ agree — 
+\begin_inset Formula $E_{x}$
+\end_inset
+
+ is continuous and well defined at 
+\begin_inset Formula $y=0$
+\end_inset
+
+.
+ (Recall from pset
+\begin_inset space ~
+\end_inset
+
+2 that the derivative of 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ across its jump at 
+\begin_inset Formula $y=0$
+\end_inset
+
+ gives the 
+\begin_inset Formula $\delta$
+\end_inset
+
+ function in 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+, so Ampere's law is now satisfied everywhere.) The power is now: 
+\begin_inset Formula 
+\[
+P(\omega)=-\frac{1}{2}\Re\left[\int\vec{J}^{*}\cdot\vec{E}\right]=\frac{1}{2}\Re\left[\sum_{n=0}^{\infty}a_{n}\frac{k_{n}}{\omega}\underbrace{\int_{0}^{L}f(x)^{*}\cos\left(\frac{n\pi x}{L}\right)dx}_{La_{n}^{*}}\right]=\boxed{\frac{L}{2\omega}\Re\left[\sum_{n=0}^{\infty}|a_{n}|^{2}k_{n}\right]}\,,
+\]
+
+\end_inset
+
+where the 
+\begin_inset Formula $\delta(y)$
+\end_inset
+
+ eliminated the 
+\begin_inset Formula $y$
+\end_inset
+
+ integral, the 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ integral gave us an 
+\begin_inset Formula $a_{n}^{*}$
+\end_inset
+
+ term, and some other nice simplifications happened.
+ In fact, a further simplication occurs because 
+\series bold
+most of the terms in the 
+\begin_inset Formula $\sum_{n}$
+\end_inset
+
+ are zero
+\series default
+ since 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+ is imaginary (evanescent) for all but a finite number of terms 
+\begin_inset Formula $\boxed{n<\frac{L\omega}{\pi}}$
+\end_inset
+
+.
+ Hence, we can simplify this further to 
+\begin_inset Formula 
+\[
+P(\omega)=\frac{L}{2}\sum_{0\le n<\frac{L\omega}{\pi}}|a_{n}|^{2}\sqrt{1-\left(\frac{n}{\omega L/\pi}\right)^{2}}\ge0.
+\]
+
+\end_inset
+
+For 
+\begin_inset Formula $L\omega/\pi<1$
+\end_inset
+
+, so that this only has the 
+\begin_inset Formula $n=0$
+\end_inset
+
+ term, we have a constant 
+\begin_inset Formula $P=|a_{0}|^{2}L/2$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $L\omega/\pi$
+\end_inset
+
+ passes through each positive integer (corresponding to the cutoff of each
+ successive propagating mode), we get a square-root singularity (infinite
+ slope).
+ Note that this power is always nonnegative as expected! An example of what
+ this could look like is shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Problem2-solution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename midtermsol_p2.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Problem2-solution"
+
+\end_inset
+
+Problem
+\begin_inset space ~
+\end_inset
+
+2 solution: typical power 
+\begin_inset Formula $P(\omega)\ge0$
+\end_inset
+
+ in arbitrary units as a function of nondimensionalized frequency 
+\begin_inset Formula $L\omega/c\pi$
+\end_inset
+
+.
+ It starts at some 
+\begin_inset Formula $\ge0$
+\end_inset
+
+ constant value, then undergoes a square-root singularity (infinite slope)
+ every time 
+\begin_inset Formula $L\omega/c\pi$
+\end_inset
+
+ passes through a positive integer (corresponding to the cutoffs for additional
+ propagating modes).
+ The exact amplitudes of each term will depend on the Fourier cosine-series
+ coefficients 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ of the current source, which here were chosen randomly.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Comment on solutions: van Hove Singularities
+\end_layout
+
+\begin_layout Standard
+The singularities in the power 
+\begin_inset Formula $P(\omega$
+\end_inset
+
+) that occur when new propagating modes appear (i.e.
+ at band edges) is called a 
+\emph on
+van Hove singularity
+\emph default
+, and is well known in solid-state physics.
+ However, if you are already familiary with van Hove singularities, you
+ may have noticed something that seems mysterious at first glance: the square
+ root singularity that we see above is the 
+\begin_inset Quotes eld
+\end_inset
+
+wrong singularity
+\begin_inset Quotes erd
+\end_inset
+
+ for 1d.
+ In a 1d band structure (only one direction of translational symmetry =
+ one direction of 
+\begin_inset Formula $k$
+\end_inset
+
+), the singularity in the power (or 
+\begin_inset Quotes eld
+\end_inset
+
+local density of states
+\begin_inset Quotes erd
+\end_inset
+
+) is genericaly an 
+\emph on
+inverse square root
+\emph default
+ singularity, corresponding to 
+\begin_inset Formula $\Re[k_{n}^{-1}]$
+\end_inset
+
+.
+ The ``mere'' square-root singularity 
+\begin_inset Formula $\Re[k_{n}]$
+\end_inset
+
+ that we get here is much weaker, and is generically what one expects from
+ van Hove singularities in 
+\emph on
+3d
+\emph default
+.
+ (These dependencies can be derived from density-of-states ``counting''
+ arguments where you integrate 
+\begin_inset Formula $\sum_{n}\int\delta(\omega-\omega_{n}(\vec{k}))\,dk$
+\end_inset
+
+ around a band edge 
+\begin_inset Formula $\omega_{n}\sim\Vert\vec{k}\Vert^{2}+\cdots$
+\end_inset
+
+ in various dimensions, and are discussed in many solid-state physics textbooks.)
+ What is going on here that is special?
+\end_layout
+
+\begin_layout Standard
+In fact, you do see the ``expected'' 
+\begin_inset Formula $\Re[k_{n}^{-1}]$
+\end_inset
+
+ singularity for a 
+\begin_inset Formula $J_{z}$
+\end_inset
+
+ current source exciting 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+-polarized modes, so the behavior here is unique to the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ polarization.
+ What's going on here originates from the fact that the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+-polarized solution at cutoff 
+\begin_inset Formula $(k=0$
+\end_inset
+
+) is a standing wave of planewaves propagating in the 
+\begin_inset Formula $\pm x$
+\end_inset
+
+ direction (orthogonal to the direction of translational symmetry), which
+ for the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ polarization have an electric field 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ that lies entirely in the 
+\begin_inset Formula $y$
+\end_inset
+
+ direction.
+ But with this polarization, 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ at 
+\begin_inset Formula $k=0$
+\end_inset
+
+ is therefore 
+\series bold
+perpendicular
+\series default
+ to our current source 
+\begin_inset Formula $\vec{J}$
+\end_inset
+
+ (in the 
+\begin_inset Formula $x$
+\end_inset
+
+ direction), and hence contributes 
+\emph on
+nothing
+\emph default
+ to the power 
+\begin_inset Formula $P(\omega).$
+\end_inset
+
+ This vanishing current–field overlap exactly at cutoff cancels some of
+ the singularity, and is the reason 
+\begin_inset Formula $\Re[k_{n}^{-1}]$
+\end_inset
+
+ is weakened to 
+\begin_inset Formula $\Re[k_{n}]$
+\end_inset
+
+ for the 
+\begin_inset Formula $H_{z}$
+\end_inset
+
+ polarization.
+ For the 
+\begin_inset Formula $E_{z}$
+\end_inset
+
+ polarization, in contrast, the electric field lies in the 
+\begin_inset Formula $z$
+\end_inset
+
+ direction for all 
+\begin_inset Formula $k,$
+\end_inset
+
+ and hence has a nonzero inner product with 
+\begin_inset Formula $J_{z}$
+\end_inset
+
+ for all 
+\begin_inset Formula $k$
+\end_inset
+
+ including cutoff, and one consequently observes the full 
+\begin_inset Formula $\Re[k_{n}^{-1}]$
+\end_inset
+
+ singularity — precisely this case was analyzed in 
+\begin_inset CommandInset href
+LatexCommand href
+name "problem 2 of pset 3 from fall 2021"
+target "https://github.com/mitmath/18369/blob/fall21/psets/pset3sol.pdf"
+literal "false"
+
+\end_inset
+
+, in fact.
+\end_layout
+
+\begin_layout Subsection*
+Problem 3 (5+5+5 points)
+\end_layout
+
+\begin_layout Standard
+In class, we have mostly considered the simplified case where the electric
+ polarization density 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ responds 
+\emph on
+instantaneously
+\emph default
+ and linearly to the electric field at the same point in space: 
+\begin_inset Formula $\vec{P}(\vec{x})=\chi_{\text{e}}\vec{E}(\vec{x})$
+\end_inset
+
+ for some constant ``susceptibility'' 
+\begin_inset Formula $\chi_{\text{e}}=\varepsilon-1$
+\end_inset
+
+.
+ More generally, however, changing 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ involves physically moving electric charges, and so it cannot happen instantane
+ously.
+ 
+\end_layout
+
+\begin_layout Standard
+Imagine a simple model in which the charges are attached to immobile atoms
+ with linear springs, so that they can bounce back and forth with some frequency
+ 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ in the absence of external forces.
+ (This actually turns out to be a reasonable semiclassical model of an atom
+ with an 
+\begin_inset Quotes eld
+\end_inset
+
+electric dipole transition
+\begin_inset Quotes erd
+\end_inset
+
+ energy difference 
+\begin_inset Formula $\hslash\omega_{0}$
+\end_inset
+
+ between a ground state and an excited state.) Of course, there also needs
+ to be some 
+\begin_inset Quotes eld
+\end_inset
+
+friction
+\begin_inset Quotes erd
+\end_inset
+
+ so that the atom slowly settles down (to its ground state) when it is left
+ alone.
+ A simple model for this is to describe 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ by a damped harmonic oscillator at each point in space: 
+\begin_inset Formula 
+\[
+\ddot{\vec{P}}=-\omega_{0}^{2}\vec{P}-\gamma_{0}\dot{\vec{\vec{P}}}+\sigma_{0}\vec{E}
+\]
+
+\end_inset
+
+for a frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+, a damping rate 
+\begin_inset Formula $\gamma_{0}>0$
+\end_inset
+
+ , and a coupling coefficient 
+\begin_inset Formula $\sigma_{0}>0$
+\end_inset
+
+ to the electric field at that point in space.
+\end_layout
+
+\begin_layout Enumerate
+Assuming time-harmonic fields 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ proportional to 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset
+
+, show that you obtain the same Maxwell equations as in class but with a
+ 
+\emph on
+frequency-dependent
+\emph default
+ permittivity 
+\begin_inset Formula $\varepsilon(\omega,\vec{x})$
+\end_inset
+
+ (where the 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ dependence arises if your coefficients above vary with 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+).
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Solution: 
+\series default
+For time-harmonic solutions 
+\begin_inset Formula $\vec{E}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{P}(\vec{x})e^{-i\omega t}$
+\end_inset
+
+, the equation becomes 
+\begin_inset Formula $-\omega^{2}\vec{P}=-\omega_{0}^{2}\vec{P}+i\omega\gamma_{0}\vec{P}+\sigma_{0}\vec{E}$
+\end_inset
+
+, and hence 
+\begin_inset Formula 
+\[
+\vec{P}=\underbrace{\frac{\sigma_{0}}{(\omega_{0}^{2}-\omega^{2})-i\omega\gamma_{0}}}_{\chi_{e}(\omega,\vec{x})}\vec{E},
+\]
+
+\end_inset
+
+where we have identified the proportionality factor as 
+\begin_inset Formula $\chi_{e}(\omega)$
+\end_inset
+
+ (the electric susceptibility) from class.
+ Hence (from class), 
+\begin_inset Formula 
+\[
+\boxed{\varepsilon(\omega,\vec{x})=1+\chi_{e}(\omega,\vec{x})=1+\frac{\sigma_{0}}{(\omega_{0}^{2}-\omega^{2})-i\omega\gamma_{0}}}.
+\]
+
+\end_inset
+
+ where the 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ dependence (if any) comes from 
+\begin_inset Formula $\omega_{0}(\vec{x}),\gamma_{0}(\vec{x}),\sigma_{0}(\vec{x})$
+\end_inset
+
+.
+ For example, if we have a single kind of polarizable material in some regions
+ of space and vacuum (
+\begin_inset Formula $\varepsilon=1$
+\end_inset
+
+) in other regions, then 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+ will be constants while 
+\begin_inset Formula $\sigma_{0}$
+\end_inset
+
+ will be 
+\begin_inset Formula $0$
+\end_inset
+
+ in vacuum and some positive constant in the material.
+\end_layout
+
+\begin_layout Enumerate
+Sketch a plot of 
+\begin_inset Formula $\Re\varepsilon-1=\Re\chi_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Im\varepsilon=\Im\chi_{e}$
+\end_inset
+
+ versus 
+\begin_inset Formula $\omega/\omega_{0}$
+\end_inset
+
+, in the regime where the friction term is fairly small (but not zero!)
+ compared the 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ term (i.e.
+\begin_inset space ~
+\end_inset
+
+where the loss rate is small, say
+\begin_inset space ~
+\end_inset
+
+5%, compared to 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+).
+ 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+ should have a peak—what parameters determine the width, amplitude, and
+ location of this peak?
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Solution: 
+\series default
+The real and imaginary parts of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ are 
+\begin_inset Formula 
+\[
+\Re\varepsilon=1+\frac{\sigma_{0}(\omega_{0}^{2}-\omega^{2})}{(\omega_{0}^{2}-\omega^{2})^{2}+(\omega\gamma_{0})^{2}},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Im\varepsilon=\frac{\sigma_{0}(\omega\gamma_{0})}{(\omega_{0}^{2}-\omega^{2})^{2}+(\omega\gamma_{0})^{2}}.
+\]
+
+\end_inset
+
+Let's plot this in the regime of 
+\emph on
+small damping
+\emph default
+, where 
+\begin_inset Formula $\gamma_{0}\ll\omega_{0}$
+\end_inset
+
+, e.g.
+ for 
+\begin_inset Formula $\gamma_{0}=0.05\omega_{0}$
+\end_inset
+
+ (note that this is dimensionally correct—both have units of frequency).
+ To make things nice and dimensionless, we'll plot 
+\begin_inset Formula $(\Re\varepsilon-1)/\sigma_{0}\omega_{0}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Im\varepsilon/\sigma_{0}\omega_{0}^{2}$
+\end_inset
+
+, both versus 
+\begin_inset Formula $\omega/\omega_{0}$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pset1p3c.pdf
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plot of 
+\begin_inset Formula $\Re\varepsilon-1$
+\end_inset
+
+ and 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+, both in 
+\begin_inset Quotes eld
+\end_inset
+
+nondimensionalized
+\begin_inset Quotes erd
+\end_inset
+
+ units of 
+\begin_inset Formula $\sigma_{0}\omega_{0}^{2}$
+\end_inset
+
+ for problem 3(c), with a relatively small loss 
+\begin_inset Formula $\gamma_{0}=0.05\omega_{0}$
+\end_inset
+
+, as a function of 
+\begin_inset Formula $\omega/\omega_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+By inspection of the formula, when 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+ is small, it's pretty easy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For small 
+\begin_inset Formula $\gamma_{0}\ll\omega_{0}$
+\end_inset
+
+, the denominator of 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+ becomes very small when 
+\begin_inset Formula $(\omega_{0}^{2}-\omega^{2})^{2}\lesssim(\omega\gamma_{0})^{2}$
+\end_inset
+
+, i.e.
+ for 
+\begin_inset Formula $\omega\approx\omega_{0}$
+\end_inset
+
+.
+ Furthermore, in the vicinity of 
+\begin_inset Formula $\omega=\omega_{0}$
+\end_inset
+
+ (similarly for 
+\begin_inset Formula $-\omega_{0}$
+\end_inset
+
+), we can approximate 
+\begin_inset Formula $(\omega\gamma_{0})^{2}\approx(\omega_{0}\gamma_{0})^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $(\omega_{0}^{2}-\omega^{2})^{2}=(\omega_{0}-\omega)^{2}(\omega_{0}+\omega)^{2}\approx4\omega_{0}^{2}(\omega_{0}-\omega)^{2}$
+\end_inset
+
+, so that the latter is smaller than the former for 
+\begin_inset Formula $|\omega-\omega_{0}|\lesssim\gamma_{0}/2$
+\end_inset
+
+.
+ This corresponds to a peak for 
+\begin_inset Formula $\omega\in[\omega_{0}-\gamma_{0}/2,\omega_{0}+\gamma_{0}/2]$
+\end_inset
+
+, or a peak width 
+\begin_inset Formula $\sim\gamma_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ to see that 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+ peaks in the vicinity of 
+\begin_inset Formula $\omega=\pm\omega_{0}$
+\end_inset
+
+, with a peak amplitude proportional to 
+\begin_inset Formula $\sigma_{0}/(\omega_{0}\gamma_{0})$
+\end_inset
+
+ and a peak width proportional to 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+.
+ That is, it peaks near the resonance frequency, with a 
+\begin_inset Quotes eld
+\end_inset
+
+linewidth
+\begin_inset Quotes erd
+\end_inset
+
+ proportional to the loss.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+We can solve for the peak more precisely by setting 
+\begin_inset Formula $\frac{d}{d\omega}\Im\varepsilon=0$
+\end_inset
+
+ and solving for 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+ After some tedious algebra, keeping terms only to lowest order in 
+\begin_inset Formula $\gamma_{0}/\omega_{0}$
+\end_inset
+
+, I find that there are peaks at 
+\begin_inset Formula $\omega=\pm\omega_{0}\left[1+\frac{\gamma_{0}^{2}}{8}\right]$
+\end_inset
+
+ (plus terms proportional to 
+\begin_inset Formula $\gamma_{0}^{4}$
+\end_inset
+
+ or larger).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Similarly, we can solve for the peak width (the 
+\begin_inset Quotes eld
+\end_inset
+
+linewidth
+\begin_inset Quotes erd
+\end_inset
+
+) more precisely by realizing that near the peak for small 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+ (narrow peaks), 
+\begin_inset Formula $|\omega|\gamma_{0}\approx\omega_{0}\gamma_{0}$
+\end_inset
+
+.
+ With this approximation, we can compute the 
+\begin_inset Quotes eld
+\end_inset
+
+width at half maximum
+\begin_inset Quotes erd
+\end_inset
+
+ —
+\begin_inset space \thinspace{}
+\end_inset
+
+i.e., over what width 
+\begin_inset Formula $2\Gamma$
+\end_inset
+
+ is 
+\begin_inset Formula $\Im\varepsilon$
+\end_inset
+
+ at least 
+\begin_inset Formula $1/2$
+\end_inset
+
+ its peak? That is, what 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ solves 
+\begin_inset Formula $\Im\varepsilon(\omega_{0}\pm\Gamma)\approx\frac{1}{2}\Im\varepsilon(\omega_{0})\approx\sigma_{0}/2\omega_{0}\gamma_{0}$
+\end_inset
+
+? After a little algebra, we find that this occurs at 
+\begin_inset Formula $\omega_{0}^{2}-(\omega_{0}\pm\Gamma)^{2}=\pm\omega_{0}\gamma_{0}\approx\mp2\omega_{0}\Gamma$
+\end_inset
+
+, and hence we find that the linewidth 
+\begin_inset Formula $2\Gamma$
+\end_inset
+
+ is actually 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+ at half-maximum! (Again, we could be even more precise by doing an expansion
+ in powers of 
+\begin_inset Formula $\gamma_{0}/\omega_{0}$
+\end_inset
+
+.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+From the plot, notice also that 
+\begin_inset Formula $\Re\varepsilon-1$
+\end_inset
+
+ 
+\emph on
+oscillates in sign
+\emph default
+ around the resonance frequency 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+.
+ If this oscillation is large enough (if 
+\begin_inset Formula $\sigma_{0}/\omega_{0}\gamma_{0}$
+\end_inset
+
+ is large enough), then 
+\begin_inset Formula $\Re\varepsilon$
+\end_inset
+
+ can actually flip sign and become 
+\begin_inset Formula $<0$
+\end_inset
+
+ — it is totally possible to have a negative permittivity near a strong
+ resonance (although this typically comes hand in hand with large absorption)!
+\end_layout
+
+\begin_layout Enumerate
+Show that your equations are consistent with the passivity condition 
+\begin_inset Formula $\omega\Im[\varepsilon]\ge0$
+\end_inset
+
+ from class.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Solution: 
+\series default
+From the formula in the previous part, it is obvious that 
+\begin_inset Formula 
+\[
+\omega\Im\varepsilon=\frac{\sigma_{0}(\omega^{2}\gamma_{0})}{(\omega_{0}^{2}-\omega^{2})^{2}+(\omega\gamma_{0})^{2}}\ge0
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $\omega$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $\sigma_{0}\gamma_{0}\ge0$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\gamma_{0}\geq0$
+\end_inset
+
+ is required for our harmonic-oscillator equations for 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ to decay rather than grow (the friction force 
+\begin_inset Formula $-\gamma_{0}\dot{\vec{P}}$
+\end_inset
+
+ must 
+\emph on
+oppose
+\emph default
+ the motion), it follows that we must have 
+\begin_inset Formula $\sigma_{0}\ge0$
+\end_inset
+
+ (as assumed above).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+From our notes on energy conservation in Maxwell's equations, it follows
+ that 
+\begin_inset Formula $\sigma_{0}\ge0$
+\end_inset
+
+ corresponds to the electric field 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+doing net work
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+on
+\emph default
+ the polarization 
+\begin_inset Formula $\vec{P}$
+\end_inset
+
+ (rather than vice versa), called 
+\emph on
+passivity
+\emph default
+ of the medium, and we argued that this ultimately implies 
+\begin_inset Formula $\omega\Im\varepsilon\ge0$
+\end_inset
+
+ much more generally.
+\end_layout
+
+\end_body
+\end_document
