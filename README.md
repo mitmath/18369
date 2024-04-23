@@ -424,3 +424,7 @@ New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical dev
 Followed chapter 10 in the book to derive TCMT in the simple 2-port (port–cavity–port) case.
 
 **Further reading:** Chapter 10 of the book and references therein.
+
+### Lecture 29: 22 Apr 2024
+
+More TCMT.  Discussed Q, and connection of 1/Q to fractional bandwidth.  Extensions of TCMT to include losses, nonlinearities, and various applications including channel drop filters [(Fan, 1998)](https://opg.optica.org/oe/fulltext.cfm?uri=oe-3-1-4&id=63297) and optical bistability [(Soljacic, 2002)](http://doi.org/10.1103/PhysRevE.66.055601).
