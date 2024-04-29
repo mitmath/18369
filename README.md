@@ -428,3 +428,26 @@ Followed chapter 10 in the book to derive TCMT in the simple 2-port (port–cavi
 ### Lecture 29: 22 Apr 2024
 
 More TCMT.  Discussed Q, and connection of 1/Q to fractional bandwidth.  Extensions of TCMT to include losses, nonlinearities, and various applications including channel drop filters [(Fan, 1998)](https://opg.optica.org/oe/fulltext.cfm?uri=oe-3-1-4&id=63297) and optical bistability [(Soljacic, 2002)](http://doi.org/10.1103/PhysRevE.66.055601).
+
+### Lecture 30: 24 Apr 2024
+
+* [β eigenproblem notes](https://www.dropbox.com/scl/fi/xqdjvqwad9t1mbbo38p9c/beta-eigenproblem.pdf?rlkey=9igd7v3qo0r8vla3ri5g8ujy1&dl=0); see also first few pages of our [2002 adiabatic-theorem paper](http://math.mit.edu/~stevenj/papers/JohnsonBi02.pdf)
+
+**New topic (see notes)**: Going full-circle back to the beginning of the course, we again derive an algebraic (linear operator / eigenproblem) formulation of Maxwell's equations. This time, however, we do so for constant-ω separating out the _z_ derivative and the corresponding **k** component (for _z_\-periodic structures) $k_z$ (denoted β). That is, we write Maxwell's equations in the form:
+
+**A** ψ = -_i_ **B** ∂ψ/∂_z_
+
+where ψ is a four-component vector field consisting of (_Ex_, _Ey_, _Hx_, _Hy_), and **A** and **B** are linear operators. This is the most convenient formulation for considering problems of propagation in the _z_ direction along a waveguide, where perturbations may break translational symmetry but frequency is still conserved. Showed that **A** and **B** are Hermitian (but _not_ positive-definite) for real ε and μ.
+
+Discussed orthogonality of modes and unconjugated "inner products," propagating vs. evanescent modes (showing that the latter carry zero power)
+
+### Lecture 31: 26 Apr 2024
+
+Continued discussion of the β eigenproblem and the ψ(z) formulation, including:
+
+* It is easy to see that the fact that evanescent modes carry zero power is physically essential to obey Poynting's theorem, e.g. in situations where a PEC waveguide narrows so that all modes at ω become evanescent.  The fact that the *cross terms* between complex-conjugate evanescent modes *do* carry power is also essential, e.g. in cases where waves ["tunnel"](https://en.wikipedia.org/wiki/Quantum_tunnelling) through a finite-length region of evanescent modees (such as a PEC waveguide narrowed over a finite region).
+* In unbounded systems, e.g. dielectric waveguides surrounded by semi-infinite ε=1 regions, the β spectrum includes discrete (point) spectra of guided modes alongside continuous spectra (the light cone) of radiating modes.
+* Mode orthogonality is very useful in conjunction with computational methods, e.g. FDTD or FEM, in order to decompose the computed outgoing fields into different modes. (See, for example, Meep's [mode decomposition](https://meep.readthedocs.io/en/latest/Mode_Decomposition/) feature and [tutorial](https://meep.readthedocs.io/en/latest/Python_Tutorials/Mode_Decomposition/).)
+* Coupled-wave theory: in cases where **A** is *nearly* uniform, either because the perturbations are small (e.g. surface roughness) or slowly varying (e.g. gradual waveguide tapers or bends), it can be revealing to express Maxwell's equations in the basis of the β eigenfunctions, with the coefficients aₙ(z) now being slowly varying functions of z described by a set of ODEs called "coupled-wave equations", with intermodal scattering determined by the non-uniformity of **A**.
+
+**Further reading:** For a connection between the adiabatic limit to the rate of convergence of the Fourier transform of the rate of change, see section 2.1 of [Oskooi et al. (2012)](https://www.osapublishing.org/oe/abstract.cfm?URI=oe-20-19-21558).
