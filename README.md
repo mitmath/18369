@@ -451,3 +451,11 @@ Continued discussion of the β eigenproblem and the ψ(z) formulation, including
 * Coupled-wave theory: in cases where **A** is *nearly* uniform, either because the perturbations are small (e.g. surface roughness) or slowly varying (e.g. gradual waveguide tapers or bends), it can be revealing to express Maxwell's equations in the basis of the β eigenfunctions, with the coefficients aₙ(z) now being slowly varying functions of z described by a set of ODEs called "coupled-wave equations", with intermodal scattering determined by the non-uniformity of **A**.
 
 **Further reading:** For a connection between the adiabatic limit to the rate of convergence of the Fourier transform of the rate of change, see section 2.1 of [Oskooi et al. (2012)](https://www.osapublishing.org/oe/abstract.cfm?URI=oe-20-19-21558).
+
+### Lecture 32: 29 Apr 2024
+
+**Slides:** my [slides](notes/Laser-Math@18.369.pdf) from some research seminars
+
+Began discussing a basic picture of lasers: the Maxwell-Bloch equations, the SALT nonlinear eigenproblem for the steady-state modes, recent SALT computational methods, and laser linewidth limits due to quantum/thermal noise.
+
+**Further reading:** See e.g. [Haken's _Laser Theory_](http://www.springer.com/us/book/9783540121886) for the Maxwell-Bloch equations, [Ge, Chong, & Stone (2010)](http://journals.aps.org/pra/abstract/10.1103/PhysRevA.82.063824) on SALT, [Esterhazy et al. (2014)](http://math.mit.edu/~stevenj/papers/EsterhazyLiu14.pdf) on computational SALT, [Pick et al. (2014)](http://dx.doi.org/doi:10.1103/PhysRevA.91.063806) and references therein on laser linewidth.
