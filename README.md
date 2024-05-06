@@ -459,3 +459,28 @@ Continued discussion of the β eigenproblem and the ψ(z) formulation, including
 Began discussing a basic picture of lasers: the Maxwell-Bloch equations, the SALT nonlinear eigenproblem for the steady-state modes, recent SALT computational methods, and laser linewidth limits due to quantum/thermal noise.
 
 **Further reading:** See e.g. [Haken's _Laser Theory_](http://www.springer.com/us/book/9783540121886) for the Maxwell-Bloch equations, [Ge, Chong, & Stone (2010)](http://journals.aps.org/pra/abstract/10.1103/PhysRevA.82.063824) on SALT, [Esterhazy et al. (2014)](http://math.mit.edu/~stevenj/papers/EsterhazyLiu14.pdf) on computational SALT, [Pick et al. (2014)](http://dx.doi.org/doi:10.1103/PhysRevA.91.063806) and references therein on laser linewidth.
+
+### Lecture 33: 1 May 2024
+
+Continued discussing SALT equation and origin of laser linewidth.
+
+### Lecture 34: 3 May 2024
+* [tutorial slides](https://www.dropbox.com/s/69jmybp912xcshs/spie-course-latest.pptx?dl=0)
+
+New topic **photonic-crystal slabs** (chapters 7-8).  Starting on page 142 of the tutorial slides.
+
+Partial confinement of light by defects, and intrinsic radiation losses due to coupling to light-line mode. Tradeoff between localization and loss (due to Fourier components inside the light cone). Discussed two mechanisms for large radiation Q despite the incomplete gap: delocalization and cancellation.
+
+**Further reading:** Chapters 7–8 of the book, tutorial slides starting on page 142.
+
+### Lecture 35: 6 May 2024
+
+* [handwritten notes](https://www.dropbox.com/scl/fi/rc6ue4sogxcb09ztiq6h1/PhC-slab-transmission.pdf?rlkey=rqmmdojz1lnlzxerjqpn0wd6c&dl=0)
+
+Out-of-plane transmission through periodic waveguides and photonic-crystal slabs, starting with a structure with continuous translational symmetry and then gradually "turning on" a periodic modulation (much like how we analyzed the origin of band gaps in 1d).
+
+Discussed derivation of [Fresnel equations](https://en.wikipedia.org/wiki/Fresnel_equations) for a single interface, and [thin film interference fringes](https://en.wikipedia.org/wiki/Thin-film_interference), which are very slowly varying and relatively "boring" for thicknesses on the order of the wavelength or less.   Then, when we "turn on" a periodicity, the guided bands are folded into the light cone and start to become leaky.   Correspondingly, in a transmission spectrum, one sees sharp [Fano resonance](https://en.wikipedia.org/wiki/Fano_resonance) lineshapes appearing in the transmission, which can be derived from TCMT.
+
+Moreover, in a mirror-symmetric ($\sigma_x$) structure, something else interesting happens: at $k_x=0$, corresponding to normal-incident light, the (formerly) guided band splits into even/odd modes, but only *one* of these couples to normal-incident radiation, so one of the peaks "disappears" from the transmission spectrum.  In fact, since for a guided mode this frequency must occur for $\lambda > a$, there are no radiating diffracted orders to couple to either, so this mode is actually *trapped*: it is a lossless guided mode even though it is in the light line, called a "bound-in-continuum (BiC)" state or "embedded eigenvalue" with an infinite $Q$ (in the absence of manufacturing disorder).  You can then controllably lower the $Q$ by perturbing the structure to slightly break the $\sigma_x$ mirror symmetry.
+
+**Further reading**: See [Fan, Suh, and Joannopoulos (2003)](https://doi.org/10.1364/josaa.20.000569) for a TCMT analysis of Fano resonances, showing how general this lineshape is; a review of Fano resonances in a variety of nanoscale physical systems can be found in [Miroshnichenko et al. (2010)](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.82.2257).  A review of BiC states can be found in [Hsu et al. (2016)](https://www.nature.com/articles/natrevmats201648); the particular type of BiC discussed in class is a "symmetry protected" BiC.
