@@ -370,7 +370,7 @@ Discussion of resonant modes, FDTD time-domain methods, and PML absorbing layers
 
 * [computational photonics slides](http://math.mit.edu/~stevenj/18.369/Computation-18.369.pdf)
 
-Discussed PML absorbing layers, began discussing principal of equivalence.
+Discussed PML absorbing layers, began discussing principle of equivalence.
 
 **Further reading** [Notes on PML](notes/pml.pdf); see also e.g. the discussion of PML in Taflove's book. [Notes on coordinate transforms in electromagnetism](notes/coordinate-transform.pdf); see also [slides on transformation optics](notes/transformation-slides.pdf).   See also the [Meep PML](https://meep.readthedocs.io/en/latest/Perfectly_Matched_Layer/) manual for some examples, caveats, and rules of thumb.   See the review article [Electromagnetic Wave Source Conditions](http://arxiv.org/abs/1301.5366), section 4.2, on equivalent currents.
 
