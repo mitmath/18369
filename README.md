@@ -423,7 +423,7 @@ New topic: **temporal coupled-mode theory** (TCMT). Started with a canonical dev
 
 Followed chapter 10 in the book to derive TCMT in the simple 2-port (port–cavity–port) case.
 
-**Further reading:** Chapter 10 of the book and references therein.
+**Further reading:** Chapter 10 of the book and references therein.  A nice recent review and generalization of TCMT is [Zhao, Guo, and Fan (2019)](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.033839).
 
 ### Lecture 29: 22 Apr 2024
 
