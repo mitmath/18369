@@ -491,4 +491,26 @@ Brief discussion of application of out-of-plane transmission to the design of op
 
 New topic: **photonic-crystal fibers** (chapter 9 of the book, tutorial slides from lecture 34). Discussed the various types from the handouts: photonic-bandgap vs. index guiding, and 2d-periodic vs. Bragg fibers (concentric "1d" crystals). Emphasized the importance of the band gap lying above the light line of air.
 
-**Further reading:** Chapter 9 of the book, tutorial slides starting on page 142.  A nice way to understand holey fibers is the β⟶0 limit, which turns out to give a *scalar* wave equation as described in chapter 9 of the book. For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).
+**Further reading:** Chapter 9 of the book, tutorial slides starting on page 142.
+
+### Lecture 37: 10 May 2024
+
+Continued discussion of photonic-crystal fibers, from chapter 9 of the book.
+
+A nice way to understand holey fibers is the β⟶0 limit, which turns out to give a *scalar* wave equation as described in chapter 9 of the book.   This helps to understand the origin of the band gaps opening at large β in holey fibers, as well as "endlessly single mode fibers" ([Birks et al., 1997](https://doi.org/10.1364/OL.22.000961)) and the surprising 4-fold near-degeneracies of the "LP" modes.
+
+Discussed Bragg fibers and the relationship to the band diagram of the asymptotic 1d-periodic structure at large radii.  Conservation of angular momentum, i.e. the fact that the modes look like exp(imφ) in any axisymmetric fiber, means that at large radii the solutions are asymptotically ≈ constant in the φ direction, so we only need to consider the projected 1d band diagram (ω vs. β) from kᵣ.   Discussed the analogy to modes of hollow metallic waveguides.
+
+**Further reading:** Chapter 9 and references therein.  For a rigorous derivation of the scalar limit, see [this 1994 paper by Bonnet-Bendhia and Djellouli](http://dx.doi.org/doi:10.1093/imamat/52.3.271).  The analogy between Bragg fibers with large gaps (especially omnidirectional gaps) and hollow metallic waveguides is discussed in [Johnson et al. (2001)](http://doi.org/10.1364/OE.9.000748).
+
+### Lecture 38: 13 May 2024
+
+* [handwritten notes](https://www.dropbox.com/scl/fi/jdpv2s0289tiv04e3hdq2/Reciprocity.pdf?rlkey=fbywc5hgeztwn0ogoknksvpp3&dl=0)
+
+Discussed the nature, origins, and consequences of **reciprocity**, which is essentially the statement that the operator $\hat{M} = \frac{1}{i\omega} (\nabla \times \mu^{-1} \nabla\times{} - \omega^2 \varepsilon)$, relating electric fields and currents $\hat{M}\vec{E} = \vec{J}$, is complex–symmetric (*not* Hermitian) for most materials ("reciprocal" materials where $\varepsilon$ and $\mu$ are symmetric, possibly lossy).   This has a number of important consequences, including an corresponding symmetry of the Green's function (from $\hat{M}^{-1}$) and the fact that the scattering matrix ([S matrix](https://en.wikipedia.org/wiki/S-matrix)), relating ingoing modes to outgoing modes, is symmetric.
+
+Discussed the connection of the vanishing boundary terms to the [limiting absorption principle](https://en.wikipedia.org/wiki/Limiting_absorption_principle) in open systems: outgoing/radiation boundary conditions can be imposed by adding an infinitesimal absorption everywhere and then letting it go to zero from above (often written $\varepsilon + i0^+$).
+
+The connection to the S matrix is nontrivial, especially because it's not so easy to write down a 6×6 reciprocity that includes both electric and magnetic fields/currents.  Instead, we use symmetry to derive an E-only (or H-only) version of the Principle of Equivalence, and consider a port with only outgoing waves in which we can derive an E-only (or H-only) version of mode orthogonality (from the β eigenproblem), to derive symmetry of the S matrix in the simplest case of (asymptotically) translation-invariant lossless input–output ports.
+
+**Further reading:** The Wikipedia article on [electromagnetic reciprocity](https://en.wikipedia.org/wiki/Reciprocity_(electromagnetism)) cites a number of useful references.
